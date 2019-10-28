@@ -29,6 +29,9 @@ module TextMagic
     # If contact or list was shared by another sub-account then name if this user will be shown.
     attr_accessor :shared_by
 
+    # If contact or list was shared by another sub-account then `true` will be set.
+    attr_accessor :is_shared
+
     # Contact avatar URI.
     attr_accessor :avatar
 
@@ -74,6 +77,7 @@ module TextMagic
         :'value' => :'value',
         :'label' => :'label',
         :'shared_by' => :'sharedBy',
+        :'is_shared' => :'isShared',
         :'avatar' => :'avatar',
         :'favorited' => :'favorited',
         :'user_id' => :'userId',
@@ -91,6 +95,7 @@ module TextMagic
         :'value' => :'String',
         :'label' => :'String',
         :'shared_by' => :'String',
+        :'is_shared' => :'BOOLEAN',
         :'avatar' => :'String',
         :'favorited' => :'BOOLEAN',
         :'user_id' => :'Integer',
@@ -126,6 +131,10 @@ module TextMagic
 
       if attributes.has_key?(:'sharedBy')
         self.shared_by = attributes[:'sharedBy']
+      end
+
+      if attributes.has_key?(:'isShared')
+        self.is_shared = attributes[:'isShared']
       end
 
       if attributes.has_key?(:'avatar')
@@ -177,6 +186,10 @@ module TextMagic
         invalid_properties.push('invalid value for "shared_by", shared_by cannot be nil.')
       end
 
+      if @is_shared.nil?
+        invalid_properties.push('invalid value for "is_shared", is_shared cannot be nil.')
+      end
+
       if @avatar.nil?
         invalid_properties.push('invalid value for "avatar", avatar cannot be nil.')
       end
@@ -214,6 +227,7 @@ module TextMagic
       return false if @value.nil?
       return false if @label.nil?
       return false if @shared_by.nil?
+      return false if @is_shared.nil?
       return false if @avatar.nil?
       return false if @favorited.nil?
       return false if @user_id.nil?
@@ -243,6 +257,7 @@ module TextMagic
           value == o.value &&
           label == o.label &&
           shared_by == o.shared_by &&
+          is_shared == o.is_shared &&
           avatar == o.avatar &&
           favorited == o.favorited &&
           user_id == o.user_id &&
@@ -260,7 +275,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [entity_id, entity_type, value, label, shared_by, avatar, favorited, user_id, country_name, qposition, rposition].hash
+      [entity_id, entity_type, value, label, shared_by, is_shared, avatar, favorited, user_id, country_name, qposition, rposition].hash
     end
 
     # Builds the object from hash
