@@ -20,7 +20,7 @@ module TextMagic
     # Entity ID(s), separated by comma
     attr_accessor :all
 
-    # Mute for N hours
+    # Mute for N hours.
     attr_accessor :_for
 
     # Attribute mapping from ruby-style variable name to JSON key.

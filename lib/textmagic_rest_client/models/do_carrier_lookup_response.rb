@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class DoCarrierLookupResponse
-    # Cost to check that one number is constant – 0.04 in your account currency.
+    # The cost to check that one number is constant – 0.04 in your account currency.
     attr_accessor :cost
 
     # Phone number country.
@@ -32,7 +32,7 @@ module TextMagic
     # Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).
     attr_accessor :number164
 
-    # The field shows if entered phone number is valid or not.
+    # This field shows whether the entered phone number is valid or not.
     attr_accessor :valid
 
     class EnumAttributeValidator

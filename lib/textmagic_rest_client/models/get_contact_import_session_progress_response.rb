@@ -14,10 +14,10 @@ require 'date'
 
 module TextMagic
   class GetContactImportSessionProgressResponse
-    # Session status: * **1** if session has been initialized but not yet started * **3** if session is being processed * **4** if session has errors * **5** if session completed successfully 
+    # Session status: * **1** - if session has been initialized but not yet started; * **3** - if session is being processed; * **4** - if session has errors; * **5** - if session completed successfully. 
     attr_accessor :status
 
-    # How many contacts have been imported.
+    # How many contacts have been imported?
     attr_accessor :processed
 
     # Attribute mapping from ruby-style variable name to JSON key.

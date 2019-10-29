@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class SenderSettingsItem
-    # The 2-letter ISO country code of the recipient phone number. 
+    # The 2-letter ISO country code of the recipient's phone number. 
     attr_accessor :country
 
     # Phone enabled for sending to specified country

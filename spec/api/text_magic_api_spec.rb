@@ -347,7 +347,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_dedicated_number
-  # Cancel dedicated number subscription
+  # Cancel a dedicated number subscription
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -541,10 +541,10 @@ describe 'TextMagicApi' do
 
   # unit tests for do_carrier_lookup
   # Carrier Lookup
-  # This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  &gt; Numbers can be checked one by one. You cannot check multiple numbers in one request.   
+  # This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  &gt; Numbers must be checked one by one. You cannot check multiple numbers in one request.   
   # @param phone Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers). 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :country This option must be specified only if the phone number in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**. 
+  # @option opts [String] :country This option must be specified only if the phone number is in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**. 
   # @return [DoCarrierLookupResponse]
   describe 'do_carrier_lookup test' do
     it 'should work' do
@@ -554,7 +554,7 @@ describe 'TextMagicApi' do
 
   # unit tests for do_email_lookup
   # Email Lookup
-  # To get more details about an email address or to check if it is a valid email, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  &gt; Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
+  # To get more details about an email address or to check whether it is a valid email or not, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  &gt; Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
   # @param email Email address.
   # @param [Hash] opts the optional parameters
   # @return [DoEmailLookupResponse]
@@ -668,9 +668,9 @@ describe 'TextMagicApi' do
   # unit tests for get_available_dedicated_numbers
   # Find dedicated numbers available for purchase
   # 
-  # @param country Two-letter dedicated number country ISO code.
+  # @param country The 2-letter dedicated number country ISO code.
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
+  # @option opts [Integer] :prefix Desired number prefix. Should include the country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
   # @option opts [Integer] :tollfree Should we show only tollfree numbers (tollfree available only for US).
   # @return [GetAvailableDedicatedNumbersResponse]
   describe 'get_available_dedicated_numbers test' do
@@ -681,7 +681,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_available_sender_setting_options
   # Get available sender settings
-  # Get all available sender setting options which could be used in \&quot;from\&quot; parameter of POST messages method.
+  # Get all available sender setting options which can be used in the \&quot;from\&quot; parameter of the POST messages method.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :country The 2-letter ISO country ID. If not specified, it returns all the available sender settings.
   # @return [GetAvailableSenderSettingOptionsResponse]
@@ -858,7 +858,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_contact_notes
-  # Fetch notes assigned to the given contact.
+  # Fetch notes assigned to a given contact
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -1273,7 +1273,7 @@ describe 'TextMagicApi' do
   # Get current sender settings
   # 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :country Return sender settings enabled for sending to specified country. Two upper case characters
+  # @option opts [String] :country Return sender settings enabled for sending to a specified country. Should be 2 upper-case characters.
   # @return [GetSenderSettingsResponse]
   describe 'get_sender_settings test' do
     it 'should work' do
@@ -1401,7 +1401,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [Integer] :survey_id Fetch only that numbers which are ready for the survey
+  # @option opts [Integer] :survey_id Fetch only those numbers that are ready for the survey.
   # @return [GetUserDedicatedNumbersPaginatedResponse]
   describe 'get_user_dedicated_numbers test' do
     it 'should work' do
@@ -1413,7 +1413,7 @@ describe 'TextMagicApi' do
   # Import contacts
   # Import contacts from the CSV, XLS or XLSX file.
   # @param file File containing contacts in csv or xls(x) formats
-  # @param column Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required. 
+  # @param column Import file column mapping. The string must contain sub-strings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where the value before &#x60;:&#x60; is a number of the column in the file, and the value after &#x60;:&#x60; is a field of the newly created contact or the ID of a custom field. Numbers of columns begin from zero. Allowed built-in contact fields are: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required. 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :list_id List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified. 
   # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified. 
@@ -1474,7 +1474,7 @@ describe 'TextMagicApi' do
 
   # unit tests for mute_chats_bulk
   # Mute chats (bulk)
-  # Mute several chats by chat IDs or mute all chats
+  # Mute several chats by chat ids or mute all chats.
   # @param mute_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1521,7 +1521,7 @@ describe 'TextMagicApi' do
 
   # unit tests for request_sender_id
   # Apply for a new Sender ID
-  # &gt; Sender IDs are shared between all of your sub-accounts.
+  # &gt; Sender IDs are shared among all of your sub-accounts.
   # @param request_sender_id_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -1748,7 +1748,7 @@ describe 'TextMagicApi' do
 
   # unit tests for unmute_chats_bulk
   # Unmute chats (bulk)
-  # Unmute several chats by chat IDs or unmute all chats
+  # Unmute several chats by chat ids or unmute all chats.
   # @param unmute_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1935,7 +1935,7 @@ describe 'TextMagicApi' do
   # unit tests for upload_contact_avatar
   # Upload an avatar
   # 
-  # @param image Contact avatar. Should be PNG or JPG file not more than 10 MB
+  # @param image Contact avatar. Should be a PNG or JPG file not more than 10 MB.
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]

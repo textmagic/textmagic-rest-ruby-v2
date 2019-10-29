@@ -30,7 +30,7 @@ Method | HTTP request | Description
 [**delete_contacts_by_ids**](TextMagicApi.md#delete_contacts_by_ids) | **POST** /api/v2/contacts/delete | Delete contacts by IDs (bulk)
 [**delete_contacts_from_list**](TextMagicApi.md#delete_contacts_from_list) | **DELETE** /api/v2/lists/{id}/contacts | Unassign contacts from a list
 [**delete_custom_field**](TextMagicApi.md#delete_custom_field) | **DELETE** /api/v2/customfields/{id} | Delete a custom field
-[**delete_dedicated_number**](TextMagicApi.md#delete_dedicated_number) | **DELETE** /api/v2/numbers/{id} | Cancel dedicated number subscription
+[**delete_dedicated_number**](TextMagicApi.md#delete_dedicated_number) | **DELETE** /api/v2/numbers/{id} | Cancel a dedicated number subscription
 [**delete_inbound_message**](TextMagicApi.md#delete_inbound_message) | **DELETE** /api/v2/replies/{id} | Delete a single inbound message
 [**delete_inbound_messages_bulk**](TextMagicApi.md#delete_inbound_messages_bulk) | **POST** /api/v2/replies/delete | Delete inbound messages (bulk)
 [**delete_list**](TextMagicApi.md#delete_list) | **DELETE** /api/v2/lists/{id} | Delete a list
@@ -70,7 +70,7 @@ Method | HTTP request | Description
 [**get_contact_if_blocked**](TextMagicApi.md#get_contact_if_blocked) | **GET** /api/v2/contacts/block/phone | Check is that phone number blocked
 [**get_contact_import_session_progress**](TextMagicApi.md#get_contact_import_session_progress) | **GET** /api/v2/contacts/import/progress/{id} | Check import progress
 [**get_contact_note**](TextMagicApi.md#get_contact_note) | **GET** /api/v2/notes/{id} | Get a contact note
-[**get_contact_notes**](TextMagicApi.md#get_contact_notes) | **GET** /api/v2/contacts/{id}/notes | Fetch notes assigned to the given contact.
+[**get_contact_notes**](TextMagicApi.md#get_contact_notes) | **GET** /api/v2/contacts/{id}/notes | Fetch notes assigned to a given contact
 [**get_contacts**](TextMagicApi.md#get_contacts) | **GET** /api/v2/contacts | Get all contacts
 [**get_contacts_autocomplete**](TextMagicApi.md#get_contacts_autocomplete) | **GET** /api/v2/contacts/autocomplete | Get contacts autocomplete suggestions
 [**get_contacts_by_list_id**](TextMagicApi.md#get_contacts_by_list_id) | **GET** /api/v2/lists/{id}/contacts | Get all contacts in a list
@@ -1511,7 +1511,7 @@ nil (empty response body)
 # **delete_dedicated_number**
 > delete_dedicated_number(id)
 
-Cancel dedicated number subscription
+Cancel a dedicated number subscription
 
 
 
@@ -1532,7 +1532,7 @@ id = 1 # Integer |
 
 
 begin
-  #Cancel dedicated number subscription
+  #Cancel a dedicated number subscription
   api_instance.delete_dedicated_number(id)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_dedicated_number: #{e}"
@@ -2348,7 +2348,7 @@ nil (empty response body)
 
 Carrier Lookup
 
-This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  > Numbers can be checked one by one. You cannot check multiple numbers in one request.   
+This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  > Numbers must be checked one by one. You cannot check multiple numbers in one request.   
 
 ### Example
 ```ruby
@@ -2366,7 +2366,7 @@ api_instance = TextMagic::TextMagicApi.new
 phone = '\"447860021130\"' # String | Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers). 
 
 opts = { 
-  country: '\"GB\"' # String | This option must be specified only if the phone number in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**. 
+  country: '\"GB\"' # String | This option must be specified only if the phone number is in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**. 
 }
 
 begin
@@ -2383,7 +2383,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **phone** | **String**| Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers).  | 
- **country** | **String**| This option must be specified only if the phone number in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**.  | [optional] 
+ **country** | **String**| This option must be specified only if the phone number is in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**.  | [optional] 
 
 ### Return type
 
@@ -2405,7 +2405,7 @@ Name | Type | Description  | Notes
 
 Email Lookup
 
-To get more details about an email address or to check if it is a valid email, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  > Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
+To get more details about an email address or to check whether it is a valid email or not, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  > Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
 
 ### Example
 ```ruby
@@ -2885,10 +2885,10 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-country = '\"GB\"' # String | Two-letter dedicated number country ISO code.
+country = '\"GB\"' # String | The 2-letter dedicated number country ISO code.
 
 opts = { 
-  prefix: 447155, # Integer | Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
+  prefix: 447155, # Integer | Desired number prefix. Should include the country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
   tollfree: 0 # Integer | Should we show only tollfree numbers (tollfree available only for US).
 }
 
@@ -2905,8 +2905,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **country** | **String**| Two-letter dedicated number country ISO code. | 
- **prefix** | **Integer**| Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. | [optional] 
+ **country** | **String**| The 2-letter dedicated number country ISO code. | 
+ **prefix** | **Integer**| Desired number prefix. Should include the country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. | [optional] 
  **tollfree** | **Integer**| Should we show only tollfree numbers (tollfree available only for US). | [optional] [default to 0]
 
 ### Return type
@@ -2929,7 +2929,7 @@ Name | Type | Description  | Notes
 
 Get available sender settings
 
-Get all available sender setting options which could be used in \"from\" parameter of POST messages method.
+Get all available sender setting options which can be used in the \"from\" parameter of the POST messages method.
 
 ### Example
 ```ruby
@@ -3683,7 +3683,7 @@ Name | Type | Description  | Notes
 # **get_contact_notes**
 > GetContactNotesPaginatedResponse get_contact_notes(id, opts)
 
-Fetch notes assigned to the given contact.
+Fetch notes assigned to a given contact
 
 
 
@@ -3708,7 +3708,7 @@ opts = {
 }
 
 begin
-  #Fetch notes assigned to the given contact.
+  #Fetch notes assigned to a given contact
   result = api_instance.get_contact_notes(id, opts)
   p result
 rescue TextMagic::ApiError => e
@@ -5372,7 +5372,7 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  country: '\"US\"' # String | Return sender settings enabled for sending to specified country. Two upper case characters
+  country: '\"US\"' # String | Return sender settings enabled for sending to a specified country. Should be 2 upper-case characters.
 }
 
 begin
@@ -5388,7 +5388,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **country** | **String**| Return sender settings enabled for sending to specified country. Two upper case characters | [optional] 
+ **country** | **String**| Return sender settings enabled for sending to a specified country. Should be 2 upper-case characters. | [optional] 
 
 ### Return type
 
@@ -5919,7 +5919,7 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  survey_id: 56 # Integer | Fetch only that numbers which are ready for the survey
+  survey_id: 56 # Integer | Fetch only those numbers that are ready for the survey.
 }
 
 begin
@@ -5937,7 +5937,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **survey_id** | **Integer**| Fetch only that numbers which are ready for the survey | [optional] 
+ **survey_id** | **Integer**| Fetch only those numbers that are ready for the survey. | [optional] 
 
 ### Return type
 
@@ -5976,7 +5976,7 @@ api_instance = TextMagic::TextMagicApi.new
 
 file = File.new('/path/to/file.txt') # File | File containing contacts in csv or xls(x) formats
 
-column = '\"0:firstName;1:lastName;3:phone;4:email\"' # String | Import file column mapping. String must contain substrings of mapping in format `columnNumber:field` glued by `;`. For example: `0:firstName;1:lastName;3:phone;4:email` where value before `:` is a number of column in file, value after `:` is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: `firstName`, `lastName`, `phone`, `email`. Existing of `phone` mapping is required. 
+column = '\"0:firstName;1:lastName;3:phone;4:email\"' # String | Import file column mapping. The string must contain sub-strings of mapping in format `columnNumber:field` glued by `;`. For example: `0:firstName;1:lastName;3:phone;4:email` where the value before `:` is a number of the column in the file, and the value after `:` is a field of the newly created contact or the ID of a custom field. Numbers of columns begin from zero. Allowed built-in contact fields are: `firstName`, `lastName`, `phone`, `email`. Existing of `phone` mapping is required. 
 
 opts = { 
   list_id: 443, # Integer | List ID contacts will be imported to. Ignored if `listName` is specified. 
@@ -5997,7 +5997,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **File**| File containing contacts in csv or xls(x) formats | 
- **column** | **String**| Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required.  | 
+ **column** | **String**| Import file column mapping. The string must contain sub-strings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where the value before &#x60;:&#x60; is a number of the column in the file, and the value after &#x60;:&#x60; is a field of the newly created contact or the ID of a custom field. Numbers of columns begin from zero. Allowed built-in contact fields are: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required.  | 
  **list_id** | **Integer**| List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified.  | [optional] 
  **list_name** | **String**| List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified.  | [optional] 
 
@@ -6230,7 +6230,7 @@ Name | Type | Description  | Notes
 
 Mute chats (bulk)
 
-Mute several chats by chat IDs or mute all chats
+Mute several chats by chat ids or mute all chats.
 
 ### Example
 ```ruby
@@ -6434,7 +6434,7 @@ Name | Type | Description  | Notes
 
 Apply for a new Sender ID
 
-> Sender IDs are shared between all of your sub-accounts.
+> Sender IDs are shared among all of your sub-accounts.
 
 ### Example
 ```ruby
@@ -7330,7 +7330,7 @@ nil (empty response body)
 
 Unmute chats (bulk)
 
-Unmute several chats by chat IDs or unmute all chats
+Unmute several chats by chat ids or unmute all chats.
 
 ### Example
 ```ruby
@@ -8152,7 +8152,7 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-image = File.new('/path/to/file.txt') # File | Contact avatar. Should be PNG or JPG file not more than 10 MB
+image = File.new('/path/to/file.txt') # File | Contact avatar. Should be a PNG or JPG file not more than 10 MB.
 
 id = 1 # Integer | 
 
@@ -8170,7 +8170,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image** | **File**| Contact avatar. Should be PNG or JPG file not more than 10 MB | 
+ **image** | **File**| Contact avatar. Should be a PNG or JPG file not more than 10 MB. | 
  **id** | **Integer**|  | 
 
 ### Return type

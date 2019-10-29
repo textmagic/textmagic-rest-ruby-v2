@@ -14,13 +14,13 @@ require 'date'
 
 module TextMagic
   class GetAvailableSenderSettingOptionsResponse
-    # Array of dedicated numbers strings.
+    # Array of dedicated number strings.
     attr_accessor :dedicated
 
     # Array of verified account phone numbers (currently only one).
     attr_accessor :user
 
-    # Array of shared numbers strings.
+    # Array of shared number strings.
     attr_accessor :shared
 
     # Array of alphanumeric sender IDs.

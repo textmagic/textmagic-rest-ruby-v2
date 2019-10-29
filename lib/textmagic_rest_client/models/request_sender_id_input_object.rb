@@ -14,10 +14,10 @@ require 'date'
 
 module TextMagic
   class RequestSenderIdInputObject
-    # Sender ID that you are applying for. *   11 characters maximum *   Only Latin based characters and digits are allowed *   Should contain at least one letter 
+    # The Sender ID that you are applying for. *   11 characters maximum; *   Only Latin based characters and digits are allowed; *   Should contain at least 1 letter. 
     attr_accessor :sender_id
 
-    # Explanation why do you need this Sender ID.
+    # Explanation of why you need this Sender ID.
     attr_accessor :explanation
 
     # Attribute mapping from ruby-style variable name to JSON key.

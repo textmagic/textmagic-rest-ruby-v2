@@ -31,7 +31,7 @@ module TextMagic
     # Dedicated number subscription expiration time.
     attr_accessor :expire_at
 
-    # Number status: *   **U** for Unused. No messages have been sent from (or received to) this number. *   **A** for Active. 
+    # Number status: *   **U** for Unused. No messages have been sent from (or received to) this number; *   **A** for Active. 
     attr_accessor :status
 
     attr_accessor :country
