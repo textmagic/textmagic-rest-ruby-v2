@@ -93,27 +93,12 @@ module TextMagic
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @inbound_message_notification.nil?
-        invalid_properties.push('invalid value for "inbound_message_notification", inbound_message_notification cannot be nil.')
-      end
-
-      if @include_sms_history.nil?
-        invalid_properties.push('invalid value for "include_sms_history", include_sms_history cannot be nil.')
-      end
-
-      if @send_in_html_format.nil?
-        invalid_properties.push('invalid value for "send_in_html_format", send_in_html_format cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @inbound_message_notification.nil?
-      return false if @include_sms_history.nil?
-      return false if @send_in_html_format.nil?
       true
     end
 

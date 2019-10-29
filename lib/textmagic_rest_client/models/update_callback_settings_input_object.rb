@@ -88,27 +88,12 @@ module TextMagic
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @out_url.nil?
-        invalid_properties.push('invalid value for "out_url", out_url cannot be nil.')
-      end
-
-      if @in_url.nil?
-        invalid_properties.push('invalid value for "in_url", in_url cannot be nil.')
-      end
-
-      if @format.nil?
-        invalid_properties.push('invalid value for "format", format cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @out_url.nil?
-      return false if @in_url.nil?
-      return false if @format.nil?
       format_validator = EnumAttributeValidator.new('String', ['m', 'u', 'j'])
       return false unless format_validator.valid?(@format)
       true

@@ -75,22 +75,12 @@ module TextMagic
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @play_sound.nil?
-        invalid_properties.push('invalid value for "play_sound", play_sound cannot be nil.')
-      end
-
-      if @show_notifications.nil?
-        invalid_properties.push('invalid value for "show_notifications", show_notifications cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @play_sound.nil?
-      return false if @show_notifications.nil?
       true
     end
 

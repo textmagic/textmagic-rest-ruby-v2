@@ -57,22 +57,12 @@ module TextMagic
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @app_name.nil?
-        invalid_properties.push('invalid value for "app_name", app_name cannot be nil.')
-      end
-
-      if @password.nil?
-        invalid_properties.push('invalid value for "password", password cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @app_name.nil?
-      return false if @password.nil?
       true
     end
 

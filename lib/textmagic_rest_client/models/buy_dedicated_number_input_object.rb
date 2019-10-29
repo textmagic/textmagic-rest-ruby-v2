@@ -66,27 +66,12 @@ module TextMagic
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @phone.nil?
-        invalid_properties.push('invalid value for "phone", phone cannot be nil.')
-      end
-
-      if @country.nil?
-        invalid_properties.push('invalid value for "country", country cannot be nil.')
-      end
-
-      if @user_id.nil?
-        invalid_properties.push('invalid value for "user_id", user_id cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @phone.nil?
-      return false if @country.nil?
-      return false if @user_id.nil?
       true
     end
 
