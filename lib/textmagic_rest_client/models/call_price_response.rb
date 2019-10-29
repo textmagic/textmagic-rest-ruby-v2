@@ -23,7 +23,7 @@ module TextMagic
     # Price for forward
     attr_accessor :forward
 
-    # 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is account country
+    # The 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is account country
     attr_accessor :country
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class UpdateSurveyCountryItem
-    # Two-letter ISO country code
+    # The 2-letter ISO country code
     attr_accessor :country
 
     # User inbound phone ID

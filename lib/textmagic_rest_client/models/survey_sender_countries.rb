@@ -20,6 +20,7 @@ module TextMagic
 
     attr_accessor :from_number
 
+    # Is allowed to use a dedicated number?
     attr_accessor :allow_dedicated
 
     # Attribute mapping from ruby-style variable name to JSON key.

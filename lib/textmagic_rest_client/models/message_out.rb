@@ -39,22 +39,22 @@ module TextMagic
 
     attr_accessor :avatar
 
-    # Indicates that message has been deleted.
+    # Indicates that the message has been deleted.
     attr_accessor :deleted
 
-    # Message charset. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS 
+    # Message charset. Could be: *   **ISO-8859-1** for plaintext SMS; *   **UTF-16BE** for Unicode SMS. 
     attr_accessor :charset
 
-    # Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages 
+    # Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS; *   **UTF-16BE** for Unicode SMS; *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages. 
     attr_accessor :charset_label
 
-    # Contact first name. Could be substituted from your [Contacts](http://docs.textmagictesting.com/#tag/Contacts) (even if you submitted phone number instead of contact ID). 
+    # Contact first name. Could be substituted from your [Contacts](http://docs.textmagictesting.com/#tag/Contacts) (even if you submitted the phone number instead of the contact ID). 
     attr_accessor :first_name
 
     # Contact last name.
     attr_accessor :last_name
 
-    # Two-letter ISO country code of the recipient phone number. 
+    # The 2-letter ISO country code of the recipient's phone number. 
     attr_accessor :country
 
     # Receipent phone number.
@@ -66,10 +66,10 @@ module TextMagic
     # Message parts (multiples of 160 characters) count.
     attr_accessor :parts_count
 
-    # User email which this message came from. For Email2SMS and Distribution Lists messages it will be an original email address, in other cases it is an account email address.
+    # The user email which this message came from. For Email2SMS and Distribution Lists the message will come from an original email address; in other cases, it will come from an account email address.
     attr_accessor :from_email
 
-    # Phone number which is used to send SMS.
+    # Phone number used to send the SMS.
     attr_accessor :from_number
 
     class EnumAttributeValidator

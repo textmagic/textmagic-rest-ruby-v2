@@ -53,16 +53,16 @@ module TextMagic
     # iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
     attr_accessor :rrule
 
-    # Should sending method try to create new Chat(if not exist) with specified recipients.
+    # Should sending method try to create new Chat (if not exist) with specified recipients?
     attr_accessor :create_chat
 
-    # Send Text to Speech message.
+    # Send a Text to Speech message.
     attr_accessor :tts
 
-    # Treat phone numbers passed in \\'phones\\' field as local.
+    # Treat phone numbers passed in the \\'phones\\' field as local.
     attr_accessor :local
 
-    # 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is account country.
+    # The 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is the account country.
     attr_accessor :local_country
 
     # Attribute mapping from ruby-style variable name to JSON key.

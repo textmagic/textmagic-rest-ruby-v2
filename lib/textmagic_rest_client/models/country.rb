@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class Country
-    # Two-letter ISO country ID.
+    # The 2-letter ISO country ID.
     attr_accessor :id
 
     # Full country name.

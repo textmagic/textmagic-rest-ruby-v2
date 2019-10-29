@@ -14,25 +14,25 @@ require 'date'
 
 module TextMagic
   class GetMessagePriceResponseCountriesItem
-    # Two-letter ISO country code
+    # The 2-letter ISO country code.
     attr_accessor :country
 
-    # Country name
+    # Country name.
     attr_accessor :country_name
 
-    # Is allow to use dedicated number
+    # Is allowed to use a dedicated number?
     attr_accessor :allow_dedicated
 
-    # Parts count to send
+    # Parts count to send.
     attr_accessor :count
 
-    # Maximum parts to send
+    # Maximum parts to send.
     attr_accessor :max
 
-    # Total price to send
+    # Total price to send.
     attr_accessor :sum
 
-    # Is this landline number?
+    # Is this a landline number?
     attr_accessor :landline
 
     # Attribute mapping from ruby-style variable name to JSON key.

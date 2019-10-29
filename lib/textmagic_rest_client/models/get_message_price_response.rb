@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class GetMessagePriceResponse
-    # Total price of the mesasge.
+    # Total price of the message.
     attr_accessor :total
 
     # Message parts (multiples of 160 characters) count.

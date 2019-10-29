@@ -20,7 +20,7 @@ module TextMagic
     # Price to send message to desired country.
     attr_accessor :price
 
-    # Two-letter ISO country code of the recipient phone number.
+    # The 2-letter ISO country code of the recipient phone number.
     attr_accessor :country
 
     # Attribute mapping from ruby-style variable name to JSON key.
