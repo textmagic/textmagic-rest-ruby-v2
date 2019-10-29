@@ -17,7 +17,7 @@ module TextMagic
     # Contact phone number.
     attr_accessor :phone
 
-    # If set to 1 incoming messages from this number will be blocked.
+    # If set to 1, incoming messages from this number will be blocked.
     attr_accessor :block_incoming
 
     # Attribute mapping from ruby-style variable name to JSON key.

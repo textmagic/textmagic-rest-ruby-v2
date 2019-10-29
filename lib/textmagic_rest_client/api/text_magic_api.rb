@@ -79,8 +79,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Block contact by phone number
-    # Block contact from inbound and outbound communication by phone number.
+    # Block a contact by phone number
+    # Block a contact from inbound and outbound communication by phone number.
     # @param block_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -89,8 +89,8 @@ module TextMagic
       data
     end
 
-    # Block contact by phone number
-    # Block contact from inbound and outbound communication by phone number.
+    # Block a contact by phone number
+    # Block a contact from inbound and outbound communication by phone number.
     # @param block_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -1019,7 +1019,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a contact
-    # > This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, instead use the Contact assignment command in the Lists section rather than deleting the contact. 
+    # > This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, use the Contact assignment command in the Lists section instead, rather than deleting the contact. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1029,7 +1029,7 @@ module TextMagic
     end
 
     # Delete a contact
-    # &gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, instead use the Contact assignment command in the Lists section rather than deleting the contact. 
+    # &gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, use the Contact assignment command in the Lists section instead, rather than deleting the contact. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -3326,7 +3326,7 @@ module TextMagic
     end
     # Get the details of a specific contact
     # 
-    # @param id The contact id
+    # @param id Contact ID.
     # @param [Hash] opts the optional parameters
     # @return [Contact]
     def get_contact(id, opts = {})
@@ -3336,7 +3336,7 @@ module TextMagic
 
     # Get the details of a specific contact
     # 
-    # @param id The contact id
+    # @param id Contact ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(Contact, Fixnum, Hash)>] Contact data, response status code and response headers
     def get_contact_with_http_info(id, opts = {})
@@ -3432,9 +3432,9 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Check is that phone number blocked
+    # Check if a phone number is blocked
     # 
-    # @param phone Phone number to check
+    # @param phone Phone number to check.
     # @param [Hash] opts the optional parameters
     # @return [Contact]
     def get_contact_if_blocked(phone, opts = {})
@@ -3442,9 +3442,9 @@ module TextMagic
       data
     end
 
-    # Check is that phone number blocked
+    # Check if a phone number is blocked
     # 
-    # @param phone Phone number to check
+    # @param phone Phone number to check.
     # @param [Hash] opts the optional parameters
     # @return [Array<(Contact, Fixnum, Hash)>] Contact data, response status code and response headers
     def get_contact_if_blocked_with_http_info(phone, opts = {})
@@ -5829,7 +5829,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all unsubscribed contacts
-    # When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
+    # When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed status, use: 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -5840,7 +5840,7 @@ module TextMagic
     end
 
     # Get all unsubscribed contacts
-    # When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
+    # When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed status, use: 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -5941,10 +5941,10 @@ module TextMagic
     end
     # Import contacts
     # Import contacts from the CSV, XLS or XLSX file.
-    # @param file File containing contacts in csv or xls(x) formats
+    # @param file File containing contacts in csv or xls(x) formats.
     # @param column Import file column mapping. The string must contain sub-strings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where the value before &#x60;:&#x60; is a number of the column in the file, and the value after &#x60;:&#x60; is a field of the newly created contact or the ID of a custom field. Numbers of columns begin from zero. Allowed built-in contact fields are: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required. 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :list_id List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified. 
+    # @option opts [Integer] :list_id List that ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified. 
     # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified. 
     # @return [ResourceLinkResponse]
     def import_contacts(file, column, opts = {})
@@ -5954,10 +5954,10 @@ module TextMagic
 
     # Import contacts
     # Import contacts from the CSV, XLS or XLSX file.
-    # @param file File containing contacts in csv or xls(x) formats
+    # @param file File containing contacts in csv or xls(x) formats.
     # @param column Import file column mapping. The string must contain sub-strings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where the value before &#x60;:&#x60; is a number of the column in the file, and the value after &#x60;:&#x60; is a field of the newly created contact or the ID of a custom field. Numbers of columns begin from zero. Allowed built-in contact fields are: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required. 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :list_id List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified. 
+    # @option opts [Integer] :list_id List that ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified. 
     # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified. 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def import_contacts_with_http_info(file, column, opts = {})
@@ -7287,8 +7287,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Unblock contact by phone number.
-    # 
+    # Unblock a contact by phone number
+    # Unblock a contact by phone number
     # @param unblock_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -7297,8 +7297,8 @@ module TextMagic
       nil
     end
 
-    # Unblock contact by phone number.
-    # 
+    # Unblock a contact by phone number
+    # Unblock a contact by phone number
     # @param unblock_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -7339,7 +7339,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Unblock contacts (bulk)
-    # Unblock several contacts by blocked contact ids or unblock all contacts
+    # Unblock several contacts by blocked contact IDs or unblock all contacts.
     # @param unblock_contacts_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -7349,7 +7349,7 @@ module TextMagic
     end
 
     # Unblock contacts (bulk)
-    # Unblock several contacts by blocked contact ids or unblock all contacts
+    # Unblock several contacts by blocked contact IDs or unblock all contacts.
     # @param unblock_contacts_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers

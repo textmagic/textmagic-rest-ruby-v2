@@ -46,8 +46,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for block_contact
-  # Block contact by phone number
-  # Block contact from inbound and outbound communication by phone number.
+  # Block a contact by phone number
+  # Block a contact from inbound and outbound communication by phone number.
   # @param block_contact_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -262,7 +262,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_contact
   # Delete a contact
-  # &gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, instead use the Contact assignment command in the Lists section rather than deleting the contact. 
+  # &gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, use the Contact assignment command in the Lists section instead, rather than deleting the contact. 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -800,7 +800,7 @@ describe 'TextMagicApi' do
   # unit tests for get_contact
   # Get the details of a specific contact
   # 
-  # @param id The contact id
+  # @param id Contact ID.
   # @param [Hash] opts the optional parameters
   # @return [Contact]
   describe 'get_contact test' do
@@ -822,9 +822,9 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_contact_if_blocked
-  # Check is that phone number blocked
+  # Check if a phone number is blocked
   # 
-  # @param phone Phone number to check
+  # @param phone Phone number to check.
   # @param [Hash] opts the optional parameters
   # @return [Contact]
   describe 'get_contact_if_blocked test' do
@@ -1384,7 +1384,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_unsubscribers
   # Get all unsubscribed contacts
-  # When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
+  # When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed status, use: 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
@@ -1412,10 +1412,10 @@ describe 'TextMagicApi' do
   # unit tests for import_contacts
   # Import contacts
   # Import contacts from the CSV, XLS or XLSX file.
-  # @param file File containing contacts in csv or xls(x) formats
+  # @param file File containing contacts in csv or xls(x) formats.
   # @param column Import file column mapping. The string must contain sub-strings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where the value before &#x60;:&#x60; is a number of the column in the file, and the value after &#x60;:&#x60; is a field of the newly created contact or the ID of a custom field. Numbers of columns begin from zero. Allowed built-in contact fields are: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required. 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :list_id List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified. 
+  # @option opts [Integer] :list_id List that ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified. 
   # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified. 
   # @return [ResourceLinkResponse]
   describe 'import_contacts test' do
@@ -1723,8 +1723,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for unblock_contact
-  # Unblock contact by phone number.
-  # 
+  # Unblock a contact by phone number
+  # Unblock a contact by phone number
   # @param unblock_contact_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1736,7 +1736,7 @@ describe 'TextMagicApi' do
 
   # unit tests for unblock_contacts_bulk
   # Unblock contacts (bulk)
-  # Unblock several contacts by blocked contact ids or unblock all contacts
+  # Unblock several contacts by blocked contact IDs or unblock all contacts.
   # @param unblock_contacts_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]

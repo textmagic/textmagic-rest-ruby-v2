@@ -17,7 +17,7 @@ module TextMagic
     # Contact ID.
     attr_accessor :id
 
-    # Is the Contact favorite? [Custom fields list](http://docs.textmagictesting.com/#operation/getFavorites).
+    # Is the Contact favorite? [Favorite list](http://docs.textmagictesting.com/#operation/getFavorites).
     attr_accessor :favorited
 
     # Is the Contact blocked? [Blocked contacts](http://docs.textmagictesting.com/#operation/getBlockedContacts).

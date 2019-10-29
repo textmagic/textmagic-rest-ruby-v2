@@ -20,7 +20,7 @@ module TextMagic
     # Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).
     attr_accessor :phone
 
-    # Time when contact has been opted-out.
+    # Time when contact was opted-out.
     attr_accessor :unsubscribe_time
 
     # Unsubscribed contact first name.

@@ -9,11 +9,11 @@ Name | Type | Description | Notes
 **email** | **String** | Contact email address. | [optional] 
 **company_name** | **String** | Company name. | [optional] 
 **lists** | **String** | Contact [list](http://docs.textmagictesting.com/#tag/Lists) ID. Each contact must be assigned to at least one list. | 
-**favorited** | **BOOLEAN** | Is contact marked as favorite. | [optional] 
-**blocked** | **BOOLEAN** | Is contact blocked for outgoing and incoming messaging. | [optional] 
-**type** | **Integer** | Force type of phone. Possible values: 0 - landline, 1 - mobile. Default is -1 (auto detection). | [optional] 
+**favorited** | **BOOLEAN** | Is the contact marked as favorite? | [optional] 
+**blocked** | **BOOLEAN** | Is the contact blocked for outgoing and incoming messaging? | [optional] 
+**type** | **Integer** | Force type of phone. Possible values: 0 is landline; 1 is mobile; default is -1 (auto-detection). | [optional] 
 **custom_field_values** | [**Array&lt;CustomFieldListItem&gt;**](CustomFieldListItem.md) |  | [optional] 
-**local** | **Integer** | Treat phone number passed in request body as local | [optional] 
-**country** | **String** | 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is account country | [optional] 
+**local** | **Integer** | Treat phone numbers passed in the request body as local. | [optional] 
+**country** | **String** | The 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is the account country. | [optional] 
 
 
