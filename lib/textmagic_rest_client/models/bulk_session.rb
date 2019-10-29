@@ -17,10 +17,10 @@ module TextMagic
     # Bulk Session ID.
     attr_accessor :id
 
-    # * **n** - bulk session is just created * **w** - work in progress * **f** - failed * **c** - completed with success * **s** - suspended 
+    # * **n** – bulk session is just created * **w** - work in progress * **f** - failed * **c** - completed with success * **s** - suspended 
     attr_accessor :status
 
-    # Amount of messages which is already processed.
+    # Amount of messages already processed.
     attr_accessor :items_processed
 
     # Total amount of messages to be processed.

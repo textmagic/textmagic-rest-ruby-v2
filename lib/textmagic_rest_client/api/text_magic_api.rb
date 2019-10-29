@@ -1908,7 +1908,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete messages (bulk)
-    # Delete outbound messages by given ID(s) or delete all outbound messages.
+    # Delete outbound messages by the given ID(s) or delete all outbound messages.
     # @param delete_outbound_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1918,7 +1918,7 @@ module TextMagic
     end
 
     # Delete messages (bulk)
-    # Delete outbound messages by given ID(s) or delete all outbound messages.
+    # Delete outbound messages by the given ID(s) or delete all outbound messages.
     # @param delete_outbound_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2456,7 +2456,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
-    # @option opts [String] :direction Order direction. Default is desc (default to desc)
+    # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @return [GetAllInboundMessagesPaginatedResponse]
     def get_all_inbound_messages(opts = {})
       data, _status_code, _headers = get_all_inbound_messages_with_http_info(opts)
@@ -2469,7 +2469,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :order_by Order results by some field. Default is id
-    # @option opts [String] :direction Order direction. Default is desc
+    # @option opts [String] :direction Order direction. Default is desc.
     # @return [Array<(GetAllInboundMessagesPaginatedResponse, Fixnum, Hash)>] GetAllInboundMessagesPaginatedResponse data, response status code and response headers
     def get_all_inbound_messages_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -2634,7 +2634,7 @@ module TextMagic
     # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all (default to x)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
-    # @option opts [String] :direction Order direction. Default is desc (default to desc)
+    # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @return [GetAllScheduledMessagesPaginatedResponse]
     def get_all_scheduled_messages(opts = {})
       data, _status_code, _headers = get_all_scheduled_messages_with_http_info(opts)
@@ -2648,7 +2648,7 @@ module TextMagic
     # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all
     # @option opts [String] :order_by Order results by some field. Default is id
-    # @option opts [String] :direction Order direction. Default is desc
+    # @option opts [String] :direction Order direction. Default is desc.
     # @return [Array<(GetAllScheduledMessagesPaginatedResponse, Fixnum, Hash)>] GetAllScheduledMessagesPaginatedResponse data, response status code and response headers
     def get_all_scheduled_messages_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -2966,9 +2966,9 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [String] :query Find blocked contacts by specified search query
-    # @option opts [String] :order_by Order results by some field. Default is id (default to id)
-    # @option opts [String] :direction Order direction. Default is desc (default to desc)
+    # @option opts [String] :query Find blocked contacts by specified search query.
+    # @option opts [String] :order_by Order results by some field. Default is id. (default to id)
+    # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @return [GetBlockedContactsPaginatedResponse]
     def get_blocked_contacts(opts = {})
       data, _status_code, _headers = get_blocked_contacts_with_http_info(opts)
@@ -2980,9 +2980,9 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [String] :query Find blocked contacts by specified search query
-    # @option opts [String] :order_by Order results by some field. Default is id
-    # @option opts [String] :direction Order direction. Default is desc
+    # @option opts [String] :query Find blocked contacts by specified search query.
+    # @option opts [String] :order_by Order results by some field. Default is id.
+    # @option opts [String] :direction Order direction. Default is desc.
     # @return [Array<(GetBlockedContactsPaginatedResponse, Fixnum, Hash)>] GetBlockedContactsPaginatedResponse data, response status code and response headers
     def get_blocked_contacts_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -3255,7 +3255,7 @@ module TextMagic
     # @option opts [String] :query Find messages by specified search query
     # @option opts [Integer] :start Return messages since specified timestamp only
     # @option opts [Integer] :_end Return messages up to specified timestamp only
-    # @option opts [String] :direction Order direction. Default is desc (default to desc)
+    # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @option opts [Integer] :voice Fetch results with voice calls (default to 0)
     # @return [GetChatMessagesPaginatedResponse]
     def get_chat_messages(id, opts = {})
@@ -3272,7 +3272,7 @@ module TextMagic
     # @option opts [String] :query Find messages by specified search query
     # @option opts [Integer] :start Return messages since specified timestamp only
     # @option opts [Integer] :_end Return messages up to specified timestamp only
-    # @option opts [String] :direction Order direction. Default is desc
+    # @option opts [String] :direction Order direction. Default is desc.
     # @option opts [Integer] :voice Fetch results with voice calls
     # @return [Array<(GetChatMessagesPaginatedResponse, Fixnum, Hash)>] GetChatMessagesPaginatedResponse data, response status code and response headers
     def get_chat_messages_with_http_info(id, opts = {})
@@ -3661,8 +3661,8 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [Integer] :shared Should shared contacts to be included (default to 0)
-    # @option opts [String] :order_by Order results by some field. Default is id (default to id)
-    # @option opts [String] :direction Order direction. Default is desc (default to desc)
+    # @option opts [String] :order_by Order results by some field. Default is id. (default to id)
+    # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @return [GetContactsPaginatedResponse]
     def get_contacts(opts = {})
       data, _status_code, _headers = get_contacts_with_http_info(opts)
@@ -3675,8 +3675,8 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
     # @option opts [Integer] :shared Should shared contacts to be included
-    # @option opts [String] :order_by Order results by some field. Default is id
-    # @option opts [String] :direction Order direction. Default is desc
+    # @option opts [String] :order_by Order results by some field. Default is id.
+    # @option opts [String] :direction Order direction. Default is desc.
     # @return [Array<(GetContactsPaginatedResponse, Fixnum, Hash)>] GetContactsPaginatedResponse data, response status code and response headers
     def get_contacts_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -3726,7 +3726,7 @@ module TextMagic
     end
     # Get contacts autocomplete suggestions
     # Get contacts autocomplete suggestions by given search term
-    # @param query Find recipients by specified search query
+    # @param query Find recipients by specified search query.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [Integer] :lists Should lists be returned or not (default to 0)
@@ -3738,7 +3738,7 @@ module TextMagic
 
     # Get contacts autocomplete suggestions
     # Get contacts autocomplete suggestions by given search term
-    # @param query Find recipients by specified search query
+    # @param query Find recipients by specified search query.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit The number of results per page.
     # @option opts [Integer] :lists Should lists be returned or not
@@ -3792,7 +3792,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
-    # @option opts [String] :direction Order direction. Default is desc (default to desc)
+    # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @return [GetContactsByListIdPaginatedResponse]
     def get_contacts_by_list_id(id, opts = {})
       data, _status_code, _headers = get_contacts_by_list_id_with_http_info(id, opts)
@@ -3806,7 +3806,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :order_by Order results by some field. Default is id
-    # @option opts [String] :direction Order direction. Default is desc
+    # @option opts [String] :direction Order direction. Default is desc.
     # @return [Array<(GetContactsByListIdPaginatedResponse, Fixnum, Hash)>] GetContactsByListIdPaginatedResponse data, response status code and response headers
     def get_contacts_by_list_id_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -4441,8 +4441,8 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page The current fetched page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [String] :order_by Order results by some field. Default is id (default to id)
-    # @option opts [String] :direction Order direction. Default is desc (default to desc)
+    # @option opts [String] :order_by Order results by some field. Default is id. (default to id)
+    # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @option opts [Integer] :favorite_only Return only favorite lists (default to 0)
     # @option opts [Integer] :only_mine Return only current user lists (default to 0)
     # @return [GetListsPaginatedResponse]
@@ -4456,8 +4456,8 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page The current fetched page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [String] :order_by Order results by some field. Default is id
-    # @option opts [String] :direction Order direction. Default is desc
+    # @option opts [String] :order_by Order results by some field. Default is id.
+    # @option opts [String] :direction Order direction. Default is desc.
     # @option opts [Integer] :favorite_only Return only favorite lists
     # @option opts [Integer] :only_mine Return only current user lists
     # @return [Array<(GetListsPaginatedResponse, Fixnum, Hash)>] GetListsPaginatedResponse data, response status code and response headers
@@ -4569,7 +4569,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Preview message
-    # Get messages preview (with tags merged) up to 100 messages per session.
+    # Get a messages preview (with tags merged) of up to 100 messages per session.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :text Message text. Required if **template_id** is not set.
     # @option opts [Integer] :template_id Template used instead of message text. Required if **text** is not set.
@@ -4585,7 +4585,7 @@ module TextMagic
     # @option opts [String] :from One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
     # @option opts [String] :rule An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
     # @option opts [Integer] :create_chat Should the sending method try to create new Chat(if not exist) with specified recipients? (default to 0)
-    # @option opts [Integer] :tts Send Text to Speech message. (default to 0)
+    # @option opts [Integer] :tts Send Text-to-Speech message. (default to 0)
     # @option opts [Integer] :local Treat phone numbers passed in the \\&#39;phones\\&#39; field as local. (default to 0)
     # @option opts [String] :local_country The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country.
     # @return [GetMessagePreviewResponse]
@@ -4595,7 +4595,7 @@ module TextMagic
     end
 
     # Preview message
-    # Get messages preview (with tags merged) up to 100 messages per session.
+    # Get a messages preview (with tags merged) of up to 100 messages per session.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :text Message text. Required if **template_id** is not set.
     # @option opts [Integer] :template_id Template used instead of message text. Required if **text** is not set.
@@ -4611,7 +4611,7 @@ module TextMagic
     # @option opts [String] :from One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
     # @option opts [String] :rule An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
     # @option opts [Integer] :create_chat Should the sending method try to create new Chat(if not exist) with specified recipients?
-    # @option opts [Integer] :tts Send Text to Speech message.
+    # @option opts [Integer] :tts Send Text-to-Speech message.
     # @option opts [Integer] :local Treat phone numbers passed in the \\&#39;phones\\&#39; field as local.
     # @option opts [String] :local_country The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country.
     # @return [Array<(GetMessagePreviewResponse, Fixnum, Hash)>] GetMessagePreviewResponse data, response status code and response headers
@@ -4685,7 +4685,7 @@ module TextMagic
     # @option opts [String] :from One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
     # @option opts [String] :rule An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
     # @option opts [Integer] :create_chat Should the sending method try to create new Chat (if not exist) with specified recipients? (default to 0)
-    # @option opts [Integer] :tts Send a Text to Speech message. (default to 0)
+    # @option opts [Integer] :tts Send a Text-to-Speech message. (default to 0)
     # @option opts [Integer] :local Treat phone numbers passed in the \\&#39;phones\\&#39; field as local. (default to 0)
     # @option opts [String] :local_country The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country.
     # @return [GetMessagePriceResponse]
@@ -4712,7 +4712,7 @@ module TextMagic
     # @option opts [String] :from One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
     # @option opts [String] :rule An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
     # @option opts [Integer] :create_chat Should the sending method try to create new Chat (if not exist) with specified recipients?
-    # @option opts [Integer] :tts Send a Text to Speech message.
+    # @option opts [Integer] :tts Send a Text-to-Speech message.
     # @option opts [Integer] :local Treat phone numbers passed in the \\&#39;phones\\&#39; field as local.
     # @option opts [String] :local_country The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country.
     # @return [Array<(GetMessagePriceResponse, Fixnum, Hash)>] GetMessagePriceResponse data, response status code and response headers
@@ -5112,13 +5112,13 @@ module TextMagic
       return data, status_code, headers
     end
     # Get history
-    # Get outbound messages history.
+    # Get the outbound messages history.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID.
     # @option opts [String] :query Find message by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
-    # @option opts [String] :direction Order direction. Default is desc (default to desc)
+    # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @return [GetOutboundMessagesHistoryPaginatedResponse]
     def get_outbound_messages_history(opts = {})
       data, _status_code, _headers = get_outbound_messages_history_with_http_info(opts)
@@ -5126,13 +5126,13 @@ module TextMagic
     end
 
     # Get history
-    # Get outbound messages history.
+    # Get the outbound messages history.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit The number of results per page.
     # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID.
     # @option opts [String] :query Find message by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id
-    # @option opts [String] :direction Order direction. Default is desc
+    # @option opts [String] :direction Order direction. Default is desc.
     # @return [Array<(GetOutboundMessagesHistoryPaginatedResponse, Fixnum, Hash)>] GetOutboundMessagesHistoryPaginatedResponse data, response status code and response headers
     def get_outbound_messages_history_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -6665,8 +6665,8 @@ module TextMagic
     # @option opts [String] :query Find contacts by specified search query
     # @option opts [Integer] :local Treat phone number passed in &#39;query&#39; field as local. Default is 0 (default to 0)
     # @option opts [String] :country 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country
-    # @option opts [String] :order_by Order results by some field. Default is id (default to id)
-    # @option opts [String] :direction Order direction. Default is desc (default to desc)
+    # @option opts [String] :order_by Order results by some field. Default is id. (default to id)
+    # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @return [SearchContactsPaginatedResponse]
     def search_contacts(opts = {})
       data, _status_code, _headers = search_contacts_with_http_info(opts)
@@ -6685,8 +6685,8 @@ module TextMagic
     # @option opts [String] :query Find contacts by specified search query
     # @option opts [Integer] :local Treat phone number passed in &#39;query&#39; field as local. Default is 0
     # @option opts [String] :country 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country
-    # @option opts [String] :order_by Order results by some field. Default is id
-    # @option opts [String] :direction Order direction. Default is desc
+    # @option opts [String] :order_by Order results by some field. Default is id.
+    # @option opts [String] :direction Order direction. Default is desc.
     # @return [Array<(SearchContactsPaginatedResponse, Fixnum, Hash)>] SearchContactsPaginatedResponse data, response status code and response headers
     def search_contacts_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -6749,11 +6749,11 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [String] :ids Find message by ID(s)
-    # @option opts [String] :query Find recipients by specified search query
+    # @option opts [String] :ids Find message by ID(s).
+    # @option opts [String] :query Find recipients by specified search query.
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
-    # @option opts [String] :direction Order direction. Default is desc (default to desc)
-    # @option opts [Integer] :expand Expand by adding firstName, lastName and contactId (default to 0)
+    # @option opts [String] :direction Order direction. Default is desc. (default to desc)
+    # @option opts [Integer] :expand Expand by adding firstName, lastName and contactId. (default to 0)
     # @return [SearchInboundMessagesPaginatedResponse]
     def search_inbound_messages(opts = {})
       data, _status_code, _headers = search_inbound_messages_with_http_info(opts)
@@ -6765,11 +6765,11 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [String] :ids Find message by ID(s)
-    # @option opts [String] :query Find recipients by specified search query
+    # @option opts [String] :ids Find message by ID(s).
+    # @option opts [String] :query Find recipients by specified search query.
     # @option opts [String] :order_by Order results by some field. Default is id
-    # @option opts [String] :direction Order direction. Default is desc
-    # @option opts [Integer] :expand Expand by adding firstName, lastName and contactId
+    # @option opts [String] :direction Order direction. Default is desc.
+    # @option opts [Integer] :expand Expand by adding firstName, lastName and contactId.
     # @return [Array<(SearchInboundMessagesPaginatedResponse, Fixnum, Hash)>] SearchInboundMessagesPaginatedResponse data, response status code and response headers
     def search_inbound_messages_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -6833,7 +6833,7 @@ module TextMagic
     # @option opts [Integer] :only_mine Return only current user lists (default to 0)
     # @option opts [Integer] :only_default Return only default lists (default to 0)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
-    # @option opts [String] :direction Order direction. Default is desc (default to desc)
+    # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @return [SearchListsPaginatedResponse]
     def search_lists(opts = {})
       data, _status_code, _headers = search_lists_with_http_info(opts)
@@ -6850,7 +6850,7 @@ module TextMagic
     # @option opts [Integer] :only_mine Return only current user lists
     # @option opts [Integer] :only_default Return only default lists
     # @option opts [String] :order_by Order results by some field. Default is id
-    # @option opts [String] :direction Order direction. Default is desc
+    # @option opts [String] :direction Order direction. Default is desc.
     # @return [Array<(SearchListsPaginatedResponse, Fixnum, Hash)>] SearchListsPaginatedResponse data, response status code and response headers
     def search_lists_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -6906,12 +6906,12 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
-    # @option opts [String] :ids Find message by ID(s)
-    # @option opts [Integer] :session_id Find messages by session ID
-    # @option opts [String] :statuses Find messages by status
-    # @option opts [Integer] :include_deleted Search also in deleted messages (default to 0)
-    # @option opts [String] :query Find messages by specified search query
+    # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
+    # @option opts [String] :ids Find message by ID(s).
+    # @option opts [Integer] :session_id Find messages by session ID.
+    # @option opts [String] :statuses Find messages by status.
+    # @option opts [Integer] :include_deleted Search also in deleted messages. (default to 0)
+    # @option opts [String] :query Find messages by specified search query.
     # @return [SearchOutboundMessagesPaginatedResponse]
     def search_outbound_messages(opts = {})
       data, _status_code, _headers = search_outbound_messages_with_http_info(opts)
@@ -6923,12 +6923,12 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
-    # @option opts [String] :ids Find message by ID(s)
-    # @option opts [Integer] :session_id Find messages by session ID
-    # @option opts [String] :statuses Find messages by status
-    # @option opts [Integer] :include_deleted Search also in deleted messages
-    # @option opts [String] :query Find messages by specified search query
+    # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
+    # @option opts [String] :ids Find message by ID(s).
+    # @option opts [Integer] :session_id Find messages by session ID.
+    # @option opts [String] :statuses Find messages by status.
+    # @option opts [Integer] :include_deleted Search also in deleted messages.
+    # @option opts [String] :query Find messages by specified search query.
     # @return [Array<(SearchOutboundMessagesPaginatedResponse, Fixnum, Hash)>] SearchOutboundMessagesPaginatedResponse data, response status code and response headers
     def search_outbound_messages_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -6989,7 +6989,7 @@ module TextMagic
     # @option opts [String] :ids Find schedules by ID(s)
     # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all (default to x)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
-    # @option opts [String] :direction Order direction. Default is desc (default to desc)
+    # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @return [SearchScheduledMessagesPaginatedResponse]
     def search_scheduled_messages(opts = {})
       data, _status_code, _headers = search_scheduled_messages_with_http_info(opts)
@@ -7005,7 +7005,7 @@ module TextMagic
     # @option opts [String] :ids Find schedules by ID(s)
     # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all
     # @option opts [String] :order_by Order results by some field. Default is id
-    # @option opts [String] :direction Order direction. Default is desc
+    # @option opts [String] :direction Order direction. Default is desc.
     # @return [Array<(SearchScheduledMessagesPaginatedResponse, Fixnum, Hash)>] SearchScheduledMessagesPaginatedResponse data, response status code and response headers
     def search_scheduled_messages_with_http_info(opts = {})
       if @api_client.config.debugging

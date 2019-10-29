@@ -2036,7 +2036,7 @@ nil (empty response body)
 
 Delete messages (bulk)
 
-Delete outbound messages by given ID(s) or delete all outbound messages.
+Delete outbound messages by the given ID(s) or delete all outbound messages.
 
 ### Example
 ```ruby
@@ -2597,7 +2597,7 @@ opts = {
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
   order_by: 'id', # String | Order results by some field. Default is id
-  direction: 'desc' # String | Order direction. Default is desc
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
@@ -2616,7 +2616,7 @@ Name | Type | Description  | Notes
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
- **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -2772,7 +2772,7 @@ opts = {
   limit: 10, # Integer | The number of results per page.
   status: 'x', # String | Fetch schedules with the specific status: a - actual, c - completed, x - all
   order_by: 'id', # String | Order results by some field. Default is id
-  direction: 'desc' # String | Order direction. Default is desc
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
@@ -2792,7 +2792,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **status** | **String**| Fetch schedules with the specific status: a - actual, c - completed, x - all | [optional] [default to x]
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
- **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -3095,9 +3095,9 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  query: 'query_example', # String | Find blocked contacts by specified search query
-  order_by: 'id', # String | Order results by some field. Default is id
-  direction: 'desc' # String | Order direction. Default is desc
+  query: 'query_example', # String | Find blocked contacts by specified search query.
+  order_by: 'id', # String | Order results by some field. Default is id.
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
@@ -3115,9 +3115,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **query** | **String**| Find blocked contacts by specified search query | [optional] 
- **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
- **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
+ **query** | **String**| Find blocked contacts by specified search query. | [optional] 
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -3374,7 +3374,7 @@ opts = {
   query: 'query_example', # String | Find messages by specified search query
   start: 56, # Integer | Return messages since specified timestamp only
   _end: 56, # Integer | Return messages up to specified timestamp only
-  direction: 'desc', # String | Order direction. Default is desc
+  direction: 'desc', # String | Order direction. Default is desc.
   voice: 0 # Integer | Fetch results with voice calls
 }
 
@@ -3397,7 +3397,7 @@ Name | Type | Description  | Notes
  **query** | **String**| Find messages by specified search query | [optional] 
  **start** | **Integer**| Return messages since specified timestamp only | [optional] 
  **_end** | **Integer**| Return messages up to specified timestamp only | [optional] 
- **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
  **voice** | **Integer**| Fetch results with voice calls | [optional] [default to 0]
 
 ### Return type
@@ -3763,8 +3763,8 @@ opts = {
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
   shared: 0, # Integer | Should shared contacts to be included
-  order_by: 'id', # String | Order results by some field. Default is id
-  direction: 'desc' # String | Order direction. Default is desc
+  order_by: 'id', # String | Order results by some field. Default is id.
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
@@ -3783,8 +3783,8 @@ Name | Type | Description  | Notes
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **shared** | **Integer**| Should shared contacts to be included | [optional] [default to 0]
- **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
- **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -3821,7 +3821,7 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-query = '\"A\"' # String | Find recipients by specified search query
+query = '\"A\"' # String | Find recipients by specified search query.
 
 opts = { 
   limit: 10, # Integer | The number of results per page.
@@ -3841,7 +3841,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **String**| Find recipients by specified search query | 
+ **query** | **String**| Find recipients by specified search query. | 
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **lists** | **Integer**| Should lists be returned or not | [optional] [default to 0]
 
@@ -3886,7 +3886,7 @@ opts = {
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
   order_by: 'id', # String | Order results by some field. Default is id
-  direction: 'desc' # String | Order direction. Default is desc
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
@@ -3906,7 +3906,7 @@ Name | Type | Description  | Notes
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
- **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -4522,8 +4522,8 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | The current fetched page.
   limit: 10, # Integer | The number of results per page.
-  order_by: 'id', # String | Order results by some field. Default is id
-  direction: 'desc', # String | Order direction. Default is desc
+  order_by: 'id', # String | Order results by some field. Default is id.
+  direction: 'desc', # String | Order direction. Default is desc.
   favorite_only: 0, # Integer | Return only favorite lists
   only_mine: 0 # Integer | Return only current user lists
 }
@@ -4543,8 +4543,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| The current fetched page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
- **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
  **favorite_only** | **Integer**| Return only favorite lists | [optional] [default to 0]
  **only_mine** | **Integer**| Return only current user lists | [optional] [default to 0]
 
@@ -4627,7 +4627,7 @@ Name | Type | Description  | Notes
 
 Preview message
 
-Get messages preview (with tags merged) up to 100 messages per session.
+Get a messages preview (with tags merged) of up to 100 messages per session.
 
 ### Example
 ```ruby
@@ -4657,7 +4657,7 @@ opts = {
   from: '\"Test Sender ID\"', # String | One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
   rule: '\"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"', # String | An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
   create_chat: 0, # Integer | Should the sending method try to create new Chat(if not exist) with specified recipients?
-  tts: 0, # Integer | Send Text to Speech message.
+  tts: 0, # Integer | Send Text-to-Speech message.
   local: 0, # Integer | Treat phone numbers passed in the \\'phones\\' field as local.
   local_country: '\"US\"' # String | The 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is the account country.
 }
@@ -4689,7 +4689,7 @@ Name | Type | Description  | Notes
  **from** | **String**| One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). | [optional] 
  **rule** | **String**| An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | [optional] 
  **create_chat** | **Integer**| Should the sending method try to create new Chat(if not exist) with specified recipients? | [optional] [default to 0]
- **tts** | **Integer**| Send Text to Speech message. | [optional] [default to 0]
+ **tts** | **Integer**| Send Text-to-Speech message. | [optional] [default to 0]
  **local** | **Integer**| Treat phone numbers passed in the \\&#39;phones\\&#39; field as local. | [optional] [default to 0]
  **local_country** | **String**| The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country. | [optional] 
 
@@ -4744,7 +4744,7 @@ opts = {
   from: '\"Test Sender ID\"', # String | One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
   rule: '\"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"', # String | An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
   create_chat: 0, # Integer | Should the sending method try to create new Chat (if not exist) with specified recipients?
-  tts: 0, # Integer | Send a Text to Speech message.
+  tts: 0, # Integer | Send a Text-to-Speech message.
   local: 0, # Integer | Treat phone numbers passed in the \\'phones\\' field as local.
   local_country: '\"US\"' # String | The 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is the account country.
 }
@@ -4777,7 +4777,7 @@ Name | Type | Description  | Notes
  **from** | **String**| One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). | [optional] 
  **rule** | **String**| An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | [optional] 
  **create_chat** | **Integer**| Should the sending method try to create new Chat (if not exist) with specified recipients? | [optional] [default to 0]
- **tts** | **Integer**| Send a Text to Speech message. | [optional] [default to 0]
+ **tts** | **Integer**| Send a Text-to-Speech message. | [optional] [default to 0]
  **local** | **Integer**| Treat phone numbers passed in the \\&#39;phones\\&#39; field as local. | [optional] [default to 0]
  **local_country** | **String**| The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country. | [optional] 
 
@@ -5132,7 +5132,7 @@ Name | Type | Description  | Notes
 
 Get history
 
-Get outbound messages history.
+Get the outbound messages history.
 
 ### Example
 ```ruby
@@ -5152,7 +5152,7 @@ opts = {
   last_id: 56, # Integer | Filter results by ID, selecting all values lesser than the specified ID.
   query: 'query_example', # String | Find message by specified search query
   order_by: 'id', # String | Order results by some field. Default is id
-  direction: 'desc' # String | Order direction. Default is desc
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
@@ -5172,7 +5172,7 @@ Name | Type | Description  | Notes
  **last_id** | **Integer**| Filter results by ID, selecting all values lesser than the specified ID. | [optional] 
  **query** | **String**| Find message by specified search query | [optional] 
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
- **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -6688,8 +6688,8 @@ opts = {
   query: 'query_example', # String | Find contacts by specified search query
   local: 0, # Integer | Treat phone number passed in 'query' field as local. Default is 0
   country: 'country_example', # String | 2-letter ISO country code for local phone numbers, used when 'local' is set to true. Default is account country
-  order_by: 'id', # String | Order results by some field. Default is id
-  direction: 'desc' # String | Order direction. Default is desc
+  order_by: 'id', # String | Order results by some field. Default is id.
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
@@ -6714,8 +6714,8 @@ Name | Type | Description  | Notes
  **query** | **String**| Find contacts by specified search query | [optional] 
  **local** | **Integer**| Treat phone number passed in &#39;query&#39; field as local. Default is 0 | [optional] [default to 0]
  **country** | **String**| 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country | [optional] 
- **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
- **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -6755,11 +6755,11 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  ids: 'ids_example', # String | Find message by ID(s)
-  query: 'query_example', # String | Find recipients by specified search query
+  ids: 'ids_example', # String | Find message by ID(s).
+  query: 'query_example', # String | Find recipients by specified search query.
   order_by: 'id', # String | Order results by some field. Default is id
-  direction: 'desc', # String | Order direction. Default is desc
-  expand: 0 # Integer | Expand by adding firstName, lastName and contactId
+  direction: 'desc', # String | Order direction. Default is desc.
+  expand: 0 # Integer | Expand by adding firstName, lastName and contactId.
 }
 
 begin
@@ -6777,11 +6777,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **ids** | **String**| Find message by ID(s) | [optional] 
- **query** | **String**| Find recipients by specified search query | [optional] 
+ **ids** | **String**| Find message by ID(s). | [optional] 
+ **query** | **String**| Find recipients by specified search query. | [optional] 
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
- **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
- **expand** | **Integer**| Expand by adding firstName, lastName and contactId | [optional] [default to 0]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
+ **expand** | **Integer**| Expand by adding firstName, lastName and contactId. | [optional] [default to 0]
 
 ### Return type
 
@@ -6826,7 +6826,7 @@ opts = {
   only_mine: 0, # Integer | Return only current user lists
   only_default: 0, # Integer | Return only default lists
   order_by: 'id', # String | Order results by some field. Default is id
-  direction: 'desc' # String | Order direction. Default is desc
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
@@ -6849,7 +6849,7 @@ Name | Type | Description  | Notes
  **only_mine** | **Integer**| Return only current user lists | [optional] [default to 0]
  **only_default** | **Integer**| Return only default lists | [optional] [default to 0]
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
- **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -6889,12 +6889,12 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  last_id: 56, # Integer | Filter results by ID, selecting all values lesser than the specified ID. Note that \\'page\\' parameter is ignored when \\'lastId\\' is specified
-  ids: 'ids_example', # String | Find message by ID(s)
-  session_id: 56, # Integer | Find messages by session ID
-  statuses: '\"q\"', # String | Find messages by status
-  include_deleted: 0, # Integer | Search also in deleted messages
-  query: 'query_example' # String | Find messages by specified search query
+  last_id: 56, # Integer | Filter results by ID, selecting all values lesser than the specified ID. Note that the \\'page\\' parameter is ignored when \\'lastId\\' is specified
+  ids: 'ids_example', # String | Find message by ID(s).
+  session_id: 56, # Integer | Find messages by session ID.
+  statuses: '\"q\"', # String | Find messages by status.
+  include_deleted: 0, # Integer | Search also in deleted messages.
+  query: 'query_example' # String | Find messages by specified search query.
 }
 
 begin
@@ -6912,12 +6912,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **last_id** | **Integer**| Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified | [optional] 
- **ids** | **String**| Find message by ID(s) | [optional] 
- **session_id** | **Integer**| Find messages by session ID | [optional] 
- **statuses** | **String**| Find messages by status | [optional] 
- **include_deleted** | **Integer**| Search also in deleted messages | [optional] [default to 0]
- **query** | **String**| Find messages by specified search query | [optional] 
+ **last_id** | **Integer**| Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified | [optional] 
+ **ids** | **String**| Find message by ID(s). | [optional] 
+ **session_id** | **Integer**| Find messages by session ID. | [optional] 
+ **statuses** | **String**| Find messages by status. | [optional] 
+ **include_deleted** | **Integer**| Search also in deleted messages. | [optional] [default to 0]
+ **query** | **String**| Find messages by specified search query. | [optional] 
 
 ### Return type
 
@@ -6961,7 +6961,7 @@ opts = {
   ids: 'ids_example', # String | Find schedules by ID(s)
   status: 'x', # String | Fetch schedules with the specific status: a - actual, c - completed, x - all
   order_by: 'id', # String | Order results by some field. Default is id
-  direction: 'desc' # String | Order direction. Default is desc
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
@@ -6983,7 +6983,7 @@ Name | Type | Description  | Notes
  **ids** | **String**| Find schedules by ID(s) | [optional] 
  **status** | **String**| Fetch schedules with the specific status: a - actual, c - completed, x - all | [optional] [default to x]
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
- **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 

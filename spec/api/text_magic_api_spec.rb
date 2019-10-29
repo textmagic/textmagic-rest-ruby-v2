@@ -469,7 +469,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_outbound_messages_bulk
   # Delete messages (bulk)
-  # Delete outbound messages by given ID(s) or delete all outbound messages.
+  # Delete outbound messages by the given ID(s) or delete all outbound messages.
   # @param delete_outbound_messages_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -601,7 +601,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :order_by Order results by some field. Default is id
-  # @option opts [String] :direction Order direction. Default is desc
+  # @option opts [String] :direction Order direction. Default is desc.
   # @return [GetAllInboundMessagesPaginatedResponse]
   describe 'get_all_inbound_messages test' do
     it 'should work' do
@@ -644,7 +644,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all
   # @option opts [String] :order_by Order results by some field. Default is id
-  # @option opts [String] :direction Order direction. Default is desc
+  # @option opts [String] :direction Order direction. Default is desc.
   # @return [GetAllScheduledMessagesPaginatedResponse]
   describe 'get_all_scheduled_messages test' do
     it 'should work' do
@@ -719,9 +719,9 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :query Find blocked contacts by specified search query
-  # @option opts [String] :order_by Order results by some field. Default is id
-  # @option opts [String] :direction Order direction. Default is desc
+  # @option opts [String] :query Find blocked contacts by specified search query.
+  # @option opts [String] :order_by Order results by some field. Default is id.
+  # @option opts [String] :direction Order direction. Default is desc.
   # @return [GetBlockedContactsPaginatedResponse]
   describe 'get_blocked_contacts test' do
     it 'should work' do
@@ -788,7 +788,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :query Find messages by specified search query
   # @option opts [Integer] :start Return messages since specified timestamp only
   # @option opts [Integer] :_end Return messages up to specified timestamp only
-  # @option opts [String] :direction Order direction. Default is desc
+  # @option opts [String] :direction Order direction. Default is desc.
   # @option opts [Integer] :voice Fetch results with voice calls
   # @return [GetChatMessagesPaginatedResponse]
   describe 'get_chat_messages test' do
@@ -878,8 +878,8 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [Integer] :shared Should shared contacts to be included
-  # @option opts [String] :order_by Order results by some field. Default is id
-  # @option opts [String] :direction Order direction. Default is desc
+  # @option opts [String] :order_by Order results by some field. Default is id.
+  # @option opts [String] :direction Order direction. Default is desc.
   # @return [GetContactsPaginatedResponse]
   describe 'get_contacts test' do
     it 'should work' do
@@ -890,7 +890,7 @@ describe 'TextMagicApi' do
   # unit tests for get_contacts_autocomplete
   # Get contacts autocomplete suggestions
   # Get contacts autocomplete suggestions by given search term
-  # @param query Find recipients by specified search query
+  # @param query Find recipients by specified search query.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [Integer] :lists Should lists be returned or not
@@ -909,7 +909,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :order_by Order results by some field. Default is id
-  # @option opts [String] :direction Order direction. Default is desc
+  # @option opts [String] :direction Order direction. Default is desc.
   # @return [GetContactsByListIdPaginatedResponse]
   describe 'get_contacts_by_list_id test' do
     it 'should work' do
@@ -1056,8 +1056,8 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page The current fetched page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :order_by Order results by some field. Default is id
-  # @option opts [String] :direction Order direction. Default is desc
+  # @option opts [String] :order_by Order results by some field. Default is id.
+  # @option opts [String] :direction Order direction. Default is desc.
   # @option opts [Integer] :favorite_only Return only favorite lists
   # @option opts [Integer] :only_mine Return only current user lists
   # @return [GetListsPaginatedResponse]
@@ -1083,7 +1083,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_message_preview
   # Preview message
-  # Get messages preview (with tags merged) up to 100 messages per session.
+  # Get a messages preview (with tags merged) of up to 100 messages per session.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :text Message text. Required if **template_id** is not set.
   # @option opts [Integer] :template_id Template used instead of message text. Required if **text** is not set.
@@ -1099,7 +1099,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :from One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
   # @option opts [String] :rule An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
   # @option opts [Integer] :create_chat Should the sending method try to create new Chat(if not exist) with specified recipients?
-  # @option opts [Integer] :tts Send Text to Speech message.
+  # @option opts [Integer] :tts Send Text-to-Speech message.
   # @option opts [Integer] :local Treat phone numbers passed in the \\&#39;phones\\&#39; field as local.
   # @option opts [String] :local_country The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country.
   # @return [GetMessagePreviewResponse]
@@ -1128,7 +1128,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :from One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
   # @option opts [String] :rule An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
   # @option opts [Integer] :create_chat Should the sending method try to create new Chat (if not exist) with specified recipients?
-  # @option opts [Integer] :tts Send a Text to Speech message.
+  # @option opts [Integer] :tts Send a Text-to-Speech message.
   # @option opts [Integer] :local Treat phone numbers passed in the \\&#39;phones\\&#39; field as local.
   # @option opts [String] :local_country The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country.
   # @return [GetMessagePriceResponse]
@@ -1218,13 +1218,13 @@ describe 'TextMagicApi' do
 
   # unit tests for get_outbound_messages_history
   # Get history
-  # Get outbound messages history.
+  # Get the outbound messages history.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID.
   # @option opts [String] :query Find message by specified search query
   # @option opts [String] :order_by Order results by some field. Default is id
-  # @option opts [String] :direction Order direction. Default is desc
+  # @option opts [String] :direction Order direction. Default is desc.
   # @return [GetOutboundMessagesHistoryPaginatedResponse]
   describe 'get_outbound_messages_history test' do
     it 'should work' do
@@ -1587,8 +1587,8 @@ describe 'TextMagicApi' do
   # @option opts [String] :query Find contacts by specified search query
   # @option opts [Integer] :local Treat phone number passed in &#39;query&#39; field as local. Default is 0
   # @option opts [String] :country 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country
-  # @option opts [String] :order_by Order results by some field. Default is id
-  # @option opts [String] :direction Order direction. Default is desc
+  # @option opts [String] :order_by Order results by some field. Default is id.
+  # @option opts [String] :direction Order direction. Default is desc.
   # @return [SearchContactsPaginatedResponse]
   describe 'search_contacts test' do
     it 'should work' do
@@ -1602,11 +1602,11 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :ids Find message by ID(s)
-  # @option opts [String] :query Find recipients by specified search query
+  # @option opts [String] :ids Find message by ID(s).
+  # @option opts [String] :query Find recipients by specified search query.
   # @option opts [String] :order_by Order results by some field. Default is id
-  # @option opts [String] :direction Order direction. Default is desc
-  # @option opts [Integer] :expand Expand by adding firstName, lastName and contactId
+  # @option opts [String] :direction Order direction. Default is desc.
+  # @option opts [Integer] :expand Expand by adding firstName, lastName and contactId.
   # @return [SearchInboundMessagesPaginatedResponse]
   describe 'search_inbound_messages test' do
     it 'should work' do
@@ -1625,7 +1625,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :only_mine Return only current user lists
   # @option opts [Integer] :only_default Return only default lists
   # @option opts [String] :order_by Order results by some field. Default is id
-  # @option opts [String] :direction Order direction. Default is desc
+  # @option opts [String] :direction Order direction. Default is desc.
   # @return [SearchListsPaginatedResponse]
   describe 'search_lists test' do
     it 'should work' do
@@ -1639,12 +1639,12 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
-  # @option opts [String] :ids Find message by ID(s)
-  # @option opts [Integer] :session_id Find messages by session ID
-  # @option opts [String] :statuses Find messages by status
-  # @option opts [Integer] :include_deleted Search also in deleted messages
-  # @option opts [String] :query Find messages by specified search query
+  # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
+  # @option opts [String] :ids Find message by ID(s).
+  # @option opts [Integer] :session_id Find messages by session ID.
+  # @option opts [String] :statuses Find messages by status.
+  # @option opts [Integer] :include_deleted Search also in deleted messages.
+  # @option opts [String] :query Find messages by specified search query.
   # @return [SearchOutboundMessagesPaginatedResponse]
   describe 'search_outbound_messages test' do
     it 'should work' do
@@ -1662,7 +1662,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :ids Find schedules by ID(s)
   # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all
   # @option opts [String] :order_by Order results by some field. Default is id
-  # @option opts [String] :direction Order direction. Default is desc
+  # @option opts [String] :direction Order direction. Default is desc.
   # @return [SearchScheduledMessagesPaginatedResponse]
   describe 'search_scheduled_messages test' do
     it 'should work' do

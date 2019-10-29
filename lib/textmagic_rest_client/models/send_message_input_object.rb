@@ -14,10 +14,10 @@ require 'date'
 
 module TextMagic
   class SendMessageInputObject
-    # Message text. Required if **template_id** is not set.
+    # Message text. Required if the **template_id** is not set.
     attr_accessor :text
 
-    # Template used instead of message text. Required if **text** is not set.
+    # Template used instead of message text. Required if the **text** is not set.
     attr_accessor :template_id
 
     # DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now.
@@ -56,7 +56,7 @@ module TextMagic
     # Should sending method try to create new Chat (if not exist) with specified recipients?
     attr_accessor :create_chat
 
-    # Send a Text to Speech message.
+    # Send a Text-to-Speech message.
     attr_accessor :tts
 
     # Treat phone numbers passed in the \\'phones\\' field as local.
