@@ -14,16 +14,16 @@ require 'date'
 
 module TextMagic
   class GetCallsPricesResponse
-    # Price for outbound message
+    # Price for outbound message.
     attr_accessor :outbound
 
-    # Price for inbound message
+    # Price for inbound message.
     attr_accessor :inbound
 
-    # Price for forward
+    # Price for forward.
     attr_accessor :forward
 
-    # 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is account country
+    # 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is account country.
     attr_accessor :country
 
     # Attribute mapping from ruby-style variable name to JSON key.
