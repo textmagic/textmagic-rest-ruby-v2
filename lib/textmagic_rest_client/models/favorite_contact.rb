@@ -20,13 +20,13 @@ module TextMagic
     # Entity type which should be marked as **favorite**.
     attr_accessor :entity_type
 
-    # Contact first name/last name if entityType is **contact** List name if entity type is **list**.
+    # Contact first name/last name if entityType is **contact**; List name if entity type is **list**.
     attr_accessor :primary_label
 
-    # Phone number if entityType is **contact** List contacts number if entity type is **list**.
+    # Phone number if entityType is **contact**; List contacts number if entity type is **list**.
     attr_accessor :secondary_label
 
-    # Contact country if entityType is **contact** else null.
+    # Contact country if entityType is **contact**; else, null.
     attr_accessor :tertiary_label
 
     attr_accessor :avatar
