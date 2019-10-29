@@ -14,10 +14,10 @@ require 'date'
 
 module TextMagic
   class DeleteChatsBulkInputObject
-    # Entity ID(s), separated by comma
+    # Entity ID(s), separated by comma.
     attr_accessor :ids
 
-    # Entity ID(s), separated by comma
+    # Entity ID(s), separated by comma.
     attr_accessor :all
 
     # Default is an empty string. If set, all entities with specified status will be affected.

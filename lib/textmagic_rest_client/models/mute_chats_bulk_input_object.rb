@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class MuteChatsBulkInputObject
-    # Entity ID(s), separated by comma
+    # Entity ID(s), separated by comma.
     attr_accessor :ids
 
     # Entity ID(s), separated by comma

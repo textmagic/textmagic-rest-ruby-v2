@@ -20,7 +20,7 @@ module TextMagic
     # This URL is used to push incoming SMS to your application.
     attr_accessor :in_url
 
-    # Desired callback data format. m - multipart/form-data, u - application/x-www-form-urlencoded, j - application/json
+    # Desired callback data format. m - multipart/form-data, u - application/x-www-form-urlencoded, j - application/json.
     attr_accessor :format
 
     class EnumAttributeValidator

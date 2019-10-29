@@ -20,7 +20,7 @@ module TextMagic
     # The email is `valid` or `invalid`.
     attr_accessor :status
 
-    # The delivery status of the email address is`deliverable`, `undeliverable`  or `unknown`.
+    # The delivery status of the email address is`deliverable`, `undeliverable`. or `unknown`.
     attr_accessor :deliverability
 
     # The reason why the checked email is invalid/undeliverable.
@@ -38,7 +38,7 @@ module TextMagic
     # Null if nothing is suggested; however, if there is a potential typo in the email address, the closest suggestion is provided.
     attr_accessor :suggestion
 
-    # Checks the mailbox part of the email to see whether it matches a specific role type (‘admin’, ‘sales’, ‘webmaster’)
+    # Checks the mailbox part of the email to see whether it matches a specific role type (‘admin’, ‘sales’, ‘webmaster’).
     attr_accessor :email_role
 
     # The local part of the email address.

@@ -2530,7 +2530,7 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  status: '\"a\"', # String | Fetch only (a)ctive, (c)losed or (d)eleted chats
+  status: '\"a\"', # String | Fetch only (a)ctive, (c)losed or (d)eleted chats.
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
   order_by: 'id', # String | Order results by some field. Default is id.
@@ -2551,7 +2551,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **String**| Fetch only (a)ctive, (c)losed or (d)eleted chats | [optional] 
+ **status** | **String**| Fetch only (a)ctive, (c)losed or (d)eleted chats. | [optional] 
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
@@ -2712,7 +2712,7 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  last_id: 56 # Integer | Filter results by ID, selecting all values lesser than the specified ID. Note that the \\'page\\' parameter is ignored when \\'lastId\\' is specified
+  last_id: 56 # Integer | Filter results by ID, selecting all values lesser than the specified ID. Note that the \\'page\\' parameter is ignored when \\'lastId\\' is specified.
 }
 
 begin
@@ -2730,7 +2730,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **last_id** | **Integer**| Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified | [optional] 
+ **last_id** | **Integer**| Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified. | [optional] 
 
 ### Return type
 
@@ -2771,7 +2771,7 @@ opts = {
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
   status: 'x', # String | Fetch schedules with a specific status: a - actual, c - completed, x - all.
-  order_by: 'id', # String | Order results by some field. Default is id
+  order_by: 'id', # String | Order results by some field. Default is id.
   direction: 'desc' # String | Order direction. Default is desc.
 }
 
@@ -2791,7 +2791,7 @@ Name | Type | Description  | Notes
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **status** | **String**| Fetch schedules with a specific status: a - actual, c - completed, x - all. | [optional] [default to x]
- **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
  **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
@@ -3310,8 +3310,8 @@ api_instance = TextMagic::TextMagicApi.new
 phone = '\"447860021130\"' # String | 
 
 opts = { 
-  upsert: 0, # Integer | Create a new chat if not found
-  reopen: 0 # Integer | Reopen chat if found or do not change status
+  upsert: 0, # Integer | Create a new chat if not found.
+  reopen: 0 # Integer | Reopen chat if found or do not change status.
 }
 
 begin
@@ -3328,8 +3328,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **phone** | **String**|  | 
- **upsert** | **Integer**| Create a new chat if not found | [optional] [default to 0]
- **reopen** | **Integer**| Reopen chat if found or do not change status | [optional] [default to 0]
+ **upsert** | **Integer**| Create a new chat if not found. | [optional] [default to 0]
+ **reopen** | **Integer**| Reopen chat if found or do not change status. | [optional] [default to 0]
 
 ### Return type
 
@@ -3371,7 +3371,7 @@ id = 1 # Integer |
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  query: 'query_example', # String | Find messages by specified search query
+  query: 'query_example', # String | Find messages by specified search query.
   start: 56, # Integer | Return messages since specified timestamp only.
   _end: 56, # Integer | Return messages up to specified timestamp only.
   direction: 'desc', # String | Order direction. Default is desc.
@@ -3394,7 +3394,7 @@ Name | Type | Description  | Notes
  **id** | **Integer**|  | 
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **query** | **String**| Find messages by specified search query | [optional] 
+ **query** | **String**| Find messages by specified search query. | [optional] 
  **start** | **Integer**| Return messages since specified timestamp only. | [optional] 
  **_end** | **Integer**| Return messages up to specified timestamp only. | [optional] 
  **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
@@ -5150,8 +5150,8 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   limit: 10, # Integer | The number of results per page.
   last_id: 56, # Integer | Filter results by ID, selecting all values lesser than the specified ID.
-  query: 'query_example', # String | Find message by specified search query
-  order_by: 'id', # String | Order results by some field. Default is id
+  query: 'query_example', # String | Find message by specified search query.
+  order_by: 'id', # String | Order results by some field. Default is id.
   direction: 'desc' # String | Order direction. Default is desc.
 }
 
@@ -5170,8 +5170,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **last_id** | **Integer**| Filter results by ID, selecting all values lesser than the specified ID. | [optional] 
- **query** | **String**| Find message by specified search query | [optional] 
- **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
+ **query** | **String**| Find message by specified search query. | [optional] 
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
  **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
@@ -6621,7 +6621,7 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  query: 'query_example', # String | Find chats by specified search query
+  query: 'query_example', # String | Find chats by specified search query.
   order_by: 'id' # String | Order results by some field. Default is id.
 }
 
@@ -6640,7 +6640,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **query** | **String**| Find chats by specified search query | [optional] 
+ **query** | **String**| Find chats by specified search query. | [optional] 
  **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
 
 ### Return type
@@ -6889,7 +6889,7 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  last_id: 56, # Integer | Filter results by ID, selecting all values lesser than the specified ID. Note that the \\'page\\' parameter is ignored when \\'lastId\\' is specified
+  last_id: 56, # Integer | Filter results by ID, selecting all values lesser than the specified ID. Note that the \\'page\\' parameter is ignored when \\'lastId\\' is specified.
   ids: 'ids_example', # String | Find message by ID(s).
   session_id: 56, # Integer | Find messages by session ID.
   statuses: '\"q\"', # String | Find messages by status.
@@ -6912,7 +6912,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **last_id** | **Integer**| Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified | [optional] 
+ **last_id** | **Integer**| Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified. | [optional] 
  **ids** | **String**| Find message by ID(s). | [optional] 
  **session_id** | **Integer**| Find messages by session ID. | [optional] 
  **statuses** | **String**| Find messages by status. | [optional] 
@@ -6957,8 +6957,8 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  query: 'query_example', # String | Find messages by specified search query
-  ids: 'ids_example', # String | Find schedules by ID(s)
+  query: 'query_example', # String | Find messages by specified search query.
+  ids: 'ids_example', # String | Find schedules by ID(s).
   status: 'x', # String | Fetch schedules with a specific status: a - actual, c - completed, x - all.
   order_by: 'id', # String | Order results by some field. Default is id.
   direction: 'desc' # String | Order direction. Default is desc.
@@ -6979,8 +6979,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **query** | **String**| Find messages by specified search query | [optional] 
- **ids** | **String**| Find schedules by ID(s) | [optional] 
+ **query** | **String**| Find messages by specified search query. | [optional] 
+ **ids** | **String**| Find schedules by ID(s). | [optional] 
  **status** | **String**| Fetch schedules with a specific status: a - actual, c - completed, x - all. | [optional] [default to x]
  **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
  **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
@@ -8264,7 +8264,7 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-file = File.new('/path/to/file.txt') # File | Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx & .vcf file formats
+file = File.new('/path/to/file.txt') # File | Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx & .vcf file formats.
 
 
 begin
@@ -8280,7 +8280,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **File**| Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats | 
+ **file** | **File**| Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats. | 
 
 ### Return type
 

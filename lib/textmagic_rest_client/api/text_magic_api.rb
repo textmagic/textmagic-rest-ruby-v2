@@ -2381,7 +2381,7 @@ module TextMagic
     # Get all chats
     # 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :status Fetch only (a)ctive, (c)losed or (d)eleted chats
+    # @option opts [String] :status Fetch only (a)ctive, (c)losed or (d)eleted chats.
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :order_by Order results by some field. Default is id. (default to id)
@@ -2396,7 +2396,7 @@ module TextMagic
     # Get all chats
     # 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :status Fetch only (a)ctive, (c)losed or (d)eleted chats
+    # @option opts [String] :status Fetch only (a)ctive, (c)losed or (d)eleted chats.
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :order_by Order results by some field. Default is id.
@@ -2575,7 +2575,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
+    # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified.
     # @return [GetAllOutboundMessagesPaginatedResponse]
     def get_all_outbound_messages(opts = {})
       data, _status_code, _headers = get_all_outbound_messages_with_http_info(opts)
@@ -2587,7 +2587,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
+    # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified.
     # @return [Array<(GetAllOutboundMessagesPaginatedResponse, Fixnum, Hash)>] GetAllOutboundMessagesPaginatedResponse data, response status code and response headers
     def get_all_outbound_messages_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -2633,7 +2633,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :status Fetch schedules with a specific status: a - actual, c - completed, x - all. (default to x)
-    # @option opts [String] :order_by Order results by some field. Default is id (default to id)
+    # @option opts [String] :order_by Order results by some field. Default is id. (default to id)
     # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @return [GetAllScheduledMessagesPaginatedResponse]
     def get_all_scheduled_messages(opts = {})
@@ -2647,7 +2647,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :status Fetch schedules with a specific status: a - actual, c - completed, x - all.
-    # @option opts [String] :order_by Order results by some field. Default is id
+    # @option opts [String] :order_by Order results by some field. Default is id.
     # @option opts [String] :direction Order direction. Default is desc.
     # @return [Array<(GetAllScheduledMessagesPaginatedResponse, Fixnum, Hash)>] GetAllScheduledMessagesPaginatedResponse data, response status code and response headers
     def get_all_scheduled_messages_with_http_info(opts = {})
@@ -3190,8 +3190,8 @@ module TextMagic
     # 
     # @param phone 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :upsert Create a new chat if not found (default to 0)
-    # @option opts [Integer] :reopen Reopen chat if found or do not change status (default to 0)
+    # @option opts [Integer] :upsert Create a new chat if not found. (default to 0)
+    # @option opts [Integer] :reopen Reopen chat if found or do not change status. (default to 0)
     # @return [Chat]
     def get_chat_by_phone(phone, opts = {})
       data, _status_code, _headers = get_chat_by_phone_with_http_info(phone, opts)
@@ -3202,8 +3202,8 @@ module TextMagic
     # 
     # @param phone 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :upsert Create a new chat if not found
-    # @option opts [Integer] :reopen Reopen chat if found or do not change status
+    # @option opts [Integer] :upsert Create a new chat if not found.
+    # @option opts [Integer] :reopen Reopen chat if found or do not change status.
     # @return [Array<(Chat, Fixnum, Hash)>] Chat data, response status code and response headers
     def get_chat_by_phone_with_http_info(phone, opts = {})
       if @api_client.config.debugging
@@ -3252,7 +3252,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [String] :query Find messages by specified search query
+    # @option opts [String] :query Find messages by specified search query.
     # @option opts [Integer] :start Return messages since specified timestamp only.
     # @option opts [Integer] :_end Return messages up to specified timestamp only.
     # @option opts [String] :direction Order direction. Default is desc. (default to desc)
@@ -3269,7 +3269,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [String] :query Find messages by specified search query
+    # @option opts [String] :query Find messages by specified search query.
     # @option opts [Integer] :start Return messages since specified timestamp only.
     # @option opts [Integer] :_end Return messages up to specified timestamp only.
     # @option opts [String] :direction Order direction. Default is desc.
@@ -5116,8 +5116,8 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID.
-    # @option opts [String] :query Find message by specified search query
-    # @option opts [String] :order_by Order results by some field. Default is id (default to id)
+    # @option opts [String] :query Find message by specified search query.
+    # @option opts [String] :order_by Order results by some field. Default is id. (default to id)
     # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @return [GetOutboundMessagesHistoryPaginatedResponse]
     def get_outbound_messages_history(opts = {})
@@ -5130,8 +5130,8 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit The number of results per page.
     # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID.
-    # @option opts [String] :query Find message by specified search query
-    # @option opts [String] :order_by Order results by some field. Default is id
+    # @option opts [String] :query Find message by specified search query.
+    # @option opts [String] :order_by Order results by some field. Default is id.
     # @option opts [String] :direction Order direction. Default is desc.
     # @return [Array<(GetOutboundMessagesHistoryPaginatedResponse, Fixnum, Hash)>] GetOutboundMessagesHistoryPaginatedResponse data, response status code and response headers
     def get_outbound_messages_history_with_http_info(opts = {})
@@ -6595,7 +6595,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [String] :query Find chats by specified search query
+    # @option opts [String] :query Find chats by specified search query.
     # @option opts [String] :order_by Order results by some field. Default is id. (default to id)
     # @return [SearchChatsByReceipentPaginatedResponse]
     def search_chats_by_receipent(opts = {})
@@ -6608,7 +6608,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [String] :query Find chats by specified search query
+    # @option opts [String] :query Find chats by specified search query.
     # @option opts [String] :order_by Order results by some field. Default is id.
     # @return [Array<(SearchChatsByReceipentPaginatedResponse, Fixnum, Hash)>] SearchChatsByReceipentPaginatedResponse data, response status code and response headers
     def search_chats_by_receipent_with_http_info(opts = {})
@@ -6906,7 +6906,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
+    # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified.
     # @option opts [String] :ids Find message by ID(s).
     # @option opts [Integer] :session_id Find messages by session ID.
     # @option opts [String] :statuses Find messages by status.
@@ -6923,7 +6923,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
+    # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified.
     # @option opts [String] :ids Find message by ID(s).
     # @option opts [Integer] :session_id Find messages by session ID.
     # @option opts [String] :statuses Find messages by status.
@@ -6985,8 +6985,8 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [String] :query Find messages by specified search query
-    # @option opts [String] :ids Find schedules by ID(s)
+    # @option opts [String] :query Find messages by specified search query.
+    # @option opts [String] :ids Find schedules by ID(s).
     # @option opts [String] :status Fetch schedules with a specific status: a - actual, c - completed, x - all. (default to x)
     # @option opts [String] :order_by Order results by some field. Default is id. (default to id)
     # @option opts [String] :direction Order direction. Default is desc. (default to desc)
@@ -7001,8 +7001,8 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [String] :query Find messages by specified search query
-    # @option opts [String] :ids Find schedules by ID(s)
+    # @option opts [String] :query Find messages by specified search query.
+    # @option opts [String] :ids Find schedules by ID(s).
     # @option opts [String] :status Fetch schedules with a specific status: a - actual, c - completed, x - all.
     # @option opts [String] :order_by Order results by some field. Default is id.
     # @option opts [String] :direction Order direction. Default is desc.
@@ -8341,7 +8341,7 @@ module TextMagic
     end
     # Upload message attachment
     # Upload a new file to insert it as a link.
-    # @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats
+    # @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats.
     # @param [Hash] opts the optional parameters
     # @return [UploadMessageAttachmentResponse]
     def upload_message_attachment(file, opts = {})
@@ -8351,7 +8351,7 @@ module TextMagic
 
     # Upload message attachment
     # Upload a new file to insert it as a link.
-    # @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats
+    # @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats.
     # @param [Hash] opts the optional parameters
     # @return [Array<(UploadMessageAttachmentResponse, Fixnum, Hash)>] UploadMessageAttachmentResponse data, response status code and response headers
     def upload_message_attachment_with_http_info(file, opts = {})

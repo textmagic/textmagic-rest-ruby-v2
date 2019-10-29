@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class DeleteOutboundMessagesBulkInputObject
-    # Entity ID(s), separated by comma
+    # Entity ID(s), separated by comma.
     attr_accessor :ids
 
     # Default is 0 (false). If set to 1, all the entities will be removed.

@@ -17,7 +17,7 @@ module TextMagic
     # The 2-letter ISO country code of the recipient's phone number. 
     attr_accessor :country
 
-    # Phone enabled for sending to a specified country
+    # Phone enabled for sending to a specified country.
     attr_accessor :phone
 
     # Attribute mapping from ruby-style variable name to JSON key.

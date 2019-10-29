@@ -581,7 +581,7 @@ describe 'TextMagicApi' do
   # Get all chats
   # 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :status Fetch only (a)ctive, (c)losed or (d)eleted chats
+  # @option opts [String] :status Fetch only (a)ctive, (c)losed or (d)eleted chats.
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :order_by Order results by some field. Default is id.
@@ -628,7 +628,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
+  # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified.
   # @return [GetAllOutboundMessagesPaginatedResponse]
   describe 'get_all_outbound_messages test' do
     it 'should work' do
@@ -643,7 +643,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :status Fetch schedules with a specific status: a - actual, c - completed, x - all.
-  # @option opts [String] :order_by Order results by some field. Default is id
+  # @option opts [String] :order_by Order results by some field. Default is id.
   # @option opts [String] :direction Order direction. Default is desc.
   # @return [GetAllScheduledMessagesPaginatedResponse]
   describe 'get_all_scheduled_messages test' do
@@ -769,8 +769,8 @@ describe 'TextMagicApi' do
   # 
   # @param phone 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :upsert Create a new chat if not found
-  # @option opts [Integer] :reopen Reopen chat if found or do not change status
+  # @option opts [Integer] :upsert Create a new chat if not found.
+  # @option opts [Integer] :reopen Reopen chat if found or do not change status.
   # @return [Chat]
   describe 'get_chat_by_phone test' do
     it 'should work' do
@@ -785,7 +785,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :query Find messages by specified search query
+  # @option opts [String] :query Find messages by specified search query.
   # @option opts [Integer] :start Return messages since specified timestamp only.
   # @option opts [Integer] :_end Return messages up to specified timestamp only.
   # @option opts [String] :direction Order direction. Default is desc.
@@ -1222,8 +1222,8 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID.
-  # @option opts [String] :query Find message by specified search query
-  # @option opts [String] :order_by Order results by some field. Default is id
+  # @option opts [String] :query Find message by specified search query.
+  # @option opts [String] :order_by Order results by some field. Default is id.
   # @option opts [String] :direction Order direction. Default is desc.
   # @return [GetOutboundMessagesHistoryPaginatedResponse]
   describe 'get_outbound_messages_history test' do
@@ -1565,7 +1565,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :query Find chats by specified search query
+  # @option opts [String] :query Find chats by specified search query.
   # @option opts [String] :order_by Order results by some field. Default is id.
   # @return [SearchChatsByReceipentPaginatedResponse]
   describe 'search_chats_by_receipent test' do
@@ -1639,7 +1639,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
+  # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified.
   # @option opts [String] :ids Find message by ID(s).
   # @option opts [Integer] :session_id Find messages by session ID.
   # @option opts [String] :statuses Find messages by status.
@@ -1658,8 +1658,8 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :query Find messages by specified search query
-  # @option opts [String] :ids Find schedules by ID(s)
+  # @option opts [String] :query Find messages by specified search query.
+  # @option opts [String] :ids Find schedules by ID(s).
   # @option opts [String] :status Fetch schedules with a specific status: a - actual, c - completed, x - all.
   # @option opts [String] :order_by Order results by some field. Default is id.
   # @option opts [String] :direction Order direction. Default is desc.
@@ -1961,7 +1961,7 @@ describe 'TextMagicApi' do
   # unit tests for upload_message_attachment
   # Upload message attachment
   # Upload a new file to insert it as a link.
-  # @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats
+  # @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats.
   # @param [Hash] opts the optional parameters
   # @return [UploadMessageAttachmentResponse]
   describe 'upload_message_attachment test' do

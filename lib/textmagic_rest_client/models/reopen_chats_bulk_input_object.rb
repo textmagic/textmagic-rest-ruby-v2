@@ -14,10 +14,10 @@ require 'date'
 
 module TextMagic
   class ReopenChatsBulkInputObject
-    # Entity ID(s), separated by comma
+    # Entity ID(s), separated by comma.
     attr_accessor :ids
 
-    # Entity ID(s), separated by comma
+    # Entity ID(s), separated by comma.
     attr_accessor :all
 
     # Attribute mapping from ruby-style variable name to JSON key.
