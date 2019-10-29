@@ -4508,8 +4508,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get contact's lists
-    # Get all the lists in which the contact is included
+    # Get a contact's lists
+    # Get all the lists in which a contact is included.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -4520,8 +4520,8 @@ module TextMagic
       data
     end
 
-    # Get contact&#39;s lists
-    # Get all the lists in which the contact is included
+    # Get a contact&#39;s lists
+    # Get all the lists in which a contact is included.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -6828,11 +6828,11 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [String] :ids Find lists by ID(s)
-    # @option opts [String] :query Find lists by specified search query
-    # @option opts [Integer] :only_mine Return only current user lists (default to 0)
-    # @option opts [Integer] :only_default Return only default lists (default to 0)
-    # @option opts [String] :order_by Order results by some field. Default is id (default to id)
+    # @option opts [String] :ids Find lists by IDs.
+    # @option opts [String] :query Find lists by specified search query.
+    # @option opts [Integer] :only_mine Return only current user lists. (default to 0)
+    # @option opts [Integer] :only_default Return only default lists. (default to 0)
+    # @option opts [String] :order_by Order results by some field. Default is id. (default to id)
     # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @return [SearchListsPaginatedResponse]
     def search_lists(opts = {})
@@ -6845,11 +6845,11 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [String] :ids Find lists by ID(s)
-    # @option opts [String] :query Find lists by specified search query
-    # @option opts [Integer] :only_mine Return only current user lists
-    # @option opts [Integer] :only_default Return only default lists
-    # @option opts [String] :order_by Order results by some field. Default is id
+    # @option opts [String] :ids Find lists by IDs.
+    # @option opts [String] :query Find lists by specified search query.
+    # @option opts [Integer] :only_mine Return only current user lists.
+    # @option opts [Integer] :only_default Return only default lists.
+    # @option opts [String] :order_by Order results by some field. Default is id.
     # @option opts [String] :direction Order direction. Default is desc.
     # @return [Array<(SearchListsPaginatedResponse, Fixnum, Hash)>] SearchListsPaginatedResponse data, response status code and response headers
     def search_lists_with_http_info(opts = {})

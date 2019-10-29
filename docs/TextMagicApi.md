@@ -86,7 +86,7 @@ Method | HTTP request | Description
 [**get_list**](TextMagicApi.md#get_list) | **GET** /api/v2/lists/{id} | Get the details of a specific list
 [**get_list_contacts_ids**](TextMagicApi.md#get_list_contacts_ids) | **GET** /api/v2/lists/{id}/contacts/ids | Get all contacts IDs in a list
 [**get_lists**](TextMagicApi.md#get_lists) | **GET** /api/v2/lists | Get all lists
-[**get_lists_of_contact**](TextMagicApi.md#get_lists_of_contact) | **GET** /api/v2/contacts/{id}/lists | Get contact&#39;s lists
+[**get_lists_of_contact**](TextMagicApi.md#get_lists_of_contact) | **GET** /api/v2/contacts/{id}/lists | Get a contact&#39;s lists
 [**get_message_preview**](TextMagicApi.md#get_message_preview) | **GET** /api/v2/messages/preview | Preview message
 [**get_message_price**](TextMagicApi.md#get_message_price) | **GET** /api/v2/messages/price/normalized | Check message price
 [**get_message_session**](TextMagicApi.md#get_message_session) | **GET** /api/v2/sessions/{id} | Get a session&#x60;s details
@@ -4566,9 +4566,9 @@ Name | Type | Description  | Notes
 # **get_lists_of_contact**
 > GetListsOfContactPaginatedResponse get_lists_of_contact(id, opts)
 
-Get contact's lists
+Get a contact's lists
 
-Get all the lists in which the contact is included
+Get all the lists in which a contact is included.
 
 ### Example
 ```ruby
@@ -4591,7 +4591,7 @@ opts = {
 }
 
 begin
-  #Get contact's lists
+  #Get a contact's lists
   result = api_instance.get_lists_of_contact(id, opts)
   p result
 rescue TextMagic::ApiError => e
@@ -6821,11 +6821,11 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  ids: '\"1,2,3,4\"', # String | Find lists by ID(s)
-  query: '\"A\"', # String | Find lists by specified search query
-  only_mine: 0, # Integer | Return only current user lists
-  only_default: 0, # Integer | Return only default lists
-  order_by: 'id', # String | Order results by some field. Default is id
+  ids: '\"1,2,3,4\"', # String | Find lists by IDs.
+  query: '\"A\"', # String | Find lists by specified search query.
+  only_mine: 0, # Integer | Return only current user lists.
+  only_default: 0, # Integer | Return only default lists.
+  order_by: 'id', # String | Order results by some field. Default is id.
   direction: 'desc' # String | Order direction. Default is desc.
 }
 
@@ -6844,11 +6844,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **ids** | **String**| Find lists by ID(s) | [optional] 
- **query** | **String**| Find lists by specified search query | [optional] 
- **only_mine** | **Integer**| Return only current user lists | [optional] [default to 0]
- **only_default** | **Integer**| Return only default lists | [optional] [default to 0]
- **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
+ **ids** | **String**| Find lists by IDs. | [optional] 
+ **query** | **String**| Find lists by specified search query. | [optional] 
+ **only_mine** | **Integer**| Return only current user lists. | [optional] [default to 0]
+ **only_default** | **Integer**| Return only default lists. | [optional] [default to 0]
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
  **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type

@@ -1068,8 +1068,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_lists_of_contact
-  # Get contact&#39;s lists
-  # Get all the lists in which the contact is included
+  # Get a contact&#39;s lists
+  # Get all the lists in which a contact is included.
   # @param id 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
@@ -1620,11 +1620,11 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :ids Find lists by ID(s)
-  # @option opts [String] :query Find lists by specified search query
-  # @option opts [Integer] :only_mine Return only current user lists
-  # @option opts [Integer] :only_default Return only default lists
-  # @option opts [String] :order_by Order results by some field. Default is id
+  # @option opts [String] :ids Find lists by IDs.
+  # @option opts [String] :query Find lists by specified search query.
+  # @option opts [Integer] :only_mine Return only current user lists.
+  # @option opts [Integer] :only_default Return only default lists.
+  # @option opts [String] :order_by Order results by some field. Default is id.
   # @option opts [String] :direction Order direction. Default is desc.
   # @return [SearchListsPaginatedResponse]
   describe 'search_lists test' do
