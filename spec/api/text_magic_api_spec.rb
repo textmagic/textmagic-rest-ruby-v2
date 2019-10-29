@@ -877,7 +877,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [Integer] :shared Should shared contacts to be included
+  # @option opts [Integer] :shared Should shared contacts be included?
   # @option opts [String] :order_by Order results by some field. Default is id.
   # @option opts [String] :direction Order direction. Default is desc.
   # @return [GetContactsPaginatedResponse]
@@ -889,11 +889,11 @@ describe 'TextMagicApi' do
 
   # unit tests for get_contacts_autocomplete
   # Get contacts autocomplete suggestions
-  # Get contacts autocomplete suggestions by given search term
+  # Get contacts autocomplete suggestions by given search terms.
   # @param query Find recipients by specified search query.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [Integer] :lists Should lists be returned or not
+  # @option opts [Integer] :lists Should lists be returned or not?
   # @return [GetContactsAutocompleteResponse]
   describe 'get_contacts_autocomplete test' do
     it 'should work' do
@@ -1580,13 +1580,13 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [Integer] :shared Should shared contacts to be included
-  # @option opts [String] :ids Find contact by ID(s)
-  # @option opts [Integer] :list_id Find contact by List ID
-  # @option opts [Integer] :include_blocked Should blocked contacts to be included
+  # @option opts [Integer] :shared Should shared contacts be included?
+  # @option opts [String] :ids Find contacts by IDs.
+  # @option opts [Integer] :list_id Find contacts by List ID.
+  # @option opts [Integer] :include_blocked Should blocked contacts be included?
   # @option opts [String] :query Find contacts by specified search query.
-  # @option opts [Integer] :local Treat phone number passed in &#39;query&#39; field as local. Default is 0
-  # @option opts [String] :country 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country
+  # @option opts [Integer] :local Treat phone number passed in the \&quot;query\&quot; field as local. Default is 0.
+  # @option opts [String] :country The 2-letter ISO country code for local phone numbers, used when \&quot;local\&quot; is set to true. Default is the account country.
   # @option opts [String] :order_by Order results by some field. Default is id.
   # @option opts [String] :direction Order direction. Default is desc.
   # @return [SearchContactsPaginatedResponse]

@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** | Contact ID. | 
 **favorited** | **BOOLEAN** | Is the Contact favorite? [Custom fields list](http://docs.textmagictesting.com/#operation/getFavorites). | 
-**blocked** | **BOOLEAN** | Is the Contact blocked? [Custom fields list](http://docs.textmagictesting.com/#operation/getBlockedContacts). | 
+**blocked** | **BOOLEAN** | Is the Contact blocked? [Blocked contacts](http://docs.textmagictesting.com/#operation/getBlockedContacts). | 
 **first_name** | **String** | Contact first name. | 
 **last_name** | **String** | Contact last name. | 
 **company_name** | **String** | Company name. | 

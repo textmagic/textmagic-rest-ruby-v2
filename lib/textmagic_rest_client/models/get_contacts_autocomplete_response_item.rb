@@ -14,19 +14,19 @@ require 'date'
 
 module TextMagic
   class GetContactsAutocompleteResponseItem
-    # Id of entity. 0 if object is a Reply
+    # Id of entity. 0 if object is a reply.
     attr_accessor :entity_id
 
-    # Entry type: * **contact** if it is related to a contact * **list** if it is related to a contact list * **reply** if it is related to an incoming message 
+    # Entry type: * **contact** if it is related to a contact; * **list** if it is related to a contact list; * **reply** if it is related to an incoming message. 
     attr_accessor :entity_type
 
-    # Id of contact/list if entityType is contact/list OR phone number if entityType is reply.
+    # ID of the contact/list if entityType is contact/list OR phone number if entityType is reply.
     attr_accessor :value
 
     # Name of the contact/list if entityType is contact/list OR phone number if entityType is reply.
     attr_accessor :label
 
-    # If contact or list was shared by another sub-account then name if this user will be shown.
+    # If contact or list was shared by another sub-account, the name of this user will be shown.
     attr_accessor :shared_by
 
     # If contact or list was shared by another sub-account then `true` will be set.
@@ -38,7 +38,7 @@ module TextMagic
     # If contact has been marked as favorite.
     attr_accessor :favorited
 
-    # Owner id of the contact/list (if it was shared).
+    # Owner ID of the contact/list (if it was shared).
     attr_accessor :user_id
 
     attr_accessor :country_name

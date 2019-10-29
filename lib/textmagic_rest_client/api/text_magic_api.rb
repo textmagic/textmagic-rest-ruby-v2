@@ -3660,7 +3660,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [Integer] :shared Should shared contacts to be included (default to 0)
+    # @option opts [Integer] :shared Should shared contacts be included? (default to 0)
     # @option opts [String] :order_by Order results by some field. Default is id. (default to id)
     # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @return [GetContactsPaginatedResponse]
@@ -3674,7 +3674,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [Integer] :shared Should shared contacts to be included
+    # @option opts [Integer] :shared Should shared contacts be included?
     # @option opts [String] :order_by Order results by some field. Default is id.
     # @option opts [String] :direction Order direction. Default is desc.
     # @return [Array<(GetContactsPaginatedResponse, Fixnum, Hash)>] GetContactsPaginatedResponse data, response status code and response headers
@@ -3725,11 +3725,11 @@ module TextMagic
       return data, status_code, headers
     end
     # Get contacts autocomplete suggestions
-    # Get contacts autocomplete suggestions by given search term
+    # Get contacts autocomplete suggestions by given search terms.
     # @param query Find recipients by specified search query.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [Integer] :lists Should lists be returned or not (default to 0)
+    # @option opts [Integer] :lists Should lists be returned or not? (default to 0)
     # @return [GetContactsAutocompleteResponse]
     def get_contacts_autocomplete(query, opts = {})
       data, _status_code, _headers = get_contacts_autocomplete_with_http_info(query, opts)
@@ -3737,11 +3737,11 @@ module TextMagic
     end
 
     # Get contacts autocomplete suggestions
-    # Get contacts autocomplete suggestions by given search term
+    # Get contacts autocomplete suggestions by given search terms.
     # @param query Find recipients by specified search query.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [Integer] :lists Should lists be returned or not
+    # @option opts [Integer] :lists Should lists be returned or not?
     # @return [Array<(GetContactsAutocompleteResponse, Fixnum, Hash)>] GetContactsAutocompleteResponse data, response status code and response headers
     def get_contacts_autocomplete_with_http_info(query, opts = {})
       if @api_client.config.debugging
@@ -6658,13 +6658,13 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [Integer] :shared Should shared contacts to be included (default to 0)
-    # @option opts [String] :ids Find contact by ID(s)
-    # @option opts [Integer] :list_id Find contact by List ID
-    # @option opts [Integer] :include_blocked Should blocked contacts to be included
+    # @option opts [Integer] :shared Should shared contacts be included? (default to 0)
+    # @option opts [String] :ids Find contacts by IDs.
+    # @option opts [Integer] :list_id Find contacts by List ID.
+    # @option opts [Integer] :include_blocked Should blocked contacts be included?
     # @option opts [String] :query Find contacts by specified search query.
-    # @option opts [Integer] :local Treat phone number passed in &#39;query&#39; field as local. Default is 0 (default to 0)
-    # @option opts [String] :country 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country
+    # @option opts [Integer] :local Treat phone number passed in the \&quot;query\&quot; field as local. Default is 0. (default to 0)
+    # @option opts [String] :country The 2-letter ISO country code for local phone numbers, used when \&quot;local\&quot; is set to true. Default is the account country.
     # @option opts [String] :order_by Order results by some field. Default is id. (default to id)
     # @option opts [String] :direction Order direction. Default is desc. (default to desc)
     # @return [SearchContactsPaginatedResponse]
@@ -6678,13 +6678,13 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [Integer] :shared Should shared contacts to be included
-    # @option opts [String] :ids Find contact by ID(s)
-    # @option opts [Integer] :list_id Find contact by List ID
-    # @option opts [Integer] :include_blocked Should blocked contacts to be included
+    # @option opts [Integer] :shared Should shared contacts be included?
+    # @option opts [String] :ids Find contacts by IDs.
+    # @option opts [Integer] :list_id Find contacts by List ID.
+    # @option opts [Integer] :include_blocked Should blocked contacts be included?
     # @option opts [String] :query Find contacts by specified search query.
-    # @option opts [Integer] :local Treat phone number passed in &#39;query&#39; field as local. Default is 0
-    # @option opts [String] :country 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country
+    # @option opts [Integer] :local Treat phone number passed in the \&quot;query\&quot; field as local. Default is 0.
+    # @option opts [String] :country The 2-letter ISO country code for local phone numbers, used when \&quot;local\&quot; is set to true. Default is the account country.
     # @option opts [String] :order_by Order results by some field. Default is id.
     # @option opts [String] :direction Order direction. Default is desc.
     # @return [Array<(SearchContactsPaginatedResponse, Fixnum, Hash)>] SearchContactsPaginatedResponse data, response status code and response headers
