@@ -17,7 +17,7 @@ module TextMagic
     # Chat ID.
     attr_accessor :id
 
-    # Chat status:   * **a** - Active   * **c** - Closed   * **d** - Deleted 
+    # Chat status:   * **a** - Active;   * **c** - Closed;   * **d** - Deleted. 
     attr_accessor :status
 
     class EnumAttributeValidator

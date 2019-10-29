@@ -19,39 +19,39 @@ module TextMagic
 
     attr_accessor :original_id
 
-    # Chat partner phone number.
+    # Chat partner's phone number.
     attr_accessor :phone
 
     attr_accessor :contact
 
-    # If this field has a value then it means that chat phone number has been unsubscribed from you and this value is a ID of a Unsubscribed contact entity. See [Get all unsubscribed contacts](http://docs.textmagictesting.com/#operation/getUnsubscribers).
+    # If this field has a value, it means that the chat phone number has been unsubscribed from you and this value is an ID of an Unsubscribed contact entity. See [Get all unsubscribed contacts](http://docs.textmagictesting.com/#operation/getUnsubscribers).
     attr_accessor :unsubscribed_contact_id
 
     # Total unread incoming messages.
     attr_accessor :unread
 
-    # Time when last incoming message arrived at this chat.
+    # Time when the last incoming message arrived at this chat.
     attr_accessor :updated_at
 
     # Chat status:   * **a** - Active   * **c** - Closed   * **d** - Deleted 
     attr_accessor :status
 
-    # Indicates when chat is muted.
+    # Indicates when the chat is muted.
     attr_accessor :mute
 
     # The last message content of a chat.
     attr_accessor :last_message
 
-    # Last message type: * **ci** - incoming call * **co** - outgoing call * **i** - incoming message * **o** - outgoing message 
+    # Last message type: * **ci** - incoming call; * **co** - outgoing call; * **i** - incoming message; * **o** - outgoing message. 
     attr_accessor :direction
 
-    # If filled then value will be used as a sender number for all outgoing messages of a chat.
+    # If filled, the value will be used as a sender number for all outgoing messages of a chat.
     attr_accessor :from
 
-    # Date and time until chat will be mutted.
+    # Date and time until the chat will be muted.
     attr_accessor :muted_until
 
-    # Time left till chat will be unmutted (seconds).
+    # Time left untill the chat will be unmuted (seconds).
     attr_accessor :time_left_mute
 
     attr_accessor :country

@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class CheckPhoneVerificationCodeInputObject
-    # Verification code that was received by the user and entered into the form field.
+    # Verification code received by the user and entered into the form field.
     attr_accessor :code
 
     # VerifyId from Step 1 to match both requests together.

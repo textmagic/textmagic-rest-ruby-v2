@@ -17,7 +17,7 @@ module TextMagic
     # User ID.
     attr_accessor :id
 
-    # User's preferred format of time display: * *12h* – AM/PM format; * *24h* – 24 hour clock format. 
+    # User's preferred format of time display: * *12h* - AM/PM format; * *24h* - 24-hour clock format. 
     attr_accessor :display_time_format
 
     # Username.
@@ -38,7 +38,7 @@ module TextMagic
     # Account balance (in account currency).
     attr_accessor :balance
 
-    # User`s phone number.
+    # User's phone number.
     attr_accessor :phone
 
     # Account company name.
@@ -50,7 +50,7 @@ module TextMagic
 
     attr_accessor :timezone
 
-    # Type of account: * **P** for Parent User; * **A** for Administrator Sub-Account; * **U** for Regular User 
+    # Type of account: * **P** for Parent User; * **A** for Administrator Sub-Account; * **U** for Regular User. 
     attr_accessor :subaccount_type
 
     # Does the account have a confirmed email?

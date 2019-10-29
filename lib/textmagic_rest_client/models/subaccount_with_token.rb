@@ -50,10 +50,10 @@ module TextMagic
     # Type of account: *   **A** for Administrator sub-account *   **U** for Regular User 
     attr_accessor :subaccount_type
 
-    # Is account has confirmed Email.
+    # Does the account have a confirmed Email?.
     attr_accessor :email_accepted
 
-    # Is account has confirmed Phone number.
+    # Does the account have a confirmed Phone Number?.
     attr_accessor :phone_accepted
 
     attr_accessor :avatar

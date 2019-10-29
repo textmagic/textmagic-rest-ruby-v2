@@ -39,7 +39,7 @@ module TextMagic
 
     attr_accessor :avatar
 
-    # Indicates that List is used as a default. All new contacts added via web app will be added in this List by default.
+    # Indicates that List is used as a default. All new contacts added via the Web-app will be added in this List by default.
     attr_accessor :is_default
 
     # Attribute mapping from ruby-style variable name to JSON key.

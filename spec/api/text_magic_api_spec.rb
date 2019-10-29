@@ -72,7 +72,7 @@ describe 'TextMagicApi' do
   # unit tests for cancel_verification
   # Cancel verification process
   # You can cancel the verification not earlier than 30 seconds after the initial request.
-  # @param verify_id the verifyId that you received in Step 1.
+  # @param verify_id The verifyId that you received in Step 1.
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'cancel_verification test' do
@@ -360,7 +360,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_inbound_message
   # Delete a single inbound message
-  # &gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+  # &gt; Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
   # @param id The unique numeric ID for the inbound message.
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -372,7 +372,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_inbound_messages_bulk
   # Delete inbound messages (bulk)
-  # &gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+  # &gt; Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
   # @param delete_inbound_messages_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -584,9 +584,9 @@ describe 'TextMagicApi' do
   # @option opts [String] :status Fetch only (a)ctive, (c)losed or (d)eleted chats
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :order_by Order results by some field. Default is id
-  # @option opts [Integer] :voice Fetch results with voice calls
-  # @option opts [Integer] :flat Should additional contact info be included
+  # @option opts [String] :order_by Order results by some field. Default is id.
+  # @option opts [Integer] :voice Fetch results with voice calls.
+  # @option opts [Integer] :flat Should additional contact info be included?
   # @return [GetAllChatsPaginatedResponse]
   describe 'get_all_chats test' do
     it 'should work' do
@@ -600,7 +600,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :order_by Order results by some field. Default is id
+  # @option opts [String] :order_by Order results by some field. Default is id.
   # @option opts [String] :direction Order direction. Default is desc.
   # @return [GetAllInboundMessagesPaginatedResponse]
   describe 'get_all_inbound_messages test' do
@@ -642,7 +642,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all
+  # @option opts [String] :status Fetch schedules with a specific status: a - actual, c - completed, x - all.
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc.
   # @return [GetAllScheduledMessagesPaginatedResponse]
@@ -786,10 +786,10 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :query Find messages by specified search query
-  # @option opts [Integer] :start Return messages since specified timestamp only
-  # @option opts [Integer] :_end Return messages up to specified timestamp only
+  # @option opts [Integer] :start Return messages since specified timestamp only.
+  # @option opts [Integer] :_end Return messages up to specified timestamp only.
   # @option opts [String] :direction Order direction. Default is desc.
-  # @option opts [Integer] :voice Fetch results with voice calls
+  # @option opts [Integer] :voice Fetch results with voice calls.
   # @return [GetChatMessagesPaginatedResponse]
   describe 'get_chat_messages test' do
     it 'should work' do
@@ -976,15 +976,15 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for get_favourites
+  # unit tests for get_favorites
   # Get favorite contacts and lists
   # 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :query Find contacts or lists by specified search query
-  # @return [GetFavouritesPaginatedResponse]
-  describe 'get_favourites test' do
+  # @return [GetFavoritesPaginatedResponse]
+  describe 'get_favorites test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -1566,7 +1566,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :query Find chats by specified search query
-  # @option opts [String] :order_by Order results by some field. Default is id
+  # @option opts [String] :order_by Order results by some field. Default is id.
   # @return [SearchChatsByReceipentPaginatedResponse]
   describe 'search_chats_by_receipent test' do
     it 'should work' do
@@ -1584,7 +1584,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :ids Find contact by ID(s)
   # @option opts [Integer] :list_id Find contact by List ID
   # @option opts [Integer] :include_blocked Should blocked contacts to be included
-  # @option opts [String] :query Find contacts by specified search query
+  # @option opts [String] :query Find contacts by specified search query.
   # @option opts [Integer] :local Treat phone number passed in &#39;query&#39; field as local. Default is 0
   # @option opts [String] :country 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country
   # @option opts [String] :order_by Order results by some field. Default is id.
@@ -1604,7 +1604,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :ids Find message by ID(s).
   # @option opts [String] :query Find recipients by specified search query.
-  # @option opts [String] :order_by Order results by some field. Default is id
+  # @option opts [String] :order_by Order results by some field. Default is id.
   # @option opts [String] :direction Order direction. Default is desc.
   # @option opts [Integer] :expand Expand by adding firstName, lastName and contactId.
   # @return [SearchInboundMessagesPaginatedResponse]
@@ -1660,8 +1660,8 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :query Find messages by specified search query
   # @option opts [String] :ids Find schedules by ID(s)
-  # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all
-  # @option opts [String] :order_by Order results by some field. Default is id
+  # @option opts [String] :status Fetch schedules with a specific status: a - actual, c - completed, x - all.
+  # @option opts [String] :order_by Order results by some field. Default is id.
   # @option opts [String] :direction Order direction. Default is desc.
   # @return [SearchScheduledMessagesPaginatedResponse]
   describe 'search_scheduled_messages test' do
@@ -1700,7 +1700,7 @@ describe 'TextMagicApi' do
 
   # unit tests for send_phone_verification_code_tfa
   # Step 1: Send a verification code 
-  # Sends verification code to specified phone number.
+  # Sends a verification code to a specified phone number.
   # @param send_phone_verification_code_input_object 
   # @param [Hash] opts the optional parameters
   # @return [SendPhoneVerificationCodeResponse]

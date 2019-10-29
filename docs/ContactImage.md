@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** | URI of a contact avatar. | 
+**href** | **String** | The URI of a contact avatar. | 
 
 

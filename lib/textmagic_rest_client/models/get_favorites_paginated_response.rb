@@ -13,7 +13,7 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
-  class GetFavouritesPaginatedResponse
+  class GetFavoritesPaginatedResponse
     attr_accessor :page
 
     # The total number of pages.

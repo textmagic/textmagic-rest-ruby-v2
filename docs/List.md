@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **service** | **BOOLEAN** | Internal service field. | 
 **shared** | **BOOLEAN** | Is the list **shared** among all sub-accounts? | 
 **avatar** | [**ListImage**](ListImage.md) |  | 
-**is_default** | **BOOLEAN** | Indicates that List is used as a default. All new contacts added via web app will be added in this List by default. | 
+**is_default** | **BOOLEAN** | Indicates that List is used as a default. All new contacts added via the Web-app will be added in this List by default. | 
 
 

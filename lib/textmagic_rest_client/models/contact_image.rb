@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class ContactImage
-    # URI of a contact avatar.
+    # The URI of a contact avatar.
     attr_accessor :href
 
     # Attribute mapping from ruby-style variable name to JSON key.

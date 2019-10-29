@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cost** | **Float** | Cost to check one number is constant – 0.04 in your account currency. | 
+**cost** | **Float** | Cost to check that one number is constant – 0.04 in your account currency. | 
 **country** | [**Country**](Country.md) | Phone number country. | [optional] 
 **local** | **String** | Phone number in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers). | 
 **type** | **String** | Phone number type. | 

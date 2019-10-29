@@ -17,7 +17,7 @@ module TextMagic
     # The ID of a verification request. This is required to finish the verification request in the next step.
     attr_accessor :verify_id
 
-    # Amount of credit which will be deducted from your account balance when this verification is successfully completed.
+    # An amount of credit which will be deducted from your account balance when this verification is successfully completed.
     attr_accessor :price
 
     # Attribute mapping from ruby-style variable name to JSON key.

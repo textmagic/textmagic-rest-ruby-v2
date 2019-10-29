@@ -17,10 +17,10 @@ module TextMagic
     # Entity ID(s), separated by comma
     attr_accessor :ids
 
-    # Default is 0 (false). If set to 1 all the entities will be removed.
+    # Default is 0 (false). If set to 1, all the entities will be removed.
     attr_accessor :all
 
-    # Default is empty string (false). If set then all entities with specified status will be affected.
+    # Default is an empty string (false). If set, all entities with specified status will be affected.
     attr_accessor :status
 
     # Attribute mapping from ruby-style variable name to JSON key.

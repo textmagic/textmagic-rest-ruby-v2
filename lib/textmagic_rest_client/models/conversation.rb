@@ -22,13 +22,13 @@ module TextMagic
     # Sender phone number.
     attr_accessor :sender
 
-    # Time when message arrived at TextMagic.
+    # Time when  the message arrived at TextMagic.
     attr_accessor :message_time
 
     # Message text.
     attr_accessor :text
 
-    # Receiver phone number.
+    # Receiver's phone number.
     attr_accessor :receiver
 
     # Message status (for chats outbound only). See [message delivery statuses](http://docs.textmagictesting.com/#section/Delivery-status-codes) for details.

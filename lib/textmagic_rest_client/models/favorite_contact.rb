@@ -17,7 +17,7 @@ module TextMagic
     # List or Contact ID.
     attr_accessor :entity_id
 
-    # Entity type which should be marked as **favourite**.
+    # Entity type which should be marked as **favorite**.
     attr_accessor :entity_type
 
     # Contact first name/last name if entityType is **contact**, List name if entity type is **list**.

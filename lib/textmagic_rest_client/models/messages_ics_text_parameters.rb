@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class MessagesIcsTextParameters
-    # Cost to check one number is constant – 0.04 in your account currency.
+    # Cost to check that one number is constant – 0.04 in your account currency.
     attr_accessor :cost
 
     # Message parts (multiples of 160 characters) count.
@@ -23,12 +23,12 @@ module TextMagic
     # Characters count.
     attr_accessor :chars
 
-    # Message charset. Could be: * **ISO-8859-1** for plaintext SMS * **UTF-16BE** for Unicode SMS 
+    # Message charset. Could be: * **ISO-8859-1** – for plaintext SMS; * **UTF-16BE** – for Unicode SMS. 
     attr_accessor :encoding
 
     attr_accessor :countries
 
-    # Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages 
+    # Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS; *   **UTF-16BE** for Unicode SMS; *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages. 
     attr_accessor :charset_label
 
     class EnumAttributeValidator
