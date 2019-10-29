@@ -23,7 +23,7 @@ module TextMagic
     # Description of the list.
     attr_accessor :description
 
-    # Is the List favourite? [Custom fields list](http://docs.textmagictesting.com/#operation/getFavourites).
+    # Is the List favorited? See [Favorites list](http://docs.textmagictesting.com/#operation/getFavourites).
     attr_accessor :favorited
 
     # List members count.
@@ -39,7 +39,7 @@ module TextMagic
 
     attr_accessor :avatar
 
-    # Indicates that List is used as a default. All new contacts that added via Web-app will be added in this List by default.
+    # Indicates that List is used as a default. All new contacts added via web app will be added in this List by default.
     attr_accessor :is_default
 
     # Attribute mapping from ruby-style variable name to JSON key.

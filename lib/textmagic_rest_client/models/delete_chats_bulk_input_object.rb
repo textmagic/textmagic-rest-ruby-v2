@@ -20,7 +20,7 @@ module TextMagic
     # Entity ID(s), separated by comma
     attr_accessor :all
 
-    # Default is empty string. If set then all entities with specified status will be affected.
+    # Default is empty string. If set, all entities with specified status will be affected.
     attr_accessor :status
 
     class EnumAttributeValidator

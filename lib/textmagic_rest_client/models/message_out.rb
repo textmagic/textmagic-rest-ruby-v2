@@ -20,7 +20,7 @@ module TextMagic
     # Message sender (phone number or alphanumeric Sender ID).
     attr_accessor :sender
 
-    # Recipient phone number.
+    # Recipient`s phone number.
     attr_accessor :receiver
 
     attr_accessor :text
@@ -31,7 +31,7 @@ module TextMagic
     # Recipient contact ID.
     attr_accessor :contact_id
 
-    # Message Session ID of a Message.
+    # Message Session ID of a message.
     attr_accessor :session_id
 
     # Sending time.
@@ -57,7 +57,7 @@ module TextMagic
     # The 2-letter ISO country code of the recipient's phone number. 
     attr_accessor :country
 
-    # Receipent phone number.
+    # Receipent`s phone number.
     attr_accessor :phone
 
     # Message price.
@@ -66,7 +66,7 @@ module TextMagic
     # Message parts (multiples of 160 characters) count.
     attr_accessor :parts_count
 
-    # The user email which this message came from. For Email2SMS and Distribution Lists the message will come from an original email address; in other cases, it will come from an account email address.
+    # The user email which this message came from. For Email2SMS and Distribution Lists the messages, it is an original email address - in other cases, it is an account email address.
     attr_accessor :from_email
 
     # The Phone number used to send the SMS.

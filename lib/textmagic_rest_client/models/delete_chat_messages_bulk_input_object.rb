@@ -14,16 +14,16 @@ require 'date'
 
 module TextMagic
   class DeleteChatMessagesBulkInputObject
-    # Inbound messages ID(s) to delete. Require when \"all\" equal to 0 (false).
+    # Inbound message IDs to delete. Require when \"all\" is equal to 0 (false).
     attr_accessor :inbound_ids
 
-    # Sent messages ID(s) to delete. Require when \"all\" equal to 0 (false).
+    # Sent message IDs to delete. Require when \"all\" is equal to 0 (false).
     attr_accessor :sent_ids
 
-    # Calls ID(s) to delete. Require when \"all\" equal to 0 (false).
+    # Calls IDs to delete. Require when \"all\" is equal to 0 (false).
     attr_accessor :calls_ids
 
-    # Default is 0 (false). If set to 1 all the entities will be removed.
+    # Default is 0 (false). If set to 1, all entities will be removed.
     attr_accessor :all
 
     # Attribute mapping from ruby-style variable name to JSON key.

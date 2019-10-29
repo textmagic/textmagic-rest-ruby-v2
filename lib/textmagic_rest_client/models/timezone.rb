@@ -20,10 +20,10 @@ module TextMagic
     # Timezone area.
     attr_accessor :area
 
-    # Is Daylight saving time used in this timezone?
+    # Is daylight saving time used in this timezone?
     attr_accessor :dst
 
-    # Offset from UTC time in seconds. In this example it is 21600/60/60=6 hours.
+    # Offset from UTC time in seconds. In this example, it is 21600/60/60=6 hours.
     attr_accessor :offset
 
     # User-friendly timezone name (with spaces replaced by underscores).

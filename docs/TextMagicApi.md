@@ -89,9 +89,9 @@ Method | HTTP request | Description
 [**get_lists_of_contact**](TextMagicApi.md#get_lists_of_contact) | **GET** /api/v2/contacts/{id}/lists | Get contact&#39;s lists
 [**get_message_preview**](TextMagicApi.md#get_message_preview) | **GET** /api/v2/messages/preview | Preview message
 [**get_message_price**](TextMagicApi.md#get_message_price) | **GET** /api/v2/messages/price/normalized | Check message price
-[**get_message_session**](TextMagicApi.md#get_message_session) | **GET** /api/v2/sessions/{id} | Get a session details
-[**get_message_session_stat**](TextMagicApi.md#get_message_session_stat) | **GET** /api/v2/sessions/{id}/stat | Get a session statistics
-[**get_messages_by_session_id**](TextMagicApi.md#get_messages_by_session_id) | **GET** /api/v2/sessions/{id}/messages | Get a session messages
+[**get_message_session**](TextMagicApi.md#get_message_session) | **GET** /api/v2/sessions/{id} | Get a session&#x60;s details
+[**get_message_session_stat**](TextMagicApi.md#get_message_session_stat) | **GET** /api/v2/sessions/{id}/stat | Get a session&#x60;s statistics
+[**get_messages_by_session_id**](TextMagicApi.md#get_messages_by_session_id) | **GET** /api/v2/sessions/{id}/messages | Get a session&#x60;s messages
 [**get_messaging_counters**](TextMagicApi.md#get_messaging_counters) | **GET** /api/v2/stats/messaging/data | Get sent/received messages counters values
 [**get_messaging_stat**](TextMagicApi.md#get_messaging_stat) | **GET** /api/v2/stats/messaging | Get messaging statistics
 [**get_outbound_message**](TextMagicApi.md#get_outbound_message) | **GET** /api/v2/messages/{id} | Get a single message
@@ -104,7 +104,7 @@ Method | HTTP request | Description
 [**get_subaccount**](TextMagicApi.md#get_subaccount) | **GET** /api/v2/subaccounts/{id} | Get sub-account information
 [**get_subaccounts**](TextMagicApi.md#get_subaccounts) | **GET** /api/v2/subaccounts | Get sub-accounts list
 [**get_subaccounts_with_tokens**](TextMagicApi.md#get_subaccounts_with_tokens) | **POST** /api/v2/subaccounts/tokens/list | Get all sub-accounts with their REST API tokens associated with app name
-[**get_template**](TextMagicApi.md#get_template) | **GET** /api/v2/templates/{id} | Get a template details
+[**get_template**](TextMagicApi.md#get_template) | **GET** /api/v2/templates/{id} | Get a template&#x60;s details
 [**get_timezones**](TextMagicApi.md#get_timezones) | **GET** /api/v2/timezones | Get timezones
 [**get_unread_messages_total**](TextMagicApi.md#get_unread_messages_total) | **GET** /api/v2/chats/unread/count | Get unread messages number
 [**get_unsubscribed_contact**](TextMagicApi.md#get_unsubscribed_contact) | **GET** /api/v2/unsubscribers/{id} | Get the details of a specific unsubscribed contact
@@ -480,7 +480,7 @@ Name | Type | Description  | Notes
 
 Close chats (bulk)
 
-Close chats by chat ids or close all chats
+Close chats by chat IDs or close all chats
 
 ### Example
 ```ruby
@@ -1036,7 +1036,7 @@ nil (empty response body)
 
 Delete chat messages by ID(s)
 
-Delete messages from chat by given messages ID(s).
+Delete messages from chat by given message IDs.
 
 ### Example
 ```ruby
@@ -1091,7 +1091,7 @@ nil (empty response body)
 
 Delete chats (bulk)
 
-Delete chats by given ID(s) or delete all chats.
+Delete chats by given IDs or delete all chats.
 
 ### Example
 ```ruby
@@ -1932,7 +1932,7 @@ nil (empty response body)
 
 Delete sessions (bulk)
 
-Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
+Delete message sessions, together with all nested messages, by given ID(s) or delete all message sessions.
 
 ### Example
 ```ruby
@@ -2296,7 +2296,7 @@ nil (empty response body)
 
 Delete templates (bulk)
 
-Delete template by given ID(s) or delete all templates.
+Delete templates by given IDs or delete all templates.
 
 ### Example
 ```ruby
@@ -4524,8 +4524,8 @@ opts = {
   limit: 10, # Integer | The number of results per page.
   order_by: 'id', # String | Order results by some field. Default is id.
   direction: 'desc', # String | Order direction. Default is desc.
-  favorite_only: 0, # Integer | Return only favorite lists
-  only_mine: 0 # Integer | Return only current user lists
+  favorite_only: 0, # Integer | Return only favorited lists.
+  only_mine: 0 # Integer | Return only current user lists.
 }
 
 begin
@@ -4545,8 +4545,8 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
  **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
- **favorite_only** | **Integer**| Return only favorite lists | [optional] [default to 0]
- **only_mine** | **Integer**| Return only current user lists | [optional] [default to 0]
+ **favorite_only** | **Integer**| Return only favorited lists. | [optional] [default to 0]
+ **only_mine** | **Integer**| Return only current user lists. | [optional] [default to 0]
 
 ### Return type
 
@@ -4799,9 +4799,9 @@ Name | Type | Description  | Notes
 # **get_message_session**
 > MessageSession get_message_session(id)
 
-Get a session details
+Get a session`s details
 
-Get a specific session’s details
+Get a specific session’s details.
 
 ### Example
 ```ruby
@@ -4816,11 +4816,11 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-id = 1 # Integer | a session ID
+id = 1 # Integer | Session ID.
 
 
 begin
-  #Get a session details
+  #Get a session`s details
   result = api_instance.get_message_session(id)
   p result
 rescue TextMagic::ApiError => e
@@ -4832,7 +4832,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**| a session ID | 
+ **id** | **Integer**| Session ID. | 
 
 ### Return type
 
@@ -4852,7 +4852,7 @@ Name | Type | Description  | Notes
 # **get_message_session_stat**
 > GetMessageSessionStatResponse get_message_session_stat(id, opts)
 
-Get a session statistics
+Get a session`s statistics
 
 
 
@@ -4872,11 +4872,11 @@ api_instance = TextMagic::TextMagicApi.new
 id = 1 # Integer | 
 
 opts = { 
-  include_deleted: 0 # Integer | Search also in deleted messages
+  include_deleted: 0 # Integer | Search also in deleted messages.
 }
 
 begin
-  #Get a session statistics
+  #Get a session`s statistics
   result = api_instance.get_message_session_stat(id, opts)
   p result
 rescue TextMagic::ApiError => e
@@ -4889,7 +4889,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**|  | 
- **include_deleted** | **Integer**| Search also in deleted messages | [optional] [default to 0]
+ **include_deleted** | **Integer**| Search also in deleted messages. | [optional] [default to 0]
 
 ### Return type
 
@@ -4909,9 +4909,9 @@ Name | Type | Description  | Notes
 # **get_messages_by_session_id**
 > GetMessagesBySessionIdPaginatedResponse get_messages_by_session_id(id, opts)
 
-Get a session messages
+Get a session`s messages
 
-A useful synonym for \"messages/search\" command with provided \"sessionId\" parameter.
+A useful synonym for the \"messages/search\" command with the provided \"sessionId\" parameter.
 
 ### Example
 ```ruby
@@ -4931,12 +4931,12 @@ id = 1 # Integer |
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  statuses: 'statuses_example', # String | Find messages by status
-  include_deleted: 0 # Integer | Search also in deleted messages
+  statuses: 'statuses_example', # String | Find messages by status.
+  include_deleted: 0 # Integer | Search also in deleted messages.
 }
 
 begin
-  #Get a session messages
+  #Get a session`s messages
   result = api_instance.get_messages_by_session_id(id, opts)
   p result
 rescue TextMagic::ApiError => e
@@ -4951,8 +4951,8 @@ Name | Type | Description  | Notes
  **id** | **Integer**|  | 
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **statuses** | **String**| Find messages by status | [optional] 
- **include_deleted** | **Integer**| Search also in deleted messages | [optional] [default to 0]
+ **statuses** | **String**| Find messages by status. | [optional] 
+ **include_deleted** | **Integer**| Search also in deleted messages. | [optional] [default to 0]
 
 ### Return type
 
@@ -5636,7 +5636,7 @@ Name | Type | Description  | Notes
 # **get_template**
 > MessageTemplate get_template(id)
 
-Get a template details
+Get a template`s details
 
 Get a single template.
 
@@ -5657,7 +5657,7 @@ id = 1 # Integer |
 
 
 begin
-  #Get a template details
+  #Get a template`s details
   result = api_instance.get_template(id)
   p result
 rescue TextMagic::ApiError => e
@@ -6073,7 +6073,7 @@ nil (empty response body)
 
 Mark chats as read (bulk)
 
-Mark several chats as read by chat ids or mark all chats as read
+Mark several chats as read by chat IDs or mark all chats as read
 
 ### Example
 ```ruby
@@ -6125,7 +6125,7 @@ nil (empty response body)
 
 Mark chats as unread (bulk)
 
-Mark several chats as UNread by chat ids or mark all chats as UNread
+Mark several chats as UNread by chat IDs or mark all chats as UNread
 
 ### Example
 ```ruby
@@ -6230,7 +6230,7 @@ Name | Type | Description  | Notes
 
 Mute chats (bulk)
 
-Mute several chats by chat ids or mute all chats
+Mute several chats by chat IDs or mute all chats
 
 ### Example
 ```ruby
@@ -6329,7 +6329,7 @@ This endpoint does not need any parameter.
 
 Reopen chats (bulk)
 
-Reopen chats by chat ids or reopen all chats
+Reopen chats by chat IDs or reopen all chats
 
 ### Example
 ```ruby
@@ -7023,9 +7023,9 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  ids: 'ids_example', # String | Find template by ID(s)
-  name: 'name_example', # String | Find template by name
-  content: 'content_example' # String | Find template by content
+  ids: 'ids_example', # String | Find template by ID(s).
+  name: 'name_example', # String | Find template by name.
+  content: 'content_example' # String | Find template by content.
 }
 
 begin
@@ -7043,9 +7043,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **ids** | **String**| Find template by ID(s) | [optional] 
- **name** | **String**| Find template by name | [optional] 
- **content** | **String**| Find template by content | [optional] 
+ **ids** | **String**| Find template by ID(s). | [optional] 
+ **name** | **String**| Find template by name. | [optional] 
+ **content** | **String**| Find template by content. | [optional] 
 
 ### Return type
 
@@ -7330,7 +7330,7 @@ nil (empty response body)
 
 Unmute chats (bulk)
 
-Unmute several chats by chat ids or unmute all chats
+Unmute several chats by chat IDs or unmute all chats
 
 ### Example
 ```ruby

@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class UserImage
-    # URI of a user avatar.
+    # The URI of a user avatar.
     attr_accessor :href
 
     # Attribute mapping from ruby-style variable name to JSON key.

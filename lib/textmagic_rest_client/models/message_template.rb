@@ -20,10 +20,10 @@ module TextMagic
     # Template name.
     attr_accessor :name
 
-    # Template text. May contain the tags. See [Custom fields list](http://docs.textmagictesting.com/#section/Custom-fields-list-(Merge-tags)).
+    # Template text. May contain tags inside braces. See the [Custom fields list](http://docs.textmagictesting.com/#section/Custom-fields-list-(Merge-tags)).
     attr_accessor :content
 
-    # Time when template was last modified.
+    # Time when the template was last modified.
     attr_accessor :last_modified
 
     # Attribute mapping from ruby-style variable name to JSON key.

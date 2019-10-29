@@ -23,7 +23,7 @@ module TextMagic
     # Session text. If a template was used for the session text (see [Messages: Send](http://docs.textmagictesting.com/#tag/Outbound-Messages) for details), it may contain template tags. 
     attr_accessor :text
 
-    # *   **O** – for TextMagic Online *   **A** – for API *   **M** – for TextMagic Messenger *   **E** – for [Email to SMS](http://docs.textmagictesting.com/#tag/Send-Email-to-SMS) *   **X** – for [Distribution Lists](http://docs.textmagictesting.com/#tag/Distribution-Lists) 
+    # *   **O** – for TextMagic Online; *   **A** – for API; *   **M** – for TextMagic Messenger; *   **E** – for [Email to SMS](http://docs.textmagictesting.com/#tag/Send-Email-to-SMS); *   **X** – for [Distribution Lists](http://docs.textmagictesting.com/#tag/Distribution-Lists). 
     attr_accessor :source
 
     # Custom reference ID (see [Messages: Send](http://docs.textmagictesting.com/#tag/Send-Email-to-SMS) for details). 
@@ -35,7 +35,7 @@ module TextMagic
     # Session recipient count.
     attr_accessor :numbers_count
 
-    # Destination type of a Message Session: * **t** - text SMS * **s** - text-to-speech * **v** - voice broadcast 
+    # Destination type of a Message Session: * **t** – text SMS; * **s** – text-to-speech; * **v** – voice broadcast. 
     attr_accessor :destination
 
     class EnumAttributeValidator

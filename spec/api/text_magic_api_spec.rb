@@ -108,7 +108,7 @@ describe 'TextMagicApi' do
 
   # unit tests for close_chats_bulk
   # Close chats (bulk)
-  # Close chats by chat ids or close all chats
+  # Close chats by chat IDs or close all chats
   # @param close_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -237,7 +237,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_chat_messages
   # Delete chat messages by ID(s)
-  # Delete messages from chat by given messages ID(s).
+  # Delete messages from chat by given message IDs.
   # @param delete_chat_messages_bulk_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -250,7 +250,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_chats_bulk
   # Delete chats (bulk)
-  # Delete chats by given ID(s) or delete all chats.
+  # Delete chats by given IDs or delete all chats.
   # @param delete_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -445,7 +445,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_message_sessions_bulk
   # Delete sessions (bulk)
-  # Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
+  # Delete message sessions, together with all nested messages, by given ID(s) or delete all message sessions.
   # @param delete_message_sessions_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -529,7 +529,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_templates_bulk
   # Delete templates (bulk)
-  # Delete template by given ID(s) or delete all templates.
+  # Delete templates by given IDs or delete all templates.
   # @param delete_templates_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1058,8 +1058,8 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :order_by Order results by some field. Default is id.
   # @option opts [String] :direction Order direction. Default is desc.
-  # @option opts [Integer] :favorite_only Return only favorite lists
-  # @option opts [Integer] :only_mine Return only current user lists
+  # @option opts [Integer] :favorite_only Return only favorited lists.
+  # @option opts [Integer] :only_mine Return only current user lists.
   # @return [GetListsPaginatedResponse]
   describe 'get_lists test' do
     it 'should work' do
@@ -1139,9 +1139,9 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_message_session
-  # Get a session details
-  # Get a specific session’s details
-  # @param id a session ID
+  # Get a session&#x60;s details
+  # Get a specific session’s details.
+  # @param id Session ID.
   # @param [Hash] opts the optional parameters
   # @return [MessageSession]
   describe 'get_message_session test' do
@@ -1151,11 +1151,11 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_message_session_stat
-  # Get a session statistics
+  # Get a session&#x60;s statistics
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :include_deleted Search also in deleted messages
+  # @option opts [Integer] :include_deleted Search also in deleted messages.
   # @return [GetMessageSessionStatResponse]
   describe 'get_message_session_stat test' do
     it 'should work' do
@@ -1164,14 +1164,14 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_messages_by_session_id
-  # Get a session messages
-  # A useful synonym for \&quot;messages/search\&quot; command with provided \&quot;sessionId\&quot; parameter.
+  # Get a session&#x60;s messages
+  # A useful synonym for the \&quot;messages/search\&quot; command with the provided \&quot;sessionId\&quot; parameter.
   # @param id 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :statuses Find messages by status
-  # @option opts [Integer] :include_deleted Search also in deleted messages
+  # @option opts [String] :statuses Find messages by status.
+  # @option opts [Integer] :include_deleted Search also in deleted messages.
   # @return [GetMessagesBySessionIdPaginatedResponse]
   describe 'get_messages_by_session_id test' do
     it 'should work' do
@@ -1336,7 +1336,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_template
-  # Get a template details
+  # Get a template&#x60;s details
   # Get a single template.
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -1438,7 +1438,7 @@ describe 'TextMagicApi' do
 
   # unit tests for mark_chats_read_bulk
   # Mark chats as read (bulk)
-  # Mark several chats as read by chat ids or mark all chats as read
+  # Mark several chats as read by chat IDs or mark all chats as read
   # @param mark_chats_read_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1450,7 +1450,7 @@ describe 'TextMagicApi' do
 
   # unit tests for mark_chats_unread_bulk
   # Mark chats as unread (bulk)
-  # Mark several chats as UNread by chat ids or mark all chats as UNread
+  # Mark several chats as UNread by chat IDs or mark all chats as UNread
   # @param mark_chats_unread_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1474,7 +1474,7 @@ describe 'TextMagicApi' do
 
   # unit tests for mute_chats_bulk
   # Mute chats (bulk)
-  # Mute several chats by chat ids or mute all chats
+  # Mute several chats by chat IDs or mute all chats
   # @param mute_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1497,7 +1497,7 @@ describe 'TextMagicApi' do
 
   # unit tests for reopen_chats_bulk
   # Reopen chats (bulk)
-  # Reopen chats by chat ids or reopen all chats
+  # Reopen chats by chat IDs or reopen all chats
   # @param reopen_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1676,9 +1676,9 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :ids Find template by ID(s)
-  # @option opts [String] :name Find template by name
-  # @option opts [String] :content Find template by content
+  # @option opts [String] :ids Find template by ID(s).
+  # @option opts [String] :name Find template by name.
+  # @option opts [String] :content Find template by content.
   # @return [SearchTemplatesPaginatedResponse]
   describe 'search_templates test' do
     it 'should work' do
@@ -1748,7 +1748,7 @@ describe 'TextMagicApi' do
 
   # unit tests for unmute_chats_bulk
   # Unmute chats (bulk)
-  # Unmute several chats by chat ids or unmute all chats
+  # Unmute several chats by chat IDs or unmute all chats
   # @param unmute_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]

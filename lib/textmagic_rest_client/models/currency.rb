@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class Currency
-    # Three-letter ISO currency ID.
+    # The 3-letter ISO currency ID.
     attr_accessor :id
 
     # Unicode-compatible currency symbol.
