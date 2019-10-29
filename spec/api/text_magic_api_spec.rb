@@ -1361,7 +1361,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_unread_messages_total
   # Get unread messages number
-  # Get total amount of unread messages in the current user chats.
+  # Get the total amount of unread messages in the current user chats.
   # @param [Hash] opts the optional parameters
   # @return [GetUnreadMessagesTotalResponse]
   describe 'get_unread_messages_total test' do
@@ -1537,7 +1537,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :query Find chats by specified search query
+  # @option opts [String] :query Find chats by specified search query.
   # @return [SearchChatsPaginatedResponse]
   describe 'search_chats test' do
     it 'should work' do
@@ -1551,7 +1551,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :ids Find chats by ID(s)
+  # @option opts [String] :ids Find chats by ID(s).
   # @return [SearchChatsByIdsPaginatedResponse]
   describe 'search_chats_by_ids test' do
     it 'should work' do
@@ -1712,7 +1712,7 @@ describe 'TextMagicApi' do
 
   # unit tests for set_chat_status
   # Change chat status
-  # Set status of the chat given by ID.
+  # Set the status of the chat given by ID.
   # @param set_chat_status_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]

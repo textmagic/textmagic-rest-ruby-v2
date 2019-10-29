@@ -29,7 +29,7 @@ module TextMagic
     # Account Email address.
     attr_accessor :email
 
-    # Current account status: * **A** for Active * **T** for Trial. 
+    # Current account status: * **A** for Active; * **T** for Trial. 
     attr_accessor :status
 
     # Account balance (in account currency).
@@ -47,7 +47,7 @@ module TextMagic
 
     attr_accessor :timezone
 
-    # Type of account: *   **A** for Administrator sub-account *   **U** for Regular User 
+    # Type of account: *   **A** for Administrator sub-account; *   **U** for Regular User. 
     attr_accessor :subaccount_type
 
     # Does the account have a confirmed Email?.

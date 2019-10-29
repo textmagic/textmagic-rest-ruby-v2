@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **unsubscribed_contact_id** | **Integer** | If this field has a value, it means that the chat phone number has been unsubscribed from you and this value is an ID of an Unsubscribed contact entity. See [Get all unsubscribed contacts](http://docs.textmagictesting.com/#operation/getUnsubscribers). | 
 **unread** | **Integer** | Total unread incoming messages. | 
 **updated_at** | **DateTime** | Time when the last incoming message arrived at this chat. | 
-**status** | **String** | Chat status:   * **a** - Active   * **c** - Closed   * **d** - Deleted  | 
+**status** | **String** | Chat status:   * **a** - Active;   * **c** - Closed;   * **d** - Deleted.  | 
 **mute** | **Integer** | Indicates when the chat is muted. | 
 **last_message** | **String** | The last message content of a chat. | 
 **direction** | **String** | Last message type: * **ci** - incoming call; * **co** - outgoing call; * **i** - incoming message; * **o** - outgoing message.  | 

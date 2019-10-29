@@ -5745,7 +5745,7 @@ Name | Type | Description  | Notes
 
 Get unread messages number
 
-Get total amount of unread messages in the current user chats.
+Get the total amount of unread messages in the current user chats.
 
 ### Example
 ```ruby
@@ -6505,7 +6505,7 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  query: 'query_example' # String | Find chats by specified search query
+  query: 'query_example' # String | Find chats by specified search query.
 }
 
 begin
@@ -6523,7 +6523,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **query** | **String**| Find chats by specified search query | [optional] 
+ **query** | **String**| Find chats by specified search query. | [optional] 
 
 ### Return type
 
@@ -6563,7 +6563,7 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  ids: 'ids_example' # String | Find chats by ID(s)
+  ids: 'ids_example' # String | Find chats by ID(s).
 }
 
 begin
@@ -6581,7 +6581,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **ids** | **String**| Find chats by ID(s) | [optional] 
+ **ids** | **String**| Find chats by ID(s). | [optional] 
 
 ### Return type
 
@@ -7173,7 +7173,7 @@ Name | Type | Description  | Notes
 
 Change chat status
 
-Set status of the chat given by ID.
+Set the status of the chat given by ID.
 
 ### Example
 ```ruby

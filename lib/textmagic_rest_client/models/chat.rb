@@ -33,7 +33,7 @@ module TextMagic
     # Time when the last incoming message arrived at this chat.
     attr_accessor :updated_at
 
-    # Chat status:   * **a** - Active   * **c** - Closed   * **d** - Deleted 
+    # Chat status:   * **a** - Active;   * **c** - Closed;   * **d** - Deleted. 
     attr_accessor :status
 
     # Indicates when the chat is muted.

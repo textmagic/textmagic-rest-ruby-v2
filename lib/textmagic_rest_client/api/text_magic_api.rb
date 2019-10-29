@@ -5727,7 +5727,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get unread messages number
-    # Get total amount of unread messages in the current user chats.
+    # Get the total amount of unread messages in the current user chats.
     # @param [Hash] opts the optional parameters
     # @return [GetUnreadMessagesTotalResponse]
     def get_unread_messages_total(opts = {})
@@ -5736,7 +5736,7 @@ module TextMagic
     end
 
     # Get unread messages number
-    # Get total amount of unread messages in the current user chats.
+    # Get the total amount of unread messages in the current user chats.
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetUnreadMessagesTotalResponse, Fixnum, Hash)>] GetUnreadMessagesTotalResponse data, response status code and response headers
     def get_unread_messages_total_with_http_info(opts = {})
@@ -6477,7 +6477,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [String] :query Find chats by specified search query
+    # @option opts [String] :query Find chats by specified search query.
     # @return [SearchChatsPaginatedResponse]
     def search_chats(opts = {})
       data, _status_code, _headers = search_chats_with_http_info(opts)
@@ -6489,7 +6489,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [String] :query Find chats by specified search query
+    # @option opts [String] :query Find chats by specified search query.
     # @return [Array<(SearchChatsPaginatedResponse, Fixnum, Hash)>] SearchChatsPaginatedResponse data, response status code and response headers
     def search_chats_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -6534,7 +6534,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [String] :ids Find chats by ID(s)
+    # @option opts [String] :ids Find chats by ID(s).
     # @return [SearchChatsByIdsPaginatedResponse]
     def search_chats_by_ids(opts = {})
       data, _status_code, _headers = search_chats_by_ids_with_http_info(opts)
@@ -6546,7 +6546,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [String] :ids Find chats by ID(s)
+    # @option opts [String] :ids Find chats by ID(s).
     # @return [Array<(SearchChatsByIdsPaginatedResponse, Fixnum, Hash)>] SearchChatsByIdsPaginatedResponse data, response status code and response headers
     def search_chats_by_ids_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -7234,7 +7234,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Change chat status
-    # Set status of the chat given by ID.
+    # Set the status of the chat given by ID.
     # @param set_chat_status_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -7244,7 +7244,7 @@ module TextMagic
     end
 
     # Change chat status
-    # Set status of the chat given by ID.
+    # Set the status of the chat given by ID.
     # @param set_chat_status_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
