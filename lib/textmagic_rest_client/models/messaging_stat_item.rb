@@ -17,7 +17,7 @@ module TextMagic
     # The number of incoming messages divided by the number of total messages.
     attr_accessor :reply_rate
 
-    # Time interval start, empty if the **by** parameter was set to **off**. 
+    # Time interval start: empty if the **by** parameter was set to **off**. 
     attr_accessor :date
 
     # Message delivery rate:the number of delivered messages divided by the number of total messages.
@@ -32,13 +32,13 @@ module TextMagic
     # Delivered messages count. As messages are retried for up to 48 hours, this value could change.
     attr_accessor :messages_sent_delivered
 
-    # Messages accepted for delivery (in queue), but not yet delivered.
+    # Messages accepted for delivery (in queue) but not yet delivered.
     attr_accessor :messages_sent_accepted
 
     # Messages buffered by endpoint cell phone operators.
     attr_accessor :messages_sent_buffered
 
-    # Messages that have failed for whatever reason, e.g. the destination phone was switched off for 48 hours or the recipient phone account is out of service.
+    # Messages that have failed for whatever reason, e.g. the destination phone was switched off for 48 hours or the recipient's phone account is out of service.
     attr_accessor :messages_sent_failed
 
     # Messages that were rejected: invalid Sender ID used (e.g. you cannot use the Sender ID or your own mobile number when sending to the United States and Canada.) 

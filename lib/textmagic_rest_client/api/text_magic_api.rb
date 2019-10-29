@@ -4120,7 +4120,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [String] :query Find contacts or lists by specified search query
+    # @option opts [String] :query Find contacts or lists by specified search query.
     # @return [GetFavoritesPaginatedResponse]
     def get_favorites(opts = {})
       data, _status_code, _headers = get_favorites_with_http_info(opts)
@@ -4132,7 +4132,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [String] :query Find contacts or lists by specified search query
+    # @option opts [String] :query Find contacts or lists by specified search query.
     # @return [Array<(GetFavoritesPaginatedResponse, Fixnum, Hash)>] GetFavoritesPaginatedResponse data, response status code and response headers
     def get_favorites_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -5000,7 +5000,7 @@ module TextMagic
     # Get messaging statistics
     # 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :by *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year  (default to off)
+    # @option opts [String] :by *   **off** - to get total values per specified time interval; *   **day** - to show values grouped by day; *   **month** - to show values grouped by month; *   **year** - to show values grouped by year.  (default to off)
     # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
     # @option opts [Integer] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
     # @return [GetMessagingStatResponse]
@@ -5012,7 +5012,7 @@ module TextMagic
     # Get messaging statistics
     # 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :by *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year 
+    # @option opts [String] :by *   **off** - to get total values per specified time interval; *   **day** - to show values grouped by day; *   **month** - to show values grouped by month; *   **year** - to show values grouped by year. 
     # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
     # @option opts [Integer] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
     # @return [Array<(GetMessagingStatResponse, Fixnum, Hash)>] GetMessagingStatResponse data, response status code and response headers
@@ -5507,7 +5507,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get sub-accounts list
+    # Get a sub-accounts list
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -5518,7 +5518,7 @@ module TextMagic
       data
     end
 
-    # Get sub-accounts list
+    # Get a sub-accounts list
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -5561,7 +5561,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get all sub-accounts with their REST API tokens associated with app name
+    # Get all sub-accounts with their REST API tokens associated with a specified app name
     # Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
     # @param get_subaccounts_with_tokens_input_object 
     # @param [Hash] opts the optional parameters
@@ -5573,7 +5573,7 @@ module TextMagic
       data
     end
 
-    # Get all sub-accounts with their REST API tokens associated with app name
+    # Get all sub-accounts with their REST API tokens associated with a specified app name
     # Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
     # @param get_subaccounts_with_tokens_input_object 
     # @param [Hash] opts the optional parameters
@@ -5678,7 +5678,7 @@ module TextMagic
     # Get timezones
     # Return all available timezone IDs
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0 (default to 0)
+    # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0. (default to 0)
     # @return [GetTimezonesResponse]
     def get_timezones(opts = {})
       data, _status_code, _headers = get_timezones_with_http_info(opts)
@@ -5688,7 +5688,7 @@ module TextMagic
     # Get timezones
     # Return all available timezone IDs
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0
+    # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0.
     # @return [Array<(GetTimezonesResponse, Fixnum, Hash)>] GetTimezonesResponse data, response status code and response headers
     def get_timezones_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -6266,7 +6266,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Ping
-    # Make a simple ping request
+    # Make a simple ping request.
     # @param [Hash] opts the optional parameters
     # @return [PingResponse]
     def ping(opts = {})
@@ -6275,7 +6275,7 @@ module TextMagic
     end
 
     # Ping
-    # Make a simple ping request
+    # Make a simple ping request.
     # @param [Hash] opts the optional parameters
     # @return [Array<(PingResponse, Fixnum, Hash)>] PingResponse data, response status code and response headers
     def ping_with_http_info(opts = {})
@@ -8165,7 +8165,7 @@ module TextMagic
     end
     # Upload an avatar
     # 
-    # @param image User avatar. Should be PNG or JPG file not more than 10 MB
+    # @param image User avatar. Should be a PNG or JPG file not more than 10 MB.
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def upload_avatar(image, opts = {})
@@ -8175,7 +8175,7 @@ module TextMagic
 
     # Upload an avatar
     # 
-    # @param image User avatar. Should be PNG or JPG file not more than 10 MB
+    # @param image User avatar. Should be a PNG or JPG file not more than 10 MB.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def upload_avatar_with_http_info(image, opts = {})

@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class InviteSubaccountInputObject
-    # Invitation email will be sent to this email address.
+    # The invitation email will be sent to this email address.
     attr_accessor :email
 
     # Type of account: *   **A** for Administrator sub-account; *   **U** for Regular User. 

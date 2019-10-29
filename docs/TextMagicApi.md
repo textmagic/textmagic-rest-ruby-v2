@@ -102,8 +102,8 @@ Method | HTTP request | Description
 [**get_sender_settings**](TextMagicApi.md#get_sender_settings) | **GET** /api/v2/sender/settings/normalized | Get current sender settings
 [**get_spending_stat**](TextMagicApi.md#get_spending_stat) | **GET** /api/v2/stats/spending | Get spending statistics
 [**get_subaccount**](TextMagicApi.md#get_subaccount) | **GET** /api/v2/subaccounts/{id} | Get sub-account information
-[**get_subaccounts**](TextMagicApi.md#get_subaccounts) | **GET** /api/v2/subaccounts | Get sub-accounts list
-[**get_subaccounts_with_tokens**](TextMagicApi.md#get_subaccounts_with_tokens) | **POST** /api/v2/subaccounts/tokens/list | Get all sub-accounts with their REST API tokens associated with app name
+[**get_subaccounts**](TextMagicApi.md#get_subaccounts) | **GET** /api/v2/subaccounts | Get a sub-accounts list
+[**get_subaccounts_with_tokens**](TextMagicApi.md#get_subaccounts_with_tokens) | **POST** /api/v2/subaccounts/tokens/list | Get all sub-accounts with their REST API tokens associated with a specified app name
 [**get_template**](TextMagicApi.md#get_template) | **GET** /api/v2/templates/{id} | Get a template&#x60;s details
 [**get_timezones**](TextMagicApi.md#get_timezones) | **GET** /api/v2/timezones | Get timezones
 [**get_unread_messages_total**](TextMagicApi.md#get_unread_messages_total) | **GET** /api/v2/chats/unread/count | Get unread messages number
@@ -4202,7 +4202,7 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  query: '\"A\"' # String | Find contacts or lists by specified search query
+  query: '\"A\"' # String | Find contacts or lists by specified search query.
 }
 
 begin
@@ -4220,7 +4220,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **query** | **String**| Find contacts or lists by specified search query | [optional] 
+ **query** | **String**| Find contacts or lists by specified search query. | [optional] 
 
 ### Return type
 
@@ -5037,7 +5037,7 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  by: 'off', # String | *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year 
+  by: 'off', # String | *   **off** - to get total values per specified time interval; *   **day** - to show values grouped by day; *   **month** - to show values grouped by month; *   **year** - to show values grouped by year. 
   start: 1430438400, # Integer | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
   _end: 1431648000 # Integer | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
 }
@@ -5055,7 +5055,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **by** | **String**| *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year  | [optional] [default to off]
+ **by** | **String**| *   **off** - to get total values per specified time interval; *   **day** - to show values grouped by day; *   **month** - to show values grouped by month; *   **year** - to show values grouped by year.  | [optional] [default to off]
  **start** | **Integer**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior.  | [optional] 
  **_end** | **Integer**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today.  | [optional] 
 
@@ -5521,7 +5521,7 @@ Name | Type | Description  | Notes
 # **get_subaccounts**
 > User get_subaccounts(opts)
 
-Get sub-accounts list
+Get a sub-accounts list
 
 
 
@@ -5544,7 +5544,7 @@ opts = {
 }
 
 begin
-  #Get sub-accounts list
+  #Get a sub-accounts list
   result = api_instance.get_subaccounts(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -5577,7 +5577,7 @@ Name | Type | Description  | Notes
 # **get_subaccounts_with_tokens**
 > GetSubaccountsWithTokensResponse get_subaccounts_with_tokens(get_subaccounts_with_tokens_input_object, opts)
 
-Get all sub-accounts with their REST API tokens associated with app name
+Get all sub-accounts with their REST API tokens associated with a specified app name
 
 Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
 
@@ -5602,7 +5602,7 @@ opts = {
 }
 
 begin
-  #Get all sub-accounts with their REST API tokens associated with app name
+  #Get all sub-accounts with their REST API tokens associated with a specified app name
   result = api_instance.get_subaccounts_with_tokens(get_subaccounts_with_tokens_input_object, opts)
   p result
 rescue TextMagic::ApiError => e
@@ -5707,7 +5707,7 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  full: 0 # Integer | Return full info about timezones in array (0 or 1). Default is 0
+  full: 0 # Integer | Return full info about timezones in array (0 or 1). Default is 0.
 }
 
 begin
@@ -5723,7 +5723,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **full** | **Integer**| Return full info about timezones in array (0 or 1). Default is 0 | [optional] [default to 0]
+ **full** | **Integer**| Return full info about timezones in array (0 or 1). Default is 0. | [optional] [default to 0]
 
 ### Return type
 
@@ -6282,7 +6282,7 @@ nil (empty response body)
 
 Ping
 
-Make a simple ping request
+Make a simple ping request.
 
 ### Example
 ```ruby
@@ -8100,7 +8100,7 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-image = File.new('/path/to/file.txt') # File | User avatar. Should be PNG or JPG file not more than 10 MB
+image = File.new('/path/to/file.txt') # File | User avatar. Should be a PNG or JPG file not more than 10 MB.
 
 
 begin
@@ -8115,7 +8115,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image** | **File**| User avatar. Should be PNG or JPG file not more than 10 MB | 
+ **image** | **File**| User avatar. Should be a PNG or JPG file not more than 10 MB. | 
 
 ### Return type
 

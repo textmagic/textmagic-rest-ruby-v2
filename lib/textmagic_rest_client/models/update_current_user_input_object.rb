@@ -29,7 +29,7 @@ module TextMagic
     # Account company name.
     attr_accessor :company
 
-    # The timezome internal id. See [Get timezones](http://docs.textmagictesting.com/#operation/getTimezones).
+    # The timezome internal ID. See [Get timezones](http://docs.textmagictesting.com/#operation/getTimezones).
     attr_accessor :timezone
 
     # Attribute mapping from ruby-style variable name to JSON key.

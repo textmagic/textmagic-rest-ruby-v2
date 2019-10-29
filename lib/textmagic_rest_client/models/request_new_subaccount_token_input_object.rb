@@ -14,13 +14,13 @@ require 'date'
 
 module TextMagic
   class RequestNewSubaccountTokenInputObject
-    # Subaccount ID
+    # Sub-account ID.
     attr_accessor :user_id
 
-    # Your account password
+    # Your account password.
     attr_accessor :password
 
-    # Application name
+    # Application name.
     attr_accessor :app_name
 
     # Attribute mapping from ruby-style variable name to JSON key.

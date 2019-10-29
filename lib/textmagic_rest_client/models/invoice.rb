@@ -17,10 +17,10 @@ module TextMagic
     # The invoice ID.
     attr_accessor :id
 
-    # Top up amount.
+    # Top-up amount.
     attr_accessor :bundle
 
-    # Top up currency.
+    # Top-up currency.
     attr_accessor :currency
 
     # VAT charged (if any).

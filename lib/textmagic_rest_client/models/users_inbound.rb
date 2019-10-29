@@ -17,7 +17,7 @@ module TextMagic
     # Dedicated number ID.
     attr_accessor :id
 
-    # Format for representation of time
+    # Format for representation of time.
     attr_accessor :display_time_format
 
     # Dedicated phone number.

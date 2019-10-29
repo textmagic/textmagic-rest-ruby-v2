@@ -17,7 +17,7 @@ module TextMagic
     # Numeric sender ID.
     attr_accessor :id
 
-    # Format for representation of time
+    # Format for representation of time.
     attr_accessor :display_time_format
 
     # Alphanumeric ID.
@@ -25,7 +25,7 @@ module TextMagic
 
     attr_accessor :user
 
-    # *   **P** for Pending. This Sender ID is being reviewed by our support team. *   **R** for Rejected. Our support team rejected your application for this Sender ID. *   **A** for Active. 
+    # *   **P** for Pending - this Sender ID is being reviewed by our support team; *   **R** for Rejected - our support team rejected your application for this Sender ID; *   **A** for Active. 
     attr_accessor :status
 
     class EnumAttributeValidator

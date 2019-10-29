@@ -982,7 +982,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :query Find contacts or lists by specified search query
+  # @option opts [String] :query Find contacts or lists by specified search query.
   # @return [GetFavoritesPaginatedResponse]
   describe 'get_favorites test' do
     it 'should work' do
@@ -1194,7 +1194,7 @@ describe 'TextMagicApi' do
   # Get messaging statistics
   # 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :by *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year 
+  # @option opts [String] :by *   **off** - to get total values per specified time interval; *   **day** - to show values grouped by day; *   **month** - to show values grouped by month; *   **year** - to show values grouped by year. 
   # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
   # @option opts [Integer] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
   # @return [GetMessagingStatResponse]
@@ -1309,7 +1309,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_subaccounts
-  # Get sub-accounts list
+  # Get a sub-accounts list
   # 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
@@ -1322,7 +1322,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_subaccounts_with_tokens
-  # Get all sub-accounts with their REST API tokens associated with app name
+  # Get all sub-accounts with their REST API tokens associated with a specified app name
   # Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
   # @param get_subaccounts_with_tokens_input_object 
   # @param [Hash] opts the optional parameters
@@ -1351,7 +1351,7 @@ describe 'TextMagicApi' do
   # Get timezones
   # Return all available timezone IDs
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0
+  # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0.
   # @return [GetTimezonesResponse]
   describe 'get_timezones test' do
     it 'should work' do
@@ -1486,7 +1486,7 @@ describe 'TextMagicApi' do
 
   # unit tests for ping
   # Ping
-  # Make a simple ping request
+  # Make a simple ping request.
   # @param [Hash] opts the optional parameters
   # @return [PingResponse]
   describe 'ping test' do
@@ -1923,7 +1923,7 @@ describe 'TextMagicApi' do
   # unit tests for upload_avatar
   # Upload an avatar
   # 
-  # @param image User avatar. Should be PNG or JPG file not more than 10 MB
+  # @param image User avatar. Should be a PNG or JPG file not more than 10 MB.
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'upload_avatar test' do

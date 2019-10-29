@@ -17,7 +17,7 @@ module TextMagic
     # Pong.
     attr_accessor :ping
 
-    # Current date time
+    # Current date and time.
     attr_accessor :utc_date_time
 
     # Attribute mapping from ruby-style variable name to JSON key.
