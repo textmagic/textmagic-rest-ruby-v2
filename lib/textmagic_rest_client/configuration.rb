@@ -128,7 +128,7 @@ module TextMagic
     attr_accessor :force_ending_format
 
     def initialize
-      @scheme = 'http'
+      @scheme = 'https'
       @host = 'rest.textmagic.com'
       @base_path = ''
       @api_key = {}
