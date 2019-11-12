@@ -20,13 +20,13 @@ module TextMagic
     # Session creation time.
     attr_accessor :start_time
 
-    # Session text. If a template was used for the session text (see [Messages: Send](http://docs.textmagictesting.com/#tag/Outbound-Messages) for details), it may contain template tags. 
+    # Session text. If a template was used for the session text (see [Messages: Send](https://docs.textmagic.com/#tag/Outbound-Messages) for details), it may contain template tags. 
     attr_accessor :text
 
-    # *   **O** – for TextMagic Online; *   **A** – for API; *   **M** – for TextMagic Messenger; *   **E** – for [Email to SMS](http://docs.textmagictesting.com/#tag/Send-Email-to-SMS); *   **X** – for [Distribution Lists](http://docs.textmagictesting.com/#tag/Distribution-Lists). 
+    # *   **O** – for TextMagic Online; *   **A** – for API; *   **M** – for TextMagic Messenger; *   **E** – for [Email to SMS](https://docs.textmagic.com/#tag/Send-Email-to-SMS); *   **X** – for [Distribution Lists](https://docs.textmagic.com/#tag/Distribution-Lists). 
     attr_accessor :source
 
-    # Custom reference ID (see [Messages: Send](http://docs.textmagictesting.com/#tag/Send-Email-to-SMS) for details). 
+    # Custom reference ID (see [Messages: Send](https://docs.textmagic.com/#tag/Send-Email-to-SMS) for details). 
     attr_accessor :reference_id
 
     # Session cost (in account currency).

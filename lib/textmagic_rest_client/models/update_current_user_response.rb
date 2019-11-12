@@ -31,7 +31,7 @@ module TextMagic
     # Account company name.
     attr_accessor :company
 
-    # Internal timezone ID. See [Get timezones](http://docs.textmagictesting.com/#operation/getTimezones).
+    # Internal timezone ID. See [Get timezones](https://docs.textmagic.com/#operation/getTimezones).
     attr_accessor :timezone
 
     # Attribute mapping from ruby-style variable name to JSON key.

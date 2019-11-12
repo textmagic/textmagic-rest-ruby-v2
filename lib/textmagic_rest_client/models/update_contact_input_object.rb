@@ -29,7 +29,7 @@ module TextMagic
     # Contact company name.
     attr_accessor :company_name
 
-    # Comma-separated [list](http://docs.textmagictesting.com/#section/Lists) ID. Each contact must be assigned to at least one list.
+    # Comma-separated [list](https://docs.textmagic.com/#section/Lists) ID. Each contact must be assigned to at least one list.
     attr_accessor :lists
 
     # Is the contact marked as favorite?

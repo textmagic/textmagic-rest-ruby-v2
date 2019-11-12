@@ -24,7 +24,7 @@ module TextMagic
 
     attr_accessor :contact
 
-    # If this field has a value, it means that the chat phone number has been unsubscribed from you and this value is an ID of an Unsubscribed contact entity. See [Get all unsubscribed contacts](http://docs.textmagictesting.com/#operation/getUnsubscribers).
+    # If this field has a value, it means that the chat phone number has been unsubscribed from you and this value is an ID of an Unsubscribed contact entity. See [Get all unsubscribed contacts](https://docs.textmagic.com/#operation/getUnsubscribers).
     attr_accessor :unsubscribed_contact_id
 
     # Total unread incoming messages.

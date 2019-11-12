@@ -31,7 +31,7 @@ module TextMagic
     # Receiver's phone number.
     attr_accessor :receiver
 
-    # Message status (for chats outbound only). See [message delivery statuses](http://docs.textmagictesting.com/#section/Delivery-status-codes) for details.
+    # Message status (for chats outbound only). See [message delivery statuses](https://docs.textmagic.com/#section/Delivery-status-codes) for details.
     attr_accessor :status
 
     # Contact first name.
@@ -40,7 +40,7 @@ module TextMagic
     # Contact last name.
     attr_accessor :last_name
 
-    # Session ID of a message. See [message sessions](http://docs.textmagictesting.com/#tag/Outbound-Message-Sessions) for details.
+    # Session ID of a message. See [message sessions](https://docs.textmagic.com/#tag/Outbound-Message-Sessions) for details.
     attr_accessor :session_id
 
     class EnumAttributeValidator

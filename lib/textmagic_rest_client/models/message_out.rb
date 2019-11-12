@@ -25,7 +25,7 @@ module TextMagic
 
     attr_accessor :text
 
-    # Delivery status of the message. See [message delivery statuses](http://docs.textmagictesting.com/#section/Delivery-status-codes) for details. 
+    # Delivery status of the message. See [message delivery statuses](https://docs.textmagic.com/#section/Delivery-status-codes) for details. 
     attr_accessor :status
 
     # Recipient contact ID.
@@ -48,7 +48,7 @@ module TextMagic
     # Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS; *   **UTF-16BE** for Unicode SMS; *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages. 
     attr_accessor :charset_label
 
-    # Contact first name. Could be substituted from your [Contacts](http://docs.textmagictesting.com/#tag/Contacts) (even if you submitted the phone number instead of the contact ID). 
+    # Contact first name. Could be substituted from your [Contacts](https://docs.textmagic.com/#tag/Contacts) (even if you submitted the phone number instead of the contact ID). 
     attr_accessor :first_name
 
     # Contact last name.

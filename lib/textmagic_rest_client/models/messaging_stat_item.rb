@@ -23,7 +23,7 @@ module TextMagic
     # Message delivery rate:the number of delivered messages divided by the number of total messages.
     attr_accessor :delivery_rate
 
-    # Cost for sent messages during this period. The costs are in the [Account](http://docs.textmagictesting.com/#tag/User) currency. 
+    # Cost for sent messages during this period. The costs are in the [Account](https://docs.textmagic.com/#tag/User) currency. 
     attr_accessor :costs
 
     # Total received messages count.

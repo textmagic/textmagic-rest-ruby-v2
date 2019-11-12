@@ -23,7 +23,7 @@ module TextMagic
     # Description of the list.
     attr_accessor :description
 
-    # Is the List favorited? See [Favorites list](http://docs.textmagictesting.com/#operation/getFavourites).
+    # Is the List favorited? See [Favorites list](https://docs.textmagic.com/#operation/getFavourites).
     attr_accessor :favorited
 
     # List members count.

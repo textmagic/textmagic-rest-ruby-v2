@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class UpdateCustomFieldValueInputObject
-    # Contact ID. See [Contact](http://docs.textmagictesting.com/#tag/Contacts). 
+    # Contact ID. See [Contact](https://docs.textmagic.com/#tag/Contacts). 
     attr_accessor :contact_id
 
     # Custom field value. Note that this value is not parsed in any way; it is stored and used in tags exactly as you send it.

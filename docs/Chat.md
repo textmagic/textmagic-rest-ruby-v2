@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **original_id** | **Integer** |  | 
 **phone** | **String** | Chat partner&#39;s phone number. | 
 **contact** | [**Contact**](Contact.md) |  | 
-**unsubscribed_contact_id** | **Integer** | If this field has a value, it means that the chat phone number has been unsubscribed from you and this value is an ID of an Unsubscribed contact entity. See [Get all unsubscribed contacts](http://docs.textmagictesting.com/#operation/getUnsubscribers). | 
+**unsubscribed_contact_id** | **Integer** | If this field has a value, it means that the chat phone number has been unsubscribed from you and this value is an ID of an Unsubscribed contact entity. See [Get all unsubscribed contacts](https://docs.textmagic.com/#operation/getUnsubscribers). | 
 **unread** | **Integer** | Total unread incoming messages. | 
 **updated_at** | **DateTime** | Time when the last incoming message arrived at this chat. | 
 **status** | **String** | Chat status:   * **a** - Active;   * **c** - Closed;   * **d** - Deleted.  | 

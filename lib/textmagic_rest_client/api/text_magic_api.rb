@@ -20,7 +20,7 @@ module TextMagic
       @api_client = api_client
     end
     # Assign contacts to a list
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/assignContactsToList\" target=\"_blank\">Try in sandbox</a><br>> Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
+    # > Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
     # @param assign_contacts_to_list_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -31,7 +31,7 @@ module TextMagic
     end
 
     # Assign contacts to a list
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/assignContactsToList\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
+    # &gt; Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
     # @param assign_contacts_to_list_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -80,7 +80,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Block a contact by phone number
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/blockContact\" target=\"_blank\">Try in sandbox</a><br>Block a contact from inbound and outbound communication by phone number.
+    # Block a contact from inbound and outbound communication by phone number.
     # @param block_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -90,7 +90,7 @@ module TextMagic
     end
 
     # Block a contact by phone number
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/blockContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Block a contact from inbound and outbound communication by phone number.
+    # Block a contact from inbound and outbound communication by phone number.
     # @param block_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -134,7 +134,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Buy a dedicated number
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/buyDedicatedNumber\" target=\"_blank\">Try in sandbox</a><br>To buy a dedicated number, you first need to find an available number matching your criteria using the `/api/v2/numbers/available` command described above.
+    # To buy a dedicated number, you first need to find an available number matching your criteria using the `/api/v2/numbers/available` command described above.
     # @param buy_dedicated_number_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -144,7 +144,7 @@ module TextMagic
     end
 
     # Buy a dedicated number
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/buyDedicatedNumber\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;To buy a dedicated number, you first need to find an available number matching your criteria using the &#x60;/api/v2/numbers/available&#x60; command described above.
+    # To buy a dedicated number, you first need to find an available number matching your criteria using the &#x60;/api/v2/numbers/available&#x60; command described above.
     # @param buy_dedicated_number_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -187,7 +187,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Cancel verification process
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Two-factor%20authentication/cancelVerification\" target=\"_blank\">Try in sandbox</a><br>You can cancel the verification not earlier than 30 seconds after the initial request.
+    # You can cancel the verification not earlier than 30 seconds after the initial request.
     # @param verify_id The verifyId that you received in Step 1.
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -197,7 +197,7 @@ module TextMagic
     end
 
     # Cancel verification process
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Two-factor%20authentication/cancelVerification\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;You can cancel the verification not earlier than 30 seconds after the initial request.
+    # You can cancel the verification not earlier than 30 seconds after the initial request.
     # @param verify_id The verifyId that you received in Step 1.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -240,7 +240,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Step 2: Check the verification code 
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Two-factor%20authentication/checkPhoneVerificationCodeTFA\" target=\"_blank\">Try in sandbox</a><br>Check received code from user with the code which was actually sent.
+    # Check received code from user with the code which was actually sent.
     # @param check_phone_verification_code_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -250,7 +250,7 @@ module TextMagic
     end
 
     # Step 2: Check the verification code 
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Two-factor%20authentication/checkPhoneVerificationCodeTFA\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Check received code from user with the code which was actually sent.
+    # Check received code from user with the code which was actually sent.
     # @param check_phone_verification_code_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -293,7 +293,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Reset list members to the specified contacts
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/clearAndAssignContactsToList\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param clear_and_assign_contacts_to_list_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -304,7 +304,7 @@ module TextMagic
     end
 
     # Reset list members to the specified contacts
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/clearAndAssignContactsToList\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param clear_and_assign_contacts_to_list_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -353,7 +353,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Close chats (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/closeChatsBulk\" target=\"_blank\">Try in sandbox</a><br>Close chats by chat IDs or close all chats
+    # Close chats by chat IDs or close all chats
     # @param close_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -363,7 +363,7 @@ module TextMagic
     end
 
     # Close chats (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/closeChatsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Close chats by chat IDs or close all chats
+    # Close chats by chat IDs or close all chats
     # @param close_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -404,7 +404,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Close read chats
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/closeReadChats\" target=\"_blank\">Try in sandbox</a><br>Close all chats that have no unread messages.
+    # Close all chats that have no unread messages.
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def close_read_chats(opts = {})
@@ -413,7 +413,7 @@ module TextMagic
     end
 
     # Close read chats
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/closeReadChats\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Close all chats that have no unread messages.
+    # Close all chats that have no unread messages.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def close_read_chats_with_http_info(opts = {})
@@ -449,7 +449,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Close sub-account
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sub-Accounts/closeSubaccount\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -459,7 +459,7 @@ module TextMagic
     end
 
     # Close sub-account
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sub-Accounts/closeSubaccount\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -500,7 +500,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Add a new contact
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/createContact\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param create_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -510,7 +510,7 @@ module TextMagic
     end
 
     # Add a new contact
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/createContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param create_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -554,7 +554,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Create a new contact note
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contact%20Notes/createContactNote\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param create_contact_note_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -565,7 +565,7 @@ module TextMagic
     end
 
     # Create a new contact note
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contact%20Notes/createContactNote\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param create_contact_note_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -614,7 +614,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Add a new custom field
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Custom%20Fields/createCustomField\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param create_custom_field_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -624,7 +624,7 @@ module TextMagic
     end
 
     # Add a new custom field
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Custom%20Fields/createCustomField\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param create_custom_field_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -668,7 +668,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Create a new list
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/createList\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param create_list_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -678,7 +678,7 @@ module TextMagic
     end
 
     # Create a new list
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/createList\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param create_list_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -722,7 +722,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Create a template
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Templates/createTemplate\" target=\"_blank\">Try in sandbox</a><br>There are times when creating a new template makes sense (such as when targeting specific clients or improving your business strategies).  You can create new SMS templates for marketing purposes or SMS templates for business campaigns. 
+    # There are times when creating a new template makes sense (such as when targeting specific clients or improving your business strategies).  You can create new SMS templates for marketing purposes or SMS templates for business campaigns. 
     # @param create_template_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -732,7 +732,7 @@ module TextMagic
     end
 
     # Create a template
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Templates/createTemplate\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;There are times when creating a new template makes sense (such as when targeting specific clients or improving your business strategies).  You can create new SMS templates for marketing purposes or SMS templates for business campaigns. 
+    # There are times when creating a new template makes sense (such as when targeting specific clients or improving your business strategies).  You can create new SMS templates for marketing purposes or SMS templates for business campaigns. 
     # @param create_template_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -776,7 +776,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete contacts (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/deleteAllContacts\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def delete_all_contacts(opts = {})
@@ -785,7 +785,7 @@ module TextMagic
     end
 
     # Delete contacts (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/deleteAllContacts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_all_contacts_with_http_info(opts = {})
@@ -821,7 +821,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete all messages
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/deleteAllOutboundMessages\" target=\"_blank\">Try in sandbox</a><br>Delete all messages.
+    # Delete all messages.
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def delete_all_outbound_messages(opts = {})
@@ -830,7 +830,7 @@ module TextMagic
     end
 
     # Delete all messages
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/deleteAllOutboundMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete all messages.
+    # Delete all messages.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_all_outbound_messages_with_http_info(opts = {})
@@ -866,7 +866,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete an avatar
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Account/deleteAvatar\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def delete_avatar(opts = {})
@@ -875,7 +875,7 @@ module TextMagic
     end
 
     # Delete an avatar
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Account/deleteAvatar\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_avatar_with_http_info(opts = {})
@@ -911,7 +911,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete chat messages by ID(s)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/deleteChatMessages\" target=\"_blank\">Try in sandbox</a><br>Delete messages from chat by given message IDs.
+    # Delete messages from chat by given message IDs.
     # @param delete_chat_messages_bulk_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -922,7 +922,7 @@ module TextMagic
     end
 
     # Delete chat messages by ID(s)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/deleteChatMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete messages from chat by given message IDs.
+    # Delete messages from chat by given message IDs.
     # @param delete_chat_messages_bulk_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -968,7 +968,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete chats (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/deleteChatsBulk\" target=\"_blank\">Try in sandbox</a><br>Delete chats by given IDs or delete all chats.
+    # Delete chats by given IDs or delete all chats.
     # @param delete_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -978,7 +978,7 @@ module TextMagic
     end
 
     # Delete chats (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/deleteChatsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete chats by given IDs or delete all chats.
+    # Delete chats by given IDs or delete all chats.
     # @param delete_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1019,7 +1019,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a contact
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/deleteContact\" target=\"_blank\">Try in sandbox</a><br>> This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, use the Contact assignment command in the Lists section instead, rather than deleting the contact. 
+    # > This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, use the Contact assignment command in the Lists section instead, rather than deleting the contact. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1029,7 +1029,7 @@ module TextMagic
     end
 
     # Delete a contact
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/deleteContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, use the Contact assignment command in the Lists section instead, rather than deleting the contact. 
+    # &gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, use the Contact assignment command in the Lists section instead, rather than deleting the contact. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1070,7 +1070,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete an avatar
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/deleteContactAvatar\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1080,7 +1080,7 @@ module TextMagic
     end
 
     # Delete an avatar
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/deleteContactAvatar\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1123,7 +1123,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a contact note
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contact%20Notes/deleteContactNote\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1133,7 +1133,7 @@ module TextMagic
     end
 
     # Delete a contact note
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contact%20Notes/deleteContactNote\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1174,7 +1174,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete contact notes (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contact%20Notes/deleteContactNotesBulk\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param delete_contact_notes_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -1185,7 +1185,7 @@ module TextMagic
     end
 
     # Delete contact notes (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contact%20Notes/deleteContactNotesBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param delete_contact_notes_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -1231,7 +1231,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete contacts by IDs (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/deleteContactsByIds\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param delete_contacts_by_ids_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1241,7 +1241,7 @@ module TextMagic
     end
 
     # Delete contacts by IDs (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/deleteContactsByIds\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param delete_contacts_by_ids_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1282,7 +1282,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Unassign contacts from a list
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/deleteContactsFromList\" target=\"_blank\">Try in sandbox</a><br>> When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
+    # > When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
     # @param delete_contacs_from_list_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -1293,7 +1293,7 @@ module TextMagic
     end
 
     # Unassign contacts from a list
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/deleteContactsFromList\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
+    # &gt; When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
     # @param delete_contacs_from_list_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -1339,7 +1339,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a custom field
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Custom%20Fields/deleteCustomField\" target=\"_blank\">Try in sandbox</a><br>> When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
+    # > When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1349,7 +1349,7 @@ module TextMagic
     end
 
     # Delete a custom field
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Custom%20Fields/deleteCustomField\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
+    # &gt; When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1390,7 +1390,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Cancel a dedicated number subscription
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/deleteDedicatedNumber\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1400,7 +1400,7 @@ module TextMagic
     end
 
     # Cancel a dedicated number subscription
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/deleteDedicatedNumber\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1441,7 +1441,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a single inbound message
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/deleteInboundMessage\" target=\"_blank\">Try in sandbox</a><br>> Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+    # > Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
     # @param id The unique numeric ID for the inbound message.
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1451,7 +1451,7 @@ module TextMagic
     end
 
     # Delete a single inbound message
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/deleteInboundMessage\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+    # &gt; Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
     # @param id The unique numeric ID for the inbound message.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1492,7 +1492,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete inbound messages (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/deleteInboundMessagesBulk\" target=\"_blank\">Try in sandbox</a><br>> Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+    # > Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
     # @param delete_inbound_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1502,7 +1502,7 @@ module TextMagic
     end
 
     # Delete inbound messages (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/deleteInboundMessagesBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+    # &gt; Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
     # @param delete_inbound_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1543,7 +1543,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a list
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/deleteList\" target=\"_blank\">Try in sandbox</a><br>This command has no parameters. If successful, this command will return the standard delete response (204 No Content); otherwise, a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well, unless they were saved in another list.
+    # This command has no parameters. If successful, this command will return the standard delete response (204 No Content); otherwise, a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well, unless they were saved in another list.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1553,7 +1553,7 @@ module TextMagic
     end
 
     # Delete a list
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/deleteList\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;This command has no parameters. If successful, this command will return the standard delete response (204 No Content); otherwise, a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well, unless they were saved in another list.
+    # This command has no parameters. If successful, this command will return the standard delete response (204 No Content); otherwise, a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well, unless they were saved in another list.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1594,7 +1594,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete an avatar for a list
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/deleteListAvatar\" target=\"_blank\">Try in sandbox</a><br>Delete an avatar for a list
+    # Delete an avatar for a list
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1604,7 +1604,7 @@ module TextMagic
     end
 
     # Delete an avatar for a list
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/deleteListAvatar\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete an avatar for a list
+    # Delete an avatar for a list
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1647,7 +1647,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete contacts from a list (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/deleteListContactsBulk\" target=\"_blank\">Try in sandbox</a><br>Delete contacts from a list (bulk)
+    # Delete contacts from a list (bulk)
     # @param delete_list_contacts_bulk_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -1658,7 +1658,7 @@ module TextMagic
     end
 
     # Delete contacts from a list (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/deleteListContactsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete contacts from a list (bulk)
+    # Delete contacts from a list (bulk)
     # @param delete_list_contacts_bulk_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -1704,7 +1704,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete lists (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/deleteListsBulk\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param delete_lists_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1714,7 +1714,7 @@ module TextMagic
     end
 
     # Delete lists (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/deleteListsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param delete_lists_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1755,7 +1755,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a session
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sessions/deleteMessageSession\" target=\"_blank\">Try in sandbox</a><br>Delete a message session, together with all nested messages. > You will not be refunded for any deleted sent sessions. 
+    # Delete a message session, together with all nested messages. > You will not be refunded for any deleted sent sessions. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1765,7 +1765,7 @@ module TextMagic
     end
 
     # Delete a session
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sessions/deleteMessageSession\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete a message session, together with all nested messages. &gt; You will not be refunded for any deleted sent sessions. 
+    # Delete a message session, together with all nested messages. &gt; You will not be refunded for any deleted sent sessions. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1806,7 +1806,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete sessions (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sessions/deleteMessageSessionsBulk\" target=\"_blank\">Try in sandbox</a><br>Delete message sessions, together with all nested messages, by given ID(s) or delete all message sessions.
+    # Delete message sessions, together with all nested messages, by given ID(s) or delete all message sessions.
     # @param delete_message_sessions_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1816,7 +1816,7 @@ module TextMagic
     end
 
     # Delete sessions (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sessions/deleteMessageSessionsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete message sessions, together with all nested messages, by given ID(s) or delete all message sessions.
+    # Delete message sessions, together with all nested messages, by given ID(s) or delete all message sessions.
     # @param delete_message_sessions_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1857,7 +1857,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete message
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/deleteOutboundMessage\" target=\"_blank\">Try in sandbox</a><br>Delete a single message.
+    # Delete a single message.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1867,7 +1867,7 @@ module TextMagic
     end
 
     # Delete message
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/deleteOutboundMessage\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete a single message.
+    # Delete a single message.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1908,7 +1908,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete messages (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/deleteOutboundMessagesBulk\" target=\"_blank\">Try in sandbox</a><br>Delete outbound messages by the given ID(s) or delete all outbound messages.
+    # Delete outbound messages by the given ID(s) or delete all outbound messages.
     # @param delete_outbound_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1918,7 +1918,7 @@ module TextMagic
     end
 
     # Delete messages (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/deleteOutboundMessagesBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete outbound messages by the given ID(s) or delete all outbound messages.
+    # Delete outbound messages by the given ID(s) or delete all outbound messages.
     # @param delete_outbound_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1959,7 +1959,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a single scheduled message
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/deleteScheduledMessage\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1969,7 +1969,7 @@ module TextMagic
     end
 
     # Delete a single scheduled message
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/deleteScheduledMessage\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2010,7 +2010,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete scheduled messages (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/deleteScheduledMessagesBulk\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param delete_scheduled_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -2020,7 +2020,7 @@ module TextMagic
     end
 
     # Delete scheduled messages (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/deleteScheduledMessagesBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param delete_scheduled_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2061,7 +2061,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a Sender ID
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sender%20IDs/deleteSenderId\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -2071,7 +2071,7 @@ module TextMagic
     end
 
     # Delete a Sender ID
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sender%20IDs/deleteSenderId\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2112,7 +2112,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a template
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Templates/deleteTemplate\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -2122,7 +2122,7 @@ module TextMagic
     end
 
     # Delete a template
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Templates/deleteTemplate\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2163,7 +2163,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete templates (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Templates/deleteTemplatesBulk\" target=\"_blank\">Try in sandbox</a><br>Delete templates by given IDs or delete all templates.
+    # Delete templates by given IDs or delete all templates.
     # @param delete_templates_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -2173,7 +2173,7 @@ module TextMagic
     end
 
     # Delete templates (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Templates/deleteTemplatesBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete templates by given IDs or delete all templates.
+    # Delete templates by given IDs or delete all templates.
     # @param delete_templates_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2214,7 +2214,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Carrier Lookup
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lookup/doCarrierLookup\" target=\"_blank\">Try in sandbox</a><br>This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  > Numbers must be checked one by one. You cannot check multiple numbers in one request.   
+    # This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  > Numbers must be checked one by one. You cannot check multiple numbers in one request.   
     # @param phone Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers). 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :country This option must be specified only if the phone number is in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**. 
@@ -2225,7 +2225,7 @@ module TextMagic
     end
 
     # Carrier Lookup
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lookup/doCarrierLookup\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  &gt; Numbers must be checked one by one. You cannot check multiple numbers in one request.   
+    # This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  &gt; Numbers must be checked one by one. You cannot check multiple numbers in one request.   
     # @param phone Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers). 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :country This option must be specified only if the phone number is in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**. 
@@ -2271,7 +2271,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Email Lookup
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lookup/doEmailLookup\" target=\"_blank\">Try in sandbox</a><br>To get more details about an email address or to check whether it is a valid email or not, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  > Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
+    # To get more details about an email address or to check whether it is a valid email or not, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  > Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
     # @param email Email address.
     # @param [Hash] opts the optional parameters
     # @return [DoEmailLookupResponse]
@@ -2281,7 +2281,7 @@ module TextMagic
     end
 
     # Email Lookup
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lookup/doEmailLookup\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;To get more details about an email address or to check whether it is a valid email or not, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  &gt; Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
+    # To get more details about an email address or to check whether it is a valid email or not, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  &gt; Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
     # @param email Email address.
     # @param [Hash] opts the optional parameters
     # @return [Array<(DoEmailLookupResponse, Fixnum, Hash)>] DoEmailLookupResponse data, response status code and response headers
@@ -2325,7 +2325,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all bulk sessions
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getAllBulkSessions\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -2336,7 +2336,7 @@ module TextMagic
     end
 
     # Get all bulk sessions
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getAllBulkSessions\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -2379,7 +2379,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all chats
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/getAllChats\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :status Fetch only (a)ctive, (c)losed or (d)eleted chats.
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -2394,7 +2394,7 @@ module TextMagic
     end
 
     # Get all chats
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/getAllChats\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :status Fetch only (a)ctive, (c)losed or (d)eleted chats.
     # @option opts [Integer] :page Fetch specified results page.
@@ -2451,7 +2451,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all inbound messages
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/getAllInboundMessages\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -2464,7 +2464,7 @@ module TextMagic
     end
 
     # Get all inbound messages
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/getAllInboundMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -2517,7 +2517,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all sessions
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sessions/getAllMessageSessions\" target=\"_blank\">Try in sandbox</a><br>Get all message sending sessions. > This list contains all of your sessions, including those which were sent but not via API 
+    # Get all message sending sessions. > This list contains all of your sessions, including those which were sent but not via API 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -2528,7 +2528,7 @@ module TextMagic
     end
 
     # Get all sessions
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sessions/getAllMessageSessions\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get all message sending sessions. &gt; This list contains all of your sessions, including those which were sent but not via API 
+    # Get all message sending sessions. &gt; This list contains all of your sessions, including those which were sent but not via API 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -2571,7 +2571,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all messages
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getAllOutboundMessages\" target=\"_blank\">Try in sandbox</a><br>Get all user oubound messages.
+    # Get all user oubound messages.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -2583,7 +2583,7 @@ module TextMagic
     end
 
     # Get all messages
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getAllOutboundMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get all user oubound messages.
+    # Get all user oubound messages.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -2628,7 +2628,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all scheduled messages
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/getAllScheduledMessages\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -2642,7 +2642,7 @@ module TextMagic
     end
 
     # Get all scheduled messages
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/getAllScheduledMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -2700,7 +2700,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all templates
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Templates/getAllTemplates\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -2711,7 +2711,7 @@ module TextMagic
     end
 
     # Get all templates
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Templates/getAllTemplates\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -2754,7 +2754,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Find dedicated numbers available for purchase
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/getAvailableDedicatedNumbers\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param country The 2-letter dedicated number country ISO code.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :prefix Desired number prefix. Should include the country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
@@ -2766,7 +2766,7 @@ module TextMagic
     end
 
     # Find dedicated numbers available for purchase
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/getAvailableDedicatedNumbers\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param country The 2-letter dedicated number country ISO code.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :prefix Desired number prefix. Should include the country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
@@ -2815,7 +2815,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get available sender settings
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Overview/getAvailableSenderSettingOptions\" target=\"_blank\">Try in sandbox</a><br>Get all available sender setting options which can be used in the \"from\" parameter of the POST messages method.
+    # Get all available sender setting options which can be used in the \"from\" parameter of the POST messages method.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :country The 2-letter ISO country ID. If not specified, it returns all the available sender settings.
     # @return [GetAvailableSenderSettingOptionsResponse]
@@ -2825,7 +2825,7 @@ module TextMagic
     end
 
     # Get available sender settings
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Overview/getAvailableSenderSettingOptions\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get all available sender setting options which can be used in the \&quot;from\&quot; parameter of the POST messages method.
+    # Get all available sender setting options which can be used in the \&quot;from\&quot; parameter of the POST messages method.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :country The 2-letter ISO country ID. If not specified, it returns all the available sender settings.
     # @return [Array<(GetAvailableSenderSettingOptionsResponse, Fixnum, Hash)>] GetAvailableSenderSettingOptionsResponse data, response status code and response headers
@@ -2866,7 +2866,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/getBalanceNotificationOptions\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetBalanceNotificationOptionsResponse]
     def get_balance_notification_options(opts = {})
@@ -2875,7 +2875,7 @@ module TextMagic
     end
 
     # Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/getBalanceNotificationOptions\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetBalanceNotificationOptionsResponse, Fixnum, Hash)>] GetBalanceNotificationOptionsResponse data, response status code and response headers
     def get_balance_notification_options_with_http_info(opts = {})
@@ -2914,7 +2914,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get balance notification settings
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/getBalanceNotificationSettings\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetBalanceNotificationSettingsResponse]
     def get_balance_notification_settings(opts = {})
@@ -2923,7 +2923,7 @@ module TextMagic
     end
 
     # Get balance notification settings
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/getBalanceNotificationSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetBalanceNotificationSettingsResponse, Fixnum, Hash)>] GetBalanceNotificationSettingsResponse data, response status code and response headers
     def get_balance_notification_settings_with_http_info(opts = {})
@@ -2962,7 +2962,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get blocked contacts
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getBlockedContacts\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -2976,7 +2976,7 @@ module TextMagic
     end
 
     # Get blocked contacts
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getBlockedContacts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -3031,7 +3031,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get bulk session status
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getBulkSession\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [BulkSession]
@@ -3041,7 +3041,7 @@ module TextMagic
     end
 
     # Get bulk session status
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getBulkSession\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(BulkSession, Fixnum, Hash)>] BulkSession data, response status code and response headers
@@ -3085,7 +3085,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Fetch callback URL settings
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/getCallbackSettings\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetCallbackSettingsResponse]
     def get_callback_settings(opts = {})
@@ -3094,7 +3094,7 @@ module TextMagic
     end
 
     # Fetch callback URL settings
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/getCallbackSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetCallbackSettingsResponse, Fixnum, Hash)>] GetCallbackSettingsResponse data, response status code and response headers
     def get_callback_settings_with_http_info(opts = {})
@@ -3133,7 +3133,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a single chat
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/getChat\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Chat]
@@ -3143,7 +3143,7 @@ module TextMagic
     end
 
     # Get a single chat
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/getChat\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Chat, Fixnum, Hash)>] Chat data, response status code and response headers
@@ -3187,7 +3187,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Find chats by phone
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/getChatByPhone\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param phone 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :upsert Create a new chat if not found. (default to 0)
@@ -3199,7 +3199,7 @@ module TextMagic
     end
 
     # Find chats by phone
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/getChatByPhone\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param phone 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :upsert Create a new chat if not found.
@@ -3247,7 +3247,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get chat messages
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/getChatMessages\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -3264,7 +3264,7 @@ module TextMagic
     end
 
     # Get chat messages
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/getChatMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -3325,7 +3325,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get the details of a specific contact
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getContact\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id Contact ID.
     # @param [Hash] opts the optional parameters
     # @return [Contact]
@@ -3335,7 +3335,7 @@ module TextMagic
     end
 
     # Get the details of a specific contact
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id Contact ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(Contact, Fixnum, Hash)>] Contact data, response status code and response headers
@@ -3379,7 +3379,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get the details of a specific contact by phone number
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getContactByPhone\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param phone 
     # @param [Hash] opts the optional parameters
     # @return [Contact]
@@ -3389,7 +3389,7 @@ module TextMagic
     end
 
     # Get the details of a specific contact by phone number
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getContactByPhone\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param phone 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Contact, Fixnum, Hash)>] Contact data, response status code and response headers
@@ -3433,7 +3433,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Check if a phone number is blocked
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getContactIfBlocked\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param phone Phone number to check.
     # @param [Hash] opts the optional parameters
     # @return [Contact]
@@ -3443,7 +3443,7 @@ module TextMagic
     end
 
     # Check if a phone number is blocked
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getContactIfBlocked\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param phone Phone number to check.
     # @param [Hash] opts the optional parameters
     # @return [Array<(Contact, Fixnum, Hash)>] Contact data, response status code and response headers
@@ -3488,7 +3488,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Check import progress
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getContactImportSessionProgress\" target=\"_blank\">Try in sandbox</a><br>Get contact import session progress.
+    # Get contact import session progress.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [GetContactImportSessionProgressResponse]
@@ -3498,7 +3498,7 @@ module TextMagic
     end
 
     # Check import progress
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getContactImportSessionProgress\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get contact import session progress.
+    # Get contact import session progress.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetContactImportSessionProgressResponse, Fixnum, Hash)>] GetContactImportSessionProgressResponse data, response status code and response headers
@@ -3542,7 +3542,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a contact note
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contact%20Notes/getContactNote\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [ContactNote]
@@ -3552,7 +3552,7 @@ module TextMagic
     end
 
     # Get a contact note
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contact%20Notes/getContactNote\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContactNote, Fixnum, Hash)>] ContactNote data, response status code and response headers
@@ -3596,7 +3596,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Fetch notes assigned to a given contact
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contact%20Notes/getContactNotes\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -3608,7 +3608,7 @@ module TextMagic
     end
 
     # Fetch notes assigned to a given contact
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contact%20Notes/getContactNotes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -3656,7 +3656,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all contacts
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getContacts\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -3670,7 +3670,7 @@ module TextMagic
     end
 
     # Get all contacts
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getContacts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -3725,7 +3725,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get contacts autocomplete suggestions
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getContactsAutocomplete\" target=\"_blank\">Try in sandbox</a><br>Get contacts autocomplete suggestions by given search terms.
+    # Get contacts autocomplete suggestions by given search terms.
     # @param query Find recipients by specified search query.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -3737,7 +3737,7 @@ module TextMagic
     end
 
     # Get contacts autocomplete suggestions
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getContactsAutocomplete\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get contacts autocomplete suggestions by given search terms.
+    # Get contacts autocomplete suggestions by given search terms.
     # @param query Find recipients by specified search query.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit The number of results per page.
@@ -3786,7 +3786,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all contacts in a list
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/getContactsByListId\" target=\"_blank\">Try in sandbox</a><br>A useful synonym for the \"contacts/search\" command with the provided \"listId\" parameter.
+    # A useful synonym for the \"contacts/search\" command with the provided \"listId\" parameter.
     # @param id Given group ID.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -3800,7 +3800,7 @@ module TextMagic
     end
 
     # Get all contacts in a list
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/getContactsByListId\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;A useful synonym for the \&quot;contacts/search\&quot; command with the provided \&quot;listId\&quot; parameter.
+    # A useful synonym for the \&quot;contacts/search\&quot; command with the provided \&quot;listId\&quot; parameter.
     # @param id Given group ID.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -3858,7 +3858,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get countries
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Timezones%20and%20Countries/getCountries\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetCountriesResponse]
     def get_countries(opts = {})
@@ -3867,7 +3867,7 @@ module TextMagic
     end
 
     # Get countries
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Timezones%20and%20Countries/getCountries\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetCountriesResponse, Fixnum, Hash)>] GetCountriesResponse data, response status code and response headers
     def get_countries_with_http_info(opts = {})
@@ -3906,7 +3906,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get current account information
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Account/getCurrentUser\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @return [User]
     def get_current_user(opts = {})
@@ -3915,7 +3915,7 @@ module TextMagic
     end
 
     # Get current account information
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Account/getCurrentUser\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(User, Fixnum, Hash)>] User data, response status code and response headers
     def get_current_user_with_http_info(opts = {})
@@ -3954,7 +3954,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get the details of a specific custom field
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Custom%20Fields/getCustomField\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [UserCustomField]
@@ -3964,7 +3964,7 @@ module TextMagic
     end
 
     # Get the details of a specific custom field
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Custom%20Fields/getCustomField\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(UserCustomField, Fixnum, Hash)>] UserCustomField data, response status code and response headers
@@ -4008,7 +4008,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all custom fields
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Custom%20Fields/getCustomFields\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -4019,7 +4019,7 @@ module TextMagic
     end
 
     # Get all custom fields
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Custom%20Fields/getCustomFields\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -4062,7 +4062,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get the details of a specific dedicated number
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/getDedicatedNumber\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [UsersInbound]
@@ -4072,7 +4072,7 @@ module TextMagic
     end
 
     # Get the details of a specific dedicated number
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/getDedicatedNumber\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(UsersInbound, Fixnum, Hash)>] UsersInbound data, response status code and response headers
@@ -4116,7 +4116,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get favorite contacts and lists
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/getFavorites\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -4128,7 +4128,7 @@ module TextMagic
     end
 
     # Get favorite contacts and lists
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/getFavorites\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -4173,7 +4173,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a single inbound message
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/getInboundMessage\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id The unique numeric ID for the inbound message.
     # @param [Hash] opts the optional parameters
     # @return [MessageIn]
@@ -4183,7 +4183,7 @@ module TextMagic
     end
 
     # Get a single inbound message
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/getInboundMessage\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id The unique numeric ID for the inbound message.
     # @param [Hash] opts the optional parameters
     # @return [Array<(MessageIn, Fixnum, Hash)>] MessageIn data, response status code and response headers
@@ -4227,7 +4227,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get inbound messages notification settings
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/getInboundMessagesNotificationSettings\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetInboundMessagesNotificationSettingsResponse]
     def get_inbound_messages_notification_settings(opts = {})
@@ -4236,7 +4236,7 @@ module TextMagic
     end
 
     # Get inbound messages notification settings
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/getInboundMessagesNotificationSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetInboundMessagesNotificationSettingsResponse, Fixnum, Hash)>] GetInboundMessagesNotificationSettingsResponse data, response status code and response headers
     def get_inbound_messages_notification_settings_with_http_info(opts = {})
@@ -4275,7 +4275,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all invoices
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Invoices/getInvoices\" target=\"_blank\">Try in sandbox</a><br>With the TextMagic API, you can check the invoices and transactions for your account.
+    # With the TextMagic API, you can check the invoices and transactions for your account.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -4286,7 +4286,7 @@ module TextMagic
     end
 
     # Get all invoices
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Invoices/getInvoices\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;With the TextMagic API, you can check the invoices and transactions for your account.
+    # With the TextMagic API, you can check the invoices and transactions for your account.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -4329,7 +4329,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get the details of a specific list
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/getList\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array]
@@ -4339,7 +4339,7 @@ module TextMagic
     end
 
     # Get the details of a specific list
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/getList\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array, Fixnum, Hash)>] Array data, response status code and response headers
@@ -4383,7 +4383,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all contact IDs in a list
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/getListContactsIds\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [GetListContactsIdsResponse]
@@ -4393,7 +4393,7 @@ module TextMagic
     end
 
     # Get all contact IDs in a list
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/getListContactsIds\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetListContactsIdsResponse, Fixnum, Hash)>] GetListContactsIdsResponse data, response status code and response headers
@@ -4437,7 +4437,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all lists
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/getLists\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page The current fetched page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -4452,7 +4452,7 @@ module TextMagic
     end
 
     # Get all lists
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/getLists\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page The current fetched page.
     # @option opts [Integer] :limit The number of results per page.
@@ -4509,7 +4509,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a contact's lists
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/getListsOfContact\" target=\"_blank\">Try in sandbox</a><br>Get all the lists in which a contact is included.
+    # Get all the lists in which a contact is included.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -4521,7 +4521,7 @@ module TextMagic
     end
 
     # Get a contact&#39;s lists
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/getListsOfContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get all the lists in which a contact is included.
+    # Get all the lists in which a contact is included.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -4569,7 +4569,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Preview message
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getMessagePreview\" target=\"_blank\">Try in sandbox</a><br>Get a messages preview (with tags merged) of up to 100 messages per session.
+    # Get a messages preview (with tags merged) of up to 100 messages per session.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :text Message text. Required if **template_id** is not set.
     # @option opts [Integer] :template_id Template used instead of message text. Required if **text** is not set.
@@ -4582,7 +4582,7 @@ module TextMagic
     # @option opts [Integer] :cut_extra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. (default to 0)
     # @option opts [Integer] :parts_count Maximum message parts count (TextMagic allows sending of 1 to 6 message parts). (default to 6)
     # @option opts [Integer] :reference_id Custom message reference id which can be used in your application infrastructure.
-    # @option opts [String] :from One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
+    # @option opts [String] :from One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](https://docs.textmagic.com/#tag/Sender-IDs).
     # @option opts [String] :rule An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
     # @option opts [Integer] :create_chat Should the sending method try to create new Chat(if not exist) with specified recipients? (default to 0)
     # @option opts [Integer] :tts Send Text-to-Speech message. (default to 0)
@@ -4595,7 +4595,7 @@ module TextMagic
     end
 
     # Preview message
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getMessagePreview\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get a messages preview (with tags merged) of up to 100 messages per session.
+    # Get a messages preview (with tags merged) of up to 100 messages per session.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :text Message text. Required if **template_id** is not set.
     # @option opts [Integer] :template_id Template used instead of message text. Required if **text** is not set.
@@ -4608,7 +4608,7 @@ module TextMagic
     # @option opts [Integer] :cut_extra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead.
     # @option opts [Integer] :parts_count Maximum message parts count (TextMagic allows sending of 1 to 6 message parts).
     # @option opts [Integer] :reference_id Custom message reference id which can be used in your application infrastructure.
-    # @option opts [String] :from One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
+    # @option opts [String] :from One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](https://docs.textmagic.com/#tag/Sender-IDs).
     # @option opts [String] :rule An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
     # @option opts [Integer] :create_chat Should the sending method try to create new Chat(if not exist) with specified recipients?
     # @option opts [Integer] :tts Send Text-to-Speech message.
@@ -4668,7 +4668,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Check message price
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getMessagePrice\" target=\"_blank\">Try in sandbox</a><br>Check pricing for a new outbound message.
+    # Check pricing for a new outbound message.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :include_blocked Should we show the pricing for blocked contacts? (default to 0)
     # @option opts [String] :text Message text. Required if the **template_id** is not set.
@@ -4682,7 +4682,7 @@ module TextMagic
     # @option opts [Integer] :cut_extra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. (default to 0)
     # @option opts [Integer] :parts_count Maximum message parts count (TextMagic allows sending 1 to 6 message parts). (default to 6)
     # @option opts [Integer] :reference_id Custom message reference id which can be used in your application infrastructure.
-    # @option opts [String] :from One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
+    # @option opts [String] :from One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](https://docs.textmagic.com/#tag/Sender-IDs).
     # @option opts [String] :rule An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
     # @option opts [Integer] :create_chat Should the sending method try to create new Chat (if not exist) with specified recipients? (default to 0)
     # @option opts [Integer] :tts Send a Text-to-Speech message. (default to 0)
@@ -4695,7 +4695,7 @@ module TextMagic
     end
 
     # Check message price
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getMessagePrice\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Check pricing for a new outbound message.
+    # Check pricing for a new outbound message.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :include_blocked Should we show the pricing for blocked contacts?
     # @option opts [String] :text Message text. Required if the **template_id** is not set.
@@ -4709,7 +4709,7 @@ module TextMagic
     # @option opts [Integer] :cut_extra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead.
     # @option opts [Integer] :parts_count Maximum message parts count (TextMagic allows sending 1 to 6 message parts).
     # @option opts [Integer] :reference_id Custom message reference id which can be used in your application infrastructure.
-    # @option opts [String] :from One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
+    # @option opts [String] :from One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](https://docs.textmagic.com/#tag/Sender-IDs).
     # @option opts [String] :rule An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
     # @option opts [Integer] :create_chat Should the sending method try to create new Chat (if not exist) with specified recipients?
     # @option opts [Integer] :tts Send a Text-to-Speech message.
@@ -4770,7 +4770,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a session`s details
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sessions/getMessageSession\" target=\"_blank\">Try in sandbox</a><br>Get a specific session’s details.
+    # Get a specific session’s details.
     # @param id Session ID.
     # @param [Hash] opts the optional parameters
     # @return [MessageSession]
@@ -4780,7 +4780,7 @@ module TextMagic
     end
 
     # Get a session&#x60;s details
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sessions/getMessageSession\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get a specific session’s details.
+    # Get a specific session’s details.
     # @param id Session ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(MessageSession, Fixnum, Hash)>] MessageSession data, response status code and response headers
@@ -4824,7 +4824,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a session`s statistics
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sessions/getMessageSessionStat\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :include_deleted Search also in deleted messages. (default to 0)
@@ -4835,7 +4835,7 @@ module TextMagic
     end
 
     # Get a session&#x60;s statistics
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sessions/getMessageSessionStat\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :include_deleted Search also in deleted messages.
@@ -4881,7 +4881,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a session`s messages
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sessions/getMessagesBySessionId\" target=\"_blank\">Try in sandbox</a><br>A useful synonym for the \"messages/search\" command with the provided \"sessionId\" parameter.
+    # A useful synonym for the \"messages/search\" command with the provided \"sessionId\" parameter.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -4895,7 +4895,7 @@ module TextMagic
     end
 
     # Get a session&#x60;s messages
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sessions/getMessagesBySessionId\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;A useful synonym for the \&quot;messages/search\&quot; command with the provided \&quot;sessionId\&quot; parameter.
+    # A useful synonym for the \&quot;messages/search\&quot; command with the provided \&quot;sessionId\&quot; parameter.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -4950,7 +4950,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get sent/received messages counters values
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Statistics/getMessagingCounters\" target=\"_blank\">Try in sandbox</a><br>Get total contacts, sent messages and received messages counters values.
+    # Get total contacts, sent messages and received messages counters values.
     # @param [Hash] opts the optional parameters
     # @return [GetMessagingCountersResponse]
     def get_messaging_counters(opts = {})
@@ -4959,7 +4959,7 @@ module TextMagic
     end
 
     # Get sent/received messages counters values
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Statistics/getMessagingCounters\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get total contacts, sent messages and received messages counters values.
+    # Get total contacts, sent messages and received messages counters values.
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetMessagingCountersResponse, Fixnum, Hash)>] GetMessagingCountersResponse data, response status code and response headers
     def get_messaging_counters_with_http_info(opts = {})
@@ -4998,7 +4998,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get messaging statistics
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Statistics/getMessagingStat\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :by *   **off** - to get total values per specified time interval; *   **day** - to show values grouped by day; *   **month** - to show values grouped by month; *   **year** - to show values grouped by year.  (default to off)
     # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
@@ -5010,7 +5010,7 @@ module TextMagic
     end
 
     # Get messaging statistics
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Statistics/getMessagingStat\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :by *   **off** - to get total values per specified time interval; *   **day** - to show values grouped by day; *   **month** - to show values grouped by month; *   **year** - to show values grouped by year. 
     # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
@@ -5058,7 +5058,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a single message
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getOutboundMessage\" target=\"_blank\">Try in sandbox</a><br>Get a single outgoing message.
+    # Get a single outgoing message.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [MessageOut]
@@ -5068,7 +5068,7 @@ module TextMagic
     end
 
     # Get a single message
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getOutboundMessage\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get a single outgoing message.
+    # Get a single outgoing message.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(MessageOut, Fixnum, Hash)>] MessageOut data, response status code and response headers
@@ -5112,7 +5112,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get history
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getOutboundMessagesHistory\" target=\"_blank\">Try in sandbox</a><br>Get the outbound messages history.
+    # Get the outbound messages history.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID.
@@ -5126,7 +5126,7 @@ module TextMagic
     end
 
     # Get history
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getOutboundMessagesHistory\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get the outbound messages history.
+    # Get the outbound messages history.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit The number of results per page.
     # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID.
@@ -5181,7 +5181,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a single scheduled message
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/getScheduledMessage\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [MessagesIcs]
@@ -5191,7 +5191,7 @@ module TextMagic
     end
 
     # Get a single scheduled message
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/getScheduledMessage\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(MessagesIcs, Fixnum, Hash)>] MessagesIcs data, response status code and response headers
@@ -5235,7 +5235,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get the details of a specific Sender ID
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sender%20IDs/getSenderId\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [SenderId]
@@ -5245,7 +5245,7 @@ module TextMagic
     end
 
     # Get the details of a specific Sender ID
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sender%20IDs/getSenderId\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(SenderId, Fixnum, Hash)>] SenderId data, response status code and response headers
@@ -5289,7 +5289,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all your approved Sender IDs
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sender%20IDs/getSenderIds\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -5300,7 +5300,7 @@ module TextMagic
     end
 
     # Get all your approved Sender IDs
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sender%20IDs/getSenderIds\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -5343,7 +5343,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get current sender settings
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Overview/getSenderSettings\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :country Return sender settings enabled for sending to a specified country. Should be 2 upper-case characters.
     # @return [GetSenderSettingsResponse]
@@ -5353,7 +5353,7 @@ module TextMagic
     end
 
     # Get current sender settings
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Overview/getSenderSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :country Return sender settings enabled for sending to a specified country. Should be 2 upper-case characters.
     # @return [Array<(GetSenderSettingsResponse, Fixnum, Hash)>] GetSenderSettingsResponse data, response status code and response headers
@@ -5394,7 +5394,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get spending statistics
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Statistics/getSpendingStat\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -5407,7 +5407,7 @@ module TextMagic
     end
 
     # Get spending statistics
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Statistics/getSpendingStat\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -5454,7 +5454,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get sub-account information
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sub-Accounts/getSubaccount\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [User]
@@ -5464,7 +5464,7 @@ module TextMagic
     end
 
     # Get sub-account information
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sub-Accounts/getSubaccount\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(User, Fixnum, Hash)>] User data, response status code and response headers
@@ -5508,7 +5508,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a sub-accounts list
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sub-Accounts/getSubaccounts\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -5519,7 +5519,7 @@ module TextMagic
     end
 
     # Get a sub-accounts list
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sub-Accounts/getSubaccounts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -5562,7 +5562,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all sub-accounts with their REST API tokens associated with a specified app name
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sub-Accounts/getSubaccountsWithTokens\" target=\"_blank\">Try in sandbox</a><br>Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
+    # Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
     # @param get_subaccounts_with_tokens_input_object 
     # @param [Hash] opts the optional parameters
     # @option opts [Float] :page Fetch specified results page. (default to 1)
@@ -5574,7 +5574,7 @@ module TextMagic
     end
 
     # Get all sub-accounts with their REST API tokens associated with a specified app name
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sub-Accounts/getSubaccountsWithTokens\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
+    # Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
     # @param get_subaccounts_with_tokens_input_object 
     # @param [Hash] opts the optional parameters
     # @option opts [Float] :page Fetch specified results page.
@@ -5622,7 +5622,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a template`s details
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Templates/getTemplate\" target=\"_blank\">Try in sandbox</a><br>Get a single template.
+    # Get a single template.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [MessageTemplate]
@@ -5632,7 +5632,7 @@ module TextMagic
     end
 
     # Get a template&#x60;s details
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Templates/getTemplate\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get a single template.
+    # Get a single template.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(MessageTemplate, Fixnum, Hash)>] MessageTemplate data, response status code and response headers
@@ -5676,7 +5676,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get timezones
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Timezones%20and%20Countries/getTimezones\" target=\"_blank\">Try in sandbox</a><br>Return all available timezone IDs
+    # Return all available timezone IDs
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0. (default to 0)
     # @return [GetTimezonesResponse]
@@ -5686,7 +5686,7 @@ module TextMagic
     end
 
     # Get timezones
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Timezones%20and%20Countries/getTimezones\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Return all available timezone IDs
+    # Return all available timezone IDs
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0.
     # @return [Array<(GetTimezonesResponse, Fixnum, Hash)>] GetTimezonesResponse data, response status code and response headers
@@ -5727,7 +5727,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get unread messages number
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/getUnreadMessagesTotal\" target=\"_blank\">Try in sandbox</a><br>Get the total amount of unread messages in the current user chats.
+    # Get the total amount of unread messages in the current user chats.
     # @param [Hash] opts the optional parameters
     # @return [GetUnreadMessagesTotalResponse]
     def get_unread_messages_total(opts = {})
@@ -5736,7 +5736,7 @@ module TextMagic
     end
 
     # Get unread messages number
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/getUnreadMessagesTotal\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get the total amount of unread messages in the current user chats.
+    # Get the total amount of unread messages in the current user chats.
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetUnreadMessagesTotalResponse, Fixnum, Hash)>] GetUnreadMessagesTotalResponse data, response status code and response headers
     def get_unread_messages_total_with_http_info(opts = {})
@@ -5775,7 +5775,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get the details of a specific unsubscribed contact
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getUnsubscribedContact\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [UnsubscribedContact]
@@ -5785,7 +5785,7 @@ module TextMagic
     end
 
     # Get the details of a specific unsubscribed contact
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getUnsubscribedContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(UnsubscribedContact, Fixnum, Hash)>] UnsubscribedContact data, response status code and response headers
@@ -5829,7 +5829,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all unsubscribed contacts
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getUnsubscribers\" target=\"_blank\">Try in sandbox</a><br>When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed status, use: 
+    # When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed status, use: 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -5840,7 +5840,7 @@ module TextMagic
     end
 
     # Get all unsubscribed contacts
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getUnsubscribers\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed status, use: 
+    # When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed status, use: 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -5883,7 +5883,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all your dedicated numbers
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/getUserDedicatedNumbers\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -5895,7 +5895,7 @@ module TextMagic
     end
 
     # Get all your dedicated numbers
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/getUserDedicatedNumbers\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -5940,7 +5940,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Import contacts
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/importContacts\" target=\"_blank\">Try in sandbox</a><br>Import contacts from the CSV, XLS or XLSX file.
+    # Import contacts from the CSV, XLS or XLSX file.
     # @param file File containing contacts in csv or xls(x) formats.
     # @param column Import file column mapping. The string must contain sub-strings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where the value before &#x60;:&#x60; is a number of the column in the file, and the value after &#x60;:&#x60; is a field of the newly created contact or the ID of a custom field. Numbers of columns begin from zero. Allowed built-in contact fields are: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required. 
     # @param [Hash] opts the optional parameters
@@ -5953,7 +5953,7 @@ module TextMagic
     end
 
     # Import contacts
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/importContacts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Import contacts from the CSV, XLS or XLSX file.
+    # Import contacts from the CSV, XLS or XLSX file.
     # @param file File containing contacts in csv or xls(x) formats.
     # @param column Import file column mapping. The string must contain sub-strings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where the value before &#x60;:&#x60; is a number of the column in the file, and the value after &#x60;:&#x60; is a field of the newly created contact or the ID of a custom field. Numbers of columns begin from zero. Allowed built-in contact fields are: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required. 
     # @param [Hash] opts the optional parameters
@@ -6008,7 +6008,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Invite a new sub-account
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sub-Accounts/inviteSubaccount\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param invite_subaccount_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -6018,7 +6018,7 @@ module TextMagic
     end
 
     # Invite a new sub-account
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sub-Accounts/inviteSubaccount\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param invite_subaccount_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -6059,7 +6059,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Mark chats as read (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/markChatsReadBulk\" target=\"_blank\">Try in sandbox</a><br>Mark several chats as read by chat IDs or mark all chats as read
+    # Mark several chats as read by chat IDs or mark all chats as read
     # @param mark_chats_read_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -6069,7 +6069,7 @@ module TextMagic
     end
 
     # Mark chats as read (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/markChatsReadBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Mark several chats as read by chat IDs or mark all chats as read
+    # Mark several chats as read by chat IDs or mark all chats as read
     # @param mark_chats_read_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -6110,7 +6110,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Mark chats as unread (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/markChatsUnreadBulk\" target=\"_blank\">Try in sandbox</a><br>Mark several chats as UNread by chat IDs or mark all chats as UNread
+    # Mark several chats as UNread by chat IDs or mark all chats as UNread
     # @param mark_chats_unread_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -6120,7 +6120,7 @@ module TextMagic
     end
 
     # Mark chats as unread (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/markChatsUnreadBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Mark several chats as UNread by chat IDs or mark all chats as UNread
+    # Mark several chats as UNread by chat IDs or mark all chats as UNread
     # @param mark_chats_unread_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -6161,7 +6161,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Mute chat sounds
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/muteChat\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param mute_chat_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -6171,7 +6171,7 @@ module TextMagic
     end
 
     # Mute chat sounds
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/muteChat\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param mute_chat_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -6215,7 +6215,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Mute chats (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/muteChatsBulk\" target=\"_blank\">Try in sandbox</a><br>Mute several chats by chat ids or mute all chats.
+    # Mute several chats by chat ids or mute all chats.
     # @param mute_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -6225,7 +6225,7 @@ module TextMagic
     end
 
     # Mute chats (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/muteChatsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Mute several chats by chat ids or mute all chats.
+    # Mute several chats by chat ids or mute all chats.
     # @param mute_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -6266,7 +6266,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Ping
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Timezones%20and%20Countries/ping\" target=\"_blank\">Try in sandbox</a><br>Make a simple ping request.
+    # Make a simple ping request.
     # @param [Hash] opts the optional parameters
     # @return [PingResponse]
     def ping(opts = {})
@@ -6275,7 +6275,7 @@ module TextMagic
     end
 
     # Ping
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Timezones%20and%20Countries/ping\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Make a simple ping request.
+    # Make a simple ping request.
     # @param [Hash] opts the optional parameters
     # @return [Array<(PingResponse, Fixnum, Hash)>] PingResponse data, response status code and response headers
     def ping_with_http_info(opts = {})
@@ -6314,7 +6314,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Reopen chats (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/reopenChatsBulk\" target=\"_blank\">Try in sandbox</a><br>Reopen chats by chat IDs or reopen all chats
+    # Reopen chats by chat IDs or reopen all chats
     # @param reopen_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -6324,7 +6324,7 @@ module TextMagic
     end
 
     # Reopen chats (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/reopenChatsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Reopen chats by chat IDs or reopen all chats
+    # Reopen chats by chat IDs or reopen all chats
     # @param reopen_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -6365,7 +6365,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Request a new REST API token for sub-account
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sub-Accounts/requestNewSubaccountToken\" target=\"_blank\">Try in sandbox</a><br>Returning user object, key and app name.
+    # Returning user object, key and app name.
     # @param request_new_subaccount_token_input_object 
     # @param [Hash] opts the optional parameters
     # @return [User]
@@ -6375,7 +6375,7 @@ module TextMagic
     end
 
     # Request a new REST API token for sub-account
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sub-Accounts/requestNewSubaccountToken\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Returning user object, key and app name.
+    # Returning user object, key and app name.
     # @param request_new_subaccount_token_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(User, Fixnum, Hash)>] User data, response status code and response headers
@@ -6419,7 +6419,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Apply for a new Sender ID
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sender%20IDs/requestSenderId\" target=\"_blank\">Try in sandbox</a><br>> Sender IDs are shared among all of your sub-accounts.
+    # > Sender IDs are shared among all of your sub-accounts.
     # @param request_sender_id_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -6429,7 +6429,7 @@ module TextMagic
     end
 
     # Apply for a new Sender ID
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sender%20IDs/requestSenderId\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; Sender IDs are shared among all of your sub-accounts.
+    # &gt; Sender IDs are shared among all of your sub-accounts.
     # @param request_sender_id_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -6473,7 +6473,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Find chats by message text
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/searchChats\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -6485,7 +6485,7 @@ module TextMagic
     end
 
     # Find chats by message text
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/searchChats\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -6530,7 +6530,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Find chats (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/searchChatsByIds\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -6542,7 +6542,7 @@ module TextMagic
     end
 
     # Find chats (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/searchChatsByIds\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -6591,7 +6591,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Find chats by recipient
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/searchChatsByReceipent\" target=\"_blank\">Try in sandbox</a><br>Find chats by recipient (contact, list name or phone number).
+    # Find chats by recipient (contact, list name or phone number).
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -6604,7 +6604,7 @@ module TextMagic
     end
 
     # Find chats by recipient
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/searchChatsByReceipent\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Find chats by recipient (contact, list name or phone number).
+    # Find chats by recipient (contact, list name or phone number).
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -6654,7 +6654,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Find contacts by given criteria
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/searchContacts\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -6674,7 +6674,7 @@ module TextMagic
     end
 
     # Find contacts by given criteria
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/searchContacts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -6745,7 +6745,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Find inbound messages
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/searchInboundMessages\" target=\"_blank\">Try in sandbox</a><br>Find inbound messages by given parameters.
+    # Find inbound messages by given parameters.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -6761,7 +6761,7 @@ module TextMagic
     end
 
     # Find inbound messages
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/searchInboundMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Find inbound messages by given parameters.
+    # Find inbound messages by given parameters.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -6824,7 +6824,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Find lists by given criteria
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/searchLists\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -6841,7 +6841,7 @@ module TextMagic
     end
 
     # Find lists by given criteria
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/searchLists\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -6902,7 +6902,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Find messages
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/searchOutboundMessages\" target=\"_blank\">Try in sandbox</a><br>Find outbound messages by given parameters.
+    # Find outbound messages by given parameters.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -6919,7 +6919,7 @@ module TextMagic
     end
 
     # Find messages
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/searchOutboundMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Find outbound messages by given parameters.
+    # Find outbound messages by given parameters.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -6981,7 +6981,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Find scheduled messages
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/searchScheduledMessages\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -6997,7 +6997,7 @@ module TextMagic
     end
 
     # Find scheduled messages
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/searchScheduledMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -7063,7 +7063,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Find templates by criteria
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Templates/searchTemplates\" target=\"_blank\">Try in sandbox</a><br>Find user templates by given parameters.
+    # Find user templates by given parameters.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -7077,7 +7077,7 @@ module TextMagic
     end
 
     # Find templates by criteria
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Templates/searchTemplates\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Find user templates by given parameters.
+    # Find user templates by given parameters.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -7126,7 +7126,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Send message
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/sendMessage\" target=\"_blank\">Try in sandbox</a><br>This is the main entrypoint to send messages. See the examples above for the reference.
+    # This is the main entrypoint to send messages. See the examples above for the reference.
     # @param send_message_input_object 
     # @param [Hash] opts the optional parameters
     # @return [SendMessageResponse]
@@ -7136,7 +7136,7 @@ module TextMagic
     end
 
     # Send message
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/sendMessage\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;This is the main entrypoint to send messages. See the examples above for the reference.
+    # This is the main entrypoint to send messages. See the examples above for the reference.
     # @param send_message_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(SendMessageResponse, Fixnum, Hash)>] SendMessageResponse data, response status code and response headers
@@ -7180,7 +7180,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Step 1: Send a verification code 
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Two-factor%20authentication/sendPhoneVerificationCodeTFA\" target=\"_blank\">Try in sandbox</a><br>Sends a verification code to a specified phone number.
+    # Sends a verification code to a specified phone number.
     # @param send_phone_verification_code_input_object 
     # @param [Hash] opts the optional parameters
     # @return [SendPhoneVerificationCodeResponse]
@@ -7190,7 +7190,7 @@ module TextMagic
     end
 
     # Step 1: Send a verification code 
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Two-factor%20authentication/sendPhoneVerificationCodeTFA\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Sends a verification code to a specified phone number.
+    # Sends a verification code to a specified phone number.
     # @param send_phone_verification_code_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(SendPhoneVerificationCodeResponse, Fixnum, Hash)>] SendPhoneVerificationCodeResponse data, response status code and response headers
@@ -7234,7 +7234,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Change chat status
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/setChatStatus\" target=\"_blank\">Try in sandbox</a><br>Set the status of the chat given by ID.
+    # Set the status of the chat given by ID.
     # @param set_chat_status_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -7244,7 +7244,7 @@ module TextMagic
     end
 
     # Change chat status
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/setChatStatus\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Set the status of the chat given by ID.
+    # Set the status of the chat given by ID.
     # @param set_chat_status_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -7288,7 +7288,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Unblock a contact by phone number
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/unblockContact\" target=\"_blank\">Try in sandbox</a><br>Unblock a contact by phone number
+    # Unblock a contact by phone number
     # @param unblock_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -7298,7 +7298,7 @@ module TextMagic
     end
 
     # Unblock a contact by phone number
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/unblockContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Unblock a contact by phone number
+    # Unblock a contact by phone number
     # @param unblock_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -7339,7 +7339,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Unblock contacts (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/unblockContactsBulk\" target=\"_blank\">Try in sandbox</a><br>Unblock several contacts by blocked contact IDs or unblock all contacts.
+    # Unblock several contacts by blocked contact IDs or unblock all contacts.
     # @param unblock_contacts_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -7349,7 +7349,7 @@ module TextMagic
     end
 
     # Unblock contacts (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/unblockContactsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Unblock several contacts by blocked contact IDs or unblock all contacts.
+    # Unblock several contacts by blocked contact IDs or unblock all contacts.
     # @param unblock_contacts_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -7390,7 +7390,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Unmute chats (bulk)
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/unmuteChatsBulk\" target=\"_blank\">Try in sandbox</a><br>Unmute several chats by chat ids or unmute all chats.
+    # Unmute several chats by chat ids or unmute all chats.
     # @param unmute_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -7400,7 +7400,7 @@ module TextMagic
     end
 
     # Unmute chats (bulk)
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/unmuteChatsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Unmute several chats by chat ids or unmute all chats.
+    # Unmute several chats by chat ids or unmute all chats.
     # @param unmute_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -7441,7 +7441,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Manually unsubscribe a contact
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/unsubscribeContact\" target=\"_blank\">Try in sandbox</a><br>> Please note, if you unsubscribe a contact, this action cannot be reversed. 
+    # > Please note, if you unsubscribe a contact, this action cannot be reversed. 
     # @param unsubscribe_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -7451,7 +7451,7 @@ module TextMagic
     end
 
     # Manually unsubscribe a contact
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/unsubscribeContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; Please note, if you unsubscribe a contact, this action cannot be reversed. 
+    # &gt; Please note, if you unsubscribe a contact, this action cannot be reversed. 
     # @param unsubscribe_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -7495,7 +7495,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update balance notification settings
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/updateBalanceNotificationSettings\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param update_balance_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -7505,7 +7505,7 @@ module TextMagic
     end
 
     # Update balance notification settings
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/updateBalanceNotificationSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param update_balance_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -7546,7 +7546,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update callback URL settings
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/updateCallbackSettings\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param update_callback_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -7556,7 +7556,7 @@ module TextMagic
     end
 
     # Update callback URL settings
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/updateCallbackSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param update_callback_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -7599,7 +7599,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update chat desktop notification settings
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/updateChatDesktopNotificationSettings\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param update_chat_desktop_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -7609,7 +7609,7 @@ module TextMagic
     end
 
     # Update chat desktop notification settings
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/updateChatDesktopNotificationSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param update_chat_desktop_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -7652,7 +7652,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Edit a contact
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/updateContact\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param update_contact_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -7663,7 +7663,7 @@ module TextMagic
     end
 
     # Edit a contact
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/updateContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param update_contact_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -7712,7 +7712,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update a contact note
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contact%20Notes/updateContactNote\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param update_contact_note_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -7723,7 +7723,7 @@ module TextMagic
     end
 
     # Update a contact note
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contact%20Notes/updateContactNote\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param update_contact_note_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -7772,7 +7772,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Edit current account info
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Account/updateCurrentUser\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param update_current_user_input_object 
     # @param [Hash] opts the optional parameters
     # @return [UpdateCurrentUserResponse]
@@ -7782,7 +7782,7 @@ module TextMagic
     end
 
     # Edit current account info
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Account/updateCurrentUser\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param update_current_user_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(UpdateCurrentUserResponse, Fixnum, Hash)>] UpdateCurrentUserResponse data, response status code and response headers
@@ -7826,7 +7826,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Edit a custom field
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Custom%20Fields/updateCustomField\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param update_custom_field_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -7837,7 +7837,7 @@ module TextMagic
     end
 
     # Edit a custom field
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Custom%20Fields/updateCustomField\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param update_custom_field_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -7886,7 +7886,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Edit the custom field value of a specified contact
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Custom%20Fields/updateCustomFieldValue\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param update_custom_field_value_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -7897,7 +7897,7 @@ module TextMagic
     end
 
     # Edit the custom field value of a specified contact
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Custom%20Fields/updateCustomFieldValue\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param update_custom_field_value_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -7946,7 +7946,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update inbound messages notification settings
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/updateInboundMessagesNotificationSettings\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param update_inbound_messages_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -7956,7 +7956,7 @@ module TextMagic
     end
 
     # Update inbound messages notification settings
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/updateInboundMessagesNotificationSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param update_inbound_messages_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -7997,7 +7997,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Edit a list
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/updateList\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [UpdateListObject] :update_list_object 
@@ -8008,7 +8008,7 @@ module TextMagic
     end
 
     # Edit a list
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/updateList\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [UpdateListObject] :update_list_object 
@@ -8053,7 +8053,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Change sender settings
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Overview/updateSenderSetting\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param update_sender_setting_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -8063,7 +8063,7 @@ module TextMagic
     end
 
     # Change sender settings
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Overview/updateSenderSetting\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param update_sender_setting_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -8104,7 +8104,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update a template
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Templates/updateTemplate\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param update_template_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8115,7 +8115,7 @@ module TextMagic
     end
 
     # Update a template
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Templates/updateTemplate\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param update_template_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8164,7 +8164,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Upload an avatar
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Account/uploadAvatar\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param image User avatar. Should be a PNG or JPG file not more than 10 MB.
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -8174,7 +8174,7 @@ module TextMagic
     end
 
     # Upload an avatar
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Account/uploadAvatar\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param image User avatar. Should be a PNG or JPG file not more than 10 MB.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -8218,7 +8218,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Upload an avatar
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/uploadContactAvatar\" target=\"_blank\">Try in sandbox</a><br>
+    # 
     # @param image Contact avatar. Should be a PNG or JPG file not more than 10 MB.
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8229,7 +8229,7 @@ module TextMagic
     end
 
     # Upload an avatar
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/uploadContactAvatar\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
+    # 
     # @param image Contact avatar. Should be a PNG or JPG file not more than 10 MB.
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8279,7 +8279,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Add an avatar for a list
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/uploadListAvatar\" target=\"_blank\">Try in sandbox</a><br>Add an avatar for a list
+    # Add an avatar for a list
     # @param image List avatar. Should be a PNG or JPG file not more than 10 MB.
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8290,7 +8290,7 @@ module TextMagic
     end
 
     # Add an avatar for a list
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/uploadListAvatar\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Add an avatar for a list
+    # Add an avatar for a list
     # @param image List avatar. Should be a PNG or JPG file not more than 10 MB.
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8340,7 +8340,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Upload message attachment
-    # <a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/uploadMessageAttachment\" target=\"_blank\">Try in sandbox</a><br>Upload a new file to insert it as a link.
+    # Upload a new file to insert it as a link.
     # @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats.
     # @param [Hash] opts the optional parameters
     # @return [UploadMessageAttachmentResponse]
@@ -8350,7 +8350,7 @@ module TextMagic
     end
 
     # Upload message attachment
-    # &lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/uploadMessageAttachment\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Upload a new file to insert it as a link.
+    # Upload a new file to insert it as a link.
     # @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats.
     # @param [Hash] opts the optional parameters
     # @return [Array<(UploadMessageAttachmentResponse, Fixnum, Hash)>] UploadMessageAttachmentResponse data, response status code and response headers

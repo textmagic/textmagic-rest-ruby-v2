@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class DeleteContacsFromListObject
-    # Comma-separated array of [Contacts](http://docs.textmagictesting.com/#tag/Contacts) IDs. 
+    # Comma-separated array of [Contacts](https://docs.textmagic.com/#tag/Contacts) IDs. 
     attr_accessor :contacts
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -29,7 +29,7 @@ module TextMagic
     # Company name.
     attr_accessor :company_name
 
-    # Contact [list](http://docs.textmagictesting.com/#tag/Lists) ID. Each contact must be assigned to at least one list.
+    # Contact [list](https://docs.textmagic.com/#tag/Lists) ID. Each contact must be assigned to at least one list.
     attr_accessor :lists
 
     # Is the contact marked as favorite?
