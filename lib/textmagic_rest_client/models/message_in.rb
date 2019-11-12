@@ -40,6 +40,9 @@ module TextMagic
 
     attr_accessor :avatar
 
+    # Sender email.
+    attr_accessor :email
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -51,7 +54,8 @@ module TextMagic
         :'contact_id' => :'contactId',
         :'first_name' => :'firstName',
         :'last_name' => :'lastName',
-        :'avatar' => :'avatar'
+        :'avatar' => :'avatar',
+        :'email' => :'email'
       }
     end
 
@@ -66,7 +70,8 @@ module TextMagic
         :'contact_id' => :'Integer',
         :'first_name' => :'String',
         :'last_name' => :'String',
-        :'avatar' => :'String'
+        :'avatar' => :'String',
+        :'email' => :'String'
       }
     end
 
@@ -112,6 +117,10 @@ module TextMagic
 
       if attributes.has_key?(:'avatar')
         self.avatar = attributes[:'avatar']
+      end
+
+      if attributes.has_key?(:'email')
+        self.email = attributes[:'email']
       end
     end
 
@@ -171,7 +180,8 @@ module TextMagic
           contact_id == o.contact_id &&
           first_name == o.first_name &&
           last_name == o.last_name &&
-          avatar == o.avatar
+          avatar == o.avatar &&
+          email == o.email
     end
 
     # @see the `==` method
@@ -183,7 +193,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, sender, receiver, message_time, text, contact_id, first_name, last_name, avatar].hash
+      [id, sender, receiver, message_time, text, contact_id, first_name, last_name, avatar, email].hash
     end
 
     # Builds the object from hash

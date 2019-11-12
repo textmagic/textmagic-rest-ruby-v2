@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **first_name** | **String** | Sender contact first name. | [optional] 
 **last_name** | **String** | Sender contact last name. | [optional] 
 **avatar** | **String** |  | 
+**email** | **String** | Sender email. | [optional] 
 
 
