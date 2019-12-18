@@ -84,7 +84,7 @@ describe 'TextMagicApi' do
   # unit tests for check_phone_verification_code_tfa
   # Step 2: Check the verification code 
   # Check received code from user with the code which was actually sent.
-  # @param check_phone_verification_code_input_object 
+  # @param check_phone_verification_code_tfa_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'check_phone_verification_code_tfa test' do
@@ -1701,7 +1701,7 @@ describe 'TextMagicApi' do
   # unit tests for send_phone_verification_code_tfa
   # Step 1: Send a verification code 
   # Sends a verification code to a specified phone number.
-  # @param send_phone_verification_code_input_object 
+  # @param send_phone_verification_code_tfa_input_object 
   # @param [Hash] opts the optional parameters
   # @return [SendPhoneVerificationCodeResponse]
   describe 'send_phone_verification_code_tfa test' do

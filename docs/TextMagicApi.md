@@ -368,7 +368,7 @@ nil (empty response body)
 
 
 # **check_phone_verification_code_tfa**
-> check_phone_verification_code_tfa(check_phone_verification_code_input_object)
+> check_phone_verification_code_tfa(check_phone_verification_code_tfa_input_object)
 
 Step 2: Check the verification code 
 
@@ -387,12 +387,12 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-check_phone_verification_code_input_object = TextMagic::CheckPhoneVerificationCodeInputObject.new # CheckPhoneVerificationCodeInputObject | 
+check_phone_verification_code_tfa_input_object = TextMagic::CheckPhoneVerificationCodeTFAInputObject.new # CheckPhoneVerificationCodeTFAInputObject | 
 
 
 begin
   #Step 2: Check the verification code 
-  api_instance.check_phone_verification_code_tfa(check_phone_verification_code_input_object)
+  api_instance.check_phone_verification_code_tfa(check_phone_verification_code_tfa_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->check_phone_verification_code_tfa: #{e}"
 end
@@ -402,7 +402,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **check_phone_verification_code_input_object** | [**CheckPhoneVerificationCodeInputObject**](CheckPhoneVerificationCodeInputObject.md)|  | 
+ **check_phone_verification_code_tfa_input_object** | [**CheckPhoneVerificationCodeTFAInputObject**](CheckPhoneVerificationCodeTFAInputObject.md)|  | 
 
 ### Return type
 
@@ -7116,7 +7116,7 @@ Name | Type | Description  | Notes
 
 
 # **send_phone_verification_code_tfa**
-> SendPhoneVerificationCodeResponse send_phone_verification_code_tfa(send_phone_verification_code_input_object)
+> SendPhoneVerificationCodeResponse send_phone_verification_code_tfa(send_phone_verification_code_tfa_input_object)
 
 Step 1: Send a verification code 
 
@@ -7135,12 +7135,12 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-send_phone_verification_code_input_object = TextMagic::SendPhoneVerificationCodeInputObject.new # SendPhoneVerificationCodeInputObject | 
+send_phone_verification_code_tfa_input_object = TextMagic::SendPhoneVerificationCodeTFAInputObject.new # SendPhoneVerificationCodeTFAInputObject | 
 
 
 begin
   #Step 1: Send a verification code 
-  result = api_instance.send_phone_verification_code_tfa(send_phone_verification_code_input_object)
+  result = api_instance.send_phone_verification_code_tfa(send_phone_verification_code_tfa_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->send_phone_verification_code_tfa: #{e}"
@@ -7151,7 +7151,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **send_phone_verification_code_input_object** | [**SendPhoneVerificationCodeInputObject**](SendPhoneVerificationCodeInputObject.md)|  | 
+ **send_phone_verification_code_tfa_input_object** | [**SendPhoneVerificationCodeTFAInputObject**](SendPhoneVerificationCodeTFAInputObject.md)|  | 
 
 ### Return type
 

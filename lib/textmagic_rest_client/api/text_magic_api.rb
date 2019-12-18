@@ -241,26 +241,26 @@ module TextMagic
     end
     # Step 2: Check the verification code 
     # Check received code from user with the code which was actually sent.
-    # @param check_phone_verification_code_input_object 
+    # @param check_phone_verification_code_tfa_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def check_phone_verification_code_tfa(check_phone_verification_code_input_object, opts = {})
-      check_phone_verification_code_tfa_with_http_info(check_phone_verification_code_input_object, opts)
+    def check_phone_verification_code_tfa(check_phone_verification_code_tfa_input_object, opts = {})
+      check_phone_verification_code_tfa_with_http_info(check_phone_verification_code_tfa_input_object, opts)
       nil
     end
 
     # Step 2: Check the verification code 
     # Check received code from user with the code which was actually sent.
-    # @param check_phone_verification_code_input_object 
+    # @param check_phone_verification_code_tfa_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def check_phone_verification_code_tfa_with_http_info(check_phone_verification_code_input_object, opts = {})
+    def check_phone_verification_code_tfa_with_http_info(check_phone_verification_code_tfa_input_object, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.check_phone_verification_code_tfa ...'
       end
-      # verify the required parameter 'check_phone_verification_code_input_object' is set
-      if @api_client.config.client_side_validation && check_phone_verification_code_input_object.nil?
-        fail ArgumentError, "Missing the required parameter 'check_phone_verification_code_input_object' when calling TextMagicApi.check_phone_verification_code_tfa"
+      # verify the required parameter 'check_phone_verification_code_tfa_input_object' is set
+      if @api_client.config.client_side_validation && check_phone_verification_code_tfa_input_object.nil?
+        fail ArgumentError, "Missing the required parameter 'check_phone_verification_code_tfa_input_object' when calling TextMagicApi.check_phone_verification_code_tfa"
       end
       # resource path
       local_var_path = '/api/v2/verify'
@@ -279,7 +279,7 @@ module TextMagic
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(check_phone_verification_code_input_object)
+      post_body = @api_client.object_to_http_body(check_phone_verification_code_tfa_input_object)
       auth_names = ['BasicAuth']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
@@ -7181,26 +7181,26 @@ module TextMagic
     end
     # Step 1: Send a verification code 
     # Sends a verification code to a specified phone number.
-    # @param send_phone_verification_code_input_object 
+    # @param send_phone_verification_code_tfa_input_object 
     # @param [Hash] opts the optional parameters
     # @return [SendPhoneVerificationCodeResponse]
-    def send_phone_verification_code_tfa(send_phone_verification_code_input_object, opts = {})
-      data, _status_code, _headers = send_phone_verification_code_tfa_with_http_info(send_phone_verification_code_input_object, opts)
+    def send_phone_verification_code_tfa(send_phone_verification_code_tfa_input_object, opts = {})
+      data, _status_code, _headers = send_phone_verification_code_tfa_with_http_info(send_phone_verification_code_tfa_input_object, opts)
       data
     end
 
     # Step 1: Send a verification code 
     # Sends a verification code to a specified phone number.
-    # @param send_phone_verification_code_input_object 
+    # @param send_phone_verification_code_tfa_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(SendPhoneVerificationCodeResponse, Fixnum, Hash)>] SendPhoneVerificationCodeResponse data, response status code and response headers
-    def send_phone_verification_code_tfa_with_http_info(send_phone_verification_code_input_object, opts = {})
+    def send_phone_verification_code_tfa_with_http_info(send_phone_verification_code_tfa_input_object, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.send_phone_verification_code_tfa ...'
       end
-      # verify the required parameter 'send_phone_verification_code_input_object' is set
-      if @api_client.config.client_side_validation && send_phone_verification_code_input_object.nil?
-        fail ArgumentError, "Missing the required parameter 'send_phone_verification_code_input_object' when calling TextMagicApi.send_phone_verification_code_tfa"
+      # verify the required parameter 'send_phone_verification_code_tfa_input_object' is set
+      if @api_client.config.client_side_validation && send_phone_verification_code_tfa_input_object.nil?
+        fail ArgumentError, "Missing the required parameter 'send_phone_verification_code_tfa_input_object' when calling TextMagicApi.send_phone_verification_code_tfa"
       end
       # resource path
       local_var_path = '/api/v2/verify'
@@ -7219,7 +7219,7 @@ module TextMagic
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(send_phone_verification_code_input_object)
+      post_body = @api_client.object_to_http_body(send_phone_verification_code_tfa_input_object)
       auth_names = ['BasicAuth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,

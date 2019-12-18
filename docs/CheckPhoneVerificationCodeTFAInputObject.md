@@ -1,4 +1,4 @@
-# TextMagic::CheckPhoneVerificationCodeInputObject
+# TextMagic::CheckPhoneVerificationCodeTFAInputObject
 
 ## Properties
 Name | Type | Description | Notes

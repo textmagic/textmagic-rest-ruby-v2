@@ -13,46 +13,26 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
-  class SendPhoneVerificationCodeInputObject
-    # Use the phone number in international E.164 format. If you need to pass a phone number in the local format, please use it with the **country** parameter to specify the origin country of the phone number. 
-    attr_accessor :phone
+  class CheckPhoneVerificationCodeTFAInputObject
+    # Verification code received by the user and entered into the form field.
+    attr_accessor :code
 
-    # An alphanumeric string with up to 18 characters you can use to personalize the verification text message body, to help users identify your company or application name. For example: “Your TextMagic PIN is …” 
-    attr_accessor :brand
-
-    # The length of the verification code. The value can be 4 or 6 characters. 
-    attr_accessor :code_length
-
-    # By default, the SMS or text-to-speech (TTS) voice message is generated in the locale that matches the number. For example, the text message or TTS message for a 33\\* number is sent in French. Use this parameter to explicitly control the language, accent, and gender used for the verification request. Choosing one of the following: `de-de`, `en-au`, `en-gb`, `en-us`, `en-in`, `es-es`, `es-mx`, `es-us`, `fr-ca`, `fr-fr`, `is-is`, `it-it`, `ja-jp`, `ko-kr`, `nl-nl`, `pl-pl`, `pt-pt`, `pt-br`, `ro-ro`, `ru-ru`, `sv-se`, `tr-tr`, `zh-cn` or `zh-tw`. 
-    attr_accessor :language
-
-    # One of the available [sender settings](https://my.textmagic.com/online/reply-options/) on your TextMagic account. If the specified sender setting type is not allowed for some destinations, a fallback default sender will be used to ensure message delivery. More info about known restrictions can be found [here](https://support.textmagic.com/article/how-to-understand-sender-setting-restrictions/). 
-    attr_accessor :sender_id
-
-    # The 2-letter ISO country code for the local phone number.
-    attr_accessor :country
+    # VerifyId from Step 1 to match both requests together.
+    attr_accessor :verify_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'phone' => :'phone',
-        :'brand' => :'brand',
-        :'code_length' => :'codeLength',
-        :'language' => :'language',
-        :'sender_id' => :'senderId',
-        :'country' => :'country'
+        :'code' => :'code',
+        :'verify_id' => :'verifyId'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'phone' => :'String',
-        :'brand' => :'String',
-        :'code_length' => :'Integer',
-        :'language' => :'String',
-        :'sender_id' => :'String',
-        :'country' => :'String'
+        :'code' => :'Integer',
+        :'verify_id' => :'String'
       }
     end
 
@@ -64,28 +44,12 @@ module TextMagic
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'phone')
-        self.phone = attributes[:'phone']
+      if attributes.has_key?(:'code')
+        self.code = attributes[:'code']
       end
 
-      if attributes.has_key?(:'brand')
-        self.brand = attributes[:'brand']
-      end
-
-      if attributes.has_key?(:'codeLength')
-        self.code_length = attributes[:'codeLength']
-      end
-
-      if attributes.has_key?(:'language')
-        self.language = attributes[:'language']
-      end
-
-      if attributes.has_key?(:'senderId')
-        self.sender_id = attributes[:'senderId']
-      end
-
-      if attributes.has_key?(:'country')
-        self.country = attributes[:'country']
+      if attributes.has_key?(:'verifyId')
+        self.verify_id = attributes[:'verifyId']
       end
     end
 
@@ -107,12 +71,8 @@ module TextMagic
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          phone == o.phone &&
-          brand == o.brand &&
-          code_length == o.code_length &&
-          language == o.language &&
-          sender_id == o.sender_id &&
-          country == o.country
+          code == o.code &&
+          verify_id == o.verify_id
     end
 
     # @see the `==` method
@@ -124,7 +84,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [phone, brand, code_length, language, sender_id, country].hash
+      [code, verify_id].hash
     end
 
     # Builds the object from hash
