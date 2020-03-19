@@ -14,6 +14,9 @@ require 'date'
 
 module TextMagic
   class PingResponse
+    # Current user Id.
+    attr_accessor :user_id
+
     # Pong.
     attr_accessor :ping
 
@@ -23,6 +26,7 @@ module TextMagic
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'user_id' => :'userId',
         :'ping' => :'ping',
         :'utc_date_time' => :'utcDateTime'
       }
@@ -31,6 +35,7 @@ module TextMagic
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'user_id' => :'Integer',
         :'ping' => :'String',
         :'utc_date_time' => :'String'
       }
@@ -43,6 +48,10 @@ module TextMagic
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'userId')
+        self.user_id = attributes[:'userId']
+      end
 
       if attributes.has_key?(:'ping')
         self.ping = attributes[:'ping']
@@ -57,6 +66,10 @@ module TextMagic
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @user_id.nil?
+        invalid_properties.push('invalid value for "user_id", user_id cannot be nil.')
+      end
+
       if @ping.nil?
         invalid_properties.push('invalid value for "ping", ping cannot be nil.')
       end
@@ -71,6 +84,7 @@ module TextMagic
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @user_id.nil?
       return false if @ping.nil?
       return false if @utc_date_time.nil?
       true
@@ -81,6 +95,7 @@ module TextMagic
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          user_id == o.user_id &&
           ping == o.ping &&
           utc_date_time == o.utc_date_time
     end
@@ -94,7 +109,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [ping, utc_date_time].hash
+      [user_id, ping, utc_date_time].hash
     end
 
     # Builds the object from hash

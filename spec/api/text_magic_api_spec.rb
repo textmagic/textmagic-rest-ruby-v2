@@ -1586,6 +1586,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :include_blocked Should blocked contacts be included?
   # @option opts [String] :query Find contacts by specified search query.
   # @option opts [Integer] :local Treat phone number passed in the \&quot;query\&quot; field as local. Default is 0.
+  # @option opts [Integer] :exact_match Return only exactly matching contacts. Default is 0.
   # @option opts [String] :country The 2-letter ISO country code for local phone numbers, used when \&quot;local\&quot; is set to true. Default is the account country.
   # @option opts [String] :order_by Order results by some field. Default is id.
   # @option opts [String] :direction Order direction. Default is desc.

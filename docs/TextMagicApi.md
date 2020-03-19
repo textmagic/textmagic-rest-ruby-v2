@@ -6687,6 +6687,7 @@ opts = {
   include_blocked: 56, # Integer | Should blocked contacts be included?
   query: 'query_example', # String | Find contacts by specified search query.
   local: 0, # Integer | Treat phone number passed in the \"query\" field as local. Default is 0.
+  exact_match: 0, # Integer | Return only exactly matching contacts. Default is 0.
   country: 'country_example', # String | The 2-letter ISO country code for local phone numbers, used when \"local\" is set to true. Default is the account country.
   order_by: 'id', # String | Order results by some field. Default is id.
   direction: 'desc' # String | Order direction. Default is desc.
@@ -6713,6 +6714,7 @@ Name | Type | Description  | Notes
  **include_blocked** | **Integer**| Should blocked contacts be included? | [optional] 
  **query** | **String**| Find contacts by specified search query. | [optional] 
  **local** | **Integer**| Treat phone number passed in the \&quot;query\&quot; field as local. Default is 0. | [optional] [default to 0]
+ **exact_match** | **Integer**| Return only exactly matching contacts. Default is 0. | [optional] [default to 0]
  **country** | **String**| The 2-letter ISO country code for local phone numbers, used when \&quot;local\&quot; is set to true. Default is the account country. | [optional] 
  **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
  **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]

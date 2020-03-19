@@ -11,7 +11,7 @@ TextMagic’s application programming interface (API) provides the communication
 
 Add these lines into your Gemfile
 ```ruby
-gem 'textmagic_rest_client', :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.1067'
+gem 'textmagic_rest_client', :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.1307'
 ```
 
 Run the bundler install command
@@ -28,9 +28,9 @@ require 'textmagic_rest_client'
 
  # Setup authorization
 TextMagic.configure do |config|
-    # Configure HTTP basic authorization: BasicAuth
+    # put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys page.
     config.username = 'YOUR_USERNAME'
-    config.password = 'YOUR_PASSWORD'
+    config.password = 'YOUR_API_KEY'
 end
 
 api_instance = TextMagic::TextMagicApi.new
