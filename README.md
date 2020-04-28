@@ -11,7 +11,7 @@ TextMagic’s application programming interface (API) provides the communication
 
 Add these lines into your Gemfile
 ```ruby
-gem 'textmagic_rest_client', :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.1307'
+gem 'textmagic_rest_client', :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.1421'
 ```
 
 Run the bundler install command

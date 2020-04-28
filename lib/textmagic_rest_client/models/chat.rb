@@ -56,6 +56,9 @@ module TextMagic
 
     attr_accessor :country
 
+    # Indicates when the chat is pinned.
+    attr_accessor :pinned
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -95,7 +98,8 @@ module TextMagic
         :'from' => :'from',
         :'muted_until' => :'mutedUntil',
         :'time_left_mute' => :'timeLeftMute',
-        :'country' => :'country'
+        :'country' => :'country',
+        :'pinned' => :'pinned'
       }
     end
 
@@ -116,7 +120,8 @@ module TextMagic
         :'from' => :'String',
         :'muted_until' => :'DateTime',
         :'time_left_mute' => :'Integer',
-        :'country' => :'Country'
+        :'country' => :'Country',
+        :'pinned' => :'BOOLEAN'
       }
     end
 
@@ -187,6 +192,10 @@ module TextMagic
       if attributes.has_key?(:'country')
         self.country = attributes[:'country']
       end
+
+      if attributes.has_key?(:'pinned')
+        self.pinned = attributes[:'pinned']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -253,6 +262,10 @@ module TextMagic
         invalid_properties.push('invalid value for "country", country cannot be nil.')
       end
 
+      if @pinned.nil?
+        invalid_properties.push('invalid value for "pinned", pinned cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -278,6 +291,7 @@ module TextMagic
       return false if @muted_until.nil?
       return false if @time_left_mute.nil?
       return false if @country.nil?
+      return false if @pinned.nil?
       true
     end
 
@@ -320,7 +334,8 @@ module TextMagic
           from == o.from &&
           muted_until == o.muted_until &&
           time_left_mute == o.time_left_mute &&
-          country == o.country
+          country == o.country &&
+          pinned == o.pinned
     end
 
     # @see the `==` method
@@ -332,7 +347,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, original_id, phone, contact, unsubscribed_contact_id, unread, updated_at, status, mute, last_message, direction, from, muted_until, time_left_mute, country].hash
+      [id, original_id, phone, contact, unsubscribed_contact_id, unread, updated_at, status, mute, last_message, direction, from, muted_until, time_left_mute, country, pinned].hash
     end
 
     # Builds the object from hash

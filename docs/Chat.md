@@ -18,5 +18,6 @@ Name | Type | Description | Notes
 **muted_until** | **DateTime** | Date and time until the chat will be muted. | 
 **time_left_mute** | **Integer** | Time left untill the chat will be unmuted (seconds). | 
 **country** | [**Country**](Country.md) |  | 
+**pinned** | **BOOLEAN** | Indicates when the chat is pinned. | 
 
 

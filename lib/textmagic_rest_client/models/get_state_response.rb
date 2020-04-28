@@ -62,6 +62,10 @@ module TextMagic
 
     attr_accessor :chat_unmuted
 
+    attr_accessor :chat_pinned
+
+    attr_accessor :chat_unpinned
+
     attr_accessor :chat_deleted
 
     attr_accessor :chat_closed
@@ -119,6 +123,8 @@ module TextMagic
         :'chat_marked_as_read' => :'chatMarkedAsRead',
         :'chat_muted' => :'chatMuted',
         :'chat_unmuted' => :'chatUnmuted',
+        :'chat_pinned' => :'chatPinned',
+        :'chat_unpinned' => :'chatUnpinned',
         :'chat_deleted' => :'chatDeleted',
         :'chat_closed' => :'chatClosed',
         :'chat_reopened' => :'chatReopened',
@@ -164,6 +170,8 @@ module TextMagic
         :'chat_marked_as_read' => :'Integer',
         :'chat_muted' => :'Integer',
         :'chat_unmuted' => :'Integer',
+        :'chat_pinned' => :'Integer',
+        :'chat_unpinned' => :'Integer',
         :'chat_deleted' => :'Integer',
         :'chat_closed' => :'Integer',
         :'chat_reopened' => :'Integer',
@@ -284,6 +292,14 @@ module TextMagic
 
       if attributes.has_key?(:'chatUnmuted')
         self.chat_unmuted = attributes[:'chatUnmuted']
+      end
+
+      if attributes.has_key?(:'chatPinned')
+        self.chat_pinned = attributes[:'chatPinned']
+      end
+
+      if attributes.has_key?(:'chatUnpinned')
+        self.chat_unpinned = attributes[:'chatUnpinned']
       end
 
       if attributes.has_key?(:'chatDeleted')
@@ -447,6 +463,14 @@ module TextMagic
         invalid_properties.push('invalid value for "chat_unmuted", chat_unmuted cannot be nil.')
       end
 
+      if @chat_pinned.nil?
+        invalid_properties.push('invalid value for "chat_pinned", chat_pinned cannot be nil.')
+      end
+
+      if @chat_unpinned.nil?
+        invalid_properties.push('invalid value for "chat_unpinned", chat_unpinned cannot be nil.')
+      end
+
       if @chat_deleted.nil?
         invalid_properties.push('invalid value for "chat_deleted", chat_deleted cannot be nil.')
       end
@@ -537,6 +561,8 @@ module TextMagic
       return false if @chat_marked_as_read.nil?
       return false if @chat_muted.nil?
       return false if @chat_unmuted.nil?
+      return false if @chat_pinned.nil?
+      return false if @chat_unpinned.nil?
       return false if @chat_deleted.nil?
       return false if @chat_closed.nil?
       return false if @chat_reopened.nil?
@@ -584,6 +610,8 @@ module TextMagic
           chat_marked_as_read == o.chat_marked_as_read &&
           chat_muted == o.chat_muted &&
           chat_unmuted == o.chat_unmuted &&
+          chat_pinned == o.chat_pinned &&
+          chat_unpinned == o.chat_unpinned &&
           chat_deleted == o.chat_deleted &&
           chat_closed == o.chat_closed &&
           chat_reopened == o.chat_reopened &&
@@ -610,7 +638,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [system_cache_clear, system_exit, system_alert, system_account_state_changed, message_deleted, message_incoming, message_incoming_deleted, message_state_changed, message_bulk_end, message_wipe_end, message_sent, message_session_deleted, message_cache_clear, message_incoming_cache_clear, message_schedule_added, message_schedule_state_changed, message_schedule_deleted, message_schedule_cache_clear, message_template_cache_clear, call_finished, chat_created, chat_marked_as_read, chat_muted, chat_unmuted, chat_deleted, chat_closed, chat_reopened, chat_cache_clear, contact_added, contact_deleted, contact_state_changed, list_added, list_deleted, list_state_changed, contact_wipe_end, contact_import_end, contact_cache_clear, list_cache_clear, custom_fields_cache_clear].hash
+      [system_cache_clear, system_exit, system_alert, system_account_state_changed, message_deleted, message_incoming, message_incoming_deleted, message_state_changed, message_bulk_end, message_wipe_end, message_sent, message_session_deleted, message_cache_clear, message_incoming_cache_clear, message_schedule_added, message_schedule_state_changed, message_schedule_deleted, message_schedule_cache_clear, message_template_cache_clear, call_finished, chat_created, chat_marked_as_read, chat_muted, chat_unmuted, chat_pinned, chat_unpinned, chat_deleted, chat_closed, chat_reopened, chat_cache_clear, contact_added, contact_deleted, contact_state_changed, list_added, list_deleted, list_state_changed, contact_wipe_end, contact_import_end, contact_cache_clear, list_cache_clear, custom_fields_cache_clear].hash
     end
 
     # Builds the object from hash

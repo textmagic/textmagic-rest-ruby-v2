@@ -17,6 +17,9 @@ module TextMagic
     # Use the phone number in international E.164 format. If you need to pass a phone number in the local format, please use it with the **country** parameter to specify the origin country of the phone number. 
     attr_accessor :phone
 
+    # **Workflows**  The Verify API allows you to select the best workflow for your use case. This might depend on the type of verification taking place, your users' preference, or their geographical location. You can specify which workflow to use for each Verify API request by setting the workflowId field to an integer value 1-7. The details of each of these preset workflows are detailed below.  <br />  **Workflow 1 (Default Workflow): SMS -> TTS -> TTS**  <br />  Send PIN code by text message, follow up with two subsequent voice calls if the request wasn't already verified.  Send SMS to user with PIN code Wait for 60 seconds Call user and give TTS PIN code Wait for 60 seconds Call user and give TTS PIN code  Request expires after 300 seconds  <br />  **Workflow 2: SMS -> SMS -> TTS**  <br />    Send PIN code by text message, follow up with a second text message and finally a voice call if the request has not been verified.  Send SMS to user with PIN code Wait for 60 seconds Send SMS to user with PIN code Wait for 60 seconds Call user and give TTS PIN code  Request expires after 300 seconds  <br />  **Workflow 3: TTS -> TTS**  <br />   Call the user and speak a PIN code, follow up with a second call if the request wasn't already verified.  Call user and give TTS PIN code Wait for 60 seconds Call user and give TTS PIN code  Request expires after 300 seconds  <br />  **Workflow 4: SMS -> SMS**  <br />    Send PIN code by text message, follow up with a second text message if the code hasn't been verified.  Send SMS to user with PIN code Wait for 60 seconds Send SMS to user with PIN code Wait for 60 seconds  Request expires after 300 seconds  <br />  **Workflow 5: SMS -> TTS**  <br />   Send PIN code by text message, follow up with a voice call if the code hasn't been verified.  Send SMS to user with PIN code Wait for 60 seconds Call user and give TTS PIN code Wait for 60 seconds  Request expires after 300 seconds  <br />  **Workflow 6: SMS**  <br />   Send PIN code by text message once only.  Send SMS to user with PIN code Request expires after 300 seconds  <br />  **Workflow 7: TTS**  <br />  Call the user and speak a PIN code once only.  Call user and give TTS PIN code  Request expires after 300 seconds 
+    attr_accessor :workflow_id
+
     # An alphanumeric string with up to 18 characters you can use to personalize the verification text message body, to help users identify your company or application name. For example: “Your TextMagic PIN is …” 
     attr_accessor :brand
 
@@ -36,6 +39,7 @@ module TextMagic
     def self.attribute_map
       {
         :'phone' => :'phone',
+        :'workflow_id' => :'workflowId',
         :'brand' => :'brand',
         :'code_length' => :'codeLength',
         :'language' => :'language',
@@ -48,6 +52,7 @@ module TextMagic
     def self.swagger_types
       {
         :'phone' => :'String',
+        :'workflow_id' => :'String',
         :'brand' => :'String',
         :'code_length' => :'Integer',
         :'language' => :'String',
@@ -66,6 +71,10 @@ module TextMagic
 
       if attributes.has_key?(:'phone')
         self.phone = attributes[:'phone']
+      end
+
+      if attributes.has_key?(:'workflowId')
+        self.workflow_id = attributes[:'workflowId']
       end
 
       if attributes.has_key?(:'brand')
@@ -108,6 +117,7 @@ module TextMagic
       return true if self.equal?(o)
       self.class == o.class &&
           phone == o.phone &&
+          workflow_id == o.workflow_id &&
           brand == o.brand &&
           code_length == o.code_length &&
           language == o.language &&
@@ -124,7 +134,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [phone, brand, code_length, language, sender_id, country].hash
+      [phone, workflow_id, brand, code_length, language, sender_id, country].hash
     end
 
     # Builds the object from hash
