@@ -26,13 +26,17 @@ module TextMagic
     # Attachment size in bytes.
     attr_accessor :size
 
+    # Internal file name
+    attr_accessor :resource
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'chars' => :'chars',
         :'href' => :'href',
         :'name' => :'name',
-        :'size' => :'size'
+        :'size' => :'size',
+        :'resource' => :'resource'
       }
     end
 
@@ -42,7 +46,8 @@ module TextMagic
         :'chars' => :'Integer',
         :'href' => :'String',
         :'name' => :'String',
-        :'size' => :'Integer'
+        :'size' => :'Integer',
+        :'resource' => :'String'
       }
     end
 
@@ -69,6 +74,10 @@ module TextMagic
       if attributes.has_key?(:'size')
         self.size = attributes[:'size']
       end
+
+      if attributes.has_key?(:'resource')
+        self.resource = attributes[:'resource']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -91,6 +100,10 @@ module TextMagic
         invalid_properties.push('invalid value for "size", size cannot be nil.')
       end
 
+      if @resource.nil?
+        invalid_properties.push('invalid value for "resource", resource cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -101,6 +114,7 @@ module TextMagic
       return false if @href.nil?
       return false if @name.nil?
       return false if @size.nil?
+      return false if @resource.nil?
       true
     end
 
@@ -112,7 +126,8 @@ module TextMagic
           chars == o.chars &&
           href == o.href &&
           name == o.name &&
-          size == o.size
+          size == o.size &&
+          resource == o.resource
     end
 
     # @see the `==` method
@@ -124,7 +139,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [chars, href, name, size].hash
+      [chars, href, name, size, resource].hash
     end
 
     # Builds the object from hash

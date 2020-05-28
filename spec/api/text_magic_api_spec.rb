@@ -1971,4 +1971,16 @@ describe 'TextMagicApi' do
     end
   end
 
+  # unit tests for upload_message_mms_attachment
+  # Upload message mms attachment
+  # Upload a new file to mms.
+  # @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats.
+  # @param [Hash] opts the optional parameters
+  # @return [UploadMessageAttachmentResponse]
+  describe 'upload_message_mms_attachment test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end

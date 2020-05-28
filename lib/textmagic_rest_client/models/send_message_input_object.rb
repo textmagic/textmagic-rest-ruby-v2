@@ -65,6 +65,12 @@ module TextMagic
     # The 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is the account country.
     attr_accessor :local_country
 
+    # Messsage destination type allowed [mms, tts].
+    attr_accessor :destination
+
+    # File name from mms attachment response (named as resource)
+    attr_accessor :resources
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -84,7 +90,9 @@ module TextMagic
         :'create_chat' => :'createChat',
         :'tts' => :'tts',
         :'local' => :'local',
-        :'local_country' => :'localCountry'
+        :'local_country' => :'localCountry',
+        :'destination' => :'destination',
+        :'resources' => :'resources'
       }
     end
 
@@ -107,7 +115,9 @@ module TextMagic
         :'create_chat' => :'BOOLEAN',
         :'tts' => :'BOOLEAN',
         :'local' => :'BOOLEAN',
-        :'local_country' => :'String'
+        :'local_country' => :'String',
+        :'destination' => :'String',
+        :'resources' => :'String'
       }
     end
 
@@ -194,6 +204,16 @@ module TextMagic
       if attributes.has_key?(:'localCountry')
         self.local_country = attributes[:'localCountry']
       end
+
+      if attributes.has_key?(:'destination')
+        self.destination = attributes[:'destination']
+      else
+        self.destination = 'false'
+      end
+
+      if attributes.has_key?(:'resources')
+        self.resources = attributes[:'resources']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -230,7 +250,9 @@ module TextMagic
           create_chat == o.create_chat &&
           tts == o.tts &&
           local == o.local &&
-          local_country == o.local_country
+          local_country == o.local_country &&
+          destination == o.destination &&
+          resources == o.resources
     end
 
     # @see the `==` method
@@ -242,7 +264,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [text, template_id, sending_time, sending_date_time, sending_timezone, contacts, lists, phones, cut_extra, parts_count, reference_id, from, rrule, create_chat, tts, local, local_country].hash
+      [text, template_id, sending_time, sending_date_time, sending_timezone, contacts, lists, phones, cut_extra, parts_count, reference_id, from, rrule, create_chat, tts, local, local_country, destination, resources].hash
     end
 
     # Builds the object from hash

@@ -152,6 +152,7 @@ Method | HTTP request | Description
 [**upload_contact_avatar**](TextMagicApi.md#upload_contact_avatar) | **POST** /api/v2/contacts/{id}/avatar | Upload an avatar
 [**upload_list_avatar**](TextMagicApi.md#upload_list_avatar) | **POST** /api/v2/lists/{id}/avatar | Add an avatar for a list
 [**upload_message_attachment**](TextMagicApi.md#upload_message_attachment) | **POST** /api/v2/messages/attachment | Upload message attachment
+[**upload_message_mms_attachment**](TextMagicApi.md#upload_message_mms_attachment) | **POST** /api/v2/messages/mms/attachment | Upload message mms attachment
 
 
 # **assign_contacts_to_list**
@@ -8275,6 +8276,59 @@ begin
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->upload_message_attachment: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats. | 
+
+### Return type
+
+[**UploadMessageAttachmentResponse**](UploadMessageAttachmentResponse.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+
+# **upload_message_mms_attachment**
+> UploadMessageAttachmentResponse upload_message_mms_attachment(file)
+
+Upload message mms attachment
+
+Upload a new file to mms.
+
+### Example
+```ruby
+# load the gem
+require 'textmagic_rest_client'
+# setup authorization
+TextMagic.configure do |config|
+  # Configure HTTP basic authorization: BasicAuth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TextMagic::TextMagicApi.new
+
+file = File.new('/path/to/file.txt') # File | Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx & .vcf file formats.
+
+
+begin
+  #Upload message mms attachment
+  result = api_instance.upload_message_mms_attachment(file)
+  p result
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->upload_message_mms_attachment: #{e}"
 end
 ```
 
