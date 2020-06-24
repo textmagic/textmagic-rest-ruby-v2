@@ -207,8 +207,6 @@ module TextMagic
 
       if attributes.has_key?(:'destination')
         self.destination = attributes[:'destination']
-      else
-        self.destination = 'false'
       end
 
       if attributes.has_key?(:'resources')
