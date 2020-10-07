@@ -786,8 +786,8 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :query Find messages by specified search query.
-  # @option opts [Integer] :start Return messages since specified timestamp only.
-  # @option opts [Integer] :_end Return messages up to specified timestamp only.
+  # @option opts [String] :start Return messages since specified timestamp only. Required when &#x60;end&#x60; parameter specified.
+  # @option opts [String] :_end Return messages up to specified timestamp only. Required when &#x60;start&#x60; parameter specified.
   # @option opts [String] :direction Order direction. Default is desc.
   # @option opts [Integer] :voice Fetch results with voice calls.
   # @return [GetChatMessagesPaginatedResponse]
