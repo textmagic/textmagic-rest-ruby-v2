@@ -40,7 +40,7 @@ module TextMagic
         :'page' => :'Integer',
         :'page_count' => :'Integer',
         :'limit' => :'Integer',
-        :'resources' => :'Array<Array>'
+        :'resources' => :'Array<List>'
       }
     end
 

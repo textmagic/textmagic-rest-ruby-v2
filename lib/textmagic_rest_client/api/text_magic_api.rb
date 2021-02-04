@@ -4376,7 +4376,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array')
+        :return_type => 'List')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
