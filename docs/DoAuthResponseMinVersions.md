@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ios** | **Integer** |  | 
-**android** | **Integer** |  | 
-**desktop** | **Integer** |  | 
+**ios** | **String** |  | 
+**android** | **String** |  | 
+**desktop** | **String** |  | 
 
 

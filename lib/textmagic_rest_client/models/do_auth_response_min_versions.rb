@@ -32,9 +32,9 @@ module TextMagic
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'ios' => :'Integer',
-        :'android' => :'Integer',
-        :'desktop' => :'Integer'
+        :'ios' => :'String',
+        :'android' => :'String',
+        :'desktop' => :'String'
       }
     end
 
