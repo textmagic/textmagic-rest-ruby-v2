@@ -48,7 +48,7 @@ module TextMagic
     def self.swagger_types
       {
         :'low_balance_notification' => :'BOOLEAN',
-        :'alert_balance' => :'String',
+        :'alert_balance' => :'Float',
         :'alert_phone' => :'String',
         :'alert_email1' => :'String',
         :'alert_email2' => :'String',

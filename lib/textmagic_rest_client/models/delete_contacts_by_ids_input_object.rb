@@ -17,7 +17,7 @@ module TextMagic
     # Entity ID(s), separated by comma.
     attr_accessor :ids
 
-    # Entity ID(s), separated by comma.
+    # Optional. Default is 0 (false). If set to 1 all the entities will be removed.
     attr_accessor :all
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -32,7 +32,7 @@ module TextMagic
     def self.swagger_types
       {
         :'ids' => :'String',
-        :'all' => :'BOOLEAN'
+        :'all' => :'Integer'
       }
     end
 
