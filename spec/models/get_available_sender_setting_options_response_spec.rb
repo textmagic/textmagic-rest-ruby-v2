@@ -56,4 +56,16 @@ describe 'GetAvailableSenderSettingOptionsResponse' do
     end
   end
 
+  describe 'test attribute "user_carrier_twilio"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "user_carrier_vonage"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end

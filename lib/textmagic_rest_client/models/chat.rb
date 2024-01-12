@@ -45,6 +45,9 @@ module TextMagic
     # Last message type: * **ci** - incoming call; * **co** - outgoing call; * **i** - incoming message; * **o** - outgoing message. 
     attr_accessor :direction
 
+    # Used for chats prices.
+    attr_accessor :reply_options_type
+
     # If filled, the value will be used as a sender number for all outgoing messages of a chat.
     attr_accessor :from
 
@@ -95,6 +98,7 @@ module TextMagic
         :'mute' => :'mute',
         :'last_message' => :'lastMessage',
         :'direction' => :'direction',
+        :'reply_options_type' => :'replyOptionsType',
         :'from' => :'from',
         :'muted_until' => :'mutedUntil',
         :'time_left_mute' => :'timeLeftMute',
@@ -117,6 +121,7 @@ module TextMagic
         :'mute' => :'Integer',
         :'last_message' => :'String',
         :'direction' => :'String',
+        :'reply_options_type' => :'String',
         :'from' => :'String',
         :'muted_until' => :'DateTime',
         :'time_left_mute' => :'Integer',
@@ -175,6 +180,10 @@ module TextMagic
 
       if attributes.has_key?(:'direction')
         self.direction = attributes[:'direction']
+      end
+
+      if attributes.has_key?(:'replyOptionsType')
+        self.reply_options_type = attributes[:'replyOptionsType']
       end
 
       if attributes.has_key?(:'from')
@@ -246,6 +255,10 @@ module TextMagic
         invalid_properties.push('invalid value for "direction", direction cannot be nil.')
       end
 
+      if @reply_options_type.nil?
+        invalid_properties.push('invalid value for "reply_options_type", reply_options_type cannot be nil.')
+      end
+
       if @from.nil?
         invalid_properties.push('invalid value for "from", from cannot be nil.')
       end
@@ -287,6 +300,7 @@ module TextMagic
       return false if @direction.nil?
       direction_validator = EnumAttributeValidator.new('String', ['ci', 'co', 'i', 'o'])
       return false unless direction_validator.valid?(@direction)
+      return false if @reply_options_type.nil?
       return false if @from.nil?
       return false if @muted_until.nil?
       return false if @time_left_mute.nil?
@@ -331,6 +345,7 @@ module TextMagic
           mute == o.mute &&
           last_message == o.last_message &&
           direction == o.direction &&
+          reply_options_type == o.reply_options_type &&
           from == o.from &&
           muted_until == o.muted_until &&
           time_left_mute == o.time_left_mute &&
@@ -347,7 +362,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, original_id, phone, contact, unsubscribed_contact_id, unread, updated_at, status, mute, last_message, direction, from, muted_until, time_left_mute, country, pinned].hash
+      [id, original_id, phone, contact, unsubscribed_contact_id, unread, updated_at, status, mute, last_message, direction, reply_options_type, from, muted_until, time_left_mute, country, pinned].hash
     end
 
     # Builds the object from hash

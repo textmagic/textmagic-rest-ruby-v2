@@ -26,13 +26,21 @@ module TextMagic
     # Array of alphanumeric sender IDs.
     attr_accessor :sender_ids
 
+    # Array of alphanumeric sender IDs.
+    attr_accessor :user_carrier_twilio
+
+    # Array of alphanumeric sender IDs.
+    attr_accessor :user_carrier_vonage
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'dedicated' => :'dedicated',
         :'user' => :'user',
         :'shared' => :'shared',
-        :'sender_ids' => :'senderIds'
+        :'sender_ids' => :'senderIds',
+        :'user_carrier_twilio' => :'userCarrierTwilio',
+        :'user_carrier_vonage' => :'userCarrierVonage'
       }
     end
 
@@ -42,7 +50,9 @@ module TextMagic
         :'dedicated' => :'Array<String>',
         :'user' => :'Array<String>',
         :'shared' => :'Array<String>',
-        :'sender_ids' => :'Array<String>'
+        :'sender_ids' => :'Array<String>',
+        :'user_carrier_twilio' => :'Array<String>',
+        :'user_carrier_vonage' => :'Array<String>'
       }
     end
 
@@ -77,6 +87,18 @@ module TextMagic
           self.sender_ids = value
         end
       end
+
+      if attributes.has_key?(:'userCarrierTwilio')
+        if (value = attributes[:'userCarrierTwilio']).is_a?(Array)
+          self.user_carrier_twilio = value
+        end
+      end
+
+      if attributes.has_key?(:'userCarrierVonage')
+        if (value = attributes[:'userCarrierVonage']).is_a?(Array)
+          self.user_carrier_vonage = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -99,6 +121,14 @@ module TextMagic
         invalid_properties.push('invalid value for "sender_ids", sender_ids cannot be nil.')
       end
 
+      if @user_carrier_twilio.nil?
+        invalid_properties.push('invalid value for "user_carrier_twilio", user_carrier_twilio cannot be nil.')
+      end
+
+      if @user_carrier_vonage.nil?
+        invalid_properties.push('invalid value for "user_carrier_vonage", user_carrier_vonage cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -109,6 +139,8 @@ module TextMagic
       return false if @user.nil?
       return false if @shared.nil?
       return false if @sender_ids.nil?
+      return false if @user_carrier_twilio.nil?
+      return false if @user_carrier_vonage.nil?
       true
     end
 
@@ -120,7 +152,9 @@ module TextMagic
           dedicated == o.dedicated &&
           user == o.user &&
           shared == o.shared &&
-          sender_ids == o.sender_ids
+          sender_ids == o.sender_ids &&
+          user_carrier_twilio == o.user_carrier_twilio &&
+          user_carrier_vonage == o.user_carrier_vonage
     end
 
     # @see the `==` method
@@ -132,7 +166,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [dedicated, user, shared, sender_ids].hash
+      [dedicated, user, shared, sender_ids, user_carrier_twilio, user_carrier_vonage].hash
     end
 
     # Builds the object from hash

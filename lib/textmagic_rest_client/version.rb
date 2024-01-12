@@ -11,5 +11,5 @@ Swagger Codegen version: 2.4.8
 =end
 
 module TextMagic
-  VERSION = '2.0.4420'
+  VERSION = '2.0.17425'
 end

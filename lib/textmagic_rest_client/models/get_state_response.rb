@@ -22,6 +22,12 @@ module TextMagic
 
     attr_accessor :system_account_state_changed
 
+    attr_accessor :system_account_additional_fields
+
+    attr_accessor :system_account_permissions_changed
+
+    attr_accessor :user_balance_changed
+
     attr_accessor :message_deleted
 
     attr_accessor :message_incoming
@@ -47,6 +53,8 @@ module TextMagic
     attr_accessor :message_schedule_state_changed
 
     attr_accessor :message_schedule_deleted
+
+    attr_accessor :message_schedule_not_sent_state_changed
 
     attr_accessor :message_schedule_cache_clear
 
@@ -74,6 +82,10 @@ module TextMagic
 
     attr_accessor :chat_cache_clear
 
+    attr_accessor :chat_read
+
+    attr_accessor :chat_unread
+
     attr_accessor :contact_added
 
     attr_accessor :contact_deleted
@@ -96,6 +108,22 @@ module TextMagic
 
     attr_accessor :custom_fields_cache_clear
 
+    attr_accessor :progress_carrier_bulk_lookup
+
+    attr_accessor :progress_email_bulk_lookup
+
+    attr_accessor :progress_sub_account_bulk_import
+
+    attr_accessor :progress_contact_bulk_import
+
+    attr_accessor :force_refresh_web_app
+
+    attr_accessor :chat_sender_settings_changed
+
+    attr_accessor :country_sender_settings_changed
+
+    attr_accessor :chat_suggested_reply_chunk
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -103,6 +131,9 @@ module TextMagic
         :'system_exit' => :'systemExit',
         :'system_alert' => :'systemAlert',
         :'system_account_state_changed' => :'systemAccountStateChanged',
+        :'system_account_additional_fields' => :'systemAccountAdditionalFields',
+        :'system_account_permissions_changed' => :'systemAccountPermissionsChanged',
+        :'user_balance_changed' => :'userBalanceChanged',
         :'message_deleted' => :'messageDeleted',
         :'message_incoming' => :'messageIncoming',
         :'message_incoming_deleted' => :'messageIncomingDeleted',
@@ -116,6 +147,7 @@ module TextMagic
         :'message_schedule_added' => :'messageScheduleAdded',
         :'message_schedule_state_changed' => :'messageScheduleStateChanged',
         :'message_schedule_deleted' => :'messageScheduleDeleted',
+        :'message_schedule_not_sent_state_changed' => :'messageScheduleNotSentStateChanged',
         :'message_schedule_cache_clear' => :'messageScheduleCacheClear',
         :'message_template_cache_clear' => :'messageTemplateCacheClear',
         :'call_finished' => :'callFinished',
@@ -129,6 +161,8 @@ module TextMagic
         :'chat_closed' => :'chatClosed',
         :'chat_reopened' => :'chatReopened',
         :'chat_cache_clear' => :'chatCacheClear',
+        :'chat_read' => :'chatRead',
+        :'chat_unread' => :'chatUnread',
         :'contact_added' => :'contactAdded',
         :'contact_deleted' => :'contactDeleted',
         :'contact_state_changed' => :'contactStateChanged',
@@ -139,7 +173,15 @@ module TextMagic
         :'contact_import_end' => :'contactImportEnd',
         :'contact_cache_clear' => :'contactCacheClear',
         :'list_cache_clear' => :'listCacheClear',
-        :'custom_fields_cache_clear' => :'customFieldsCacheClear'
+        :'custom_fields_cache_clear' => :'customFieldsCacheClear',
+        :'progress_carrier_bulk_lookup' => :'progressCarrierBulkLookup',
+        :'progress_email_bulk_lookup' => :'progressEmailBulkLookup',
+        :'progress_sub_account_bulk_import' => :'progressSubAccountBulkImport',
+        :'progress_contact_bulk_import' => :'progressContactBulkImport',
+        :'force_refresh_web_app' => :'forceRefreshWebApp',
+        :'chat_sender_settings_changed' => :'chatSenderSettingsChanged',
+        :'country_sender_settings_changed' => :'countrySenderSettingsChanged',
+        :'chat_suggested_reply_chunk' => :'chatSuggestedReplyChunk'
       }
     end
 
@@ -150,6 +192,9 @@ module TextMagic
         :'system_exit' => :'Integer',
         :'system_alert' => :'Integer',
         :'system_account_state_changed' => :'Integer',
+        :'system_account_additional_fields' => :'Integer',
+        :'system_account_permissions_changed' => :'Integer',
+        :'user_balance_changed' => :'Integer',
         :'message_deleted' => :'Integer',
         :'message_incoming' => :'Integer',
         :'message_incoming_deleted' => :'Integer',
@@ -163,6 +208,7 @@ module TextMagic
         :'message_schedule_added' => :'Integer',
         :'message_schedule_state_changed' => :'Integer',
         :'message_schedule_deleted' => :'Integer',
+        :'message_schedule_not_sent_state_changed' => :'Integer',
         :'message_schedule_cache_clear' => :'Integer',
         :'message_template_cache_clear' => :'Integer',
         :'call_finished' => :'Integer',
@@ -176,6 +222,8 @@ module TextMagic
         :'chat_closed' => :'Integer',
         :'chat_reopened' => :'Integer',
         :'chat_cache_clear' => :'Integer',
+        :'chat_read' => :'Integer',
+        :'chat_unread' => :'Integer',
         :'contact_added' => :'Integer',
         :'contact_deleted' => :'Integer',
         :'contact_state_changed' => :'Integer',
@@ -186,7 +234,15 @@ module TextMagic
         :'contact_import_end' => :'Integer',
         :'contact_cache_clear' => :'Integer',
         :'list_cache_clear' => :'Integer',
-        :'custom_fields_cache_clear' => :'Integer'
+        :'custom_fields_cache_clear' => :'Integer',
+        :'progress_carrier_bulk_lookup' => :'Integer',
+        :'progress_email_bulk_lookup' => :'Integer',
+        :'progress_sub_account_bulk_import' => :'Integer',
+        :'progress_contact_bulk_import' => :'Integer',
+        :'force_refresh_web_app' => :'Integer',
+        :'chat_sender_settings_changed' => :'Integer',
+        :'country_sender_settings_changed' => :'Integer',
+        :'chat_suggested_reply_chunk' => :'Integer'
       }
     end
 
@@ -212,6 +268,18 @@ module TextMagic
 
       if attributes.has_key?(:'systemAccountStateChanged')
         self.system_account_state_changed = attributes[:'systemAccountStateChanged']
+      end
+
+      if attributes.has_key?(:'systemAccountAdditionalFields')
+        self.system_account_additional_fields = attributes[:'systemAccountAdditionalFields']
+      end
+
+      if attributes.has_key?(:'systemAccountPermissionsChanged')
+        self.system_account_permissions_changed = attributes[:'systemAccountPermissionsChanged']
+      end
+
+      if attributes.has_key?(:'userBalanceChanged')
+        self.user_balance_changed = attributes[:'userBalanceChanged']
       end
 
       if attributes.has_key?(:'messageDeleted')
@@ -266,6 +334,10 @@ module TextMagic
         self.message_schedule_deleted = attributes[:'messageScheduleDeleted']
       end
 
+      if attributes.has_key?(:'messageScheduleNotSentStateChanged')
+        self.message_schedule_not_sent_state_changed = attributes[:'messageScheduleNotSentStateChanged']
+      end
+
       if attributes.has_key?(:'messageScheduleCacheClear')
         self.message_schedule_cache_clear = attributes[:'messageScheduleCacheClear']
       end
@@ -318,6 +390,14 @@ module TextMagic
         self.chat_cache_clear = attributes[:'chatCacheClear']
       end
 
+      if attributes.has_key?(:'chatRead')
+        self.chat_read = attributes[:'chatRead']
+      end
+
+      if attributes.has_key?(:'chatUnread')
+        self.chat_unread = attributes[:'chatUnread']
+      end
+
       if attributes.has_key?(:'contactAdded')
         self.contact_added = attributes[:'contactAdded']
       end
@@ -361,6 +441,38 @@ module TextMagic
       if attributes.has_key?(:'customFieldsCacheClear')
         self.custom_fields_cache_clear = attributes[:'customFieldsCacheClear']
       end
+
+      if attributes.has_key?(:'progressCarrierBulkLookup')
+        self.progress_carrier_bulk_lookup = attributes[:'progressCarrierBulkLookup']
+      end
+
+      if attributes.has_key?(:'progressEmailBulkLookup')
+        self.progress_email_bulk_lookup = attributes[:'progressEmailBulkLookup']
+      end
+
+      if attributes.has_key?(:'progressSubAccountBulkImport')
+        self.progress_sub_account_bulk_import = attributes[:'progressSubAccountBulkImport']
+      end
+
+      if attributes.has_key?(:'progressContactBulkImport')
+        self.progress_contact_bulk_import = attributes[:'progressContactBulkImport']
+      end
+
+      if attributes.has_key?(:'forceRefreshWebApp')
+        self.force_refresh_web_app = attributes[:'forceRefreshWebApp']
+      end
+
+      if attributes.has_key?(:'chatSenderSettingsChanged')
+        self.chat_sender_settings_changed = attributes[:'chatSenderSettingsChanged']
+      end
+
+      if attributes.has_key?(:'countrySenderSettingsChanged')
+        self.country_sender_settings_changed = attributes[:'countrySenderSettingsChanged']
+      end
+
+      if attributes.has_key?(:'chatSuggestedReplyChunk')
+        self.chat_suggested_reply_chunk = attributes[:'chatSuggestedReplyChunk']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -381,6 +493,18 @@ module TextMagic
 
       if @system_account_state_changed.nil?
         invalid_properties.push('invalid value for "system_account_state_changed", system_account_state_changed cannot be nil.')
+      end
+
+      if @system_account_additional_fields.nil?
+        invalid_properties.push('invalid value for "system_account_additional_fields", system_account_additional_fields cannot be nil.')
+      end
+
+      if @system_account_permissions_changed.nil?
+        invalid_properties.push('invalid value for "system_account_permissions_changed", system_account_permissions_changed cannot be nil.')
+      end
+
+      if @user_balance_changed.nil?
+        invalid_properties.push('invalid value for "user_balance_changed", user_balance_changed cannot be nil.')
       end
 
       if @message_deleted.nil?
@@ -435,6 +559,10 @@ module TextMagic
         invalid_properties.push('invalid value for "message_schedule_deleted", message_schedule_deleted cannot be nil.')
       end
 
+      if @message_schedule_not_sent_state_changed.nil?
+        invalid_properties.push('invalid value for "message_schedule_not_sent_state_changed", message_schedule_not_sent_state_changed cannot be nil.')
+      end
+
       if @message_schedule_cache_clear.nil?
         invalid_properties.push('invalid value for "message_schedule_cache_clear", message_schedule_cache_clear cannot be nil.')
       end
@@ -487,6 +615,14 @@ module TextMagic
         invalid_properties.push('invalid value for "chat_cache_clear", chat_cache_clear cannot be nil.')
       end
 
+      if @chat_read.nil?
+        invalid_properties.push('invalid value for "chat_read", chat_read cannot be nil.')
+      end
+
+      if @chat_unread.nil?
+        invalid_properties.push('invalid value for "chat_unread", chat_unread cannot be nil.')
+      end
+
       if @contact_added.nil?
         invalid_properties.push('invalid value for "contact_added", contact_added cannot be nil.')
       end
@@ -531,6 +667,38 @@ module TextMagic
         invalid_properties.push('invalid value for "custom_fields_cache_clear", custom_fields_cache_clear cannot be nil.')
       end
 
+      if @progress_carrier_bulk_lookup.nil?
+        invalid_properties.push('invalid value for "progress_carrier_bulk_lookup", progress_carrier_bulk_lookup cannot be nil.')
+      end
+
+      if @progress_email_bulk_lookup.nil?
+        invalid_properties.push('invalid value for "progress_email_bulk_lookup", progress_email_bulk_lookup cannot be nil.')
+      end
+
+      if @progress_sub_account_bulk_import.nil?
+        invalid_properties.push('invalid value for "progress_sub_account_bulk_import", progress_sub_account_bulk_import cannot be nil.')
+      end
+
+      if @progress_contact_bulk_import.nil?
+        invalid_properties.push('invalid value for "progress_contact_bulk_import", progress_contact_bulk_import cannot be nil.')
+      end
+
+      if @force_refresh_web_app.nil?
+        invalid_properties.push('invalid value for "force_refresh_web_app", force_refresh_web_app cannot be nil.')
+      end
+
+      if @chat_sender_settings_changed.nil?
+        invalid_properties.push('invalid value for "chat_sender_settings_changed", chat_sender_settings_changed cannot be nil.')
+      end
+
+      if @country_sender_settings_changed.nil?
+        invalid_properties.push('invalid value for "country_sender_settings_changed", country_sender_settings_changed cannot be nil.')
+      end
+
+      if @chat_suggested_reply_chunk.nil?
+        invalid_properties.push('invalid value for "chat_suggested_reply_chunk", chat_suggested_reply_chunk cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -541,6 +709,9 @@ module TextMagic
       return false if @system_exit.nil?
       return false if @system_alert.nil?
       return false if @system_account_state_changed.nil?
+      return false if @system_account_additional_fields.nil?
+      return false if @system_account_permissions_changed.nil?
+      return false if @user_balance_changed.nil?
       return false if @message_deleted.nil?
       return false if @message_incoming.nil?
       return false if @message_incoming_deleted.nil?
@@ -554,6 +725,7 @@ module TextMagic
       return false if @message_schedule_added.nil?
       return false if @message_schedule_state_changed.nil?
       return false if @message_schedule_deleted.nil?
+      return false if @message_schedule_not_sent_state_changed.nil?
       return false if @message_schedule_cache_clear.nil?
       return false if @message_template_cache_clear.nil?
       return false if @call_finished.nil?
@@ -567,6 +739,8 @@ module TextMagic
       return false if @chat_closed.nil?
       return false if @chat_reopened.nil?
       return false if @chat_cache_clear.nil?
+      return false if @chat_read.nil?
+      return false if @chat_unread.nil?
       return false if @contact_added.nil?
       return false if @contact_deleted.nil?
       return false if @contact_state_changed.nil?
@@ -578,6 +752,14 @@ module TextMagic
       return false if @contact_cache_clear.nil?
       return false if @list_cache_clear.nil?
       return false if @custom_fields_cache_clear.nil?
+      return false if @progress_carrier_bulk_lookup.nil?
+      return false if @progress_email_bulk_lookup.nil?
+      return false if @progress_sub_account_bulk_import.nil?
+      return false if @progress_contact_bulk_import.nil?
+      return false if @force_refresh_web_app.nil?
+      return false if @chat_sender_settings_changed.nil?
+      return false if @country_sender_settings_changed.nil?
+      return false if @chat_suggested_reply_chunk.nil?
       true
     end
 
@@ -590,6 +772,9 @@ module TextMagic
           system_exit == o.system_exit &&
           system_alert == o.system_alert &&
           system_account_state_changed == o.system_account_state_changed &&
+          system_account_additional_fields == o.system_account_additional_fields &&
+          system_account_permissions_changed == o.system_account_permissions_changed &&
+          user_balance_changed == o.user_balance_changed &&
           message_deleted == o.message_deleted &&
           message_incoming == o.message_incoming &&
           message_incoming_deleted == o.message_incoming_deleted &&
@@ -603,6 +788,7 @@ module TextMagic
           message_schedule_added == o.message_schedule_added &&
           message_schedule_state_changed == o.message_schedule_state_changed &&
           message_schedule_deleted == o.message_schedule_deleted &&
+          message_schedule_not_sent_state_changed == o.message_schedule_not_sent_state_changed &&
           message_schedule_cache_clear == o.message_schedule_cache_clear &&
           message_template_cache_clear == o.message_template_cache_clear &&
           call_finished == o.call_finished &&
@@ -616,6 +802,8 @@ module TextMagic
           chat_closed == o.chat_closed &&
           chat_reopened == o.chat_reopened &&
           chat_cache_clear == o.chat_cache_clear &&
+          chat_read == o.chat_read &&
+          chat_unread == o.chat_unread &&
           contact_added == o.contact_added &&
           contact_deleted == o.contact_deleted &&
           contact_state_changed == o.contact_state_changed &&
@@ -626,7 +814,15 @@ module TextMagic
           contact_import_end == o.contact_import_end &&
           contact_cache_clear == o.contact_cache_clear &&
           list_cache_clear == o.list_cache_clear &&
-          custom_fields_cache_clear == o.custom_fields_cache_clear
+          custom_fields_cache_clear == o.custom_fields_cache_clear &&
+          progress_carrier_bulk_lookup == o.progress_carrier_bulk_lookup &&
+          progress_email_bulk_lookup == o.progress_email_bulk_lookup &&
+          progress_sub_account_bulk_import == o.progress_sub_account_bulk_import &&
+          progress_contact_bulk_import == o.progress_contact_bulk_import &&
+          force_refresh_web_app == o.force_refresh_web_app &&
+          chat_sender_settings_changed == o.chat_sender_settings_changed &&
+          country_sender_settings_changed == o.country_sender_settings_changed &&
+          chat_suggested_reply_chunk == o.chat_suggested_reply_chunk
     end
 
     # @see the `==` method
@@ -638,7 +834,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [system_cache_clear, system_exit, system_alert, system_account_state_changed, message_deleted, message_incoming, message_incoming_deleted, message_state_changed, message_bulk_end, message_wipe_end, message_sent, message_session_deleted, message_cache_clear, message_incoming_cache_clear, message_schedule_added, message_schedule_state_changed, message_schedule_deleted, message_schedule_cache_clear, message_template_cache_clear, call_finished, chat_created, chat_marked_as_read, chat_muted, chat_unmuted, chat_pinned, chat_unpinned, chat_deleted, chat_closed, chat_reopened, chat_cache_clear, contact_added, contact_deleted, contact_state_changed, list_added, list_deleted, list_state_changed, contact_wipe_end, contact_import_end, contact_cache_clear, list_cache_clear, custom_fields_cache_clear].hash
+      [system_cache_clear, system_exit, system_alert, system_account_state_changed, system_account_additional_fields, system_account_permissions_changed, user_balance_changed, message_deleted, message_incoming, message_incoming_deleted, message_state_changed, message_bulk_end, message_wipe_end, message_sent, message_session_deleted, message_cache_clear, message_incoming_cache_clear, message_schedule_added, message_schedule_state_changed, message_schedule_deleted, message_schedule_not_sent_state_changed, message_schedule_cache_clear, message_template_cache_clear, call_finished, chat_created, chat_marked_as_read, chat_muted, chat_unmuted, chat_pinned, chat_unpinned, chat_deleted, chat_closed, chat_reopened, chat_cache_clear, chat_read, chat_unread, contact_added, contact_deleted, contact_state_changed, list_added, list_deleted, list_state_changed, contact_wipe_end, contact_import_end, contact_cache_clear, list_cache_clear, custom_fields_cache_clear, progress_carrier_bulk_lookup, progress_email_bulk_lookup, progress_sub_account_bulk_import, progress_contact_bulk_import, force_refresh_web_app, chat_sender_settings_changed, country_sender_settings_changed, chat_suggested_reply_chunk].hash
     end
 
     # Builds the object from hash

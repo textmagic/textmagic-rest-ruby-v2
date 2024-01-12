@@ -7,6 +7,9 @@ Name | Type | Description | Notes
 **system_exit** | **Integer** |  | 
 **system_alert** | **Integer** |  | 
 **system_account_state_changed** | **Integer** |  | 
+**system_account_additional_fields** | **Integer** |  | 
+**system_account_permissions_changed** | **Integer** |  | 
+**user_balance_changed** | **Integer** |  | 
 **message_deleted** | **Integer** |  | 
 **message_incoming** | **Integer** |  | 
 **message_incoming_deleted** | **Integer** |  | 
@@ -20,6 +23,7 @@ Name | Type | Description | Notes
 **message_schedule_added** | **Integer** |  | 
 **message_schedule_state_changed** | **Integer** |  | 
 **message_schedule_deleted** | **Integer** |  | 
+**message_schedule_not_sent_state_changed** | **Integer** |  | 
 **message_schedule_cache_clear** | **Integer** |  | 
 **message_template_cache_clear** | **Integer** |  | 
 **call_finished** | **Integer** |  | 
@@ -33,6 +37,8 @@ Name | Type | Description | Notes
 **chat_closed** | **Integer** |  | 
 **chat_reopened** | **Integer** |  | 
 **chat_cache_clear** | **Integer** |  | 
+**chat_read** | **Integer** |  | 
+**chat_unread** | **Integer** |  | 
 **contact_added** | **Integer** |  | 
 **contact_deleted** | **Integer** |  | 
 **contact_state_changed** | **Integer** |  | 
@@ -44,5 +50,13 @@ Name | Type | Description | Notes
 **contact_cache_clear** | **Integer** |  | 
 **list_cache_clear** | **Integer** |  | 
 **custom_fields_cache_clear** | **Integer** |  | 
+**progress_carrier_bulk_lookup** | **Integer** |  | 
+**progress_email_bulk_lookup** | **Integer** |  | 
+**progress_sub_account_bulk_import** | **Integer** |  | 
+**progress_contact_bulk_import** | **Integer** |  | 
+**force_refresh_web_app** | **Integer** |  | 
+**chat_sender_settings_changed** | **Integer** |  | 
+**country_sender_settings_changed** | **Integer** |  | 
+**chat_suggested_reply_chunk** | **Integer** |  | 
 
 
