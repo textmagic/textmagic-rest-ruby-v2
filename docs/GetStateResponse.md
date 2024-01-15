@@ -57,6 +57,8 @@ Name | Type | Description | Notes
 **force_refresh_web_app** | **Integer** |  | 
 **chat_sender_settings_changed** | **Integer** |  | 
 **country_sender_settings_changed** | **Integer** |  | 
+**chat_summary_chunk** | **Integer** |  | 
+**chat_ways_to_reply_chunk** | **Integer** |  | 
 **chat_suggested_reply_chunk** | **Integer** |  | 
 
 

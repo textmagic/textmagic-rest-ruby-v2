@@ -122,6 +122,10 @@ module TextMagic
 
     attr_accessor :country_sender_settings_changed
 
+    attr_accessor :chat_summary_chunk
+
+    attr_accessor :chat_ways_to_reply_chunk
+
     attr_accessor :chat_suggested_reply_chunk
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -181,6 +185,8 @@ module TextMagic
         :'force_refresh_web_app' => :'forceRefreshWebApp',
         :'chat_sender_settings_changed' => :'chatSenderSettingsChanged',
         :'country_sender_settings_changed' => :'countrySenderSettingsChanged',
+        :'chat_summary_chunk' => :'chatSummaryChunk',
+        :'chat_ways_to_reply_chunk' => :'chatWaysToReplyChunk',
         :'chat_suggested_reply_chunk' => :'chatSuggestedReplyChunk'
       }
     end
@@ -242,6 +248,8 @@ module TextMagic
         :'force_refresh_web_app' => :'Integer',
         :'chat_sender_settings_changed' => :'Integer',
         :'country_sender_settings_changed' => :'Integer',
+        :'chat_summary_chunk' => :'Integer',
+        :'chat_ways_to_reply_chunk' => :'Integer',
         :'chat_suggested_reply_chunk' => :'Integer'
       }
     end
@@ -470,6 +478,14 @@ module TextMagic
         self.country_sender_settings_changed = attributes[:'countrySenderSettingsChanged']
       end
 
+      if attributes.has_key?(:'chatSummaryChunk')
+        self.chat_summary_chunk = attributes[:'chatSummaryChunk']
+      end
+
+      if attributes.has_key?(:'chatWaysToReplyChunk')
+        self.chat_ways_to_reply_chunk = attributes[:'chatWaysToReplyChunk']
+      end
+
       if attributes.has_key?(:'chatSuggestedReplyChunk')
         self.chat_suggested_reply_chunk = attributes[:'chatSuggestedReplyChunk']
       end
@@ -695,6 +711,14 @@ module TextMagic
         invalid_properties.push('invalid value for "country_sender_settings_changed", country_sender_settings_changed cannot be nil.')
       end
 
+      if @chat_summary_chunk.nil?
+        invalid_properties.push('invalid value for "chat_summary_chunk", chat_summary_chunk cannot be nil.')
+      end
+
+      if @chat_ways_to_reply_chunk.nil?
+        invalid_properties.push('invalid value for "chat_ways_to_reply_chunk", chat_ways_to_reply_chunk cannot be nil.')
+      end
+
       if @chat_suggested_reply_chunk.nil?
         invalid_properties.push('invalid value for "chat_suggested_reply_chunk", chat_suggested_reply_chunk cannot be nil.')
       end
@@ -759,6 +783,8 @@ module TextMagic
       return false if @force_refresh_web_app.nil?
       return false if @chat_sender_settings_changed.nil?
       return false if @country_sender_settings_changed.nil?
+      return false if @chat_summary_chunk.nil?
+      return false if @chat_ways_to_reply_chunk.nil?
       return false if @chat_suggested_reply_chunk.nil?
       true
     end
@@ -822,6 +848,8 @@ module TextMagic
           force_refresh_web_app == o.force_refresh_web_app &&
           chat_sender_settings_changed == o.chat_sender_settings_changed &&
           country_sender_settings_changed == o.country_sender_settings_changed &&
+          chat_summary_chunk == o.chat_summary_chunk &&
+          chat_ways_to_reply_chunk == o.chat_ways_to_reply_chunk &&
           chat_suggested_reply_chunk == o.chat_suggested_reply_chunk
     end
 
@@ -834,7 +862,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [system_cache_clear, system_exit, system_alert, system_account_state_changed, system_account_additional_fields, system_account_permissions_changed, user_balance_changed, message_deleted, message_incoming, message_incoming_deleted, message_state_changed, message_bulk_end, message_wipe_end, message_sent, message_session_deleted, message_cache_clear, message_incoming_cache_clear, message_schedule_added, message_schedule_state_changed, message_schedule_deleted, message_schedule_not_sent_state_changed, message_schedule_cache_clear, message_template_cache_clear, call_finished, chat_created, chat_marked_as_read, chat_muted, chat_unmuted, chat_pinned, chat_unpinned, chat_deleted, chat_closed, chat_reopened, chat_cache_clear, chat_read, chat_unread, contact_added, contact_deleted, contact_state_changed, list_added, list_deleted, list_state_changed, contact_wipe_end, contact_import_end, contact_cache_clear, list_cache_clear, custom_fields_cache_clear, progress_carrier_bulk_lookup, progress_email_bulk_lookup, progress_sub_account_bulk_import, progress_contact_bulk_import, force_refresh_web_app, chat_sender_settings_changed, country_sender_settings_changed, chat_suggested_reply_chunk].hash
+      [system_cache_clear, system_exit, system_alert, system_account_state_changed, system_account_additional_fields, system_account_permissions_changed, user_balance_changed, message_deleted, message_incoming, message_incoming_deleted, message_state_changed, message_bulk_end, message_wipe_end, message_sent, message_session_deleted, message_cache_clear, message_incoming_cache_clear, message_schedule_added, message_schedule_state_changed, message_schedule_deleted, message_schedule_not_sent_state_changed, message_schedule_cache_clear, message_template_cache_clear, call_finished, chat_created, chat_marked_as_read, chat_muted, chat_unmuted, chat_pinned, chat_unpinned, chat_deleted, chat_closed, chat_reopened, chat_cache_clear, chat_read, chat_unread, contact_added, contact_deleted, contact_state_changed, list_added, list_deleted, list_state_changed, contact_wipe_end, contact_import_end, contact_cache_clear, list_cache_clear, custom_fields_cache_clear, progress_carrier_bulk_lookup, progress_email_bulk_lookup, progress_sub_account_bulk_import, progress_contact_bulk_import, force_refresh_web_app, chat_sender_settings_changed, country_sender_settings_changed, chat_summary_chunk, chat_ways_to_reply_chunk, chat_suggested_reply_chunk].hash
     end
 
     # Builds the object from hash
