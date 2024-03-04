@@ -56,6 +56,12 @@ describe 'GetStateResponse' do
     end
   end
 
+  describe 'test attribute "system_account_closed"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "system_account_additional_fields"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -43,6 +43,10 @@ module TextMagic
     # Sender email.
     attr_accessor :email
 
+    attr_accessor :contact_user_id
+
+    attr_accessor :user_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -55,7 +59,9 @@ module TextMagic
         :'first_name' => :'firstName',
         :'last_name' => :'lastName',
         :'avatar' => :'avatar',
-        :'email' => :'email'
+        :'email' => :'email',
+        :'contact_user_id' => :'contactUserId',
+        :'user_id' => :'userId'
       }
     end
 
@@ -71,7 +77,9 @@ module TextMagic
         :'first_name' => :'String',
         :'last_name' => :'String',
         :'avatar' => :'String',
-        :'email' => :'String'
+        :'email' => :'String',
+        :'contact_user_id' => :'Integer',
+        :'user_id' => :'Integer'
       }
     end
 
@@ -121,6 +129,14 @@ module TextMagic
 
       if attributes.has_key?(:'email')
         self.email = attributes[:'email']
+      end
+
+      if attributes.has_key?(:'contactUserId')
+        self.contact_user_id = attributes[:'contactUserId']
+      end
+
+      if attributes.has_key?(:'userId')
+        self.user_id = attributes[:'userId']
       end
     end
 
@@ -181,7 +197,9 @@ module TextMagic
           first_name == o.first_name &&
           last_name == o.last_name &&
           avatar == o.avatar &&
-          email == o.email
+          email == o.email &&
+          contact_user_id == o.contact_user_id &&
+          user_id == o.user_id
     end
 
     # @see the `==` method
@@ -193,7 +211,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, sender, receiver, message_time, text, contact_id, first_name, last_name, avatar, email].hash
+      [id, sender, receiver, message_time, text, contact_id, first_name, last_name, avatar, email, contact_user_id, user_id].hash
     end
 
     # Builds the object from hash

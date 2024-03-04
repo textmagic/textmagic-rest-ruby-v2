@@ -22,6 +22,8 @@ module TextMagic
 
     attr_accessor :system_account_state_changed
 
+    attr_accessor :system_account_closed
+
     attr_accessor :system_account_additional_fields
 
     attr_accessor :system_account_permissions_changed
@@ -135,6 +137,7 @@ module TextMagic
         :'system_exit' => :'systemExit',
         :'system_alert' => :'systemAlert',
         :'system_account_state_changed' => :'systemAccountStateChanged',
+        :'system_account_closed' => :'systemAccountClosed',
         :'system_account_additional_fields' => :'systemAccountAdditionalFields',
         :'system_account_permissions_changed' => :'systemAccountPermissionsChanged',
         :'user_balance_changed' => :'userBalanceChanged',
@@ -198,6 +201,7 @@ module TextMagic
         :'system_exit' => :'Integer',
         :'system_alert' => :'Integer',
         :'system_account_state_changed' => :'Integer',
+        :'system_account_closed' => :'Integer',
         :'system_account_additional_fields' => :'Integer',
         :'system_account_permissions_changed' => :'Integer',
         :'user_balance_changed' => :'Integer',
@@ -276,6 +280,10 @@ module TextMagic
 
       if attributes.has_key?(:'systemAccountStateChanged')
         self.system_account_state_changed = attributes[:'systemAccountStateChanged']
+      end
+
+      if attributes.has_key?(:'systemAccountClosed')
+        self.system_account_closed = attributes[:'systemAccountClosed']
       end
 
       if attributes.has_key?(:'systemAccountAdditionalFields')
@@ -511,6 +519,10 @@ module TextMagic
         invalid_properties.push('invalid value for "system_account_state_changed", system_account_state_changed cannot be nil.')
       end
 
+      if @system_account_closed.nil?
+        invalid_properties.push('invalid value for "system_account_closed", system_account_closed cannot be nil.')
+      end
+
       if @system_account_additional_fields.nil?
         invalid_properties.push('invalid value for "system_account_additional_fields", system_account_additional_fields cannot be nil.')
       end
@@ -733,6 +745,7 @@ module TextMagic
       return false if @system_exit.nil?
       return false if @system_alert.nil?
       return false if @system_account_state_changed.nil?
+      return false if @system_account_closed.nil?
       return false if @system_account_additional_fields.nil?
       return false if @system_account_permissions_changed.nil?
       return false if @user_balance_changed.nil?
@@ -798,6 +811,7 @@ module TextMagic
           system_exit == o.system_exit &&
           system_alert == o.system_alert &&
           system_account_state_changed == o.system_account_state_changed &&
+          system_account_closed == o.system_account_closed &&
           system_account_additional_fields == o.system_account_additional_fields &&
           system_account_permissions_changed == o.system_account_permissions_changed &&
           user_balance_changed == o.user_balance_changed &&
@@ -862,7 +876,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [system_cache_clear, system_exit, system_alert, system_account_state_changed, system_account_additional_fields, system_account_permissions_changed, user_balance_changed, message_deleted, message_incoming, message_incoming_deleted, message_state_changed, message_bulk_end, message_wipe_end, message_sent, message_session_deleted, message_cache_clear, message_incoming_cache_clear, message_schedule_added, message_schedule_state_changed, message_schedule_deleted, message_schedule_not_sent_state_changed, message_schedule_cache_clear, message_template_cache_clear, call_finished, chat_created, chat_marked_as_read, chat_muted, chat_unmuted, chat_pinned, chat_unpinned, chat_deleted, chat_closed, chat_reopened, chat_cache_clear, chat_read, chat_unread, contact_added, contact_deleted, contact_state_changed, list_added, list_deleted, list_state_changed, contact_wipe_end, contact_import_end, contact_cache_clear, list_cache_clear, custom_fields_cache_clear, progress_carrier_bulk_lookup, progress_email_bulk_lookup, progress_sub_account_bulk_import, progress_contact_bulk_import, force_refresh_web_app, chat_sender_settings_changed, country_sender_settings_changed, chat_summary_chunk, chat_ways_to_reply_chunk, chat_suggested_reply_chunk].hash
+      [system_cache_clear, system_exit, system_alert, system_account_state_changed, system_account_closed, system_account_additional_fields, system_account_permissions_changed, user_balance_changed, message_deleted, message_incoming, message_incoming_deleted, message_state_changed, message_bulk_end, message_wipe_end, message_sent, message_session_deleted, message_cache_clear, message_incoming_cache_clear, message_schedule_added, message_schedule_state_changed, message_schedule_deleted, message_schedule_not_sent_state_changed, message_schedule_cache_clear, message_template_cache_clear, call_finished, chat_created, chat_marked_as_read, chat_muted, chat_unmuted, chat_pinned, chat_unpinned, chat_deleted, chat_closed, chat_reopened, chat_cache_clear, chat_read, chat_unread, contact_added, contact_deleted, contact_state_changed, list_added, list_deleted, list_state_changed, contact_wipe_end, contact_import_end, contact_cache_clear, list_cache_clear, custom_fields_cache_clear, progress_carrier_bulk_lookup, progress_email_bulk_lookup, progress_sub_account_bulk_import, progress_contact_bulk_import, force_refresh_web_app, chat_sender_settings_changed, country_sender_settings_changed, chat_summary_chunk, chat_ways_to_reply_chunk, chat_suggested_reply_chunk].hash
     end
 
     # Builds the object from hash

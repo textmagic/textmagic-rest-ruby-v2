@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **system_exit** | **Integer** |  | 
 **system_alert** | **Integer** |  | 
 **system_account_state_changed** | **Integer** |  | 
+**system_account_closed** | **Integer** |  | 
 **system_account_additional_fields** | **Integer** |  | 
 **system_account_permissions_changed** | **Integer** |  | 
 **user_balance_changed** | **Integer** |  | 

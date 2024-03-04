@@ -13,5 +13,7 @@ Name | Type | Description | Notes
 **last_name** | **String** | Sender contact last name. | [optional] 
 **avatar** | **String** |  | 
 **email** | **String** | Sender email. | [optional] 
+**contact_user_id** | **Integer** |  | [optional] 
+**user_id** | **Integer** |  | [optional] 
 
 
