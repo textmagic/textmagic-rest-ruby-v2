@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://docs.textmagic.com"
   s.summary     = "This library provides you with an easy way of sending SMS and receiving replies by integrating the Textmagic SMS Gateway into your Ruby application."
   s.description = "Textmagic Ruby SDK"
-  s.license     = "The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT)."
+  s.license     = "MIT"
   s.required_ruby_version = "> 2.7"
   s.metadata    = {}
 
