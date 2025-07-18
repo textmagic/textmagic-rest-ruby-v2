@@ -1,217 +1,197 @@
-# TextmagicRestClient::TextMagicApi
+# TextMagic::TextMagicApi
 
 All URIs are relative to *https://rest.textmagic.com*
 
-| Method | HTTP request | Description |
-| ------ | ------------ | ----------- |
-| [**assign_contacts_to_list**](TextMagicApi.md#assign_contacts_to_list) | **PUT** /api/v2/lists/{id}/contacts | Assign contacts to a list |
-| [**block_contact**](TextMagicApi.md#block_contact) | **POST** /api/v2/contacts/block | Block a contact by phone number |
-| [**buy_dedicated_number**](TextMagicApi.md#buy_dedicated_number) | **POST** /api/v2/numbers | Buy a dedicated number |
-| [**cancel_verification**](TextMagicApi.md#cancel_verification) | **DELETE** /api/v2/verify/{verifyId} | Cancel verification process |
-| [**check_phone_verification_code_tfa**](TextMagicApi.md#check_phone_verification_code_tfa) | **PUT** /api/v2/verify | Step 2: Check the verification code  |
-| [**clear_and_assign_contacts_to_list**](TextMagicApi.md#clear_and_assign_contacts_to_list) | **POST** /api/v2/lists/{id}/contacts | Reset list members to the specified contacts |
-| [**close_chats_bulk**](TextMagicApi.md#close_chats_bulk) | **POST** /api/v2/chats/close/bulk | Close chats (bulk) |
-| [**close_read_chats**](TextMagicApi.md#close_read_chats) | **POST** /api/v2/chats/close/read | Close read chats |
-| [**close_subaccount**](TextMagicApi.md#close_subaccount) | **DELETE** /api/v2/subaccounts/{id} | Close sub-account |
-| [**create_contact**](TextMagicApi.md#create_contact) | **POST** /api/v2/contacts/normalized | Add a new contact |
-| [**create_contact_note**](TextMagicApi.md#create_contact_note) | **POST** /api/v2/contacts/{id}/notes | Create a new contact note |
-| [**create_custom_field**](TextMagicApi.md#create_custom_field) | **POST** /api/v2/customfields | Add a new custom field |
-| [**create_list**](TextMagicApi.md#create_list) | **POST** /api/v2/lists | Create a new list |
-| [**create_template**](TextMagicApi.md#create_template) | **POST** /api/v2/templates | Create a template |
-| [**delete_all_contacts**](TextMagicApi.md#delete_all_contacts) | **DELETE** /api/v2/contact/all | Delete contacts (bulk) |
-| [**delete_all_outbound_messages**](TextMagicApi.md#delete_all_outbound_messages) | **DELETE** /api/v2/message/all | Delete all messages |
-| [**delete_avatar**](TextMagicApi.md#delete_avatar) | **DELETE** /api/v2/user/avatar | Delete an avatar |
-| [**delete_chat_messages**](TextMagicApi.md#delete_chat_messages) | **POST** /api/v2/chats/{id}/messages/delete | Delete chat messages by ID(s) |
-| [**delete_chats_bulk**](TextMagicApi.md#delete_chats_bulk) | **POST** /api/v2/chats/delete | Delete chats (bulk) |
-| [**delete_contact**](TextMagicApi.md#delete_contact) | **DELETE** /api/v2/contacts/{id} | Delete a contact |
-| [**delete_contact_avatar**](TextMagicApi.md#delete_contact_avatar) | **DELETE** /api/v2/contacts/{id}/avatar | Delete an avatar |
-| [**delete_contact_note**](TextMagicApi.md#delete_contact_note) | **DELETE** /api/v2/notes/{id} | Delete a contact note |
-| [**delete_contact_notes_bulk**](TextMagicApi.md#delete_contact_notes_bulk) | **POST** /api/v2/contacts/{id}/notes/delete | Delete contact notes (bulk) |
-| [**delete_contacts_by_ids**](TextMagicApi.md#delete_contacts_by_ids) | **POST** /api/v2/contacts/delete | Delete contacts by IDs (bulk) |
-| [**delete_contacts_from_list**](TextMagicApi.md#delete_contacts_from_list) | **DELETE** /api/v2/lists/{id}/contacts | Unassign contacts from a list |
-| [**delete_custom_field**](TextMagicApi.md#delete_custom_field) | **DELETE** /api/v2/customfields/{id} | Delete a custom field |
-| [**delete_dedicated_number**](TextMagicApi.md#delete_dedicated_number) | **DELETE** /api/v2/numbers/{id} | Cancel a dedicated number subscription |
-| [**delete_inbound_message**](TextMagicApi.md#delete_inbound_message) | **DELETE** /api/v2/replies/{id} | Delete a single inbound message |
-| [**delete_inbound_messages_bulk**](TextMagicApi.md#delete_inbound_messages_bulk) | **POST** /api/v2/replies/delete | Delete inbound messages (bulk) |
-| [**delete_list**](TextMagicApi.md#delete_list) | **DELETE** /api/v2/lists/{id} | Delete a list |
-| [**delete_list_avatar**](TextMagicApi.md#delete_list_avatar) | **DELETE** /api/v2/lists/{id}/avatar | Delete an avatar for a list |
-| [**delete_list_contacts_bulk**](TextMagicApi.md#delete_list_contacts_bulk) | **POST** /api/v2/lists/{id}/contacts/delete | Delete contacts from a list (bulk) |
-| [**delete_lists_bulk**](TextMagicApi.md#delete_lists_bulk) | **POST** /api/v2/lists/delete | Delete lists (bulk) |
-| [**delete_message_session**](TextMagicApi.md#delete_message_session) | **DELETE** /api/v2/sessions/{id} | Delete a session |
-| [**delete_message_sessions_bulk**](TextMagicApi.md#delete_message_sessions_bulk) | **POST** /api/v2/sessions/delete | Delete sessions (bulk) |
-| [**delete_outbound_message**](TextMagicApi.md#delete_outbound_message) | **DELETE** /api/v2/messages/{id} | Delete message |
-| [**delete_outbound_messages_bulk**](TextMagicApi.md#delete_outbound_messages_bulk) | **POST** /api/v2/messages/delete | Delete messages (bulk) |
-| [**delete_scheduled_message**](TextMagicApi.md#delete_scheduled_message) | **DELETE** /api/v2/schedules/{id} | Delete a single scheduled message |
-| [**delete_scheduled_messages_bulk**](TextMagicApi.md#delete_scheduled_messages_bulk) | **POST** /api/v2/schedules/delete | Delete scheduled messages (bulk) |
-| [**delete_sender_id**](TextMagicApi.md#delete_sender_id) | **DELETE** /api/v2/senderids/{id} | Delete a Sender ID |
-| [**delete_template**](TextMagicApi.md#delete_template) | **DELETE** /api/v2/templates/{id} | Delete a template |
-| [**delete_templates_bulk**](TextMagicApi.md#delete_templates_bulk) | **POST** /api/v2/templates/delete | Delete templates (bulk) |
-| [**do_carrier_lookup**](TextMagicApi.md#do_carrier_lookup) | **GET** /api/v2/lookups/{phone} | Carrier Lookup |
-| [**do_email_lookup**](TextMagicApi.md#do_email_lookup) | **GET** /api/v2/email-lookups/{email} | Email Lookup |
-| [**get_all_bulk_sessions**](TextMagicApi.md#get_all_bulk_sessions) | **GET** /api/v2/bulks | Get all bulk sessions |
-| [**get_all_chats**](TextMagicApi.md#get_all_chats) | **GET** /api/v2/chats | Get all chats |
-| [**get_all_inbound_messages**](TextMagicApi.md#get_all_inbound_messages) | **GET** /api/v2/replies | Get all inbound messages |
-| [**get_all_message_sessions**](TextMagicApi.md#get_all_message_sessions) | **GET** /api/v2/sessions | Get all sessions |
-| [**get_all_outbound_messages**](TextMagicApi.md#get_all_outbound_messages) | **GET** /api/v2/messages | Get all messages |
-| [**get_all_scheduled_messages**](TextMagicApi.md#get_all_scheduled_messages) | **GET** /api/v2/schedules | Get all scheduled messages |
-| [**get_all_templates**](TextMagicApi.md#get_all_templates) | **GET** /api/v2/templates | Get all templates |
-| [**get_available_dedicated_numbers**](TextMagicApi.md#get_available_dedicated_numbers) | **GET** /api/v2/numbers/available | Find dedicated numbers available for purchase |
-| [**get_available_sender_setting_options**](TextMagicApi.md#get_available_sender_setting_options) | **GET** /api/v2/sources | Get available sender settings |
-| [**get_balance_notification_options**](TextMagicApi.md#get_balance_notification_options) | **GET** /api/v2/user/notification/balance/bundles | Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance |
-| [**get_balance_notification_settings**](TextMagicApi.md#get_balance_notification_settings) | **GET** /api/v2/user/notification/balance | Get balance notification settings |
-| [**get_blocked_contacts**](TextMagicApi.md#get_blocked_contacts) | **GET** /api/v2/contacts/block/list | Get blocked contacts |
-| [**get_bulk_session**](TextMagicApi.md#get_bulk_session) | **GET** /api/v2/bulks/{id} | Get bulk session status |
-| [**get_callback_settings**](TextMagicApi.md#get_callback_settings) | **GET** /api/v2/callback/settings | Fetch callback URL settings |
-| [**get_chat**](TextMagicApi.md#get_chat) | **GET** /api/v2/chats/{id} | Get a single chat |
-| [**get_chat_by_phone**](TextMagicApi.md#get_chat_by_phone) | **GET** /api/v2/chats/{phone}/by/phone | Find chats by phone |
-| [**get_chat_messages**](TextMagicApi.md#get_chat_messages) | **GET** /api/v2/chats/{id}/message | Get chat messages |
-| [**get_contact**](TextMagicApi.md#get_contact) | **GET** /api/v2/contacts/{id} | Get the details of a specific contact |
-| [**get_contact_by_phone**](TextMagicApi.md#get_contact_by_phone) | **GET** /api/v2/contacts/phone/{phone} | Get the details of a specific contact by phone number |
-| [**get_contact_if_blocked**](TextMagicApi.md#get_contact_if_blocked) | **GET** /api/v2/contacts/block/phone | Check if a phone number is blocked |
-| [**get_contact_import_session_progress**](TextMagicApi.md#get_contact_import_session_progress) | **GET** /api/v2/contacts/import/progress/{id} | Check import progress |
-| [**get_contact_note**](TextMagicApi.md#get_contact_note) | **GET** /api/v2/notes/{id} | Get a contact note |
-| [**get_contact_notes**](TextMagicApi.md#get_contact_notes) | **GET** /api/v2/contacts/{id}/notes | Fetch notes assigned to a given contact |
-| [**get_contacts**](TextMagicApi.md#get_contacts) | **GET** /api/v2/contacts | Get all contacts |
-| [**get_contacts_autocomplete**](TextMagicApi.md#get_contacts_autocomplete) | **GET** /api/v2/contacts/autocomplete | Get contacts autocomplete suggestions |
-| [**get_contacts_by_list_id**](TextMagicApi.md#get_contacts_by_list_id) | **GET** /api/v2/lists/{id}/contacts | Get all contacts in a list |
-| [**get_countries**](TextMagicApi.md#get_countries) | **GET** /api/v2/countries | Get countries |
-| [**get_current_user**](TextMagicApi.md#get_current_user) | **GET** /api/v2/user | Get current account information |
-| [**get_custom_field**](TextMagicApi.md#get_custom_field) | **GET** /api/v2/customfields/{id} | Get the details of a specific custom field |
-| [**get_custom_fields**](TextMagicApi.md#get_custom_fields) | **GET** /api/v2/customfields | Get all custom fields |
-| [**get_dedicated_number**](TextMagicApi.md#get_dedicated_number) | **GET** /api/v2/numbers/{id} | Get the details of a specific dedicated number |
-| [**get_favorites**](TextMagicApi.md#get_favorites) | **GET** /api/v2/contacts/favorite | Get favorite contacts and lists |
-| [**get_inbound_message**](TextMagicApi.md#get_inbound_message) | **GET** /api/v2/replies/{id} | Get a single inbound message |
-| [**get_inbound_messages_notification_settings**](TextMagicApi.md#get_inbound_messages_notification_settings) | **GET** /api/v2/user/notification/inbound | Get inbound messages notification settings |
-| [**get_invoices**](TextMagicApi.md#get_invoices) | **GET** /api/v2/invoices | Get all invoices |
-| [**get_list**](TextMagicApi.md#get_list) | **GET** /api/v2/lists/{id} | Get the details of a specific list |
-| [**get_list_contacts_ids**](TextMagicApi.md#get_list_contacts_ids) | **GET** /api/v2/lists/{id}/contacts/ids | Get all contact IDs in a list |
-| [**get_lists**](TextMagicApi.md#get_lists) | **GET** /api/v2/lists | Get all lists |
-| [**get_lists_of_contact**](TextMagicApi.md#get_lists_of_contact) | **GET** /api/v2/contacts/{id}/lists | Get a contact&#39;s lists |
-| [**get_message_preview**](TextMagicApi.md#get_message_preview) | **GET** /api/v2/messages/preview | Preview message |
-| [**get_message_price**](TextMagicApi.md#get_message_price) | **GET** /api/v2/messages/price/normalized | Check message price |
-| [**get_message_session**](TextMagicApi.md#get_message_session) | **GET** /api/v2/sessions/{id} | Get a session&#x60;s details |
-| [**get_message_session_stat**](TextMagicApi.md#get_message_session_stat) | **GET** /api/v2/sessions/{id}/stat | Get a session&#x60;s statistics |
-| [**get_messages_by_session_id**](TextMagicApi.md#get_messages_by_session_id) | **GET** /api/v2/sessions/{id}/messages | Get a session&#x60;s messages |
-| [**get_messaging_counters**](TextMagicApi.md#get_messaging_counters) | **GET** /api/v2/stats/messaging/data | Get sent/received messages counters values |
-| [**get_messaging_stat**](TextMagicApi.md#get_messaging_stat) | **GET** /api/v2/stats/messaging | Get messaging statistics |
-| [**get_outbound_message**](TextMagicApi.md#get_outbound_message) | **GET** /api/v2/messages/{id} | Get a single message |
-| [**get_outbound_messages_history**](TextMagicApi.md#get_outbound_messages_history) | **GET** /api/v2/history | Get history |
-| [**get_scheduled_message**](TextMagicApi.md#get_scheduled_message) | **GET** /api/v2/schedules/{id} | Get a single scheduled message |
-| [**get_sender_id**](TextMagicApi.md#get_sender_id) | **GET** /api/v2/senderids/{id} | Get the details of a specific Sender ID |
-| [**get_sender_ids**](TextMagicApi.md#get_sender_ids) | **GET** /api/v2/senderids | Get all your approved Sender IDs |
-| [**get_sender_settings**](TextMagicApi.md#get_sender_settings) | **GET** /api/v2/sender/settings/normalized | Get current sender settings |
-| [**get_spending_stat**](TextMagicApi.md#get_spending_stat) | **GET** /api/v2/stats/spending | Get spending statistics |
-| [**get_subaccount**](TextMagicApi.md#get_subaccount) | **GET** /api/v2/subaccounts/{id} | Get sub-account information |
-| [**get_subaccounts**](TextMagicApi.md#get_subaccounts) | **GET** /api/v2/subaccounts | Get a sub-accounts list |
-| [**get_subaccounts_with_tokens**](TextMagicApi.md#get_subaccounts_with_tokens) | **POST** /api/v2/subaccounts/tokens/list | Get all sub-accounts with their REST API tokens associated with a specified app name |
-| [**get_template**](TextMagicApi.md#get_template) | **GET** /api/v2/templates/{id} | Get a template&#x60;s details |
-| [**get_timezones**](TextMagicApi.md#get_timezones) | **GET** /api/v2/timezones | Get timezones |
-| [**get_unread_messages_total**](TextMagicApi.md#get_unread_messages_total) | **GET** /api/v2/chats/unread/count | Get unread messages number |
-| [**get_unsubscribed_contact**](TextMagicApi.md#get_unsubscribed_contact) | **GET** /api/v2/unsubscribers/{id} | Get the details of a specific unsubscribed contact |
-| [**get_unsubscribers**](TextMagicApi.md#get_unsubscribers) | **GET** /api/v2/unsubscribers | Get all unsubscribed contacts |
-| [**get_user_dedicated_numbers**](TextMagicApi.md#get_user_dedicated_numbers) | **GET** /api/v2/numbers | Get all your dedicated numbers |
-| [**import_contacts**](TextMagicApi.md#import_contacts) | **POST** /api/v2/contacts/import/normalized | Import contacts |
-| [**invite_subaccount**](TextMagicApi.md#invite_subaccount) | **POST** /api/v2/subaccounts | Invite a new sub-account |
-| [**mark_chats_read_bulk**](TextMagicApi.md#mark_chats_read_bulk) | **POST** /api/v2/chats/read/bulk | Mark chats as read (bulk) |
-| [**mark_chats_unread_bulk**](TextMagicApi.md#mark_chats_unread_bulk) | **POST** /api/v2/chats/unread/bulk | Mark chats as unread (bulk) |
-| [**mute_chat**](TextMagicApi.md#mute_chat) | **POST** /api/v2/chats/mute | Mute chat sounds |
-| [**mute_chats_bulk**](TextMagicApi.md#mute_chats_bulk) | **POST** /api/v2/chats/mute/bulk | Mute chats (bulk) |
-| [**ping**](TextMagicApi.md#ping) | **GET** /api/v2/ping | Ping |
-| [**reopen_chats_bulk**](TextMagicApi.md#reopen_chats_bulk) | **POST** /api/v2/chats/reopen/bulk | Reopen chats (bulk) |
-| [**request_new_subaccount_token**](TextMagicApi.md#request_new_subaccount_token) | **POST** /api/v2/subaccounts/tokens | Request a new REST API token for sub-account |
-| [**request_sender_id**](TextMagicApi.md#request_sender_id) | **POST** /api/v2/senderids | Apply for a new Sender ID |
-| [**search_chats**](TextMagicApi.md#search_chats) | **GET** /api/v2/chats/search | Find chats by message text |
-| [**search_chats_by_ids**](TextMagicApi.md#search_chats_by_ids) | **GET** /api/v2/chats/search/ids | Find chats (bulk) |
-| [**search_chats_by_receipent**](TextMagicApi.md#search_chats_by_receipent) | **GET** /api/v2/chats/search/recipients | Find chats by recipient |
-| [**search_contacts**](TextMagicApi.md#search_contacts) | **GET** /api/v2/contacts/search | Find contacts by given criteria |
-| [**search_inbound_messages**](TextMagicApi.md#search_inbound_messages) | **GET** /api/v2/replies/search | Find inbound messages |
-| [**search_lists**](TextMagicApi.md#search_lists) | **GET** /api/v2/lists/search | Find lists by given criteria |
-| [**search_outbound_messages**](TextMagicApi.md#search_outbound_messages) | **GET** /api/v2/messages/search | Find messages |
-| [**search_scheduled_messages**](TextMagicApi.md#search_scheduled_messages) | **GET** /api/v2/schedules/search | Find scheduled messages |
-| [**search_templates**](TextMagicApi.md#search_templates) | **GET** /api/v2/templates/search | Find templates by criteria |
-| [**send_message**](TextMagicApi.md#send_message) | **POST** /api/v2/messages | Send message |
-| [**send_phone_verification_code_tfa**](TextMagicApi.md#send_phone_verification_code_tfa) | **POST** /api/v2/verify | Step 1: Send a verification code  |
-| [**set_chat_status**](TextMagicApi.md#set_chat_status) | **POST** /api/v2/chats/status | Change chat status |
-| [**unblock_contact**](TextMagicApi.md#unblock_contact) | **POST** /api/v2/contacts/unblock | Unblock a contact by phone number |
-| [**unblock_contacts_bulk**](TextMagicApi.md#unblock_contacts_bulk) | **POST** /api/v2/contacts/unblock/bulk | Unblock contacts (bulk) |
-| [**unmute_chats_bulk**](TextMagicApi.md#unmute_chats_bulk) | **POST** /api/v2/chats/unmute/bulk | Unmute chats (bulk) |
-| [**unsubscribe_contact**](TextMagicApi.md#unsubscribe_contact) | **POST** /api/v2/unsubscribers | Manually unsubscribe a contact |
-| [**update_balance_notification_settings**](TextMagicApi.md#update_balance_notification_settings) | **PUT** /api/v2/user/notification/balance | Update balance notification settings |
-| [**update_callback_settings**](TextMagicApi.md#update_callback_settings) | **PUT** /api/v2/callback/settings | Update callback URL settings |
-| [**update_chat_desktop_notification_settings**](TextMagicApi.md#update_chat_desktop_notification_settings) | **PUT** /api/v2/user/desktop/notification | Update chat desktop notification settings |
-| [**update_contact**](TextMagicApi.md#update_contact) | **PUT** /api/v2/contacts/{id}/normalized | Edit a contact |
-| [**update_contact_note**](TextMagicApi.md#update_contact_note) | **PUT** /api/v2/notes/{id} | Update a contact note |
-| [**update_current_user**](TextMagicApi.md#update_current_user) | **PUT** /api/v2/user | Edit current account info |
-| [**update_custom_field**](TextMagicApi.md#update_custom_field) | **PUT** /api/v2/customfields/{id} | Edit a custom field |
-| [**update_custom_field_value**](TextMagicApi.md#update_custom_field_value) | **PUT** /api/v2/customfields/{id}/update | Edit the custom field value of a specified contact |
-| [**update_inbound_messages_notification_settings**](TextMagicApi.md#update_inbound_messages_notification_settings) | **PUT** /api/v2/user/notification/inbound | Update inbound messages notification settings |
-| [**update_list**](TextMagicApi.md#update_list) | **PUT** /api/v2/lists/{id} | Edit a list |
-| [**update_sender_setting**](TextMagicApi.md#update_sender_setting) | **PUT** /api/v2/sender/settings | Change sender settings |
-| [**update_template**](TextMagicApi.md#update_template) | **PUT** /api/v2/templates/{id} | Update a template |
-| [**upload_avatar**](TextMagicApi.md#upload_avatar) | **POST** /api/v2/user/avatar | Upload an avatar |
-| [**upload_contact_avatar**](TextMagicApi.md#upload_contact_avatar) | **POST** /api/v2/contacts/{id}/avatar | Upload an avatar |
-| [**upload_list_avatar**](TextMagicApi.md#upload_list_avatar) | **POST** /api/v2/lists/{id}/avatar | Add an avatar for a list |
-| [**upload_message_attachment**](TextMagicApi.md#upload_message_attachment) | **POST** /api/v2/messages/attachment | Upload message attachment |
-| [**upload_message_mms_attachment**](TextMagicApi.md#upload_message_mms_attachment) | **POST** /api/v2/messages/mms/attachment | Upload message mms attachment |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**assign_contacts_to_list**](TextMagicApi.md#assign_contacts_to_list) | **PUT** /api/v2/lists/{id}/contacts | Assign contacts to a list
+[**block_contact**](TextMagicApi.md#block_contact) | **POST** /api/v2/contacts/block | Block a contact by phone number
+[**buy_dedicated_number**](TextMagicApi.md#buy_dedicated_number) | **POST** /api/v2/numbers | Buy a dedicated number
+[**clear_and_assign_contacts_to_list**](TextMagicApi.md#clear_and_assign_contacts_to_list) | **POST** /api/v2/lists/{id}/contacts | Reset list members to the specified contacts
+[**close_chats_bulk**](TextMagicApi.md#close_chats_bulk) | **POST** /api/v2/chats/close/bulk | Close chats (bulk)
+[**close_read_chats**](TextMagicApi.md#close_read_chats) | **POST** /api/v2/chats/close/read | Close read chats
+[**close_subaccount**](TextMagicApi.md#close_subaccount) | **DELETE** /api/v2/subaccounts/{id} | Close sub-account
+[**create_contact**](TextMagicApi.md#create_contact) | **POST** /api/v2/contacts/normalized | Add a new contact
+[**create_contact_note**](TextMagicApi.md#create_contact_note) | **POST** /api/v2/contacts/{id}/notes | Create a new contact note
+[**create_custom_field**](TextMagicApi.md#create_custom_field) | **POST** /api/v2/customfields | Add a new custom field
+[**create_list**](TextMagicApi.md#create_list) | **POST** /api/v2/lists | Create a new list
+[**create_template**](TextMagicApi.md#create_template) | **POST** /api/v2/templates | Create a template
+[**delete_all_contacts**](TextMagicApi.md#delete_all_contacts) | **DELETE** /api/v2/contact/all | Delete contacts (bulk)
+[**delete_all_outbound_messages**](TextMagicApi.md#delete_all_outbound_messages) | **DELETE** /api/v2/message/all | Delete all messages
+[**delete_avatar**](TextMagicApi.md#delete_avatar) | **DELETE** /api/v2/user/avatar | Delete an avatar
+[**delete_chat_messages**](TextMagicApi.md#delete_chat_messages) | **POST** /api/v2/chats/{id}/messages/delete | Delete chat messages by ID(s)
+[**delete_chats_bulk**](TextMagicApi.md#delete_chats_bulk) | **POST** /api/v2/chats/delete | Delete chats (bulk)
+[**delete_contact**](TextMagicApi.md#delete_contact) | **DELETE** /api/v2/contacts/{id} | Delete a contact
+[**delete_contact_avatar**](TextMagicApi.md#delete_contact_avatar) | **DELETE** /api/v2/contacts/{id}/avatar | Delete an avatar
+[**delete_contact_note**](TextMagicApi.md#delete_contact_note) | **DELETE** /api/v2/notes/{id} | Delete a contact note
+[**delete_contact_notes_bulk**](TextMagicApi.md#delete_contact_notes_bulk) | **POST** /api/v2/contacts/{id}/notes/delete | Delete contact notes (bulk)
+[**delete_contacts_by_ids**](TextMagicApi.md#delete_contacts_by_ids) | **POST** /api/v2/contacts/delete | Delete contacts by IDs (bulk)
+[**delete_contacts_from_list**](TextMagicApi.md#delete_contacts_from_list) | **DELETE** /api/v2/lists/{id}/contacts | Unassign contacts from a list
+[**delete_custom_field**](TextMagicApi.md#delete_custom_field) | **DELETE** /api/v2/customfields/{id} | Delete a custom field
+[**delete_dedicated_number**](TextMagicApi.md#delete_dedicated_number) | **DELETE** /api/v2/numbers/{id} | Cancel a dedicated number subscription
+[**delete_inbound_message**](TextMagicApi.md#delete_inbound_message) | **DELETE** /api/v2/replies/{id} | Delete a single inbound message
+[**delete_inbound_messages_bulk**](TextMagicApi.md#delete_inbound_messages_bulk) | **POST** /api/v2/replies/delete | Delete inbound messages (bulk)
+[**delete_list**](TextMagicApi.md#delete_list) | **DELETE** /api/v2/lists/{id} | Delete a list
+[**delete_list_avatar**](TextMagicApi.md#delete_list_avatar) | **DELETE** /api/v2/lists/{id}/avatar | Delete an avatar for a list
+[**delete_list_contacts_bulk**](TextMagicApi.md#delete_list_contacts_bulk) | **POST** /api/v2/lists/{id}/contacts/delete | Delete contacts from a list (bulk)
+[**delete_lists_bulk**](TextMagicApi.md#delete_lists_bulk) | **POST** /api/v2/lists/delete | Delete lists (bulk)
+[**delete_message_session**](TextMagicApi.md#delete_message_session) | **DELETE** /api/v2/sessions/{id} | Delete a session
+[**delete_message_sessions_bulk**](TextMagicApi.md#delete_message_sessions_bulk) | **POST** /api/v2/sessions/delete | Delete sessions (bulk)
+[**delete_outbound_message**](TextMagicApi.md#delete_outbound_message) | **DELETE** /api/v2/messages/{id} | Delete message
+[**delete_outbound_messages_bulk**](TextMagicApi.md#delete_outbound_messages_bulk) | **POST** /api/v2/messages/delete | Delete messages (bulk)
+[**delete_scheduled_message**](TextMagicApi.md#delete_scheduled_message) | **DELETE** /api/v2/schedules/{id} | Delete a single scheduled message
+[**delete_scheduled_messages_bulk**](TextMagicApi.md#delete_scheduled_messages_bulk) | **POST** /api/v2/schedules/delete | Delete scheduled messages (bulk)
+[**delete_sender_id**](TextMagicApi.md#delete_sender_id) | **DELETE** /api/v2/senderids/{id} | Delete a Sender ID
+[**delete_template**](TextMagicApi.md#delete_template) | **DELETE** /api/v2/templates/{id} | Delete a template
+[**delete_templates_bulk**](TextMagicApi.md#delete_templates_bulk) | **POST** /api/v2/templates/delete | Delete templates (bulk)
+[**do_carrier_lookup**](TextMagicApi.md#do_carrier_lookup) | **GET** /api/v2/lookups/{phone} | Carrier Lookup
+[**do_email_lookup**](TextMagicApi.md#do_email_lookup) | **GET** /api/v2/email-lookups/{email} | Email Lookup
+[**get_all_bulk_sessions**](TextMagicApi.md#get_all_bulk_sessions) | **GET** /api/v2/bulks | Get all bulk sessions
+[**get_all_chats**](TextMagicApi.md#get_all_chats) | **GET** /api/v2/chats | Get all chats
+[**get_all_inbound_messages**](TextMagicApi.md#get_all_inbound_messages) | **GET** /api/v2/replies | Get all inbound messages
+[**get_all_message_sessions**](TextMagicApi.md#get_all_message_sessions) | **GET** /api/v2/sessions | Get all sessions
+[**get_all_outbound_messages**](TextMagicApi.md#get_all_outbound_messages) | **GET** /api/v2/messages | Get all messages
+[**get_all_scheduled_messages**](TextMagicApi.md#get_all_scheduled_messages) | **GET** /api/v2/schedules | Get all scheduled messages
+[**get_all_templates**](TextMagicApi.md#get_all_templates) | **GET** /api/v2/templates | Get all templates
+[**get_available_dedicated_numbers**](TextMagicApi.md#get_available_dedicated_numbers) | **GET** /api/v2/numbers/available | Find dedicated numbers available for purchase
+[**get_available_sender_setting_options**](TextMagicApi.md#get_available_sender_setting_options) | **GET** /api/v2/sources | Get available sender settings
+[**get_balance_notification_options**](TextMagicApi.md#get_balance_notification_options) | **GET** /api/v2/user/notification/balance/bundles | Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
+[**get_balance_notification_settings**](TextMagicApi.md#get_balance_notification_settings) | **GET** /api/v2/user/notification/balance | Get balance notification settings
+[**get_blocked_contacts**](TextMagicApi.md#get_blocked_contacts) | **GET** /api/v2/contacts/block/list | Get blocked contacts
+[**get_bulk_session**](TextMagicApi.md#get_bulk_session) | **GET** /api/v2/bulks/{id} | Get bulk session status
+[**get_callback_settings**](TextMagicApi.md#get_callback_settings) | **GET** /api/v2/callback/settings | Fetch callback URL settings
+[**get_chat**](TextMagicApi.md#get_chat) | **GET** /api/v2/chats/{id} | Get a single chat
+[**get_chat_by_phone**](TextMagicApi.md#get_chat_by_phone) | **GET** /api/v2/chats/{phone}/by/phone | Find chats by phone
+[**get_chat_messages**](TextMagicApi.md#get_chat_messages) | **GET** /api/v2/chats/{id}/message | Get chat messages
+[**get_contact**](TextMagicApi.md#get_contact) | **GET** /api/v2/contacts/{id} | Get the details of a specific contact
+[**get_contact_by_phone**](TextMagicApi.md#get_contact_by_phone) | **GET** /api/v2/contacts/phone/{phone} | Get the details of a specific contact by phone number
+[**get_contact_if_blocked**](TextMagicApi.md#get_contact_if_blocked) | **GET** /api/v2/contacts/block/phone | Check if a phone number is blocked
+[**get_contact_import_session_progress**](TextMagicApi.md#get_contact_import_session_progress) | **GET** /api/v2/contacts/import/progress/{id} | Check import progress
+[**get_contact_note**](TextMagicApi.md#get_contact_note) | **GET** /api/v2/notes/{id} | Get a contact note
+[**get_contact_notes**](TextMagicApi.md#get_contact_notes) | **GET** /api/v2/contacts/{id}/notes | Fetch notes assigned to a given contact
+[**get_contacts**](TextMagicApi.md#get_contacts) | **GET** /api/v2/contacts | Get all contacts
+[**get_contacts_autocomplete**](TextMagicApi.md#get_contacts_autocomplete) | **GET** /api/v2/contacts/autocomplete | Get contacts autocomplete suggestions
+[**get_contacts_by_list_id**](TextMagicApi.md#get_contacts_by_list_id) | **GET** /api/v2/lists/{id}/contacts | Get all contacts in a list
+[**get_countries**](TextMagicApi.md#get_countries) | **GET** /api/v2/countries | Get countries
+[**get_current_user**](TextMagicApi.md#get_current_user) | **GET** /api/v2/user | Get current account information
+[**get_custom_field**](TextMagicApi.md#get_custom_field) | **GET** /api/v2/customfields/{id} | Get the details of a specific custom field
+[**get_custom_fields**](TextMagicApi.md#get_custom_fields) | **GET** /api/v2/customfields | Get all custom fields
+[**get_dedicated_number**](TextMagicApi.md#get_dedicated_number) | **GET** /api/v2/numbers/{id} | Get the details of a specific dedicated number
+[**get_favorites**](TextMagicApi.md#get_favorites) | **GET** /api/v2/contacts/favorite | Get favorite contacts and lists
+[**get_inbound_message**](TextMagicApi.md#get_inbound_message) | **GET** /api/v2/replies/{id} | Get a single inbound message
+[**get_inbound_messages_notification_settings**](TextMagicApi.md#get_inbound_messages_notification_settings) | **GET** /api/v2/user/notification/inbound | Get inbound messages notification settings
+[**get_invoices**](TextMagicApi.md#get_invoices) | **GET** /api/v2/invoices | Get all invoices
+[**get_list**](TextMagicApi.md#get_list) | **GET** /api/v2/lists/{id} | Get the details of a specific list
+[**get_list_contacts_ids**](TextMagicApi.md#get_list_contacts_ids) | **GET** /api/v2/lists/{id}/contacts/ids | Get all contact IDs in a list
+[**get_lists**](TextMagicApi.md#get_lists) | **GET** /api/v2/lists | Get all lists
+[**get_lists_of_contact**](TextMagicApi.md#get_lists_of_contact) | **GET** /api/v2/contacts/{id}/lists | Get a contact&#39;s lists
+[**get_message_preview**](TextMagicApi.md#get_message_preview) | **GET** /api/v2/messages/preview | Preview message
+[**get_message_price**](TextMagicApi.md#get_message_price) | **GET** /api/v2/messages/price/normalized | Check message price
+[**get_message_session**](TextMagicApi.md#get_message_session) | **GET** /api/v2/sessions/{id} | Get a session&#x60;s details
+[**get_message_session_stat**](TextMagicApi.md#get_message_session_stat) | **GET** /api/v2/sessions/{id}/stat | Get a session&#x60;s statistics
+[**get_messages_by_session_id**](TextMagicApi.md#get_messages_by_session_id) | **GET** /api/v2/sessions/{id}/messages | Get a session&#x60;s messages
+[**get_messaging_counters**](TextMagicApi.md#get_messaging_counters) | **GET** /api/v2/stats/messaging/data | Get sent/received messages counters values
+[**get_messaging_stat**](TextMagicApi.md#get_messaging_stat) | **GET** /api/v2/stats/messaging | Get messaging statistics
+[**get_outbound_message**](TextMagicApi.md#get_outbound_message) | **GET** /api/v2/messages/{id} | Get a single message
+[**get_outbound_messages_history**](TextMagicApi.md#get_outbound_messages_history) | **GET** /api/v2/history | Get history
+[**get_scheduled_message**](TextMagicApi.md#get_scheduled_message) | **GET** /api/v2/schedules/{id} | Get a single scheduled message
+[**get_sender_id**](TextMagicApi.md#get_sender_id) | **GET** /api/v2/senderids/{id} | Get the details of a specific Sender ID
+[**get_sender_ids**](TextMagicApi.md#get_sender_ids) | **GET** /api/v2/senderids | Get all your approved Sender IDs
+[**get_sender_settings**](TextMagicApi.md#get_sender_settings) | **GET** /api/v2/sender/settings/normalized | Get current sender settings
+[**get_spending_stat**](TextMagicApi.md#get_spending_stat) | **GET** /api/v2/stats/spending | Get spending statistics
+[**get_subaccount**](TextMagicApi.md#get_subaccount) | **GET** /api/v2/subaccounts/{id} | Get sub-account information
+[**get_subaccounts**](TextMagicApi.md#get_subaccounts) | **GET** /api/v2/subaccounts | Get a sub-accounts list
+[**get_subaccounts_with_tokens**](TextMagicApi.md#get_subaccounts_with_tokens) | **POST** /api/v2/subaccounts/tokens/list | Get all sub-accounts with their REST API tokens associated with a specified app name
+[**get_template**](TextMagicApi.md#get_template) | **GET** /api/v2/templates/{id} | Get a template&#x60;s details
+[**get_timezones**](TextMagicApi.md#get_timezones) | **GET** /api/v2/timezones | Get timezones
+[**get_unread_messages_total**](TextMagicApi.md#get_unread_messages_total) | **GET** /api/v2/chats/unread/count | Get unread messages number
+[**get_unsubscribed_contact**](TextMagicApi.md#get_unsubscribed_contact) | **GET** /api/v2/unsubscribers/{id} | Get the details of a specific unsubscribed contact
+[**get_unsubscribers**](TextMagicApi.md#get_unsubscribers) | **GET** /api/v2/unsubscribers | Get all unsubscribed contacts
+[**get_user_dedicated_numbers**](TextMagicApi.md#get_user_dedicated_numbers) | **GET** /api/v2/numbers | Get all your dedicated numbers
+[**import_contacts**](TextMagicApi.md#import_contacts) | **POST** /api/v2/contacts/import/normalized | Import contacts
+[**invite_subaccount**](TextMagicApi.md#invite_subaccount) | **POST** /api/v2/subaccounts | Invite a new sub-account
+[**mark_chats_read_bulk**](TextMagicApi.md#mark_chats_read_bulk) | **POST** /api/v2/chats/read/bulk | Mark chats as read (bulk)
+[**mark_chats_unread_bulk**](TextMagicApi.md#mark_chats_unread_bulk) | **POST** /api/v2/chats/unread/bulk | Mark chats as unread (bulk)
+[**mute_chat**](TextMagicApi.md#mute_chat) | **POST** /api/v2/chats/mute | Mute chat sounds
+[**mute_chats_bulk**](TextMagicApi.md#mute_chats_bulk) | **POST** /api/v2/chats/mute/bulk | Mute chats (bulk)
+[**ping**](TextMagicApi.md#ping) | **GET** /api/v2/ping | Ping
+[**reopen_chats_bulk**](TextMagicApi.md#reopen_chats_bulk) | **POST** /api/v2/chats/reopen/bulk | Reopen chats (bulk)
+[**request_new_subaccount_token**](TextMagicApi.md#request_new_subaccount_token) | **POST** /api/v2/subaccounts/tokens | Request a new REST API token for sub-account
+[**request_sender_id**](TextMagicApi.md#request_sender_id) | **POST** /api/v2/senderids | Apply for a new Sender ID
+[**search_chats**](TextMagicApi.md#search_chats) | **GET** /api/v2/chats/search | Find chats by message text
+[**search_chats_by_ids**](TextMagicApi.md#search_chats_by_ids) | **GET** /api/v2/chats/search/ids | Find chats (bulk)
+[**search_chats_by_receipent**](TextMagicApi.md#search_chats_by_receipent) | **GET** /api/v2/chats/search/recipients | Find chats by recipient
+[**search_contacts**](TextMagicApi.md#search_contacts) | **GET** /api/v2/contacts/search | Find contacts by given criteria
+[**search_inbound_messages**](TextMagicApi.md#search_inbound_messages) | **GET** /api/v2/replies/search | Find inbound messages
+[**search_lists**](TextMagicApi.md#search_lists) | **GET** /api/v2/lists/search | Find lists by given criteria
+[**search_outbound_messages**](TextMagicApi.md#search_outbound_messages) | **GET** /api/v2/messages/search | Find messages
+[**search_scheduled_messages**](TextMagicApi.md#search_scheduled_messages) | **GET** /api/v2/schedules/search | Find scheduled messages
+[**search_templates**](TextMagicApi.md#search_templates) | **GET** /api/v2/templates/search | Find templates by criteria
+[**send_message**](TextMagicApi.md#send_message) | **POST** /api/v2/messages | Send message
+[**set_chat_status**](TextMagicApi.md#set_chat_status) | **POST** /api/v2/chats/status | Change chat status
+[**unblock_contact**](TextMagicApi.md#unblock_contact) | **POST** /api/v2/contacts/unblock | Unblock a contact by phone number
+[**unblock_contacts_bulk**](TextMagicApi.md#unblock_contacts_bulk) | **POST** /api/v2/contacts/unblock/bulk | Unblock contacts (bulk)
+[**unmute_chats_bulk**](TextMagicApi.md#unmute_chats_bulk) | **POST** /api/v2/chats/unmute/bulk | Unmute chats (bulk)
+[**unsubscribe_contact**](TextMagicApi.md#unsubscribe_contact) | **POST** /api/v2/unsubscribers | Manually unsubscribe a contact
+[**update_balance_notification_settings**](TextMagicApi.md#update_balance_notification_settings) | **PUT** /api/v2/user/notification/balance | Update balance notification settings
+[**update_callback_settings**](TextMagicApi.md#update_callback_settings) | **PUT** /api/v2/callback/settings | Update callback URL settings
+[**update_chat_desktop_notification_settings**](TextMagicApi.md#update_chat_desktop_notification_settings) | **PUT** /api/v2/user/desktop/notification | Update chat desktop notification settings
+[**update_contact**](TextMagicApi.md#update_contact) | **PUT** /api/v2/contacts/{id}/normalized | Edit a contact
+[**update_contact_note**](TextMagicApi.md#update_contact_note) | **PUT** /api/v2/notes/{id} | Update a contact note
+[**update_current_user**](TextMagicApi.md#update_current_user) | **PUT** /api/v2/user | Edit current account info
+[**update_custom_field**](TextMagicApi.md#update_custom_field) | **PUT** /api/v2/customfields/{id} | Edit a custom field
+[**update_custom_field_value**](TextMagicApi.md#update_custom_field_value) | **PUT** /api/v2/customfields/{id}/update | Edit the custom field value of a specified contact
+[**update_inbound_messages_notification_settings**](TextMagicApi.md#update_inbound_messages_notification_settings) | **PUT** /api/v2/user/notification/inbound | Update inbound messages notification settings
+[**update_list**](TextMagicApi.md#update_list) | **PUT** /api/v2/lists/{id} | Edit a list
+[**update_sender_setting**](TextMagicApi.md#update_sender_setting) | **PUT** /api/v2/sender/settings | Change sender settings
+[**update_template**](TextMagicApi.md#update_template) | **PUT** /api/v2/templates/{id} | Update a template
+[**upload_avatar**](TextMagicApi.md#upload_avatar) | **POST** /api/v2/user/avatar | Upload an avatar
+[**upload_contact_avatar**](TextMagicApi.md#upload_contact_avatar) | **POST** /api/v2/contacts/{id}/avatar | Upload an avatar
+[**upload_list_avatar**](TextMagicApi.md#upload_list_avatar) | **POST** /api/v2/lists/{id}/avatar | Add an avatar for a list
+[**upload_message_attachment**](TextMagicApi.md#upload_message_attachment) | **POST** /api/v2/messages/attachment | Upload message attachment
+[**upload_message_mms_attachment**](TextMagicApi.md#upload_message_mms_attachment) | **POST** /api/v2/messages/mms/attachment | Upload message mms attachment
 
 
-## assign_contacts_to_list
-
-> <ResourceLinkResponse> assign_contacts_to_list(id, assign_contacts_to_list_input_object)
+# **assign_contacts_to_list**
+> ResourceLinkResponse assign_contacts_to_list(assign_contacts_to_list_input_object, id)
 
 Assign contacts to a list
 
 > Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
+assign_contacts_to_list_input_object = TextMagic::AssignContactsToListInputObject.new # AssignContactsToListInputObject | 
+
 id = 1 # Integer | 
-assign_contacts_to_list_input_object = TextmagicRestClient::AssignContactsToListInputObject.new # AssignContactsToListInputObject | 
+
 
 begin
-  # Assign contacts to a list
-  result = api_instance.assign_contacts_to_list(id, assign_contacts_to_list_input_object)
+  #Assign contacts to a list
+  result = api_instance.assign_contacts_to_list(assign_contacts_to_list_input_object, id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->assign_contacts_to_list: #{e}"
-end
-```
-
-#### Using the assign_contacts_to_list_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> assign_contacts_to_list_with_http_info(id, assign_contacts_to_list_input_object)
-
-```ruby
-begin
-  # Assign contacts to a list
-  data, status_code, headers = api_instance.assign_contacts_to_list_with_http_info(id, assign_contacts_to_list_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->assign_contacts_to_list_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->assign_contacts_to_list: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **assign_contacts_to_list_input_object** | [**AssignContactsToListInputObject**](AssignContactsToListInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **assign_contacts_to_list_input_object** | [**AssignContactsToListInputObject**](AssignContactsToListInputObject.md)|  | 
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -223,65 +203,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## block_contact
 
-> <ResourceLinkResponse> block_contact(block_contact_input_object)
+# **block_contact**
+> ResourceLinkResponse block_contact(block_contact_input_object)
 
 Block a contact by phone number
 
 Block a contact from inbound and outbound communication by phone number.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-block_contact_input_object = TextmagicRestClient::BlockContactInputObject.new # BlockContactInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+block_contact_input_object = TextMagic::BlockContactInputObject.new # BlockContactInputObject | 
+
 
 begin
-  # Block a contact by phone number
+  #Block a contact by phone number
   result = api_instance.block_contact(block_contact_input_object)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->block_contact: #{e}"
-end
-```
-
-#### Using the block_contact_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> block_contact_with_http_info(block_contact_input_object)
-
-```ruby
-begin
-  # Block a contact by phone number
-  data, status_code, headers = api_instance.block_contact_with_http_info(block_contact_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->block_contact_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->block_contact: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **block_contact_input_object** | [**BlockContactInputObject**](BlockContactInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **block_contact_input_object** | [**BlockContactInputObject**](BlockContactInputObject.md)|  | 
 
 ### Return type
 
@@ -293,64 +256,47 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## buy_dedicated_number
 
+# **buy_dedicated_number**
 > buy_dedicated_number(buy_dedicated_number_input_object)
 
 Buy a dedicated number
 
 To buy a dedicated number, you first need to find an available number matching your criteria using the `/api/v2/numbers/available` command described above.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-buy_dedicated_number_input_object = TextmagicRestClient::BuyDedicatedNumberInputObject.new # BuyDedicatedNumberInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+buy_dedicated_number_input_object = TextMagic::BuyDedicatedNumberInputObject.new # BuyDedicatedNumberInputObject | 
+
 
 begin
-  # Buy a dedicated number
+  #Buy a dedicated number
   api_instance.buy_dedicated_number(buy_dedicated_number_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->buy_dedicated_number: #{e}"
-end
-```
-
-#### Using the buy_dedicated_number_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> buy_dedicated_number_with_http_info(buy_dedicated_number_input_object)
-
-```ruby
-begin
-  # Buy a dedicated number
-  data, status_code, headers = api_instance.buy_dedicated_number_with_http_info(buy_dedicated_number_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->buy_dedicated_number_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->buy_dedicated_number: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **buy_dedicated_number_input_object** | [**BuyDedicatedNumberInputObject**](BuyDedicatedNumberInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **buy_dedicated_number_input_object** | [**BuyDedicatedNumberInputObject**](BuyDedicatedNumberInputObject.md)|  | 
 
 ### Return type
 
@@ -362,203 +308,51 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## cancel_verification
 
-> cancel_verification(verify_id)
-
-Cancel verification process
-
-You can cancel the verification not earlier than 30 seconds after the initial request.
-
-### Examples
-
-```ruby
-require 'time'
-require 'textmagic_rest_client'
-# setup authorization
-TextmagicRestClient.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextmagicRestClient::TextMagicApi.new
-verify_id = '123e4567-e89b-12d3-a456-426655440000' # String | The verifyId that you received in Step 1.
-
-begin
-  # Cancel verification process
-  api_instance.cancel_verification(verify_id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->cancel_verification: #{e}"
-end
-```
-
-#### Using the cancel_verification_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> cancel_verification_with_http_info(verify_id)
-
-```ruby
-begin
-  # Cancel verification process
-  data, status_code, headers = api_instance.cancel_verification_with_http_info(verify_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->cancel_verification_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **verify_id** | **String** | The verifyId that you received in Step 1. |  |
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## check_phone_verification_code_tfa
-
-> check_phone_verification_code_tfa(check_phone_verification_code_tfa_input_object)
-
-Step 2: Check the verification code 
-
-Check received code from user with the code which was actually sent.
-
-### Examples
-
-```ruby
-require 'time'
-require 'textmagic_rest_client'
-# setup authorization
-TextmagicRestClient.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextmagicRestClient::TextMagicApi.new
-check_phone_verification_code_tfa_input_object = TextmagicRestClient::CheckPhoneVerificationCodeTFAInputObject.new # CheckPhoneVerificationCodeTFAInputObject | 
-
-begin
-  # Step 2: Check the verification code 
-  api_instance.check_phone_verification_code_tfa(check_phone_verification_code_tfa_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->check_phone_verification_code_tfa: #{e}"
-end
-```
-
-#### Using the check_phone_verification_code_tfa_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> check_phone_verification_code_tfa_with_http_info(check_phone_verification_code_tfa_input_object)
-
-```ruby
-begin
-  # Step 2: Check the verification code 
-  data, status_code, headers = api_instance.check_phone_verification_code_tfa_with_http_info(check_phone_verification_code_tfa_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->check_phone_verification_code_tfa_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **check_phone_verification_code_tfa_input_object** | [**CheckPhoneVerificationCodeTFAInputObject**](CheckPhoneVerificationCodeTFAInputObject.md) |  |  |
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## clear_and_assign_contacts_to_list
-
-> <ResourceLinkResponse> clear_and_assign_contacts_to_list(id, clear_and_assign_contacts_to_list_input_object)
+# **clear_and_assign_contacts_to_list**
+> ResourceLinkResponse clear_and_assign_contacts_to_list(clear_and_assign_contacts_to_list_input_object, id)
 
 Reset list members to the specified contacts
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
+clear_and_assign_contacts_to_list_input_object = TextMagic::ClearAndAssignContactsToListInputObject.new # ClearAndAssignContactsToListInputObject | 
+
 id = 1 # Integer | 
-clear_and_assign_contacts_to_list_input_object = TextmagicRestClient::ClearAndAssignContactsToListInputObject.new # ClearAndAssignContactsToListInputObject | 
+
 
 begin
-  # Reset list members to the specified contacts
-  result = api_instance.clear_and_assign_contacts_to_list(id, clear_and_assign_contacts_to_list_input_object)
+  #Reset list members to the specified contacts
+  result = api_instance.clear_and_assign_contacts_to_list(clear_and_assign_contacts_to_list_input_object, id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->clear_and_assign_contacts_to_list: #{e}"
-end
-```
-
-#### Using the clear_and_assign_contacts_to_list_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> clear_and_assign_contacts_to_list_with_http_info(id, clear_and_assign_contacts_to_list_input_object)
-
-```ruby
-begin
-  # Reset list members to the specified contacts
-  data, status_code, headers = api_instance.clear_and_assign_contacts_to_list_with_http_info(id, clear_and_assign_contacts_to_list_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->clear_and_assign_contacts_to_list_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->clear_and_assign_contacts_to_list: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **clear_and_assign_contacts_to_list_input_object** | [**ClearAndAssignContactsToListInputObject**](ClearAndAssignContactsToListInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clear_and_assign_contacts_to_list_input_object** | [**ClearAndAssignContactsToListInputObject**](ClearAndAssignContactsToListInputObject.md)|  | 
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -570,64 +364,47 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## close_chats_bulk
 
+# **close_chats_bulk**
 > close_chats_bulk(close_chats_bulk_input_object)
 
 Close chats (bulk)
 
 Close chats by chat IDs or close all chats
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-close_chats_bulk_input_object = TextmagicRestClient::ChatsBulkInputObject.new # ChatsBulkInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+close_chats_bulk_input_object = TextMagic::CloseChatsBulkInputObject.new # CloseChatsBulkInputObject | 
+
 
 begin
-  # Close chats (bulk)
+  #Close chats (bulk)
   api_instance.close_chats_bulk(close_chats_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->close_chats_bulk: #{e}"
-end
-```
-
-#### Using the close_chats_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> close_chats_bulk_with_http_info(close_chats_bulk_input_object)
-
-```ruby
-begin
-  # Close chats (bulk)
-  data, status_code, headers = api_instance.close_chats_bulk_with_http_info(close_chats_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->close_chats_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->close_chats_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **close_chats_bulk_input_object** | [**ChatsBulkInputObject**](ChatsBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **close_chats_bulk_input_object** | [**CloseChatsBulkInputObject**](CloseChatsBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -639,60 +416,40 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## close_read_chats
 
+# **close_read_chats**
 > close_read_chats
 
 Close read chats
 
 Close all chats that have no unread messages.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
-  # Close read chats
+  #Close read chats
   api_instance.close_read_chats
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->close_read_chats: #{e}"
-end
-```
-
-#### Using the close_read_chats_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> close_read_chats_with_http_info
-
-```ruby
-begin
-  # Close read chats
-  data, status_code, headers = api_instance.close_read_chats_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->close_read_chats_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->close_read_chats: #{e}"
 end
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -705,62 +462,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## close_subaccount
 
+# **close_subaccount**
 > close_subaccount(id)
 
 Close sub-account
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Close sub-account
+  #Close sub-account
   api_instance.close_subaccount(id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->close_subaccount: #{e}"
-end
-```
-
-#### Using the close_subaccount_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> close_subaccount_with_http_info(id)
-
-```ruby
-begin
-  # Close sub-account
-  data, status_code, headers = api_instance.close_subaccount_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->close_subaccount_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->close_subaccount: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -772,63 +514,48 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## create_contact
 
-> <ResourceLinkResponse> create_contact(create_contact_input_object)
+# **create_contact**
+> ResourceLinkResponse create_contact(create_contact_input_object)
 
 Add a new contact
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-create_contact_input_object = TextmagicRestClient::CreateContactInputObject.new # CreateContactInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+create_contact_input_object = TextMagic::CreateContactInputObject.new # CreateContactInputObject | 
+
 
 begin
-  # Add a new contact
+  #Add a new contact
   result = api_instance.create_contact(create_contact_input_object)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->create_contact: #{e}"
-end
-```
-
-#### Using the create_contact_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> create_contact_with_http_info(create_contact_input_object)
-
-```ruby
-begin
-  # Add a new contact
-  data, status_code, headers = api_instance.create_contact_with_http_info(create_contact_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->create_contact_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->create_contact: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **create_contact_input_object** | [**CreateContactInputObject**](CreateContactInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_contact_input_object** | [**CreateContactInputObject**](CreateContactInputObject.md)|  | 
 
 ### Return type
 
@@ -840,65 +567,51 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## create_contact_note
 
-> <ResourceLinkResponse> create_contact_note(id, create_contact_note_input_object)
+# **create_contact_note**
+> ResourceLinkResponse create_contact_note(create_contact_note_input_object, id)
 
 Create a new contact note
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
+create_contact_note_input_object = TextMagic::CreateContactNoteInputObject.new # CreateContactNoteInputObject | 
+
 id = 1 # Integer | 
-create_contact_note_input_object = TextmagicRestClient::CreateContactNoteInputObject.new # CreateContactNoteInputObject | 
+
 
 begin
-  # Create a new contact note
-  result = api_instance.create_contact_note(id, create_contact_note_input_object)
+  #Create a new contact note
+  result = api_instance.create_contact_note(create_contact_note_input_object, id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->create_contact_note: #{e}"
-end
-```
-
-#### Using the create_contact_note_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> create_contact_note_with_http_info(id, create_contact_note_input_object)
-
-```ruby
-begin
-  # Create a new contact note
-  data, status_code, headers = api_instance.create_contact_note_with_http_info(id, create_contact_note_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->create_contact_note_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->create_contact_note: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **create_contact_note_input_object** | [**CreateContactNoteInputObject**](CreateContactNoteInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_contact_note_input_object** | [**CreateContactNoteInputObject**](CreateContactNoteInputObject.md)|  | 
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -910,63 +623,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## create_custom_field
 
-> <ResourceLinkResponse> create_custom_field(create_custom_field_input_object)
+# **create_custom_field**
+> ResourceLinkResponse create_custom_field(create_custom_field_input_object)
 
 Add a new custom field
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-create_custom_field_input_object = TextmagicRestClient::CustomFieldInputObject.new # CustomFieldInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+create_custom_field_input_object = TextMagic::CreateCustomFieldInputObject.new # CreateCustomFieldInputObject | 
+
 
 begin
-  # Add a new custom field
+  #Add a new custom field
   result = api_instance.create_custom_field(create_custom_field_input_object)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->create_custom_field: #{e}"
-end
-```
-
-#### Using the create_custom_field_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> create_custom_field_with_http_info(create_custom_field_input_object)
-
-```ruby
-begin
-  # Add a new custom field
-  data, status_code, headers = api_instance.create_custom_field_with_http_info(create_custom_field_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->create_custom_field_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->create_custom_field: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **create_custom_field_input_object** | [**CustomFieldInputObject**](CustomFieldInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_custom_field_input_object** | [**CreateCustomFieldInputObject**](CreateCustomFieldInputObject.md)|  | 
 
 ### Return type
 
@@ -978,63 +676,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## create_list
 
-> <ResourceLinkResponse> create_list(create_list_input_object)
+# **create_list**
+> ResourceLinkResponse create_list(create_list_input_object)
 
 Create a new list
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-create_list_input_object = TextmagicRestClient::CreateListInputObject.new # CreateListInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+create_list_input_object = TextMagic::CreateListInputObject.new # CreateListInputObject | 
+
 
 begin
-  # Create a new list
+  #Create a new list
   result = api_instance.create_list(create_list_input_object)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->create_list: #{e}"
-end
-```
-
-#### Using the create_list_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> create_list_with_http_info(create_list_input_object)
-
-```ruby
-begin
-  # Create a new list
-  data, status_code, headers = api_instance.create_list_with_http_info(create_list_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->create_list_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->create_list: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **create_list_input_object** | [**CreateListInputObject**](CreateListInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_list_input_object** | [**CreateListInputObject**](CreateListInputObject.md)|  | 
 
 ### Return type
 
@@ -1046,65 +729,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## create_template
 
-> <ResourceLinkResponse> create_template(create_template_input_object)
+# **create_template**
+> ResourceLinkResponse create_template(create_template_input_object)
 
 Create a template
 
 There are times when creating a new template makes sense (such as when targeting specific clients or improving your business strategies).  You can create new SMS templates for marketing purposes or SMS templates for business campaigns. 
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-create_template_input_object = TextmagicRestClient::CreateTemplateInputObject.new # CreateTemplateInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+create_template_input_object = TextMagic::CreateTemplateInputObject.new # CreateTemplateInputObject | 
+
 
 begin
-  # Create a template
+  #Create a template
   result = api_instance.create_template(create_template_input_object)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->create_template: #{e}"
-end
-```
-
-#### Using the create_template_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> create_template_with_http_info(create_template_input_object)
-
-```ruby
-begin
-  # Create a template
-  data, status_code, headers = api_instance.create_template_with_http_info(create_template_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->create_template_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->create_template: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **create_template_input_object** | [**CreateTemplateInputObject**](CreateTemplateInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_template_input_object** | [**CreateTemplateInputObject**](CreateTemplateInputObject.md)|  | 
 
 ### Return type
 
@@ -1116,58 +782,40 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## delete_all_contacts
 
+# **delete_all_contacts**
 > delete_all_contacts
 
 Delete contacts (bulk)
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
-  # Delete contacts (bulk)
+  #Delete contacts (bulk)
   api_instance.delete_all_contacts
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_all_contacts: #{e}"
-end
-```
-
-#### Using the delete_all_contacts_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_all_contacts_with_http_info
-
-```ruby
-begin
-  # Delete contacts (bulk)
-  data, status_code, headers = api_instance.delete_all_contacts_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_all_contacts_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_all_contacts: #{e}"
 end
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -1180,60 +828,40 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_all_outbound_messages
 
+# **delete_all_outbound_messages**
 > delete_all_outbound_messages
 
 Delete all messages
 
 Delete all messages.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
-  # Delete all messages
+  #Delete all messages
   api_instance.delete_all_outbound_messages
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_all_outbound_messages: #{e}"
-end
-```
-
-#### Using the delete_all_outbound_messages_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_all_outbound_messages_with_http_info
-
-```ruby
-begin
-  # Delete all messages
-  data, status_code, headers = api_instance.delete_all_outbound_messages_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_all_outbound_messages_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_all_outbound_messages: #{e}"
 end
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -1246,58 +874,40 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_avatar
 
+# **delete_avatar**
 > delete_avatar
 
 Delete an avatar
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
-  # Delete an avatar
+  #Delete an avatar
   api_instance.delete_avatar
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_avatar: #{e}"
-end
-```
-
-#### Using the delete_avatar_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_avatar_with_http_info
-
-```ruby
-begin
-  # Delete an avatar
-  data, status_code, headers = api_instance.delete_avatar_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_avatar_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_avatar: #{e}"
 end
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -1310,66 +920,50 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_chat_messages
 
-> delete_chat_messages(id, delete_chat_messages_bulk_input_object)
+# **delete_chat_messages**
+> delete_chat_messages(delete_chat_messages_bulk_input_object, id)
 
 Delete chat messages by ID(s)
 
 Delete messages from chat by given message IDs.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
+delete_chat_messages_bulk_input_object = TextMagic::DeleteChatMessagesBulkInputObject.new # DeleteChatMessagesBulkInputObject | 
+
 id = 1 # Integer | 
-delete_chat_messages_bulk_input_object = TextmagicRestClient::DeleteChatMessagesInputObject.new # DeleteChatMessagesInputObject | 
+
 
 begin
-  # Delete chat messages by ID(s)
-  api_instance.delete_chat_messages(id, delete_chat_messages_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_chat_messages: #{e}"
-end
-```
-
-#### Using the delete_chat_messages_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_chat_messages_with_http_info(id, delete_chat_messages_bulk_input_object)
-
-```ruby
-begin
-  # Delete chat messages by ID(s)
-  data, status_code, headers = api_instance.delete_chat_messages_with_http_info(id, delete_chat_messages_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_chat_messages_with_http_info: #{e}"
+  #Delete chat messages by ID(s)
+  api_instance.delete_chat_messages(delete_chat_messages_bulk_input_object, id)
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_chat_messages: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **delete_chat_messages_bulk_input_object** | [**DeleteChatMessagesInputObject**](DeleteChatMessagesInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **delete_chat_messages_bulk_input_object** | [**DeleteChatMessagesBulkInputObject**](DeleteChatMessagesBulkInputObject.md)|  | 
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -1381,64 +975,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_chats_bulk
 
+# **delete_chats_bulk**
 > delete_chats_bulk(delete_chats_bulk_input_object)
 
 Delete chats (bulk)
 
 Delete chats by given IDs or delete all chats.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-delete_chats_bulk_input_object = TextmagicRestClient::DeleteChatsBulkInputObject.new # DeleteChatsBulkInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+delete_chats_bulk_input_object = TextMagic::DeleteChatsBulkInputObject.new # DeleteChatsBulkInputObject | 
+
 
 begin
-  # Delete chats (bulk)
+  #Delete chats (bulk)
   api_instance.delete_chats_bulk(delete_chats_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_chats_bulk: #{e}"
-end
-```
-
-#### Using the delete_chats_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_chats_bulk_with_http_info(delete_chats_bulk_input_object)
-
-```ruby
-begin
-  # Delete chats (bulk)
-  data, status_code, headers = api_instance.delete_chats_bulk_with_http_info(delete_chats_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_chats_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_chats_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **delete_chats_bulk_input_object** | [**DeleteChatsBulkInputObject**](DeleteChatsBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **delete_chats_bulk_input_object** | [**DeleteChatsBulkInputObject**](DeleteChatsBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -1450,64 +1027,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_contact
 
+# **delete_contact**
 > delete_contact(id)
 
 Delete a contact
 
 > This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, use the Contact assignment command in the Lists section instead, rather than deleting the contact. 
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Delete a contact
+  #Delete a contact
   api_instance.delete_contact(id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_contact: #{e}"
-end
-```
-
-#### Using the delete_contact_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_contact_with_http_info(id)
-
-```ruby
-begin
-  # Delete a contact
-  data, status_code, headers = api_instance.delete_contact_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_contact_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_contact: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -1519,62 +1079,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_contact_avatar
 
+# **delete_contact_avatar**
 > delete_contact_avatar(id)
 
 Delete an avatar
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Delete an avatar
+  #Delete an avatar
   api_instance.delete_contact_avatar(id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_contact_avatar: #{e}"
-end
-```
-
-#### Using the delete_contact_avatar_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_contact_avatar_with_http_info(id)
-
-```ruby
-begin
-  # Delete an avatar
-  data, status_code, headers = api_instance.delete_contact_avatar_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_contact_avatar_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_contact_avatar: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -1586,62 +1131,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## delete_contact_note
 
+# **delete_contact_note**
 > delete_contact_note(id)
 
 Delete a contact note
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Delete a contact note
+  #Delete a contact note
   api_instance.delete_contact_note(id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_contact_note: #{e}"
-end
-```
-
-#### Using the delete_contact_note_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_contact_note_with_http_info(id)
-
-```ruby
-begin
-  # Delete a contact note
-  data, status_code, headers = api_instance.delete_contact_note_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_contact_note_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_contact_note: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -1653,64 +1183,50 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_contact_notes_bulk
 
+# **delete_contact_notes_bulk**
 > delete_contact_notes_bulk(id, delete_contact_notes_bulk_input_object)
 
 Delete contact notes (bulk)
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
-delete_contact_notes_bulk_input_object = TextmagicRestClient::DeleteContactNotesBulkInputObject.new # DeleteContactNotesBulkInputObject | 
+
+delete_contact_notes_bulk_input_object = TextMagic::DeleteContactNotesBulkInputObject.new # DeleteContactNotesBulkInputObject | 
+
 
 begin
-  # Delete contact notes (bulk)
+  #Delete contact notes (bulk)
   api_instance.delete_contact_notes_bulk(id, delete_contact_notes_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_contact_notes_bulk: #{e}"
-end
-```
-
-#### Using the delete_contact_notes_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_contact_notes_bulk_with_http_info(id, delete_contact_notes_bulk_input_object)
-
-```ruby
-begin
-  # Delete contact notes (bulk)
-  data, status_code, headers = api_instance.delete_contact_notes_bulk_with_http_info(id, delete_contact_notes_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_contact_notes_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_contact_notes_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **delete_contact_notes_bulk_input_object** | [**DeleteContactNotesBulkInputObject**](DeleteContactNotesBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
+ **delete_contact_notes_bulk_input_object** | [**DeleteContactNotesBulkInputObject**](DeleteContactNotesBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -1722,62 +1238,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_contacts_by_ids
 
+# **delete_contacts_by_ids**
 > delete_contacts_by_ids(delete_contacts_by_ids_input_object)
 
 Delete contacts by IDs (bulk)
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-delete_contacts_by_ids_input_object = TextmagicRestClient::DeleteContactsByIdsInputObject.new # DeleteContactsByIdsInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+delete_contacts_by_ids_input_object = TextMagic::DeleteContactsByIdsInputObject.new # DeleteContactsByIdsInputObject | 
+
 
 begin
-  # Delete contacts by IDs (bulk)
+  #Delete contacts by IDs (bulk)
   api_instance.delete_contacts_by_ids(delete_contacts_by_ids_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_contacts_by_ids: #{e}"
-end
-```
-
-#### Using the delete_contacts_by_ids_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_contacts_by_ids_with_http_info(delete_contacts_by_ids_input_object)
-
-```ruby
-begin
-  # Delete contacts by IDs (bulk)
-  data, status_code, headers = api_instance.delete_contacts_by_ids_with_http_info(delete_contacts_by_ids_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_contacts_by_ids_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_contacts_by_ids: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **delete_contacts_by_ids_input_object** | [**DeleteContactsByIdsInputObject**](DeleteContactsByIdsInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **delete_contacts_by_ids_input_object** | [**DeleteContactsByIdsInputObject**](DeleteContactsByIdsInputObject.md)|  | 
 
 ### Return type
 
@@ -1789,66 +1290,50 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_contacts_from_list
 
-> delete_contacts_from_list(id, delete_contacs_from_list_object)
+# **delete_contacts_from_list**
+> delete_contacts_from_list(delete_contacs_from_list_object, id)
 
 Unassign contacts from a list
 
 > When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
+delete_contacs_from_list_object = TextMagic::DeleteContacsFromListObject.new # DeleteContacsFromListObject | 
+
 id = 1 # Integer | 
-delete_contacs_from_list_object = TextmagicRestClient::DeleteContactsFromListInputObject.new # DeleteContactsFromListInputObject | 
+
 
 begin
-  # Unassign contacts from a list
-  api_instance.delete_contacts_from_list(id, delete_contacs_from_list_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_contacts_from_list: #{e}"
-end
-```
-
-#### Using the delete_contacts_from_list_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_contacts_from_list_with_http_info(id, delete_contacs_from_list_object)
-
-```ruby
-begin
-  # Unassign contacts from a list
-  data, status_code, headers = api_instance.delete_contacts_from_list_with_http_info(id, delete_contacs_from_list_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_contacts_from_list_with_http_info: #{e}"
+  #Unassign contacts from a list
+  api_instance.delete_contacts_from_list(delete_contacs_from_list_object, id)
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_contacts_from_list: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **delete_contacs_from_list_object** | [**DeleteContactsFromListInputObject**](DeleteContactsFromListInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **delete_contacs_from_list_object** | [**DeleteContacsFromListObject**](DeleteContacsFromListObject.md)|  | 
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -1860,64 +1345,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_custom_field
 
+# **delete_custom_field**
 > delete_custom_field(id)
 
 Delete a custom field
 
 > When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Delete a custom field
+  #Delete a custom field
   api_instance.delete_custom_field(id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_custom_field: #{e}"
-end
-```
-
-#### Using the delete_custom_field_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_custom_field_with_http_info(id)
-
-```ruby
-begin
-  # Delete a custom field
-  data, status_code, headers = api_instance.delete_custom_field_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_custom_field_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_custom_field: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -1929,62 +1397,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_dedicated_number
 
+# **delete_dedicated_number**
 > delete_dedicated_number(id)
 
 Cancel a dedicated number subscription
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Cancel a dedicated number subscription
+  #Cancel a dedicated number subscription
   api_instance.delete_dedicated_number(id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_dedicated_number: #{e}"
-end
-```
-
-#### Using the delete_dedicated_number_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_dedicated_number_with_http_info(id)
-
-```ruby
-begin
-  # Cancel a dedicated number subscription
-  data, status_code, headers = api_instance.delete_dedicated_number_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_dedicated_number_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_dedicated_number: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -1996,64 +1449,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_inbound_message
 
+# **delete_inbound_message**
 > delete_inbound_message(id)
 
 Delete a single inbound message
 
 > Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | The unique numeric ID for the inbound message.
 
+
 begin
-  # Delete a single inbound message
+  #Delete a single inbound message
   api_instance.delete_inbound_message(id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_inbound_message: #{e}"
-end
-```
-
-#### Using the delete_inbound_message_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_inbound_message_with_http_info(id)
-
-```ruby
-begin
-  # Delete a single inbound message
-  data, status_code, headers = api_instance.delete_inbound_message_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_inbound_message_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_inbound_message: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** | The unique numeric ID for the inbound message. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| The unique numeric ID for the inbound message. | 
 
 ### Return type
 
@@ -2065,64 +1501,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_inbound_messages_bulk
 
+# **delete_inbound_messages_bulk**
 > delete_inbound_messages_bulk(delete_inbound_messages_bulk_input_object)
 
 Delete inbound messages (bulk)
 
 > Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-delete_inbound_messages_bulk_input_object = TextmagicRestClient::DeleteListsBulkInputObject.new # DeleteListsBulkInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+delete_inbound_messages_bulk_input_object = TextMagic::DeleteInboundMessagesBulkInputObject.new # DeleteInboundMessagesBulkInputObject | 
+
 
 begin
-  # Delete inbound messages (bulk)
+  #Delete inbound messages (bulk)
   api_instance.delete_inbound_messages_bulk(delete_inbound_messages_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_inbound_messages_bulk: #{e}"
-end
-```
-
-#### Using the delete_inbound_messages_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_inbound_messages_bulk_with_http_info(delete_inbound_messages_bulk_input_object)
-
-```ruby
-begin
-  # Delete inbound messages (bulk)
-  data, status_code, headers = api_instance.delete_inbound_messages_bulk_with_http_info(delete_inbound_messages_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_inbound_messages_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_inbound_messages_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **delete_inbound_messages_bulk_input_object** | [**DeleteListsBulkInputObject**](DeleteListsBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **delete_inbound_messages_bulk_input_object** | [**DeleteInboundMessagesBulkInputObject**](DeleteInboundMessagesBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -2134,64 +1553,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_list
 
+# **delete_list**
 > delete_list(id)
 
 Delete a list
 
 This command has no parameters. If successful, this command will return the standard delete response (204 No Content); otherwise, a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well, unless they were saved in another list.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Delete a list
+  #Delete a list
   api_instance.delete_list(id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_list: #{e}"
-end
-```
-
-#### Using the delete_list_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_list_with_http_info(id)
-
-```ruby
-begin
-  # Delete a list
-  data, status_code, headers = api_instance.delete_list_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_list_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_list: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -2203,64 +1605,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_list_avatar
 
+# **delete_list_avatar**
 > delete_list_avatar(id)
 
 Delete an avatar for a list
 
 Delete an avatar for a list
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Delete an avatar for a list
+  #Delete an avatar for a list
   api_instance.delete_list_avatar(id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_list_avatar: #{e}"
-end
-```
-
-#### Using the delete_list_avatar_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_list_avatar_with_http_info(id)
-
-```ruby
-begin
-  # Delete an avatar for a list
-  data, status_code, headers = api_instance.delete_list_avatar_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_list_avatar_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_list_avatar: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -2272,66 +1657,50 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## delete_list_contacts_bulk
 
-> delete_list_contacts_bulk(id, delete_list_contacts_bulk_input_object)
-
-Delete contacts from a list (bulk)
+# **delete_list_contacts_bulk**
+> delete_list_contacts_bulk(delete_list_contacts_bulk_input_object, id)
 
 Delete contacts from a list (bulk)
 
-### Examples
+Delete contacts from a list (bulk)
 
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
+delete_list_contacts_bulk_input_object = TextMagic::DeleteListContactsBulkInputObject.new # DeleteListContactsBulkInputObject | 
+
 id = 1 # Integer | 
-delete_list_contacts_bulk_input_object = TextmagicRestClient::UnblockContactsBulkInputObject.new # UnblockContactsBulkInputObject | 
+
 
 begin
-  # Delete contacts from a list (bulk)
-  api_instance.delete_list_contacts_bulk(id, delete_list_contacts_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_list_contacts_bulk: #{e}"
-end
-```
-
-#### Using the delete_list_contacts_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_list_contacts_bulk_with_http_info(id, delete_list_contacts_bulk_input_object)
-
-```ruby
-begin
-  # Delete contacts from a list (bulk)
-  data, status_code, headers = api_instance.delete_list_contacts_bulk_with_http_info(id, delete_list_contacts_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_list_contacts_bulk_with_http_info: #{e}"
+  #Delete contacts from a list (bulk)
+  api_instance.delete_list_contacts_bulk(delete_list_contacts_bulk_input_object, id)
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_list_contacts_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **delete_list_contacts_bulk_input_object** | [**UnblockContactsBulkInputObject**](UnblockContactsBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **delete_list_contacts_bulk_input_object** | [**DeleteListContactsBulkInputObject**](DeleteListContactsBulkInputObject.md)|  | 
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -2343,62 +1712,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_lists_bulk
 
+# **delete_lists_bulk**
 > delete_lists_bulk(delete_lists_bulk_input_object)
 
 Delete lists (bulk)
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-delete_lists_bulk_input_object = TextmagicRestClient::DeleteListsBulkInputObject.new # DeleteListsBulkInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+delete_lists_bulk_input_object = TextMagic::DeleteListsBulkInputObject.new # DeleteListsBulkInputObject | 
+
 
 begin
-  # Delete lists (bulk)
+  #Delete lists (bulk)
   api_instance.delete_lists_bulk(delete_lists_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_lists_bulk: #{e}"
-end
-```
-
-#### Using the delete_lists_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_lists_bulk_with_http_info(delete_lists_bulk_input_object)
-
-```ruby
-begin
-  # Delete lists (bulk)
-  data, status_code, headers = api_instance.delete_lists_bulk_with_http_info(delete_lists_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_lists_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_lists_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **delete_lists_bulk_input_object** | [**DeleteListsBulkInputObject**](DeleteListsBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **delete_lists_bulk_input_object** | [**DeleteListsBulkInputObject**](DeleteListsBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -2410,64 +1764,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_message_session
 
+# **delete_message_session**
 > delete_message_session(id)
 
 Delete a session
 
 Delete a message session, together with all nested messages. > You will not be refunded for any deleted sent sessions. 
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Delete a session
+  #Delete a session
   api_instance.delete_message_session(id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_message_session: #{e}"
-end
-```
-
-#### Using the delete_message_session_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_message_session_with_http_info(id)
-
-```ruby
-begin
-  # Delete a session
-  data, status_code, headers = api_instance.delete_message_session_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_message_session_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_message_session: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -2479,64 +1816,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_message_sessions_bulk
 
+# **delete_message_sessions_bulk**
 > delete_message_sessions_bulk(delete_message_sessions_bulk_input_object)
 
 Delete sessions (bulk)
 
 Delete message sessions, together with all nested messages, by given ID(s) or delete all message sessions.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-delete_message_sessions_bulk_input_object = TextmagicRestClient::DeleteListsBulkInputObject.new # DeleteListsBulkInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+delete_message_sessions_bulk_input_object = TextMagic::DeleteMessageSessionsBulkInputObject.new # DeleteMessageSessionsBulkInputObject | 
+
 
 begin
-  # Delete sessions (bulk)
+  #Delete sessions (bulk)
   api_instance.delete_message_sessions_bulk(delete_message_sessions_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_message_sessions_bulk: #{e}"
-end
-```
-
-#### Using the delete_message_sessions_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_message_sessions_bulk_with_http_info(delete_message_sessions_bulk_input_object)
-
-```ruby
-begin
-  # Delete sessions (bulk)
-  data, status_code, headers = api_instance.delete_message_sessions_bulk_with_http_info(delete_message_sessions_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_message_sessions_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_message_sessions_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **delete_message_sessions_bulk_input_object** | [**DeleteListsBulkInputObject**](DeleteListsBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **delete_message_sessions_bulk_input_object** | [**DeleteMessageSessionsBulkInputObject**](DeleteMessageSessionsBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -2548,64 +1868,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_outbound_message
 
+# **delete_outbound_message**
 > delete_outbound_message(id)
 
 Delete message
 
 Delete a single message.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Delete message
+  #Delete message
   api_instance.delete_outbound_message(id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_outbound_message: #{e}"
-end
-```
-
-#### Using the delete_outbound_message_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_outbound_message_with_http_info(id)
-
-```ruby
-begin
-  # Delete message
-  data, status_code, headers = api_instance.delete_outbound_message_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_outbound_message_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_outbound_message: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -2617,64 +1920,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_outbound_messages_bulk
 
+# **delete_outbound_messages_bulk**
 > delete_outbound_messages_bulk(delete_outbound_messages_bulk_input_object)
 
 Delete messages (bulk)
 
 Delete outbound messages by the given ID(s) or delete all outbound messages.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-delete_outbound_messages_bulk_input_object = TextmagicRestClient::DeleteOutboundMessagesBulkInputObject.new # DeleteOutboundMessagesBulkInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+delete_outbound_messages_bulk_input_object = TextMagic::DeleteOutboundMessagesBulkInputObject.new # DeleteOutboundMessagesBulkInputObject | 
+
 
 begin
-  # Delete messages (bulk)
+  #Delete messages (bulk)
   api_instance.delete_outbound_messages_bulk(delete_outbound_messages_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_outbound_messages_bulk: #{e}"
-end
-```
-
-#### Using the delete_outbound_messages_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_outbound_messages_bulk_with_http_info(delete_outbound_messages_bulk_input_object)
-
-```ruby
-begin
-  # Delete messages (bulk)
-  data, status_code, headers = api_instance.delete_outbound_messages_bulk_with_http_info(delete_outbound_messages_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_outbound_messages_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_outbound_messages_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **delete_outbound_messages_bulk_input_object** | [**DeleteOutboundMessagesBulkInputObject**](DeleteOutboundMessagesBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **delete_outbound_messages_bulk_input_object** | [**DeleteOutboundMessagesBulkInputObject**](DeleteOutboundMessagesBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -2686,62 +1972,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_scheduled_message
 
+# **delete_scheduled_message**
 > delete_scheduled_message(id)
 
 Delete a single scheduled message
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Delete a single scheduled message
+  #Delete a single scheduled message
   api_instance.delete_scheduled_message(id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_scheduled_message: #{e}"
-end
-```
-
-#### Using the delete_scheduled_message_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_scheduled_message_with_http_info(id)
-
-```ruby
-begin
-  # Delete a single scheduled message
-  data, status_code, headers = api_instance.delete_scheduled_message_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_scheduled_message_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_scheduled_message: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -2753,62 +2024,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_scheduled_messages_bulk
 
+# **delete_scheduled_messages_bulk**
 > delete_scheduled_messages_bulk(delete_scheduled_messages_bulk_input_object)
 
 Delete scheduled messages (bulk)
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-delete_scheduled_messages_bulk_input_object = TextmagicRestClient::DeleteScheduledMessagesBulkInputObject.new # DeleteScheduledMessagesBulkInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+delete_scheduled_messages_bulk_input_object = TextMagic::DeleteScheduledMessagesBulkInputObject.new # DeleteScheduledMessagesBulkInputObject | 
+
 
 begin
-  # Delete scheduled messages (bulk)
+  #Delete scheduled messages (bulk)
   api_instance.delete_scheduled_messages_bulk(delete_scheduled_messages_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_scheduled_messages_bulk: #{e}"
-end
-```
-
-#### Using the delete_scheduled_messages_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_scheduled_messages_bulk_with_http_info(delete_scheduled_messages_bulk_input_object)
-
-```ruby
-begin
-  # Delete scheduled messages (bulk)
-  data, status_code, headers = api_instance.delete_scheduled_messages_bulk_with_http_info(delete_scheduled_messages_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_scheduled_messages_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_scheduled_messages_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **delete_scheduled_messages_bulk_input_object** | [**DeleteScheduledMessagesBulkInputObject**](DeleteScheduledMessagesBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **delete_scheduled_messages_bulk_input_object** | [**DeleteScheduledMessagesBulkInputObject**](DeleteScheduledMessagesBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -2820,62 +2076,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_sender_id
 
+# **delete_sender_id**
 > delete_sender_id(id)
 
 Delete a Sender ID
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Delete a Sender ID
+  #Delete a Sender ID
   api_instance.delete_sender_id(id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_sender_id: #{e}"
-end
-```
-
-#### Using the delete_sender_id_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_sender_id_with_http_info(id)
-
-```ruby
-begin
-  # Delete a Sender ID
-  data, status_code, headers = api_instance.delete_sender_id_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_sender_id_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_sender_id: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -2887,62 +2128,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_template
 
+# **delete_template**
 > delete_template(id)
 
 Delete a template
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Delete a template
+  #Delete a template
   api_instance.delete_template(id)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_template: #{e}"
-end
-```
-
-#### Using the delete_template_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_template_with_http_info(id)
-
-```ruby
-begin
-  # Delete a template
-  data, status_code, headers = api_instance.delete_template_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_template_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_template: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -2954,64 +2180,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## delete_templates_bulk
 
+# **delete_templates_bulk**
 > delete_templates_bulk(delete_templates_bulk_input_object)
 
 Delete templates (bulk)
 
 Delete templates by given IDs or delete all templates.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-delete_templates_bulk_input_object = TextmagicRestClient::DeleteContactNotesBulkInputObject.new # DeleteContactNotesBulkInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+delete_templates_bulk_input_object = TextMagic::DeleteTemplatesBulkInputObject.new # DeleteTemplatesBulkInputObject | 
+
 
 begin
-  # Delete templates (bulk)
+  #Delete templates (bulk)
   api_instance.delete_templates_bulk(delete_templates_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_templates_bulk: #{e}"
-end
-```
-
-#### Using the delete_templates_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_templates_bulk_with_http_info(delete_templates_bulk_input_object)
-
-```ruby
-begin
-  # Delete templates (bulk)
-  data, status_code, headers = api_instance.delete_templates_bulk_with_http_info(delete_templates_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->delete_templates_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->delete_templates_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **delete_templates_bulk_input_object** | [**DeleteContactNotesBulkInputObject**](DeleteContactNotesBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **delete_templates_bulk_input_object** | [**DeleteTemplatesBulkInputObject**](DeleteTemplatesBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -3023,69 +2232,52 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## do_carrier_lookup
 
-> <DoCarrierLookupResponse> do_carrier_lookup(phone, opts)
+# **do_carrier_lookup**
+> DoCarrierLookupResponse do_carrier_lookup(phone, opts)
 
 Carrier Lookup
 
 This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  > Numbers must be checked one by one. You cannot check multiple numbers in one request.   
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-phone = '447860021130' # String | Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers). 
-opts = {
-  country: 'GB' # String | This option must be specified only if the phone number is in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**. 
+api_instance = TextMagic::TextMagicApi.new
+
+phone = '\"447860021130\"' # String | Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers). 
+
+opts = { 
+  country: '\"GB\"' # String | This option must be specified only if the phone number is in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**. 
 }
 
 begin
-  # Carrier Lookup
+  #Carrier Lookup
   result = api_instance.do_carrier_lookup(phone, opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->do_carrier_lookup: #{e}"
-end
-```
-
-#### Using the do_carrier_lookup_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<DoCarrierLookupResponse>, Integer, Hash)> do_carrier_lookup_with_http_info(phone, opts)
-
-```ruby
-begin
-  # Carrier Lookup
-  data, status_code, headers = api_instance.do_carrier_lookup_with_http_info(phone, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <DoCarrierLookupResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->do_carrier_lookup_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->do_carrier_lookup: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **phone** | **String** | Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers).  |  |
-| **country** | **String** | This option must be specified only if the phone number is in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**.  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **phone** | **String**| Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers).  | 
+ **country** | **String**| This option must be specified only if the phone number is in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**.  | [optional] 
 
 ### Return type
 
@@ -3097,65 +2289,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## do_email_lookup
 
-> <DoEmailLookupResponse> do_email_lookup(email)
+# **do_email_lookup**
+> DoEmailLookupResponse do_email_lookup(email)
 
 Email Lookup
 
 To get more details about an email address or to check whether it is a valid email or not, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  > Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-email = 'john@sample.com' # String | Email address.
+api_instance = TextMagic::TextMagicApi.new
+
+email = '\"john@sample.com\"' # String | Email address.
+
 
 begin
-  # Email Lookup
+  #Email Lookup
   result = api_instance.do_email_lookup(email)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->do_email_lookup: #{e}"
-end
-```
-
-#### Using the do_email_lookup_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<DoEmailLookupResponse>, Integer, Hash)> do_email_lookup_with_http_info(email)
-
-```ruby
-begin
-  # Email Lookup
-  data, status_code, headers = api_instance.do_email_lookup_with_http_info(email)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <DoEmailLookupResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->do_email_lookup_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->do_email_lookup: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **email** | **String** | Email address. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **String**| Email address. | 
 
 ### Return type
 
@@ -3167,67 +2342,51 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_all_bulk_sessions
 
-> <GetAllBulkSessionsPaginatedResponse> get_all_bulk_sessions(opts)
+# **get_all_bulk_sessions**
+> GetAllBulkSessionsPaginatedResponse get_all_bulk_sessions(opts)
 
 Get all bulk sessions
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56 # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
-  # Get all bulk sessions
+  #Get all bulk sessions
   result = api_instance.get_all_bulk_sessions(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_all_bulk_sessions: #{e}"
-end
-```
-
-#### Using the get_all_bulk_sessions_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetAllBulkSessionsPaginatedResponse>, Integer, Hash)> get_all_bulk_sessions_with_http_info(opts)
-
-```ruby
-begin
-  # Get all bulk sessions
-  data, status_code, headers = api_instance.get_all_bulk_sessions_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetAllBulkSessionsPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_all_bulk_sessions_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_all_bulk_sessions: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -3239,75 +2398,59 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_all_chats
 
-> <GetAllChatsPaginatedResponse> get_all_chats(opts)
+# **get_all_chats**
+> GetAllChatsPaginatedResponse get_all_chats(opts)
 
 Get all chats
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  status: 'a', # String | Fetch only (a)ctive, (c)losed or (d)eleted chats.
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  status: '\"a\"', # String | Fetch only (a)ctive, (c)losed or (d)eleted chats.
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   order_by: 'id', # String | Order results by some field. Default is id.
   voice: 0, # Integer | Fetch results with voice calls.
   flat: 0 # Integer | Should additional contact info be included?
 }
 
 begin
-  # Get all chats
+  #Get all chats
   result = api_instance.get_all_chats(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_all_chats: #{e}"
-end
-```
-
-#### Using the get_all_chats_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetAllChatsPaginatedResponse>, Integer, Hash)> get_all_chats_with_http_info(opts)
-
-```ruby
-begin
-  # Get all chats
-  data, status_code, headers = api_instance.get_all_chats_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetAllChatsPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_all_chats_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_all_chats: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **status** | **String** | Fetch only (a)ctive, (c)losed or (d)eleted chats. | [optional] |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **order_by** | **String** | Order results by some field. Default is id. | [optional][default to &#39;id&#39;] |
-| **voice** | **Integer** | Fetch results with voice calls. | [optional][default to 0] |
-| **flat** | **Integer** | Should additional contact info be included? | [optional][default to 0] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **status** | **String**| Fetch only (a)ctive, (c)losed or (d)eleted chats. | [optional] 
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **voice** | **Integer**| Fetch results with voice calls. | [optional] [default to 0]
+ **flat** | **Integer**| Should additional contact info be included? | [optional] [default to 0]
 
 ### Return type
 
@@ -3319,71 +2462,55 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_all_inbound_messages
 
-> <GetAllInboundMessagesPaginatedResponse> get_all_inbound_messages(opts)
+# **get_all_inbound_messages**
+> GetAllInboundMessagesPaginatedResponse get_all_inbound_messages(opts)
 
 Get all inbound messages
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   order_by: 'id', # String | Order results by some field. Default is id.
-  direction: 'asc' # String | Order direction. Default is desc.
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
-  # Get all inbound messages
+  #Get all inbound messages
   result = api_instance.get_all_inbound_messages(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_all_inbound_messages: #{e}"
-end
-```
-
-#### Using the get_all_inbound_messages_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetAllInboundMessagesPaginatedResponse>, Integer, Hash)> get_all_inbound_messages_with_http_info(opts)
-
-```ruby
-begin
-  # Get all inbound messages
-  data, status_code, headers = api_instance.get_all_inbound_messages_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetAllInboundMessagesPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_all_inbound_messages_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_all_inbound_messages: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **order_by** | **String** | Order results by some field. Default is id. | [optional][default to &#39;id&#39;] |
-| **direction** | **String** | Order direction. Default is desc. | [optional][default to &#39;desc&#39;] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -3395,69 +2522,51 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_all_message_sessions
 
-> <GetAllMessageSessionsPaginatedResponse> get_all_message_sessions(opts)
+# **get_all_message_sessions**
+> GetAllMessageSessionsPaginatedResponse get_all_message_sessions(opts)
 
 Get all sessions
 
 Get all message sending sessions. > This list contains all of your sessions, including those which were sent but not via API 
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56 # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
-  # Get all sessions
+  #Get all sessions
   result = api_instance.get_all_message_sessions(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_all_message_sessions: #{e}"
-end
-```
-
-#### Using the get_all_message_sessions_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetAllMessageSessionsPaginatedResponse>, Integer, Hash)> get_all_message_sessions_with_http_info(opts)
-
-```ruby
-begin
-  # Get all sessions
-  data, status_code, headers = api_instance.get_all_message_sessions_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetAllMessageSessionsPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_all_message_sessions_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_all_message_sessions: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -3469,71 +2578,53 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_all_outbound_messages
 
-> <GetAllOutboundMessagesPaginatedResponse> get_all_outbound_messages(opts)
+# **get_all_outbound_messages**
+> GetAllOutboundMessagesPaginatedResponse get_all_outbound_messages(opts)
 
 Get all messages
 
 Get all user oubound messages.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   last_id: 56 # Integer | Filter results by ID, selecting all values lesser than the specified ID. Note that the \\'page\\' parameter is ignored when \\'lastId\\' is specified.
 }
 
 begin
-  # Get all messages
+  #Get all messages
   result = api_instance.get_all_outbound_messages(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_all_outbound_messages: #{e}"
-end
-```
-
-#### Using the get_all_outbound_messages_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetAllOutboundMessagesPaginatedResponse>, Integer, Hash)> get_all_outbound_messages_with_http_info(opts)
-
-```ruby
-begin
-  # Get all messages
-  data, status_code, headers = api_instance.get_all_outbound_messages_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetAllOutboundMessagesPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_all_outbound_messages_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_all_outbound_messages: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **last_id** | **Integer** | Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **last_id** | **Integer**| Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified. | [optional] 
 
 ### Return type
 
@@ -3545,73 +2636,57 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_all_scheduled_messages
 
-> <GetAllScheduledMessagesPaginatedResponse> get_all_scheduled_messages(opts)
+# **get_all_scheduled_messages**
+> GetAllScheduledMessagesPaginatedResponse get_all_scheduled_messages(opts)
 
 Get all scheduled messages
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
-  status: 'a', # String | Fetch schedules with a specific status: a - actual, c - completed, x - all.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
+  status: 'x', # String | Fetch schedules with a specific status: a - actual, c - completed, x - all.
   order_by: 'id', # String | Order results by some field. Default is id.
-  direction: 'asc' # String | Order direction. Default is desc.
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
-  # Get all scheduled messages
+  #Get all scheduled messages
   result = api_instance.get_all_scheduled_messages(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_all_scheduled_messages: #{e}"
-end
-```
-
-#### Using the get_all_scheduled_messages_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetAllScheduledMessagesPaginatedResponse>, Integer, Hash)> get_all_scheduled_messages_with_http_info(opts)
-
-```ruby
-begin
-  # Get all scheduled messages
-  data, status_code, headers = api_instance.get_all_scheduled_messages_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetAllScheduledMessagesPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_all_scheduled_messages_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_all_scheduled_messages: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **status** | **String** | Fetch schedules with a specific status: a - actual, c - completed, x - all. | [optional][default to &#39;x&#39;] |
-| **order_by** | **String** | Order results by some field. Default is id. | [optional][default to &#39;id&#39;] |
-| **direction** | **String** | Order direction. Default is desc. | [optional][default to &#39;desc&#39;] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **status** | **String**| Fetch schedules with a specific status: a - actual, c - completed, x - all. | [optional] [default to x]
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -3623,67 +2698,51 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_all_templates
 
-> <GetAllTemplatesPaginatedResponse> get_all_templates(opts)
+# **get_all_templates**
+> GetAllTemplatesPaginatedResponse get_all_templates(opts)
 
 Get all templates
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10 # Integer | The number of results per page.
 }
 
 begin
-  # Get all templates
+  #Get all templates
   result = api_instance.get_all_templates(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_all_templates: #{e}"
-end
-```
-
-#### Using the get_all_templates_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetAllTemplatesPaginatedResponse>, Integer, Hash)> get_all_templates_with_http_info(opts)
-
-```ruby
-begin
-  # Get all templates
-  data, status_code, headers = api_instance.get_all_templates_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetAllTemplatesPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_all_templates_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_all_templates: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional] |
-| **limit** | **Integer** | The number of results per page. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] 
+ **limit** | **Integer**| The number of results per page. | [optional] 
 
 ### Return type
 
@@ -3695,69 +2754,54 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_available_dedicated_numbers
 
-> <GetAvailableDedicatedNumbersResponse> get_available_dedicated_numbers(country, opts)
+# **get_available_dedicated_numbers**
+> GetAvailableDedicatedNumbersResponse get_available_dedicated_numbers(country, opts)
 
 Find dedicated numbers available for purchase
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-country = 'GB' # String | The 2-letter dedicated number country ISO code.
-opts = {
+api_instance = TextMagic::TextMagicApi.new
+
+country = '\"GB\"' # String | The 2-letter dedicated number country ISO code.
+
+opts = { 
   prefix: 447155, # Integer | Desired number prefix. Should include the country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
   tollfree: 0 # Integer | Should we show only tollfree numbers (tollfree available only for US).
 }
 
 begin
-  # Find dedicated numbers available for purchase
+  #Find dedicated numbers available for purchase
   result = api_instance.get_available_dedicated_numbers(country, opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_available_dedicated_numbers: #{e}"
-end
-```
-
-#### Using the get_available_dedicated_numbers_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetAvailableDedicatedNumbersResponse>, Integer, Hash)> get_available_dedicated_numbers_with_http_info(country, opts)
-
-```ruby
-begin
-  # Find dedicated numbers available for purchase
-  data, status_code, headers = api_instance.get_available_dedicated_numbers_with_http_info(country, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetAvailableDedicatedNumbersResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_available_dedicated_numbers_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_available_dedicated_numbers: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **country** | **String** | The 2-letter dedicated number country ISO code. |  |
-| **prefix** | **Integer** | Desired number prefix. Should include the country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. | [optional] |
-| **tollfree** | **Integer** | Should we show only tollfree numbers (tollfree available only for US). | [optional][default to 0] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **country** | **String**| The 2-letter dedicated number country ISO code. | 
+ **prefix** | **Integer**| Desired number prefix. Should include the country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. | [optional] 
+ **tollfree** | **Integer**| Should we show only tollfree numbers (tollfree available only for US). | [optional] [default to 0]
 
 ### Return type
 
@@ -3769,67 +2813,49 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_available_sender_setting_options
 
-> <GetAvailableSenderSettingOptionsResponse> get_available_sender_setting_options(opts)
+# **get_available_sender_setting_options**
+> GetAvailableSenderSettingOptionsResponse get_available_sender_setting_options(opts)
 
 Get available sender settings
 
 Get all available sender setting options which can be used in the \"from\" parameter of the POST messages method.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  country: 'US' # String | The 2-letter ISO country ID. If not specified, it returns all the available sender settings.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  country: '\"US\"' # String | The 2-letter ISO country ID. If not specified, it returns all the available sender settings.
 }
 
 begin
-  # Get available sender settings
+  #Get available sender settings
   result = api_instance.get_available_sender_setting_options(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_available_sender_setting_options: #{e}"
-end
-```
-
-#### Using the get_available_sender_setting_options_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetAvailableSenderSettingOptionsResponse>, Integer, Hash)> get_available_sender_setting_options_with_http_info(opts)
-
-```ruby
-begin
-  # Get available sender settings
-  data, status_code, headers = api_instance.get_available_sender_setting_options_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetAvailableSenderSettingOptionsResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_available_sender_setting_options_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_available_sender_setting_options: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **country** | **String** | The 2-letter ISO country ID. If not specified, it returns all the available sender settings. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **country** | **String**| The 2-letter ISO country ID. If not specified, it returns all the available sender settings. | [optional] 
 
 ### Return type
 
@@ -3841,59 +2867,41 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_balance_notification_options
 
-> <GetBalanceNotificationOptionsResponse> get_balance_notification_options
+# **get_balance_notification_options**
+> GetBalanceNotificationOptionsResponse get_balance_notification_options
 
 Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
-  # Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
+  #Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
   result = api_instance.get_balance_notification_options
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_balance_notification_options: #{e}"
-end
-```
-
-#### Using the get_balance_notification_options_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetBalanceNotificationOptionsResponse>, Integer, Hash)> get_balance_notification_options_with_http_info
-
-```ruby
-begin
-  # Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
-  data, status_code, headers = api_instance.get_balance_notification_options_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetBalanceNotificationOptionsResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_balance_notification_options_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_balance_notification_options: #{e}"
 end
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -3906,59 +2914,41 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_balance_notification_settings
 
-> <GetBalanceNotificationSettingsResponse> get_balance_notification_settings
+# **get_balance_notification_settings**
+> GetBalanceNotificationSettingsResponse get_balance_notification_settings
 
 Get balance notification settings
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
-  # Get balance notification settings
+  #Get balance notification settings
   result = api_instance.get_balance_notification_settings
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_balance_notification_settings: #{e}"
-end
-```
-
-#### Using the get_balance_notification_settings_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetBalanceNotificationSettingsResponse>, Integer, Hash)> get_balance_notification_settings_with_http_info
-
-```ruby
-begin
-  # Get balance notification settings
-  data, status_code, headers = api_instance.get_balance_notification_settings_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetBalanceNotificationSettingsResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_balance_notification_settings_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_balance_notification_settings: #{e}"
 end
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -3971,73 +2961,57 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_blocked_contacts
 
-> <GetBlockedContactsPaginatedResponse> get_blocked_contacts(opts)
+# **get_blocked_contacts**
+> GetBlockedContactsPaginatedResponse get_blocked_contacts(opts)
 
 Get blocked contacts
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   query: 'query_example', # String | Find blocked contacts by specified search query.
   order_by: 'id', # String | Order results by some field. Default is id.
-  direction: 'asc' # String | Order direction. Default is desc.
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
-  # Get blocked contacts
+  #Get blocked contacts
   result = api_instance.get_blocked_contacts(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_blocked_contacts: #{e}"
-end
-```
-
-#### Using the get_blocked_contacts_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetBlockedContactsPaginatedResponse>, Integer, Hash)> get_blocked_contacts_with_http_info(opts)
-
-```ruby
-begin
-  # Get blocked contacts
-  data, status_code, headers = api_instance.get_blocked_contacts_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetBlockedContactsPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_blocked_contacts_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_blocked_contacts: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **query** | **String** | Find blocked contacts by specified search query. | [optional] |
-| **order_by** | **String** | Order results by some field. Default is id. | [optional][default to &#39;id&#39;] |
-| **direction** | **String** | Order direction. Default is desc. | [optional][default to &#39;desc&#39;] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **query** | **String**| Find blocked contacts by specified search query. | [optional] 
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -4049,63 +3023,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_bulk_session
 
-> <BulkSession> get_bulk_session(id)
+# **get_bulk_session**
+> BulkSession get_bulk_session(id)
 
 Get bulk session status
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Get bulk session status
+  #Get bulk session status
   result = api_instance.get_bulk_session(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_bulk_session: #{e}"
-end
-```
-
-#### Using the get_bulk_session_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<BulkSession>, Integer, Hash)> get_bulk_session_with_http_info(id)
-
-```ruby
-begin
-  # Get bulk session status
-  data, status_code, headers = api_instance.get_bulk_session_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <BulkSession>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_bulk_session_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_bulk_session: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -4117,59 +3076,41 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_callback_settings
 
-> <GetCallbackSettingsResponse> get_callback_settings
+# **get_callback_settings**
+> GetCallbackSettingsResponse get_callback_settings
 
 Fetch callback URL settings
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
-  # Fetch callback URL settings
+  #Fetch callback URL settings
   result = api_instance.get_callback_settings
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_callback_settings: #{e}"
-end
-```
-
-#### Using the get_callback_settings_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetCallbackSettingsResponse>, Integer, Hash)> get_callback_settings_with_http_info
-
-```ruby
-begin
-  # Fetch callback URL settings
-  data, status_code, headers = api_instance.get_callback_settings_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetCallbackSettingsResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_callback_settings_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_callback_settings: #{e}"
 end
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -4182,63 +3123,48 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_chat
 
-> <Chat> get_chat(id)
+# **get_chat**
+> Chat get_chat(id)
 
 Get a single chat
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Get a single chat
+  #Get a single chat
   result = api_instance.get_chat(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_chat: #{e}"
-end
-```
-
-#### Using the get_chat_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<Chat>, Integer, Hash)> get_chat_with_http_info(id)
-
-```ruby
-begin
-  # Get a single chat
-  data, status_code, headers = api_instance.get_chat_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <Chat>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_chat_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_chat: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -4250,69 +3176,54 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_chat_by_phone
 
-> <Chat> get_chat_by_phone(phone, opts)
+# **get_chat_by_phone**
+> Chat get_chat_by_phone(phone, opts)
 
 Find chats by phone
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-phone = '447860021130' # String | 
-opts = {
+api_instance = TextMagic::TextMagicApi.new
+
+phone = '\"447860021130\"' # String | 
+
+opts = { 
   upsert: 0, # Integer | Create a new chat if not found.
   reopen: 0 # Integer | Reopen chat if found or do not change status.
 }
 
 begin
-  # Find chats by phone
+  #Find chats by phone
   result = api_instance.get_chat_by_phone(phone, opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_chat_by_phone: #{e}"
-end
-```
-
-#### Using the get_chat_by_phone_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<Chat>, Integer, Hash)> get_chat_by_phone_with_http_info(phone, opts)
-
-```ruby
-begin
-  # Find chats by phone
-  data, status_code, headers = api_instance.get_chat_by_phone_with_http_info(phone, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <Chat>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_chat_by_phone_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_chat_by_phone: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **phone** | **String** |  |  |
-| **upsert** | **Integer** | Create a new chat if not found. | [optional][default to 0] |
-| **reopen** | **Integer** | Reopen chat if found or do not change status. | [optional][default to 0] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **phone** | **String**|  | 
+ **upsert** | **Integer**| Create a new chat if not found. | [optional] [default to 0]
+ **reopen** | **Integer**| Reopen chat if found or do not change status. | [optional] [default to 0]
 
 ### Return type
 
@@ -4324,79 +3235,66 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_chat_messages
 
-> <GetChatMessagesPaginatedResponse> get_chat_messages(id, opts)
+# **get_chat_messages**
+> GetChatMessagesPaginatedResponse get_chat_messages(id, opts)
 
 Get chat messages
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   query: 'query_example', # String | Find messages by specified search query.
   start: 'start_example', # String | Return messages since specified timestamp only. Required when `end` parameter specified.
   _end: '_end_example', # String | Return messages up to specified timestamp only. Required when `start` parameter specified.
-  direction: 'asc', # String | Order direction. Default is desc.
-  voice: 0 # Integer | Fetch results with voice calls.
+  direction: 'desc', # String | Order direction. Default is desc.
+  voice: 0, # Integer | Fetch results with voice calls.
+  include_notes: 0 # Integer | Fetch results with messenger notes.
 }
 
 begin
-  # Get chat messages
+  #Get chat messages
   result = api_instance.get_chat_messages(id, opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_chat_messages: #{e}"
-end
-```
-
-#### Using the get_chat_messages_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetChatMessagesPaginatedResponse>, Integer, Hash)> get_chat_messages_with_http_info(id, opts)
-
-```ruby
-begin
-  # Get chat messages
-  data, status_code, headers = api_instance.get_chat_messages_with_http_info(id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetChatMessagesPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_chat_messages_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_chat_messages: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **query** | **String** | Find messages by specified search query. | [optional] |
-| **start** | **String** | Return messages since specified timestamp only. Required when &#x60;end&#x60; parameter specified. | [optional] |
-| **_end** | **String** | Return messages up to specified timestamp only. Required when &#x60;start&#x60; parameter specified. | [optional] |
-| **direction** | **String** | Order direction. Default is desc. | [optional][default to &#39;desc&#39;] |
-| **voice** | **Integer** | Fetch results with voice calls. | [optional][default to 0] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **query** | **String**| Find messages by specified search query. | [optional] 
+ **start** | **String**| Return messages since specified timestamp only. Required when &#x60;end&#x60; parameter specified. | [optional] 
+ **_end** | **String**| Return messages up to specified timestamp only. Required when &#x60;start&#x60; parameter specified. | [optional] 
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
+ **voice** | **Integer**| Fetch results with voice calls. | [optional] [default to 0]
+ **include_notes** | **Integer**| Fetch results with messenger notes. | [optional] [default to 0]
 
 ### Return type
 
@@ -4408,63 +3306,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_contact
 
-> <Contact> get_contact(id)
+# **get_contact**
+> Contact get_contact(id)
 
 Get the details of a specific contact
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | Contact ID.
 
+
 begin
-  # Get the details of a specific contact
+  #Get the details of a specific contact
   result = api_instance.get_contact(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contact: #{e}"
-end
-```
-
-#### Using the get_contact_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<Contact>, Integer, Hash)> get_contact_with_http_info(id)
-
-```ruby
-begin
-  # Get the details of a specific contact
-  data, status_code, headers = api_instance.get_contact_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <Contact>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contact_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_contact: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** | Contact ID. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Contact ID. | 
 
 ### Return type
 
@@ -4476,63 +3359,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_contact_by_phone
 
-> <Contact> get_contact_by_phone(phone)
+# **get_contact_by_phone**
+> Contact get_contact_by_phone(phone)
 
 Get the details of a specific contact by phone number
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-phone = '447860021130' # String | 
+api_instance = TextMagic::TextMagicApi.new
+
+phone = '\"447860021130\"' # String | 
+
 
 begin
-  # Get the details of a specific contact by phone number
+  #Get the details of a specific contact by phone number
   result = api_instance.get_contact_by_phone(phone)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contact_by_phone: #{e}"
-end
-```
-
-#### Using the get_contact_by_phone_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<Contact>, Integer, Hash)> get_contact_by_phone_with_http_info(phone)
-
-```ruby
-begin
-  # Get the details of a specific contact by phone number
-  data, status_code, headers = api_instance.get_contact_by_phone_with_http_info(phone)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <Contact>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contact_by_phone_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_contact_by_phone: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **phone** | **String** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **phone** | **String**|  | 
 
 ### Return type
 
@@ -4544,63 +3412,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_contact_if_blocked
 
-> <Contact> get_contact_if_blocked(phone)
+# **get_contact_if_blocked**
+> Contact get_contact_if_blocked(phone)
 
 Check if a phone number is blocked
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-phone = '447860021130' # String | Phone number to check.
+api_instance = TextMagic::TextMagicApi.new
+
+phone = '\"447860021130\"' # String | Phone number to check.
+
 
 begin
-  # Check if a phone number is blocked
+  #Check if a phone number is blocked
   result = api_instance.get_contact_if_blocked(phone)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contact_if_blocked: #{e}"
-end
-```
-
-#### Using the get_contact_if_blocked_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<Contact>, Integer, Hash)> get_contact_if_blocked_with_http_info(phone)
-
-```ruby
-begin
-  # Check if a phone number is blocked
-  data, status_code, headers = api_instance.get_contact_if_blocked_with_http_info(phone)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <Contact>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contact_if_blocked_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_contact_if_blocked: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **phone** | **String** | Phone number to check. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **phone** | **String**| Phone number to check. | 
 
 ### Return type
 
@@ -4612,65 +3465,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_contact_import_session_progress
 
-> <GetContactImportSessionProgressResponse> get_contact_import_session_progress(id)
+# **get_contact_import_session_progress**
+> GetContactImportSessionProgressResponse get_contact_import_session_progress(id)
 
 Check import progress
 
 Get contact import session progress.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Check import progress
+  #Check import progress
   result = api_instance.get_contact_import_session_progress(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contact_import_session_progress: #{e}"
-end
-```
-
-#### Using the get_contact_import_session_progress_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetContactImportSessionProgressResponse>, Integer, Hash)> get_contact_import_session_progress_with_http_info(id)
-
-```ruby
-begin
-  # Check import progress
-  data, status_code, headers = api_instance.get_contact_import_session_progress_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetContactImportSessionProgressResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contact_import_session_progress_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_contact_import_session_progress: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -4682,63 +3518,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_contact_note
 
-> <ContactNote> get_contact_note(id)
+# **get_contact_note**
+> ContactNote get_contact_note(id)
 
 Get a contact note
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Get a contact note
+  #Get a contact note
   result = api_instance.get_contact_note(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contact_note: #{e}"
-end
-```
-
-#### Using the get_contact_note_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ContactNote>, Integer, Hash)> get_contact_note_with_http_info(id)
-
-```ruby
-begin
-  # Get a contact note
-  data, status_code, headers = api_instance.get_contact_note_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ContactNote>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contact_note_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_contact_note: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -4750,69 +3571,54 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_contact_notes
 
-> <GetContactNotesPaginatedResponse> get_contact_notes(id, opts)
+# **get_contact_notes**
+> GetContactNotesPaginatedResponse get_contact_notes(id, opts)
 
 Fetch notes assigned to a given contact
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56 # Integer | The number of results per page.
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
-  # Fetch notes assigned to a given contact
+  #Fetch notes assigned to a given contact
   result = api_instance.get_contact_notes(id, opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contact_notes: #{e}"
-end
-```
-
-#### Using the get_contact_notes_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetContactNotesPaginatedResponse>, Integer, Hash)> get_contact_notes_with_http_info(id, opts)
-
-```ruby
-begin
-  # Fetch notes assigned to a given contact
-  data, status_code, headers = api_instance.get_contact_notes_with_http_info(id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetContactNotesPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contact_notes_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_contact_notes: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -4824,73 +3630,57 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_contacts
 
-> <GetContactsPaginatedResponse> get_contacts(opts)
+# **get_contacts**
+> GetContactsPaginatedResponse get_contacts(opts)
 
 Get all contacts
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   shared: 0, # Integer | Should shared contacts be included?
   order_by: 'id', # String | Order results by some field. Default is id.
-  direction: 'asc' # String | Order direction. Default is desc.
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
-  # Get all contacts
+  #Get all contacts
   result = api_instance.get_contacts(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contacts: #{e}"
-end
-```
-
-#### Using the get_contacts_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetContactsPaginatedResponse>, Integer, Hash)> get_contacts_with_http_info(opts)
-
-```ruby
-begin
-  # Get all contacts
-  data, status_code, headers = api_instance.get_contacts_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetContactsPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contacts_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_contacts: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **shared** | **Integer** | Should shared contacts be included? | [optional][default to 0] |
-| **order_by** | **String** | Order results by some field. Default is id. | [optional][default to &#39;id&#39;] |
-| **direction** | **String** | Order direction. Default is desc. | [optional][default to &#39;desc&#39;] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **shared** | **Integer**| Should shared contacts be included? | [optional] [default to 0]
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -4902,71 +3692,54 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_contacts_autocomplete
 
-> <GetContactsAutocompleteResponse> get_contacts_autocomplete(query, opts)
+# **get_contacts_autocomplete**
+> GetContactsAutocompleteResponse get_contacts_autocomplete(query, opts)
 
 Get contacts autocomplete suggestions
 
 Get contacts autocomplete suggestions by given search terms.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-query = 'A' # String | Find recipients by specified search query.
-opts = {
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+query = '\"A\"' # String | Find recipients by specified search query.
+
+opts = { 
+  limit: 10, # Integer | The number of results per page.
   lists: 0 # Integer | Should lists be returned or not?
 }
 
 begin
-  # Get contacts autocomplete suggestions
+  #Get contacts autocomplete suggestions
   result = api_instance.get_contacts_autocomplete(query, opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contacts_autocomplete: #{e}"
-end
-```
-
-#### Using the get_contacts_autocomplete_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetContactsAutocompleteResponse>, Integer, Hash)> get_contacts_autocomplete_with_http_info(query, opts)
-
-```ruby
-begin
-  # Get contacts autocomplete suggestions
-  data, status_code, headers = api_instance.get_contacts_autocomplete_with_http_info(query, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetContactsAutocompleteResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contacts_autocomplete_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_contacts_autocomplete: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **query** | **String** | Find recipients by specified search query. |  |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **lists** | **Integer** | Should lists be returned or not? | [optional][default to 0] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **String**| Find recipients by specified search query. | 
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **lists** | **Integer**| Should lists be returned or not? | [optional] [default to 0]
 
 ### Return type
 
@@ -4978,75 +3751,58 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_contacts_by_list_id
 
-> <GetContactsByListIdPaginatedResponse> get_contacts_by_list_id(id, opts)
+# **get_contacts_by_list_id**
+> GetContactsByListIdPaginatedResponse get_contacts_by_list_id(id, opts)
 
 Get all contacts in a list
 
 A useful synonym for the \"contacts/search\" command with the provided \"listId\" parameter.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | Given group ID.
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   order_by: 'id', # String | Order results by some field. Default is id.
-  direction: 'asc' # String | Order direction. Default is desc.
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
-  # Get all contacts in a list
+  #Get all contacts in a list
   result = api_instance.get_contacts_by_list_id(id, opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contacts_by_list_id: #{e}"
-end
-```
-
-#### Using the get_contacts_by_list_id_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetContactsByListIdPaginatedResponse>, Integer, Hash)> get_contacts_by_list_id_with_http_info(id, opts)
-
-```ruby
-begin
-  # Get all contacts in a list
-  data, status_code, headers = api_instance.get_contacts_by_list_id_with_http_info(id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetContactsByListIdPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_contacts_by_list_id_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_contacts_by_list_id: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** | Given group ID. |  |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **order_by** | **String** | Order results by some field. Default is id. | [optional][default to &#39;id&#39;] |
-| **direction** | **String** | Order direction. Default is desc. | [optional][default to &#39;desc&#39;] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Given group ID. | 
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -5058,59 +3814,41 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_countries
 
-> <GetCountriesResponse> get_countries
+# **get_countries**
+> GetCountriesResponse get_countries
 
 Get countries
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
-  # Get countries
+  #Get countries
   result = api_instance.get_countries
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_countries: #{e}"
-end
-```
-
-#### Using the get_countries_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetCountriesResponse>, Integer, Hash)> get_countries_with_http_info
-
-```ruby
-begin
-  # Get countries
-  data, status_code, headers = api_instance.get_countries_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetCountriesResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_countries_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_countries: #{e}"
 end
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -5123,59 +3861,41 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_current_user
 
-> <User> get_current_user
+# **get_current_user**
+> User get_current_user
 
 Get current account information
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
-  # Get current account information
+  #Get current account information
   result = api_instance.get_current_user
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_current_user: #{e}"
-end
-```
-
-#### Using the get_current_user_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<User>, Integer, Hash)> get_current_user_with_http_info
-
-```ruby
-begin
-  # Get current account information
-  data, status_code, headers = api_instance.get_current_user_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <User>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_current_user_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_current_user: #{e}"
 end
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -5188,63 +3908,48 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_custom_field
 
-> <UserCustomField> get_custom_field(id)
+# **get_custom_field**
+> UserCustomField get_custom_field(id)
 
 Get the details of a specific custom field
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Get the details of a specific custom field
+  #Get the details of a specific custom field
   result = api_instance.get_custom_field(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_custom_field: #{e}"
-end
-```
-
-#### Using the get_custom_field_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<UserCustomField>, Integer, Hash)> get_custom_field_with_http_info(id)
-
-```ruby
-begin
-  # Get the details of a specific custom field
-  data, status_code, headers = api_instance.get_custom_field_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <UserCustomField>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_custom_field_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_custom_field: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -5256,67 +3961,51 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_custom_fields
 
-> <GetCustomFieldsPaginatedResponse> get_custom_fields(opts)
+# **get_custom_fields**
+> GetCustomFieldsPaginatedResponse get_custom_fields(opts)
 
 Get all custom fields
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56 # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
-  # Get all custom fields
+  #Get all custom fields
   result = api_instance.get_custom_fields(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_custom_fields: #{e}"
-end
-```
-
-#### Using the get_custom_fields_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetCustomFieldsPaginatedResponse>, Integer, Hash)> get_custom_fields_with_http_info(opts)
-
-```ruby
-begin
-  # Get all custom fields
-  data, status_code, headers = api_instance.get_custom_fields_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetCustomFieldsPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_custom_fields_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_custom_fields: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -5328,63 +4017,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_dedicated_number
 
-> <UsersInbound> get_dedicated_number(id)
+# **get_dedicated_number**
+> UsersInbound get_dedicated_number(id)
 
 Get the details of a specific dedicated number
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Get the details of a specific dedicated number
+  #Get the details of a specific dedicated number
   result = api_instance.get_dedicated_number(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_dedicated_number: #{e}"
-end
-```
-
-#### Using the get_dedicated_number_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<UsersInbound>, Integer, Hash)> get_dedicated_number_with_http_info(id)
-
-```ruby
-begin
-  # Get the details of a specific dedicated number
-  data, status_code, headers = api_instance.get_dedicated_number_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <UsersInbound>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_dedicated_number_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_dedicated_number: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -5396,69 +4070,53 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_favorites
 
-> <GetFavoritesPaginatedResponse> get_favorites(opts)
+# **get_favorites**
+> GetFavoritesPaginatedResponse get_favorites(opts)
 
 Get favorite contacts and lists
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
-  query: 'A' # String | Find contacts or lists by specified search query.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
+  query: '\"A\"' # String | Find contacts or lists by specified search query.
 }
 
 begin
-  # Get favorite contacts and lists
+  #Get favorite contacts and lists
   result = api_instance.get_favorites(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_favorites: #{e}"
-end
-```
-
-#### Using the get_favorites_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetFavoritesPaginatedResponse>, Integer, Hash)> get_favorites_with_http_info(opts)
-
-```ruby
-begin
-  # Get favorite contacts and lists
-  data, status_code, headers = api_instance.get_favorites_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetFavoritesPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_favorites_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_favorites: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **query** | **String** | Find contacts or lists by specified search query. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **query** | **String**| Find contacts or lists by specified search query. | [optional] 
 
 ### Return type
 
@@ -5470,63 +4128,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_inbound_message
 
-> <MessageIn> get_inbound_message(id)
+# **get_inbound_message**
+> MessageIn get_inbound_message(id)
 
 Get a single inbound message
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1782832 # Integer | The unique numeric ID for the inbound message.
 
+
 begin
-  # Get a single inbound message
+  #Get a single inbound message
   result = api_instance.get_inbound_message(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_inbound_message: #{e}"
-end
-```
-
-#### Using the get_inbound_message_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<MessageIn>, Integer, Hash)> get_inbound_message_with_http_info(id)
-
-```ruby
-begin
-  # Get a single inbound message
-  data, status_code, headers = api_instance.get_inbound_message_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <MessageIn>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_inbound_message_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_inbound_message: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** | The unique numeric ID for the inbound message. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| The unique numeric ID for the inbound message. | 
 
 ### Return type
 
@@ -5538,59 +4181,41 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_inbound_messages_notification_settings
 
-> <GetInboundMessagesNotificationSettingsResponse> get_inbound_messages_notification_settings
+# **get_inbound_messages_notification_settings**
+> GetInboundMessagesNotificationSettingsResponse get_inbound_messages_notification_settings
 
 Get inbound messages notification settings
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
-  # Get inbound messages notification settings
+  #Get inbound messages notification settings
   result = api_instance.get_inbound_messages_notification_settings
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_inbound_messages_notification_settings: #{e}"
-end
-```
-
-#### Using the get_inbound_messages_notification_settings_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetInboundMessagesNotificationSettingsResponse>, Integer, Hash)> get_inbound_messages_notification_settings_with_http_info
-
-```ruby
-begin
-  # Get inbound messages notification settings
-  data, status_code, headers = api_instance.get_inbound_messages_notification_settings_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetInboundMessagesNotificationSettingsResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_inbound_messages_notification_settings_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_inbound_messages_notification_settings: #{e}"
 end
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -5603,69 +4228,51 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_invoices
 
-> <GetInvoicesPaginatedResponse> get_invoices(opts)
+# **get_invoices**
+> GetInvoicesPaginatedResponse get_invoices(opts)
 
 Get all invoices
 
 With the TextMagic API, you can check the invoices and transactions for your account.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56 # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
-  # Get all invoices
+  #Get all invoices
   result = api_instance.get_invoices(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_invoices: #{e}"
-end
-```
-
-#### Using the get_invoices_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetInvoicesPaginatedResponse>, Integer, Hash)> get_invoices_with_http_info(opts)
-
-```ruby
-begin
-  # Get all invoices
-  data, status_code, headers = api_instance.get_invoices_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetInvoicesPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_invoices_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_invoices: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -5677,67 +4284,52 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_list
 
-> <List> get_list(id)
+# **get_list**
+> Array get_list(id)
 
 Get the details of a specific list
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Get the details of a specific list
+  #Get the details of a specific list
   result = api_instance.get_list(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_list: #{e}"
-end
-```
-
-#### Using the get_list_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<List>, Integer, Hash)> get_list_with_http_info(id)
-
-```ruby
-begin
-  # Get the details of a specific list
-  data, status_code, headers = api_instance.get_list_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <List>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_list_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_list: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
-[**List**](List.md)
+**Array**
 
 ### Authorization
 
@@ -5745,63 +4337,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_list_contacts_ids
 
-> <GetListContactsIdsResponse> get_list_contacts_ids(id)
+# **get_list_contacts_ids**
+> GetListContactsIdsResponse get_list_contacts_ids(id)
 
 Get all contact IDs in a list
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Get all contact IDs in a list
+  #Get all contact IDs in a list
   result = api_instance.get_list_contacts_ids(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_list_contacts_ids: #{e}"
-end
-```
-
-#### Using the get_list_contacts_ids_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetListContactsIdsResponse>, Integer, Hash)> get_list_contacts_ids_with_http_info(id)
-
-```ruby
-begin
-  # Get all contact IDs in a list
-  data, status_code, headers = api_instance.get_list_contacts_ids_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetListContactsIdsResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_list_contacts_ids_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_list_contacts_ids: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -5813,75 +4390,59 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_lists
 
-> <GetListsPaginatedResponse> get_lists(opts)
+# **get_lists**
+> GetListsPaginatedResponse get_lists(opts)
 
 Get all lists
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | The current fetched page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | The current fetched page.
+  limit: 10, # Integer | The number of results per page.
   order_by: 'id', # String | Order results by some field. Default is id.
-  direction: 'asc', # String | Order direction. Default is desc.
+  direction: 'desc', # String | Order direction. Default is desc.
   favorite_only: 0, # Integer | Return only favorited lists.
   only_mine: 0 # Integer | Return only current user lists.
 }
 
 begin
-  # Get all lists
+  #Get all lists
   result = api_instance.get_lists(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_lists: #{e}"
-end
-```
-
-#### Using the get_lists_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetListsPaginatedResponse>, Integer, Hash)> get_lists_with_http_info(opts)
-
-```ruby
-begin
-  # Get all lists
-  data, status_code, headers = api_instance.get_lists_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetListsPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_lists_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_lists: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | The current fetched page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **order_by** | **String** | Order results by some field. Default is id. | [optional][default to &#39;id&#39;] |
-| **direction** | **String** | Order direction. Default is desc. | [optional][default to &#39;desc&#39;] |
-| **favorite_only** | **Integer** | Return only favorited lists. | [optional][default to 0] |
-| **only_mine** | **Integer** | Return only current user lists. | [optional][default to 0] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| The current fetched page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
+ **favorite_only** | **Integer**| Return only favorited lists. | [optional] [default to 0]
+ **only_mine** | **Integer**| Return only current user lists. | [optional] [default to 0]
 
 ### Return type
 
@@ -5893,71 +4454,54 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_lists_of_contact
 
-> <GetListsOfContactPaginatedResponse> get_lists_of_contact(id, opts)
+# **get_lists_of_contact**
+> GetListsOfContactPaginatedResponse get_lists_of_contact(id, opts)
 
 Get a contact's lists
 
 Get all the lists in which a contact is included.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56 # Integer | The number of results per page.
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
-  # Get a contact's lists
+  #Get a contact's lists
   result = api_instance.get_lists_of_contact(id, opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_lists_of_contact: #{e}"
-end
-```
-
-#### Using the get_lists_of_contact_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetListsOfContactPaginatedResponse>, Integer, Hash)> get_lists_of_contact_with_http_info(id, opts)
-
-```ruby
-begin
-  # Get a contact's lists
-  data, status_code, headers = api_instance.get_lists_of_contact_with_http_info(id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetListsOfContactPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_lists_of_contact_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_lists_of_contact: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -5969,99 +4513,81 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_message_preview
 
-> <GetMessagePreviewResponse> get_message_preview(opts)
+# **get_message_preview**
+> GetMessagePreviewResponse get_message_preview(opts)
 
 Preview message
 
-Get a messages preview (with tags merged) of up to 100 messages per session.
+Get a messages preview (with dynamic fields merged) of up to 100 messages per session. 
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  text: 'Test message test', # String | Message text. Required if **template_id** is not set.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  text: '\"Test message test\"', # String | Message text. Required if **template_id** is not set.
   template_id: 1, # Integer | Template used instead of message text. Required if **text** is not set.
   sending_time: 1565606455, # Integer | DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time is in unix timestamp format. Default is now.
-  sending_date_time: '2020-05-27 13:02:33', # String | Sending time is in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to the sendingTimezone.
-  sending_timezone: 'America/Buenos_Aires', # String | The ID or ISO-name of the timezone used for sending when the sendingDateTime parameter is set, e.g. if you specify sendingDateTime = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your message will be sent on May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is the account timezone.
-  contacts: '1,2,3,4', # String | Comma-separated array of contact resources id message will be sent to.
-  lists: '1,2,3,4', # String | Comma-separated array of list resources id message will be sent to.
-  phones: '447860021130,447860021131', # String | Comma-separated array of E.164 phone numbers message will be sent to.
+  sending_date_time: '\"2020-05-27 13:02:33\"', # String | Sending time is in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to the sendingTimezone.
+  sending_timezone: '\"America/Buenos_Aires\"', # String | The ID or ISO-name of the timezone used for sending when the sendingDateTime parameter is set, e.g. if you specify sendingDateTime = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your message will be sent on May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is the account timezone.
+  contacts: '\"1,2,3,4\"', # String | Comma-separated array of contact resources id message will be sent to.
+  lists: '\"1,2,3,4\"', # String | Comma-separated array of list resources id message will be sent to.
+  phones: '\"447860021130,447860021131\"', # String | Comma-separated array of E.164 phone numbers message will be sent to.
   cut_extra: 0, # Integer | Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead.
-  parts_count: 56, # Integer | Maximum message parts count (Textmagic allows sending of 1 to 6 message parts).
+  parts_count: 6, # Integer | Maximum message parts count (Textmagic allows sending of 1 to 6 message parts).
   reference_id: 1, # Integer | Custom message reference id which can be used in your application infrastructure.
-  from: 'Test Sender ID', # String | One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](https://docs.textmagic.com/#tag/Sender-IDs).
-  rule: 'FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1', # String | An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
+  from: '\"Test Sender ID\"', # String | One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](https://docs.textmagic.com/#tag/Sender-IDs).
+  rule: '\"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"', # String | An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
   create_chat: 0, # Integer | Should the sending method try to create new Chat(if not exist) with specified recipients?
   tts: 0, # Integer | Send Text-to-Speech message.
   local: 0, # Integer | Treat phone numbers passed in the \\'phones\\' field as local.
-  local_country: 'US' # String | The 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is the account country.
+  local_country: '\"US\"' # String | The 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is the account country.
 }
 
 begin
-  # Preview message
+  #Preview message
   result = api_instance.get_message_preview(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_message_preview: #{e}"
-end
-```
-
-#### Using the get_message_preview_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetMessagePreviewResponse>, Integer, Hash)> get_message_preview_with_http_info(opts)
-
-```ruby
-begin
-  # Preview message
-  data, status_code, headers = api_instance.get_message_preview_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetMessagePreviewResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_message_preview_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_message_preview: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **text** | **String** | Message text. Required if **template_id** is not set. | [optional] |
-| **template_id** | **Integer** | Template used instead of message text. Required if **text** is not set. | [optional] |
-| **sending_time** | **Integer** | DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time is in unix timestamp format. Default is now. | [optional] |
-| **sending_date_time** | **String** | Sending time is in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to the sendingTimezone. | [optional] |
-| **sending_timezone** | **String** | The ID or ISO-name of the timezone used for sending when the sendingDateTime parameter is set, e.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent on May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is the account timezone. | [optional] |
-| **contacts** | **String** | Comma-separated array of contact resources id message will be sent to. | [optional] |
-| **lists** | **String** | Comma-separated array of list resources id message will be sent to. | [optional] |
-| **phones** | **String** | Comma-separated array of E.164 phone numbers message will be sent to. | [optional] |
-| **cut_extra** | **Integer** | Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. | [optional][default to 0] |
-| **parts_count** | **Integer** | Maximum message parts count (Textmagic allows sending of 1 to 6 message parts). | [optional][default to 6] |
-| **reference_id** | **Integer** | Custom message reference id which can be used in your application infrastructure. | [optional] |
-| **from** | **String** | One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](https://docs.textmagic.com/#tag/Sender-IDs). | [optional] |
-| **rule** | **String** | An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | [optional] |
-| **create_chat** | **Integer** | Should the sending method try to create new Chat(if not exist) with specified recipients? | [optional][default to 0] |
-| **tts** | **Integer** | Send Text-to-Speech message. | [optional][default to 0] |
-| **local** | **Integer** | Treat phone numbers passed in the \\&#39;phones\\&#39; field as local. | [optional][default to 0] |
-| **local_country** | **String** | The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **String**| Message text. Required if **template_id** is not set. | [optional] 
+ **template_id** | **Integer**| Template used instead of message text. Required if **text** is not set. | [optional] 
+ **sending_time** | **Integer**| DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time is in unix timestamp format. Default is now. | [optional] 
+ **sending_date_time** | **String**| Sending time is in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to the sendingTimezone. | [optional] 
+ **sending_timezone** | **String**| The ID or ISO-name of the timezone used for sending when the sendingDateTime parameter is set, e.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent on May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is the account timezone. | [optional] 
+ **contacts** | **String**| Comma-separated array of contact resources id message will be sent to. | [optional] 
+ **lists** | **String**| Comma-separated array of list resources id message will be sent to. | [optional] 
+ **phones** | **String**| Comma-separated array of E.164 phone numbers message will be sent to. | [optional] 
+ **cut_extra** | **Integer**| Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. | [optional] [default to 0]
+ **parts_count** | **Integer**| Maximum message parts count (Textmagic allows sending of 1 to 6 message parts). | [optional] [default to 6]
+ **reference_id** | **Integer**| Custom message reference id which can be used in your application infrastructure. | [optional] 
+ **from** | **String**| One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](https://docs.textmagic.com/#tag/Sender-IDs). | [optional] 
+ **rule** | **String**| An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | [optional] 
+ **create_chat** | **Integer**| Should the sending method try to create new Chat(if not exist) with specified recipients? | [optional] [default to 0]
+ **tts** | **Integer**| Send Text-to-Speech message. | [optional] [default to 0]
+ **local** | **Integer**| Treat phone numbers passed in the \\&#39;phones\\&#39; field as local. | [optional] [default to 0]
+ **local_country** | **String**| The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country. | [optional] 
 
 ### Return type
 
@@ -6073,101 +4599,83 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_message_price
 
-> <GetMessagePriceResponse> get_message_price(opts)
+# **get_message_price**
+> GetMessagePriceResponse get_message_price(opts)
 
 Check message price
 
 Check pricing for a new outbound message.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
   include_blocked: 0, # Integer | Should we show the pricing for blocked contacts?
-  text: 'Test message test', # String | Message text. Required if the **template_id** is not set.
+  text: '\"Test message test\"', # String | Message text. Required if the **template_id** is not set.
   template_id: 1, # Integer | Template used instead of message text. Required if the **text** is not set.
   sending_time: 1565606455, # Integer | DEPRECATED, consider using the sendingDateTime and sendingTimezone parameters instead: optional (required with rrule set). Message sending time is in unix timestamp format. Default is now.
-  sending_date_time: '2020-05-27 13:02:33', # String | Sending time is in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to the sendingTimezone.
-  sending_timezone: 'America/Buenos_Aires', # String | The ID or ISO-name of the timezone used for sending when sendingDateTime parameter is set, e.g. if you specify sendingDateTime = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your message will be sent on May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is the account timezone.
-  contacts: '1,2,3,4', # String | Comma-separated array of contact resources id message will be sent to.
-  lists: '1,2,3,4', # String | Comma-separated array of list resources id message will be sent to.
-  phones: '447860021130,447860021131', # String | Comma-separated array of E.164 phone numbers message will be sent to.
+  sending_date_time: '\"2020-05-27 13:02:33\"', # String | Sending time is in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to the sendingTimezone.
+  sending_timezone: '\"America/Buenos_Aires\"', # String | The ID or ISO-name of the timezone used for sending when sendingDateTime parameter is set, e.g. if you specify sendingDateTime = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your message will be sent on May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is the account timezone.
+  contacts: '\"1,2,3,4\"', # String | Comma-separated array of contact resources id message will be sent to.
+  lists: '\"1,2,3,4\"', # String | Comma-separated array of list resources id message will be sent to.
+  phones: '\"447860021130,447860021131\"', # String | Comma-separated array of E.164 phone numbers message will be sent to.
   cut_extra: 0, # Integer | Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead.
-  parts_count: 56, # Integer | Maximum message parts count (Textmagic allows sending 1 to 6 message parts).
+  parts_count: 6, # Integer | Maximum message parts count (Textmagic allows sending 1 to 6 message parts).
   reference_id: 1, # Integer | Custom message reference id which can be used in your application infrastructure.
-  from: 'Test Sender ID', # String | One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](https://docs.textmagic.com/#tag/Sender-IDs).
-  rule: 'FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1', # String | An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
+  from: '\"Test Sender ID\"', # String | One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](https://docs.textmagic.com/#tag/Sender-IDs).
+  rule: '\"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"', # String | An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
   create_chat: 0, # Integer | Should the sending method try to create new Chat (if not exist) with specified recipients?
   tts: 0, # Integer | Send a Text-to-Speech message.
   local: 0, # Integer | Treat phone numbers passed in the \\'phones\\' field as local.
-  local_country: 'US' # String | The 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is the account country.
+  local_country: '\"US\"' # String | The 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is the account country.
 }
 
 begin
-  # Check message price
+  #Check message price
   result = api_instance.get_message_price(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_message_price: #{e}"
-end
-```
-
-#### Using the get_message_price_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetMessagePriceResponse>, Integer, Hash)> get_message_price_with_http_info(opts)
-
-```ruby
-begin
-  # Check message price
-  data, status_code, headers = api_instance.get_message_price_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetMessagePriceResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_message_price_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_message_price: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **include_blocked** | **Integer** | Should we show the pricing for blocked contacts? | [optional][default to 0] |
-| **text** | **String** | Message text. Required if the **template_id** is not set. | [optional] |
-| **template_id** | **Integer** | Template used instead of message text. Required if the **text** is not set. | [optional] |
-| **sending_time** | **Integer** | DEPRECATED, consider using the sendingDateTime and sendingTimezone parameters instead: optional (required with rrule set). Message sending time is in unix timestamp format. Default is now. | [optional] |
-| **sending_date_time** | **String** | Sending time is in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to the sendingTimezone. | [optional] |
-| **sending_timezone** | **String** | The ID or ISO-name of the timezone used for sending when sendingDateTime parameter is set, e.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent on May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is the account timezone. | [optional] |
-| **contacts** | **String** | Comma-separated array of contact resources id message will be sent to. | [optional] |
-| **lists** | **String** | Comma-separated array of list resources id message will be sent to. | [optional] |
-| **phones** | **String** | Comma-separated array of E.164 phone numbers message will be sent to. | [optional] |
-| **cut_extra** | **Integer** | Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. | [optional][default to 0] |
-| **parts_count** | **Integer** | Maximum message parts count (Textmagic allows sending 1 to 6 message parts). | [optional][default to 6] |
-| **reference_id** | **Integer** | Custom message reference id which can be used in your application infrastructure. | [optional] |
-| **from** | **String** | One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](https://docs.textmagic.com/#tag/Sender-IDs). | [optional] |
-| **rule** | **String** | An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | [optional] |
-| **create_chat** | **Integer** | Should the sending method try to create new Chat (if not exist) with specified recipients? | [optional][default to 0] |
-| **tts** | **Integer** | Send a Text-to-Speech message. | [optional][default to 0] |
-| **local** | **Integer** | Treat phone numbers passed in the \\&#39;phones\\&#39; field as local. | [optional][default to 0] |
-| **local_country** | **String** | The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **include_blocked** | **Integer**| Should we show the pricing for blocked contacts? | [optional] [default to 0]
+ **text** | **String**| Message text. Required if the **template_id** is not set. | [optional] 
+ **template_id** | **Integer**| Template used instead of message text. Required if the **text** is not set. | [optional] 
+ **sending_time** | **Integer**| DEPRECATED, consider using the sendingDateTime and sendingTimezone parameters instead: optional (required with rrule set). Message sending time is in unix timestamp format. Default is now. | [optional] 
+ **sending_date_time** | **String**| Sending time is in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to the sendingTimezone. | [optional] 
+ **sending_timezone** | **String**| The ID or ISO-name of the timezone used for sending when sendingDateTime parameter is set, e.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent on May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is the account timezone. | [optional] 
+ **contacts** | **String**| Comma-separated array of contact resources id message will be sent to. | [optional] 
+ **lists** | **String**| Comma-separated array of list resources id message will be sent to. | [optional] 
+ **phones** | **String**| Comma-separated array of E.164 phone numbers message will be sent to. | [optional] 
+ **cut_extra** | **Integer**| Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. | [optional] [default to 0]
+ **parts_count** | **Integer**| Maximum message parts count (Textmagic allows sending 1 to 6 message parts). | [optional] [default to 6]
+ **reference_id** | **Integer**| Custom message reference id which can be used in your application infrastructure. | [optional] 
+ **from** | **String**| One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](https://docs.textmagic.com/#tag/Sender-IDs). | [optional] 
+ **rule** | **String**| An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | [optional] 
+ **create_chat** | **Integer**| Should the sending method try to create new Chat (if not exist) with specified recipients? | [optional] [default to 0]
+ **tts** | **Integer**| Send a Text-to-Speech message. | [optional] [default to 0]
+ **local** | **Integer**| Treat phone numbers passed in the \\&#39;phones\\&#39; field as local. | [optional] [default to 0]
+ **local_country** | **String**| The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country. | [optional] 
 
 ### Return type
 
@@ -6179,65 +4687,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_message_session
 
-> <MessageSession> get_message_session(id)
+# **get_message_session**
+> MessageSession get_message_session(id)
 
 Get a session`s details
 
 Get a specific session’s details.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | Session ID.
 
+
 begin
-  # Get a session`s details
+  #Get a session`s details
   result = api_instance.get_message_session(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_message_session: #{e}"
-end
-```
-
-#### Using the get_message_session_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<MessageSession>, Integer, Hash)> get_message_session_with_http_info(id)
-
-```ruby
-begin
-  # Get a session`s details
-  data, status_code, headers = api_instance.get_message_session_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <MessageSession>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_message_session_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_message_session: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** | Session ID. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Session ID. | 
 
 ### Return type
 
@@ -6249,67 +4740,52 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_message_session_stat
 
-> <GetMessageSessionStatResponse> get_message_session_stat(id, opts)
+# **get_message_session_stat**
+> GetMessageSessionStatResponse get_message_session_stat(id, opts)
 
 Get a session`s statistics
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
-opts = {
+
+opts = { 
   include_deleted: 0 # Integer | Search also in deleted messages.
 }
 
 begin
-  # Get a session`s statistics
+  #Get a session`s statistics
   result = api_instance.get_message_session_stat(id, opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_message_session_stat: #{e}"
-end
-```
-
-#### Using the get_message_session_stat_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetMessageSessionStatResponse>, Integer, Hash)> get_message_session_stat_with_http_info(id, opts)
-
-```ruby
-begin
-  # Get a session`s statistics
-  data, status_code, headers = api_instance.get_message_session_stat_with_http_info(id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetMessageSessionStatResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_message_session_stat_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_message_session_stat: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **include_deleted** | **Integer** | Search also in deleted messages. | [optional][default to 0] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
+ **include_deleted** | **Integer**| Search also in deleted messages. | [optional] [default to 0]
 
 ### Return type
 
@@ -6321,75 +4797,58 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_messages_by_session_id
 
-> <GetMessagesBySessionIdPaginatedResponse> get_messages_by_session_id(id, opts)
+# **get_messages_by_session_id**
+> GetMessagesBySessionIdPaginatedResponse get_messages_by_session_id(id, opts)
 
 Get a session`s messages
 
 A useful synonym for the \"messages/search\" command with the provided \"sessionId\" parameter.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
-  statuses: 'q', # String | Find messages by status.
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
+  statuses: 'statuses_example', # String | Find messages by status.
   include_deleted: 0 # Integer | Search also in deleted messages.
 }
 
 begin
-  # Get a session`s messages
+  #Get a session`s messages
   result = api_instance.get_messages_by_session_id(id, opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_messages_by_session_id: #{e}"
-end
-```
-
-#### Using the get_messages_by_session_id_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetMessagesBySessionIdPaginatedResponse>, Integer, Hash)> get_messages_by_session_id_with_http_info(id, opts)
-
-```ruby
-begin
-  # Get a session`s messages
-  data, status_code, headers = api_instance.get_messages_by_session_id_with_http_info(id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetMessagesBySessionIdPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_messages_by_session_id_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_messages_by_session_id: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **statuses** | **String** | Find messages by status. | [optional] |
-| **include_deleted** | **Integer** | Search also in deleted messages. | [optional][default to 0] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **statuses** | **String**| Find messages by status. | [optional] 
+ **include_deleted** | **Integer**| Search also in deleted messages. | [optional] [default to 0]
 
 ### Return type
 
@@ -6401,61 +4860,41 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_messaging_counters
 
-> <GetMessagingCountersResponse> get_messaging_counters
+# **get_messaging_counters**
+> GetMessagingCountersResponse get_messaging_counters
 
 Get sent/received messages counters values
 
 Get total contacts, sent messages and received messages counters values.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
-  # Get sent/received messages counters values
+  #Get sent/received messages counters values
   result = api_instance.get_messaging_counters
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_messaging_counters: #{e}"
-end
-```
-
-#### Using the get_messaging_counters_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetMessagingCountersResponse>, Integer, Hash)> get_messaging_counters_with_http_info
-
-```ruby
-begin
-  # Get sent/received messages counters values
-  data, status_code, headers = api_instance.get_messaging_counters_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetMessagingCountersResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_messaging_counters_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_messaging_counters: #{e}"
 end
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -6468,69 +4907,53 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_messaging_stat
 
-> <GetMessagingStatResponse> get_messaging_stat(opts)
+# **get_messaging_stat**
+> GetMessagingStatResponse get_messaging_stat(opts)
 
 Get messaging statistics
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
   by: 'off', # String | *   **off** - to get total values per specified time interval; *   **day** - to show values grouped by day; *   **month** - to show values grouped by month; *   **year** - to show values grouped by year. 
   start: 1430438400, # Integer | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
   _end: 1431648000 # Integer | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
 }
 
 begin
-  # Get messaging statistics
+  #Get messaging statistics
   result = api_instance.get_messaging_stat(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_messaging_stat: #{e}"
-end
-```
-
-#### Using the get_messaging_stat_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetMessagingStatResponse>, Integer, Hash)> get_messaging_stat_with_http_info(opts)
-
-```ruby
-begin
-  # Get messaging statistics
-  data, status_code, headers = api_instance.get_messaging_stat_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetMessagingStatResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_messaging_stat_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_messaging_stat: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **by** | **String** | *   **off** - to get total values per specified time interval; *   **day** - to show values grouped by day; *   **month** - to show values grouped by month; *   **year** - to show values grouped by year.  | [optional][default to &#39;off&#39;] |
-| **start** | **Integer** | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior.  | [optional] |
-| **_end** | **Integer** | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today.  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **by** | **String**| *   **off** - to get total values per specified time interval; *   **day** - to show values grouped by day; *   **month** - to show values grouped by month; *   **year** - to show values grouped by year.  | [optional] [default to off]
+ **start** | **Integer**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior.  | [optional] 
+ **_end** | **Integer**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today.  | [optional] 
 
 ### Return type
 
@@ -6542,65 +4965,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_outbound_message
 
-> <MessageOut> get_outbound_message(id)
+# **get_outbound_message**
+> MessageOut get_outbound_message(id)
 
 Get a single message
 
 Get a single outgoing message.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Get a single message
+  #Get a single message
   result = api_instance.get_outbound_message(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_outbound_message: #{e}"
-end
-```
-
-#### Using the get_outbound_message_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<MessageOut>, Integer, Hash)> get_outbound_message_with_http_info(id)
-
-```ruby
-begin
-  # Get a single message
-  data, status_code, headers = api_instance.get_outbound_message_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <MessageOut>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_outbound_message_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_outbound_message: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -6612,75 +5018,57 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_outbound_messages_history
 
-> <GetOutboundMessagesHistoryPaginatedResponse> get_outbound_messages_history(opts)
+# **get_outbound_messages_history**
+> GetOutboundMessagesHistoryPaginatedResponse get_outbound_messages_history(opts)
 
 Get history
 
 Get the outbound messages history.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  limit: 10, # Integer | The number of results per page.
   last_id: 56, # Integer | Filter results by ID, selecting all values lesser than the specified ID.
   query: 'query_example', # String | Find message by specified search query.
   order_by: 'id', # String | Order results by some field. Default is id.
-  direction: 'asc' # String | Order direction. Default is desc.
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
-  # Get history
+  #Get history
   result = api_instance.get_outbound_messages_history(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_outbound_messages_history: #{e}"
-end
-```
-
-#### Using the get_outbound_messages_history_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetOutboundMessagesHistoryPaginatedResponse>, Integer, Hash)> get_outbound_messages_history_with_http_info(opts)
-
-```ruby
-begin
-  # Get history
-  data, status_code, headers = api_instance.get_outbound_messages_history_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetOutboundMessagesHistoryPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_outbound_messages_history_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_outbound_messages_history: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **last_id** | **Integer** | Filter results by ID, selecting all values lesser than the specified ID. | [optional] |
-| **query** | **String** | Find message by specified search query. | [optional] |
-| **order_by** | **String** | Order results by some field. Default is id. | [optional][default to &#39;id&#39;] |
-| **direction** | **String** | Order direction. Default is desc. | [optional][default to &#39;desc&#39;] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **last_id** | **Integer**| Filter results by ID, selecting all values lesser than the specified ID. | [optional] 
+ **query** | **String**| Find message by specified search query. | [optional] 
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -6692,63 +5080,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_scheduled_message
 
-> <MessagesIcs> get_scheduled_message(id)
+# **get_scheduled_message**
+> MessagesIcs get_scheduled_message(id)
 
 Get a single scheduled message
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Get a single scheduled message
+  #Get a single scheduled message
   result = api_instance.get_scheduled_message(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_scheduled_message: #{e}"
-end
-```
-
-#### Using the get_scheduled_message_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<MessagesIcs>, Integer, Hash)> get_scheduled_message_with_http_info(id)
-
-```ruby
-begin
-  # Get a single scheduled message
-  data, status_code, headers = api_instance.get_scheduled_message_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <MessagesIcs>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_scheduled_message_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_scheduled_message: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -6760,63 +5133,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_sender_id
 
-> <SenderId> get_sender_id(id)
+# **get_sender_id**
+> SenderId get_sender_id(id)
 
 Get the details of a specific Sender ID
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Get the details of a specific Sender ID
+  #Get the details of a specific Sender ID
   result = api_instance.get_sender_id(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_sender_id: #{e}"
-end
-```
-
-#### Using the get_sender_id_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SenderId>, Integer, Hash)> get_sender_id_with_http_info(id)
-
-```ruby
-begin
-  # Get the details of a specific Sender ID
-  data, status_code, headers = api_instance.get_sender_id_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SenderId>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_sender_id_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_sender_id: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -6828,67 +5186,51 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_sender_ids
 
-> <GetSenderIdsPaginatedResponse> get_sender_ids(opts)
+# **get_sender_ids**
+> GetSenderIdsPaginatedResponse get_sender_ids(opts)
 
 Get all your approved Sender IDs
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56 # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
-  # Get all your approved Sender IDs
+  #Get all your approved Sender IDs
   result = api_instance.get_sender_ids(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_sender_ids: #{e}"
-end
-```
-
-#### Using the get_sender_ids_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetSenderIdsPaginatedResponse>, Integer, Hash)> get_sender_ids_with_http_info(opts)
-
-```ruby
-begin
-  # Get all your approved Sender IDs
-  data, status_code, headers = api_instance.get_sender_ids_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetSenderIdsPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_sender_ids_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_sender_ids: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -6900,65 +5242,49 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_sender_settings
 
-> <GetSenderSettingsResponse> get_sender_settings(opts)
+# **get_sender_settings**
+> GetSenderSettingsResponse get_sender_settings(opts)
 
 Get current sender settings
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  country: 'US' # String | Return sender settings enabled for sending to a specified country. Should be 2 upper-case characters.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  country: '\"US\"' # String | Return sender settings enabled for sending to a specified country. Should be 2 upper-case characters.
 }
 
 begin
-  # Get current sender settings
+  #Get current sender settings
   result = api_instance.get_sender_settings(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_sender_settings: #{e}"
-end
-```
-
-#### Using the get_sender_settings_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetSenderSettingsResponse>, Integer, Hash)> get_sender_settings_with_http_info(opts)
-
-```ruby
-begin
-  # Get current sender settings
-  data, status_code, headers = api_instance.get_sender_settings_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetSenderSettingsResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_sender_settings_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_sender_settings: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **country** | **String** | Return sender settings enabled for sending to a specified country. Should be 2 upper-case characters. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **country** | **String**| Return sender settings enabled for sending to a specified country. Should be 2 upper-case characters. | [optional] 
 
 ### Return type
 
@@ -6970,71 +5296,55 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_spending_stat
 
-> <GetSpendingStatPaginatedResponse> get_spending_stat(opts)
+# **get_spending_stat**
+> GetSpendingStatPaginatedResponse get_spending_stat(opts)
 
 Get spending statistics
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
-  start: '2018-11-11 11:11', # String | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
-  _end: '2019-11-11 11:11' # String | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
+  start: '\"2018-11-11 11:11\"', # String | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
+  _end: '\"2019-11-11 11:11\"' # String | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
 }
 
 begin
-  # Get spending statistics
+  #Get spending statistics
   result = api_instance.get_spending_stat(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_spending_stat: #{e}"
-end
-```
-
-#### Using the get_spending_stat_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetSpendingStatPaginatedResponse>, Integer, Hash)> get_spending_stat_with_http_info(opts)
-
-```ruby
-begin
-  # Get spending statistics
-  data, status_code, headers = api_instance.get_spending_stat_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetSpendingStatPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_spending_stat_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_spending_stat: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **start** | **String** | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior.  | [optional] |
-| **_end** | **String** | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today.  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **start** | **String**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior.  | [optional] 
+ **_end** | **String**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today.  | [optional] 
 
 ### Return type
 
@@ -7046,63 +5356,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_subaccount
 
-> <User> get_subaccount(id)
+# **get_subaccount**
+> User get_subaccount(id)
 
 Get sub-account information
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Get sub-account information
+  #Get sub-account information
   result = api_instance.get_subaccount(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_subaccount: #{e}"
-end
-```
-
-#### Using the get_subaccount_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<User>, Integer, Hash)> get_subaccount_with_http_info(id)
-
-```ruby
-begin
-  # Get sub-account information
-  data, status_code, headers = api_instance.get_subaccount_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <User>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_subaccount_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_subaccount: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -7114,67 +5409,51 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_subaccounts
 
-> <User> get_subaccounts(opts)
+# **get_subaccounts**
+> User get_subaccounts(opts)
 
 Get a sub-accounts list
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56 # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
-  # Get a sub-accounts list
+  #Get a sub-accounts list
   result = api_instance.get_subaccounts(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_subaccounts: #{e}"
-end
-```
-
-#### Using the get_subaccounts_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<User>, Integer, Hash)> get_subaccounts_with_http_info(opts)
-
-```ruby
-begin
-  # Get a sub-accounts list
-  data, status_code, headers = api_instance.get_subaccounts_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <User>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_subaccounts_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_subaccounts: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -7186,71 +5465,54 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_subaccounts_with_tokens
 
-> <GetSubaccountsWithTokensResponse> get_subaccounts_with_tokens(get_subaccounts_with_tokens_input_object, opts)
+# **get_subaccounts_with_tokens**
+> GetSubaccountsWithTokensResponse get_subaccounts_with_tokens(get_subaccounts_with_tokens_input_object, opts)
 
 Get all sub-accounts with their REST API tokens associated with a specified app name
 
 Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-get_subaccounts_with_tokens_input_object = TextmagicRestClient::GetSubaccountsWithTokensInputObject.new # GetSubaccountsWithTokensInputObject | 
-opts = {
-  page: 8.14, # Float | Fetch specified results page.
-  limit: 56 # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+get_subaccounts_with_tokens_input_object = TextMagic::GetSubaccountsWithTokensInputObject.new # GetSubaccountsWithTokensInputObject | 
+
+opts = { 
+  page: 1, # Float | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
-  # Get all sub-accounts with their REST API tokens associated with a specified app name
+  #Get all sub-accounts with their REST API tokens associated with a specified app name
   result = api_instance.get_subaccounts_with_tokens(get_subaccounts_with_tokens_input_object, opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_subaccounts_with_tokens: #{e}"
-end
-```
-
-#### Using the get_subaccounts_with_tokens_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetSubaccountsWithTokensResponse>, Integer, Hash)> get_subaccounts_with_tokens_with_http_info(get_subaccounts_with_tokens_input_object, opts)
-
-```ruby
-begin
-  # Get all sub-accounts with their REST API tokens associated with a specified app name
-  data, status_code, headers = api_instance.get_subaccounts_with_tokens_with_http_info(get_subaccounts_with_tokens_input_object, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetSubaccountsWithTokensResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_subaccounts_with_tokens_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_subaccounts_with_tokens: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **get_subaccounts_with_tokens_input_object** | [**GetSubaccountsWithTokensInputObject**](GetSubaccountsWithTokensInputObject.md) |  |  |
-| **page** | **Float** | Fetch specified results page. | [optional][default to 1.0] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **get_subaccounts_with_tokens_input_object** | [**GetSubaccountsWithTokensInputObject**](GetSubaccountsWithTokensInputObject.md)|  | 
+ **page** | **Float**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -7262,65 +5524,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_template
 
-> <MessageTemplate> get_template(id)
+# **get_template**
+> MessageTemplate get_template(id)
 
 Get a template`s details
 
 Get a single template.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Get a template`s details
+  #Get a template`s details
   result = api_instance.get_template(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_template: #{e}"
-end
-```
-
-#### Using the get_template_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<MessageTemplate>, Integer, Hash)> get_template_with_http_info(id)
-
-```ruby
-begin
-  # Get a template`s details
-  data, status_code, headers = api_instance.get_template_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <MessageTemplate>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_template_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_template: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -7332,71 +5577,53 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_timezones
 
-> Object get_timezones(opts)
+# **get_timezones**
+> GetTimezonesResponse get_timezones(opts)
 
 Get timezones
 
 Return all available timezone IDs
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
   full: 0 # Integer | Return full info about timezones in array (0 or 1). Default is 0.
 }
 
 begin
-  # Get timezones
+  #Get timezones
   result = api_instance.get_timezones(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_timezones: #{e}"
-end
-```
-
-#### Using the get_timezones_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(Object, Integer, Hash)> get_timezones_with_http_info(opts)
-
-```ruby
-begin
-  # Get timezones
-  data, status_code, headers = api_instance.get_timezones_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => Object
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_timezones_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_timezones: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **full** | **Integer** | Return full info about timezones in array (0 or 1). Default is 0. | [optional][default to 0] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **full** | **Integer**| Return full info about timezones in array (0 or 1). Default is 0. | [optional] [default to 0]
 
 ### Return type
 
-**Object**
+[**GetTimezonesResponse**](GetTimezonesResponse.md)
 
 ### Authorization
 
@@ -7404,61 +5631,41 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_unread_messages_total
 
-> <GetUnreadMessagesTotalResponse> get_unread_messages_total
+# **get_unread_messages_total**
+> GetUnreadMessagesTotalResponse get_unread_messages_total
 
 Get unread messages number
 
 Get the total amount of unread messages in the current user chats.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
-  # Get unread messages number
+  #Get unread messages number
   result = api_instance.get_unread_messages_total
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_unread_messages_total: #{e}"
-end
-```
-
-#### Using the get_unread_messages_total_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetUnreadMessagesTotalResponse>, Integer, Hash)> get_unread_messages_total_with_http_info
-
-```ruby
-begin
-  # Get unread messages number
-  data, status_code, headers = api_instance.get_unread_messages_total_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetUnreadMessagesTotalResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_unread_messages_total_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_unread_messages_total: #{e}"
 end
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -7471,63 +5678,48 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_unsubscribed_contact
 
-> <UnsubscribedContact> get_unsubscribed_contact(id)
+# **get_unsubscribed_contact**
+> UnsubscribedContact get_unsubscribed_contact(id)
 
 Get the details of a specific unsubscribed contact
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
 
+
 begin
-  # Get the details of a specific unsubscribed contact
+  #Get the details of a specific unsubscribed contact
   result = api_instance.get_unsubscribed_contact(id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_unsubscribed_contact: #{e}"
-end
-```
-
-#### Using the get_unsubscribed_contact_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<UnsubscribedContact>, Integer, Hash)> get_unsubscribed_contact_with_http_info(id)
-
-```ruby
-begin
-  # Get the details of a specific unsubscribed contact
-  data, status_code, headers = api_instance.get_unsubscribed_contact_with_http_info(id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <UnsubscribedContact>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_unsubscribed_contact_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_unsubscribed_contact: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -7539,69 +5731,51 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_unsubscribers
 
-> <GetUnsubscribersPaginatedResponse> get_unsubscribers(opts)
+# **get_unsubscribers**
+> GetUnsubscribersPaginatedResponse get_unsubscribers(opts)
 
 Get all unsubscribed contacts
 
 When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed status, use: 
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56 # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
-  # Get all unsubscribed contacts
+  #Get all unsubscribed contacts
   result = api_instance.get_unsubscribers(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_unsubscribers: #{e}"
-end
-```
-
-#### Using the get_unsubscribers_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetUnsubscribersPaginatedResponse>, Integer, Hash)> get_unsubscribers_with_http_info(opts)
-
-```ruby
-begin
-  # Get all unsubscribed contacts
-  data, status_code, headers = api_instance.get_unsubscribers_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetUnsubscribersPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_unsubscribers_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_unsubscribers: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -7613,69 +5787,53 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## get_user_dedicated_numbers
 
-> <GetUserDedicatedNumbersPaginatedResponse> get_user_dedicated_numbers(opts)
+# **get_user_dedicated_numbers**
+> GetUserDedicatedNumbersPaginatedResponse get_user_dedicated_numbers(opts)
 
 Get all your dedicated numbers
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   survey_id: 56 # Integer | Fetch only those numbers that are ready for the survey.
 }
 
 begin
-  # Get all your dedicated numbers
+  #Get all your dedicated numbers
   result = api_instance.get_user_dedicated_numbers(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_user_dedicated_numbers: #{e}"
-end
-```
-
-#### Using the get_user_dedicated_numbers_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<GetUserDedicatedNumbersPaginatedResponse>, Integer, Hash)> get_user_dedicated_numbers_with_http_info(opts)
-
-```ruby
-begin
-  # Get all your dedicated numbers
-  data, status_code, headers = api_instance.get_user_dedicated_numbers_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <GetUserDedicatedNumbersPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->get_user_dedicated_numbers_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_user_dedicated_numbers: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **survey_id** | **Integer** | Fetch only those numbers that are ready for the survey. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **survey_id** | **Integer**| Fetch only those numbers that are ready for the survey. | [optional] 
 
 ### Return type
 
@@ -7687,73 +5845,57 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## import_contacts
 
-> <ResourceLinkResponse> import_contacts(column, file, opts)
+# **import_contacts**
+> ResourceLinkResponse import_contacts(file, column, opts)
 
 Import contacts
 
 Import contacts from the CSV, XLS or XLSX file.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-column = '0:firstName;1:lastName;3:phone;4:email' # String | Import file column mapping. The string must contain sub-strings of mapping in format `columnNumber:field` glued by `;`. For example: `0:firstName;1:lastName;3:phone;4:email` where the value before `:` is a number of the column in the file, and the value after `:` is a field of the newly created contact or the ID of a custom field. Numbers of columns begin from zero. Allowed built-in contact fields are: `firstName`, `lastName`, `phone`, `email`. Existing of `phone` mapping is required. 
-file = File.new('/path/to/some/file') # File | File containing contacts in csv or xls(x) formats.
-opts = {
+api_instance = TextMagic::TextMagicApi.new
+
+file = File.new('/path/to/file.txt') # File | File containing contacts in csv or xls(x) formats.
+
+column = '\"0:firstName;1:lastName;3:phone;4:email\"' # String | Import file column mapping. The string must contain sub-strings of mapping in format `columnNumber:field` glued by `;`. For example: `0:firstName;1:lastName;3:phone;4:email` where the value before `:` is a number of the column in the file, and the value after `:` is a field of the newly created contact or the ID of a custom field. Numbers of columns begin from zero. Allowed built-in contact fields are: `firstName`, `lastName`, `phone`, `email`. Existing of `phone` mapping is required. 
+
+opts = { 
   list_id: 443, # Integer | List that ID contacts will be imported to. Ignored if `listName` is specified. 
-  list_name: 'A new list' # String | List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if `listId` is specified. 
+  list_name: '\"A new list\"' # String | List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if `listId` is specified. 
 }
 
 begin
-  # Import contacts
-  result = api_instance.import_contacts(column, file, opts)
+  #Import contacts
+  result = api_instance.import_contacts(file, column, opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->import_contacts: #{e}"
-end
-```
-
-#### Using the import_contacts_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> import_contacts_with_http_info(column, file, opts)
-
-```ruby
-begin
-  # Import contacts
-  data, status_code, headers = api_instance.import_contacts_with_http_info(column, file, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->import_contacts_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->import_contacts: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **column** | **String** | Import file column mapping. The string must contain sub-strings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where the value before &#x60;:&#x60; is a number of the column in the file, and the value after &#x60;:&#x60; is a field of the newly created contact or the ID of a custom field. Numbers of columns begin from zero. Allowed built-in contact fields are: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required.  |  |
-| **file** | **File** | File containing contacts in csv or xls(x) formats. |  |
-| **list_id** | **Integer** | List that ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified.  | [optional] |
-| **list_name** | **String** | List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified.  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| File containing contacts in csv or xls(x) formats. | 
+ **column** | **String**| Import file column mapping. The string must contain sub-strings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where the value before &#x60;:&#x60; is a number of the column in the file, and the value after &#x60;:&#x60; is a field of the newly created contact or the ID of a custom field. Numbers of columns begin from zero. Allowed built-in contact fields are: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required.  | 
+ **list_id** | **Integer**| List that ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified.  | [optional] 
+ **list_name** | **String**| List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified.  | [optional] 
 
 ### Return type
 
@@ -7765,62 +5907,47 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
 
 
-## invite_subaccount
 
+# **invite_subaccount**
 > invite_subaccount(invite_subaccount_input_object)
 
 Invite a new sub-account
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-invite_subaccount_input_object = TextmagicRestClient::InviteSubaccountInputObject.new # InviteSubaccountInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+invite_subaccount_input_object = TextMagic::InviteSubaccountInputObject.new # InviteSubaccountInputObject | 
+
 
 begin
-  # Invite a new sub-account
+  #Invite a new sub-account
   api_instance.invite_subaccount(invite_subaccount_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->invite_subaccount: #{e}"
-end
-```
-
-#### Using the invite_subaccount_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> invite_subaccount_with_http_info(invite_subaccount_input_object)
-
-```ruby
-begin
-  # Invite a new sub-account
-  data, status_code, headers = api_instance.invite_subaccount_with_http_info(invite_subaccount_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->invite_subaccount_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->invite_subaccount: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **invite_subaccount_input_object** | [**InviteSubaccountInputObject**](InviteSubaccountInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **invite_subaccount_input_object** | [**InviteSubaccountInputObject**](InviteSubaccountInputObject.md)|  | 
 
 ### Return type
 
@@ -7832,64 +5959,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## mark_chats_read_bulk
 
+# **mark_chats_read_bulk**
 > mark_chats_read_bulk(mark_chats_read_bulk_input_object)
 
 Mark chats as read (bulk)
 
 Mark several chats as read by chat IDs or mark all chats as read
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-mark_chats_read_bulk_input_object = TextmagicRestClient::ChatsBulkInputObject.new # ChatsBulkInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+mark_chats_read_bulk_input_object = TextMagic::MarkChatsReadBulkInputObject.new # MarkChatsReadBulkInputObject | 
+
 
 begin
-  # Mark chats as read (bulk)
+  #Mark chats as read (bulk)
   api_instance.mark_chats_read_bulk(mark_chats_read_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->mark_chats_read_bulk: #{e}"
-end
-```
-
-#### Using the mark_chats_read_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> mark_chats_read_bulk_with_http_info(mark_chats_read_bulk_input_object)
-
-```ruby
-begin
-  # Mark chats as read (bulk)
-  data, status_code, headers = api_instance.mark_chats_read_bulk_with_http_info(mark_chats_read_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->mark_chats_read_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->mark_chats_read_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **mark_chats_read_bulk_input_object** | [**ChatsBulkInputObject**](ChatsBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mark_chats_read_bulk_input_object** | [**MarkChatsReadBulkInputObject**](MarkChatsReadBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -7901,64 +6011,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## mark_chats_unread_bulk
 
+# **mark_chats_unread_bulk**
 > mark_chats_unread_bulk(mark_chats_unread_bulk_input_object)
 
 Mark chats as unread (bulk)
 
 Mark several chats as UNread by chat IDs or mark all chats as UNread
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-mark_chats_unread_bulk_input_object = TextmagicRestClient::ChatsBulkInputObject.new # ChatsBulkInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+mark_chats_unread_bulk_input_object = TextMagic::MarkChatsUnreadBulkInputObject.new # MarkChatsUnreadBulkInputObject | 
+
 
 begin
-  # Mark chats as unread (bulk)
+  #Mark chats as unread (bulk)
   api_instance.mark_chats_unread_bulk(mark_chats_unread_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->mark_chats_unread_bulk: #{e}"
-end
-```
-
-#### Using the mark_chats_unread_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> mark_chats_unread_bulk_with_http_info(mark_chats_unread_bulk_input_object)
-
-```ruby
-begin
-  # Mark chats as unread (bulk)
-  data, status_code, headers = api_instance.mark_chats_unread_bulk_with_http_info(mark_chats_unread_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->mark_chats_unread_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->mark_chats_unread_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **mark_chats_unread_bulk_input_object** | [**ChatsBulkInputObject**](ChatsBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mark_chats_unread_bulk_input_object** | [**MarkChatsUnreadBulkInputObject**](MarkChatsUnreadBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -7970,63 +6063,48 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## mute_chat
 
-> <ResourceLinkResponse> mute_chat(mute_chat_input_object)
+# **mute_chat**
+> ResourceLinkResponse mute_chat(mute_chat_input_object)
 
 Mute chat sounds
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-mute_chat_input_object = TextmagicRestClient::MuteChatInputObject.new # MuteChatInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+mute_chat_input_object = TextMagic::MuteChatInputObject.new # MuteChatInputObject | 
+
 
 begin
-  # Mute chat sounds
+  #Mute chat sounds
   result = api_instance.mute_chat(mute_chat_input_object)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->mute_chat: #{e}"
-end
-```
-
-#### Using the mute_chat_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> mute_chat_with_http_info(mute_chat_input_object)
-
-```ruby
-begin
-  # Mute chat sounds
-  data, status_code, headers = api_instance.mute_chat_with_http_info(mute_chat_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->mute_chat_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->mute_chat: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **mute_chat_input_object** | [**MuteChatInputObject**](MuteChatInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mute_chat_input_object** | [**MuteChatInputObject**](MuteChatInputObject.md)|  | 
 
 ### Return type
 
@@ -8038,64 +6116,47 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## mute_chats_bulk
 
+# **mute_chats_bulk**
 > mute_chats_bulk(mute_chats_bulk_input_object)
 
 Mute chats (bulk)
 
 Mute several chats by chat ids or mute all chats.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-mute_chats_bulk_input_object = TextmagicRestClient::MuteChatsBulkInputObject.new # MuteChatsBulkInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+mute_chats_bulk_input_object = TextMagic::MuteChatsBulkInputObject.new # MuteChatsBulkInputObject | 
+
 
 begin
-  # Mute chats (bulk)
+  #Mute chats (bulk)
   api_instance.mute_chats_bulk(mute_chats_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->mute_chats_bulk: #{e}"
-end
-```
-
-#### Using the mute_chats_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> mute_chats_bulk_with_http_info(mute_chats_bulk_input_object)
-
-```ruby
-begin
-  # Mute chats (bulk)
-  data, status_code, headers = api_instance.mute_chats_bulk_with_http_info(mute_chats_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->mute_chats_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->mute_chats_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **mute_chats_bulk_input_object** | [**MuteChatsBulkInputObject**](MuteChatsBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mute_chats_bulk_input_object** | [**MuteChatsBulkInputObject**](MuteChatsBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -8107,61 +6168,41 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## ping
 
-> <PingResponse> ping
+# **ping**
+> PingResponse ping
 
 Ping
 
 Make a simple ping request.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
-  # Ping
+  #Ping
   result = api_instance.ping
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->ping: #{e}"
-end
-```
-
-#### Using the ping_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<PingResponse>, Integer, Hash)> ping_with_http_info
-
-```ruby
-begin
-  # Ping
-  data, status_code, headers = api_instance.ping_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <PingResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->ping_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->ping: #{e}"
 end
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -8174,64 +6215,47 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## reopen_chats_bulk
 
+# **reopen_chats_bulk**
 > reopen_chats_bulk(reopen_chats_bulk_input_object)
 
 Reopen chats (bulk)
 
 Reopen chats by chat IDs or reopen all chats
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-reopen_chats_bulk_input_object = TextmagicRestClient::ChatsBulkInputObject.new # ChatsBulkInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+reopen_chats_bulk_input_object = TextMagic::ReopenChatsBulkInputObject.new # ReopenChatsBulkInputObject | 
+
 
 begin
-  # Reopen chats (bulk)
+  #Reopen chats (bulk)
   api_instance.reopen_chats_bulk(reopen_chats_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->reopen_chats_bulk: #{e}"
-end
-```
-
-#### Using the reopen_chats_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> reopen_chats_bulk_with_http_info(reopen_chats_bulk_input_object)
-
-```ruby
-begin
-  # Reopen chats (bulk)
-  data, status_code, headers = api_instance.reopen_chats_bulk_with_http_info(reopen_chats_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->reopen_chats_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->reopen_chats_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **reopen_chats_bulk_input_object** | [**ChatsBulkInputObject**](ChatsBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **reopen_chats_bulk_input_object** | [**ReopenChatsBulkInputObject**](ReopenChatsBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -8243,65 +6267,48 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## request_new_subaccount_token
 
-> <User> request_new_subaccount_token(request_new_subaccount_token_input_object)
+# **request_new_subaccount_token**
+> User request_new_subaccount_token(request_new_subaccount_token_input_object)
 
 Request a new REST API token for sub-account
 
 Returning user object, key and app name.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-request_new_subaccount_token_input_object = TextmagicRestClient::RequestNewSubaccountTokenInputObject.new # RequestNewSubaccountTokenInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+request_new_subaccount_token_input_object = TextMagic::RequestNewSubaccountTokenInputObject.new # RequestNewSubaccountTokenInputObject | 
+
 
 begin
-  # Request a new REST API token for sub-account
+  #Request a new REST API token for sub-account
   result = api_instance.request_new_subaccount_token(request_new_subaccount_token_input_object)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->request_new_subaccount_token: #{e}"
-end
-```
-
-#### Using the request_new_subaccount_token_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<User>, Integer, Hash)> request_new_subaccount_token_with_http_info(request_new_subaccount_token_input_object)
-
-```ruby
-begin
-  # Request a new REST API token for sub-account
-  data, status_code, headers = api_instance.request_new_subaccount_token_with_http_info(request_new_subaccount_token_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <User>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->request_new_subaccount_token_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->request_new_subaccount_token: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **request_new_subaccount_token_input_object** | [**RequestNewSubaccountTokenInputObject**](RequestNewSubaccountTokenInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request_new_subaccount_token_input_object** | [**RequestNewSubaccountTokenInputObject**](RequestNewSubaccountTokenInputObject.md)|  | 
 
 ### Return type
 
@@ -8313,65 +6320,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## request_sender_id
 
-> <ResourceLinkResponse> request_sender_id(request_sender_id_input_object)
+# **request_sender_id**
+> ResourceLinkResponse request_sender_id(request_sender_id_input_object)
 
 Apply for a new Sender ID
 
 > Sender IDs are shared among all of your sub-accounts.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-request_sender_id_input_object = TextmagicRestClient::RequestSenderIdInputObject.new # RequestSenderIdInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+request_sender_id_input_object = TextMagic::RequestSenderIdInputObject.new # RequestSenderIdInputObject | 
+
 
 begin
-  # Apply for a new Sender ID
+  #Apply for a new Sender ID
   result = api_instance.request_sender_id(request_sender_id_input_object)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->request_sender_id: #{e}"
-end
-```
-
-#### Using the request_sender_id_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> request_sender_id_with_http_info(request_sender_id_input_object)
-
-```ruby
-begin
-  # Apply for a new Sender ID
-  data, status_code, headers = api_instance.request_sender_id_with_http_info(request_sender_id_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->request_sender_id_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->request_sender_id: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **request_sender_id_input_object** | [**RequestSenderIdInputObject**](RequestSenderIdInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request_sender_id_input_object** | [**RequestSenderIdInputObject**](RequestSenderIdInputObject.md)|  | 
 
 ### Return type
 
@@ -8383,69 +6373,53 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## search_chats
 
-> <SearchChatsPaginatedResponse> search_chats(opts)
+# **search_chats**
+> SearchChatsPaginatedResponse search_chats(opts)
 
 Find chats by message text
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   query: 'query_example' # String | Find chats by specified search query.
 }
 
 begin
-  # Find chats by message text
+  #Find chats by message text
   result = api_instance.search_chats(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_chats: #{e}"
-end
-```
-
-#### Using the search_chats_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SearchChatsPaginatedResponse>, Integer, Hash)> search_chats_with_http_info(opts)
-
-```ruby
-begin
-  # Find chats by message text
-  data, status_code, headers = api_instance.search_chats_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SearchChatsPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_chats_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->search_chats: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **query** | **String** | Find chats by specified search query. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **query** | **String**| Find chats by specified search query. | [optional] 
 
 ### Return type
 
@@ -8457,69 +6431,53 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## search_chats_by_ids
 
-> <SearchChatsByIdsPaginatedResponse> search_chats_by_ids(opts)
+# **search_chats_by_ids**
+> SearchChatsByIdsPaginatedResponse search_chats_by_ids(opts)
 
 Find chats (bulk)
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   ids: 'ids_example' # String | Find chats by ID(s).
 }
 
 begin
-  # Find chats (bulk)
+  #Find chats (bulk)
   result = api_instance.search_chats_by_ids(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_chats_by_ids: #{e}"
-end
-```
-
-#### Using the search_chats_by_ids_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SearchChatsByIdsPaginatedResponse>, Integer, Hash)> search_chats_by_ids_with_http_info(opts)
-
-```ruby
-begin
-  # Find chats (bulk)
-  data, status_code, headers = api_instance.search_chats_by_ids_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SearchChatsByIdsPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_chats_by_ids_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->search_chats_by_ids: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **ids** | **String** | Find chats by ID(s). | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **ids** | **String**| Find chats by ID(s). | [optional] 
 
 ### Return type
 
@@ -8531,73 +6489,55 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## search_chats_by_receipent
 
-> <SearchChatsByReceipentPaginatedResponse> search_chats_by_receipent(opts)
+# **search_chats_by_receipent**
+> SearchChatsByReceipentPaginatedResponse search_chats_by_receipent(opts)
 
 Find chats by recipient
 
 Find chats by recipient (contact, list name or phone number).
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   query: 'query_example', # String | Find chats by specified search query.
   order_by: 'id' # String | Order results by some field. Default is id.
 }
 
 begin
-  # Find chats by recipient
+  #Find chats by recipient
   result = api_instance.search_chats_by_receipent(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_chats_by_receipent: #{e}"
-end
-```
-
-#### Using the search_chats_by_receipent_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SearchChatsByReceipentPaginatedResponse>, Integer, Hash)> search_chats_by_receipent_with_http_info(opts)
-
-```ruby
-begin
-  # Find chats by recipient
-  data, status_code, headers = api_instance.search_chats_by_receipent_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SearchChatsByReceipentPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_chats_by_receipent_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->search_chats_by_receipent: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **query** | **String** | Find chats by specified search query. | [optional] |
-| **order_by** | **String** | Order results by some field. Default is id. | [optional][default to &#39;id&#39;] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **query** | **String**| Find chats by specified search query. | [optional] 
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
 
 ### Return type
 
@@ -8609,87 +6549,71 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## search_contacts
 
-> <SearchContactsPaginatedResponse> search_contacts(opts)
+# **search_contacts**
+> SearchContactsPaginatedResponse search_contacts(opts)
 
 Find contacts by given criteria
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   shared: 0, # Integer | Should shared contacts be included?
   ids: 'ids_example', # String | Find contacts by IDs.
   list_id: 56, # Integer | Find contacts by List ID.
-  include_blocked: 0, # Integer | Should blocked contacts be included?
+  include_blocked: 56, # Integer | Should blocked contacts be included?
   query: 'query_example', # String | Find contacts by specified search query.
   local: 0, # Integer | Treat phone number passed in the \"query\" field as local. Default is 0.
   exact_match: 0, # Integer | Return only exactly matching contacts. Default is 0.
   country: 'country_example', # String | The 2-letter ISO country code for local phone numbers, used when \"local\" is set to true. Default is the account country.
   order_by: 'id', # String | Order results by some field. Default is id.
-  direction: 'asc' # String | Order direction. Default is desc.
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
-  # Find contacts by given criteria
+  #Find contacts by given criteria
   result = api_instance.search_contacts(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_contacts: #{e}"
-end
-```
-
-#### Using the search_contacts_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SearchContactsPaginatedResponse>, Integer, Hash)> search_contacts_with_http_info(opts)
-
-```ruby
-begin
-  # Find contacts by given criteria
-  data, status_code, headers = api_instance.search_contacts_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SearchContactsPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_contacts_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->search_contacts: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **shared** | **Integer** | Should shared contacts be included? | [optional][default to 0] |
-| **ids** | **String** | Find contacts by IDs. | [optional] |
-| **list_id** | **Integer** | Find contacts by List ID. | [optional] |
-| **include_blocked** | **Integer** | Should blocked contacts be included? | [optional] |
-| **query** | **String** | Find contacts by specified search query. | [optional] |
-| **local** | **Integer** | Treat phone number passed in the \&quot;query\&quot; field as local. Default is 0. | [optional][default to 0] |
-| **exact_match** | **Integer** | Return only exactly matching contacts. Default is 0. | [optional][default to 0] |
-| **country** | **String** | The 2-letter ISO country code for local phone numbers, used when \&quot;local\&quot; is set to true. Default is the account country. | [optional] |
-| **order_by** | **String** | Order results by some field. Default is id. | [optional][default to &#39;id&#39;] |
-| **direction** | **String** | Order direction. Default is desc. | [optional][default to &#39;desc&#39;] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **shared** | **Integer**| Should shared contacts be included? | [optional] [default to 0]
+ **ids** | **String**| Find contacts by IDs. | [optional] 
+ **list_id** | **Integer**| Find contacts by List ID. | [optional] 
+ **include_blocked** | **Integer**| Should blocked contacts be included? | [optional] 
+ **query** | **String**| Find contacts by specified search query. | [optional] 
+ **local** | **Integer**| Treat phone number passed in the \&quot;query\&quot; field as local. Default is 0. | [optional] [default to 0]
+ **exact_match** | **Integer**| Return only exactly matching contacts. Default is 0. | [optional] [default to 0]
+ **country** | **String**| The 2-letter ISO country code for local phone numbers, used when \&quot;local\&quot; is set to true. Default is the account country. | [optional] 
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -8701,79 +6625,61 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## search_inbound_messages
 
-> <SearchInboundMessagesPaginatedResponse> search_inbound_messages(opts)
+# **search_inbound_messages**
+> SearchInboundMessagesPaginatedResponse search_inbound_messages(opts)
 
 Find inbound messages
 
 Find inbound messages by given parameters.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   ids: 'ids_example', # String | Find message by ID(s).
   query: 'query_example', # String | Find recipients by specified search query.
   order_by: 'id', # String | Order results by some field. Default is id.
-  direction: 'asc', # String | Order direction. Default is desc.
+  direction: 'desc', # String | Order direction. Default is desc.
   expand: 0 # Integer | Expand by adding firstName, lastName and contactId.
 }
 
 begin
-  # Find inbound messages
+  #Find inbound messages
   result = api_instance.search_inbound_messages(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_inbound_messages: #{e}"
-end
-```
-
-#### Using the search_inbound_messages_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SearchInboundMessagesPaginatedResponse>, Integer, Hash)> search_inbound_messages_with_http_info(opts)
-
-```ruby
-begin
-  # Find inbound messages
-  data, status_code, headers = api_instance.search_inbound_messages_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SearchInboundMessagesPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_inbound_messages_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->search_inbound_messages: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **ids** | **String** | Find message by ID(s). | [optional] |
-| **query** | **String** | Find recipients by specified search query. | [optional] |
-| **order_by** | **String** | Order results by some field. Default is id. | [optional][default to &#39;id&#39;] |
-| **direction** | **String** | Order direction. Default is desc. | [optional][default to &#39;desc&#39;] |
-| **expand** | **Integer** | Expand by adding firstName, lastName and contactId. | [optional][default to 0] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **ids** | **String**| Find message by ID(s). | [optional] 
+ **query** | **String**| Find recipients by specified search query. | [optional] 
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
+ **expand** | **Integer**| Expand by adding firstName, lastName and contactId. | [optional] [default to 0]
 
 ### Return type
 
@@ -8785,79 +6691,63 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## search_lists
 
-> <SearchListsPaginatedResponse> search_lists(opts)
+# **search_lists**
+> SearchListsPaginatedResponse search_lists(opts)
 
 Find lists by given criteria
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
-  ids: '1,2,3,4', # String | Find lists by IDs.
-  query: 'A', # String | Find lists by specified search query.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
+  ids: '\"1,2,3,4\"', # String | Find lists by IDs.
+  query: '\"A\"', # String | Find lists by specified search query.
   only_mine: 0, # Integer | Return only current user lists.
-  only_default: 56, # Integer | Return only default lists.
+  only_default: 0, # Integer | Return only default lists.
   order_by: 'id', # String | Order results by some field. Default is id.
-  direction: 'asc' # String | Order direction. Default is desc.
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
-  # Find lists by given criteria
+  #Find lists by given criteria
   result = api_instance.search_lists(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_lists: #{e}"
-end
-```
-
-#### Using the search_lists_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SearchListsPaginatedResponse>, Integer, Hash)> search_lists_with_http_info(opts)
-
-```ruby
-begin
-  # Find lists by given criteria
-  data, status_code, headers = api_instance.search_lists_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SearchListsPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_lists_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->search_lists: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **ids** | **String** | Find lists by IDs. | [optional] |
-| **query** | **String** | Find lists by specified search query. | [optional] |
-| **only_mine** | **Integer** | Return only current user lists. | [optional][default to 0] |
-| **only_default** | **Integer** | Return only default lists. | [optional][default to 0] |
-| **order_by** | **String** | Order results by some field. Default is id. | [optional][default to &#39;id&#39;] |
-| **direction** | **String** | Order direction. Default is desc. | [optional][default to &#39;desc&#39;] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **ids** | **String**| Find lists by IDs. | [optional] 
+ **query** | **String**| Find lists by specified search query. | [optional] 
+ **only_mine** | **Integer**| Return only current user lists. | [optional] [default to 0]
+ **only_default** | **Integer**| Return only default lists. | [optional] [default to 0]
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -8869,81 +6759,63 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## search_outbound_messages
 
-> <SearchOutboundMessagesPaginatedResponse> search_outbound_messages(opts)
+# **search_outbound_messages**
+> SearchOutboundMessagesPaginatedResponse search_outbound_messages(opts)
 
 Find messages
 
 Find outbound messages by given parameters.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   last_id: 56, # Integer | Filter results by ID, selecting all values lesser than the specified ID. Note that the \\'page\\' parameter is ignored when \\'lastId\\' is specified.
   ids: 'ids_example', # String | Find message by ID(s).
   session_id: 56, # Integer | Find messages by session ID.
-  statuses: 'q', # String | Find messages by status.
+  statuses: '\"q\"', # String | Find messages by status.
   include_deleted: 0, # Integer | Search also in deleted messages.
   query: 'query_example' # String | Find messages by specified search query.
 }
 
 begin
-  # Find messages
+  #Find messages
   result = api_instance.search_outbound_messages(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_outbound_messages: #{e}"
-end
-```
-
-#### Using the search_outbound_messages_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SearchOutboundMessagesPaginatedResponse>, Integer, Hash)> search_outbound_messages_with_http_info(opts)
-
-```ruby
-begin
-  # Find messages
-  data, status_code, headers = api_instance.search_outbound_messages_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SearchOutboundMessagesPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_outbound_messages_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->search_outbound_messages: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **last_id** | **Integer** | Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified. | [optional] |
-| **ids** | **String** | Find message by ID(s). | [optional] |
-| **session_id** | **Integer** | Find messages by session ID. | [optional] |
-| **statuses** | **String** | Find messages by status. | [optional] |
-| **include_deleted** | **Integer** | Search also in deleted messages. | [optional][default to 0] |
-| **query** | **String** | Find messages by specified search query. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **last_id** | **Integer**| Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified. | [optional] 
+ **ids** | **String**| Find message by ID(s). | [optional] 
+ **session_id** | **Integer**| Find messages by session ID. | [optional] 
+ **statuses** | **String**| Find messages by status. | [optional] 
+ **include_deleted** | **Integer**| Search also in deleted messages. | [optional] [default to 0]
+ **query** | **String**| Find messages by specified search query. | [optional] 
 
 ### Return type
 
@@ -8955,77 +6827,61 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## search_scheduled_messages
 
-> <SearchScheduledMessagesPaginatedResponse> search_scheduled_messages(opts)
+# **search_scheduled_messages**
+> SearchScheduledMessagesPaginatedResponse search_scheduled_messages(opts)
 
 Find scheduled messages
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   query: 'query_example', # String | Find messages by specified search query.
   ids: 'ids_example', # String | Find schedules by ID(s).
   status: 'x', # String | Fetch schedules with a specific status: a - actual, c - completed, x - all.
   order_by: 'id', # String | Order results by some field. Default is id.
-  direction: 'asc' # String | Order direction. Default is desc.
+  direction: 'desc' # String | Order direction. Default is desc.
 }
 
 begin
-  # Find scheduled messages
+  #Find scheduled messages
   result = api_instance.search_scheduled_messages(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_scheduled_messages: #{e}"
-end
-```
-
-#### Using the search_scheduled_messages_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SearchScheduledMessagesPaginatedResponse>, Integer, Hash)> search_scheduled_messages_with_http_info(opts)
-
-```ruby
-begin
-  # Find scheduled messages
-  data, status_code, headers = api_instance.search_scheduled_messages_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SearchScheduledMessagesPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_scheduled_messages_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->search_scheduled_messages: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **query** | **String** | Find messages by specified search query. | [optional] |
-| **ids** | **String** | Find schedules by ID(s). | [optional] |
-| **status** | **String** | Fetch schedules with a specific status: a - actual, c - completed, x - all. | [optional][default to &#39;x&#39;] |
-| **order_by** | **String** | Order results by some field. Default is id. | [optional][default to &#39;id&#39;] |
-| **direction** | **String** | Order direction. Default is desc. | [optional][default to &#39;desc&#39;] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **query** | **String**| Find messages by specified search query. | [optional] 
+ **ids** | **String**| Find schedules by ID(s). | [optional] 
+ **status** | **String**| Fetch schedules with a specific status: a - actual, c - completed, x - all. | [optional] [default to x]
+ **order_by** | **String**| Order results by some field. Default is id. | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc. | [optional] [default to desc]
 
 ### Return type
 
@@ -9037,75 +6893,57 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## search_templates
 
-> <SearchTemplatesPaginatedResponse> search_templates(opts)
+# **search_templates**
+> SearchTemplatesPaginatedResponse search_templates(opts)
 
 Find templates by criteria
 
 Find user templates by given parameters.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-opts = {
-  page: 56, # Integer | Fetch specified results page.
-  limit: 56, # Integer | The number of results per page.
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   ids: 'ids_example', # String | Find template by ID(s).
   name: 'name_example', # String | Find template by name.
   content: 'content_example' # String | Find template by content.
 }
 
 begin
-  # Find templates by criteria
+  #Find templates by criteria
   result = api_instance.search_templates(opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_templates: #{e}"
-end
-```
-
-#### Using the search_templates_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SearchTemplatesPaginatedResponse>, Integer, Hash)> search_templates_with_http_info(opts)
-
-```ruby
-begin
-  # Find templates by criteria
-  data, status_code, headers = api_instance.search_templates_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SearchTemplatesPaginatedResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->search_templates_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->search_templates: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Fetch specified results page. | [optional][default to 1] |
-| **limit** | **Integer** | The number of results per page. | [optional][default to 10] |
-| **ids** | **String** | Find template by ID(s). | [optional] |
-| **name** | **String** | Find template by name. | [optional] |
-| **content** | **String** | Find template by content. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **ids** | **String**| Find template by ID(s). | [optional] 
+ **name** | **String**| Find template by name. | [optional] 
+ **content** | **String**| Find template by content. | [optional] 
 
 ### Return type
 
@@ -9117,65 +6955,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## send_message
 
-> <SendMessageResponse> send_message(send_message_input_object)
+# **send_message**
+> SendMessageResponse send_message(send_message_input_object)
 
 Send message
 
 This is the main entrypoint to send messages. See the examples above for the reference.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-send_message_input_object = TextmagicRestClient::SendMessageInputObject.new # SendMessageInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+send_message_input_object = TextMagic::SendMessageInputObject.new # SendMessageInputObject | 
+
 
 begin
-  # Send message
+  #Send message
   result = api_instance.send_message(send_message_input_object)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->send_message: #{e}"
-end
-```
-
-#### Using the send_message_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SendMessageResponse>, Integer, Hash)> send_message_with_http_info(send_message_input_object)
-
-```ruby
-begin
-  # Send message
-  data, status_code, headers = api_instance.send_message_with_http_info(send_message_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SendMessageResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->send_message_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->send_message: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **send_message_input_object** | [**SendMessageInputObject**](SendMessageInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **send_message_input_object** | [**SendMessageInputObject**](SendMessageInputObject.md)|  | 
 
 ### Return type
 
@@ -9187,135 +7008,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## send_phone_verification_code_tfa
 
-> <SendPhoneVerificationCodeResponse> send_phone_verification_code_tfa(send_phone_verification_code_tfa_input_object)
-
-Step 1: Send a verification code 
-
-Sends a verification code to a specified phone number.
-
-### Examples
-
-```ruby
-require 'time'
-require 'textmagic_rest_client'
-# setup authorization
-TextmagicRestClient.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextmagicRestClient::TextMagicApi.new
-send_phone_verification_code_tfa_input_object = TextmagicRestClient::SendPhoneVerificationCodeTFAInputObject.new # SendPhoneVerificationCodeTFAInputObject | 
-
-begin
-  # Step 1: Send a verification code 
-  result = api_instance.send_phone_verification_code_tfa(send_phone_verification_code_tfa_input_object)
-  p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->send_phone_verification_code_tfa: #{e}"
-end
-```
-
-#### Using the send_phone_verification_code_tfa_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SendPhoneVerificationCodeResponse>, Integer, Hash)> send_phone_verification_code_tfa_with_http_info(send_phone_verification_code_tfa_input_object)
-
-```ruby
-begin
-  # Step 1: Send a verification code 
-  data, status_code, headers = api_instance.send_phone_verification_code_tfa_with_http_info(send_phone_verification_code_tfa_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SendPhoneVerificationCodeResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->send_phone_verification_code_tfa_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **send_phone_verification_code_tfa_input_object** | [**SendPhoneVerificationCodeTFAInputObject**](SendPhoneVerificationCodeTFAInputObject.md) |  |  |
-
-### Return type
-
-[**SendPhoneVerificationCodeResponse**](SendPhoneVerificationCodeResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## set_chat_status
-
-> <ResourceLinkResponse> set_chat_status(set_chat_status_input_object)
+# **set_chat_status**
+> ResourceLinkResponse set_chat_status(set_chat_status_input_object)
 
 Change chat status
 
 Set the status of the chat given by ID.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-set_chat_status_input_object = TextmagicRestClient::SetChatStatusInputObject.new # SetChatStatusInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+set_chat_status_input_object = TextMagic::SetChatStatusInputObject.new # SetChatStatusInputObject | 
+
 
 begin
-  # Change chat status
+  #Change chat status
   result = api_instance.set_chat_status(set_chat_status_input_object)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->set_chat_status: #{e}"
-end
-```
-
-#### Using the set_chat_status_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> set_chat_status_with_http_info(set_chat_status_input_object)
-
-```ruby
-begin
-  # Change chat status
-  data, status_code, headers = api_instance.set_chat_status_with_http_info(set_chat_status_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->set_chat_status_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->set_chat_status: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **set_chat_status_input_object** | [**SetChatStatusInputObject**](SetChatStatusInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **set_chat_status_input_object** | [**SetChatStatusInputObject**](SetChatStatusInputObject.md)|  | 
 
 ### Return type
 
@@ -9327,64 +7061,47 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## unblock_contact
 
+# **unblock_contact**
 > unblock_contact(unblock_contact_input_object)
 
 Unblock a contact by phone number
 
 Unblock a contact by phone number
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-unblock_contact_input_object = TextmagicRestClient::BlockContactInputObject.new # BlockContactInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+unblock_contact_input_object = TextMagic::UnblockContactInputObject.new # UnblockContactInputObject | 
+
 
 begin
-  # Unblock a contact by phone number
+  #Unblock a contact by phone number
   api_instance.unblock_contact(unblock_contact_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->unblock_contact: #{e}"
-end
-```
-
-#### Using the unblock_contact_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> unblock_contact_with_http_info(unblock_contact_input_object)
-
-```ruby
-begin
-  # Unblock a contact by phone number
-  data, status_code, headers = api_instance.unblock_contact_with_http_info(unblock_contact_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->unblock_contact_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->unblock_contact: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **unblock_contact_input_object** | [**BlockContactInputObject**](BlockContactInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unblock_contact_input_object** | [**UnblockContactInputObject**](UnblockContactInputObject.md)|  | 
 
 ### Return type
 
@@ -9396,64 +7113,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## unblock_contacts_bulk
 
+# **unblock_contacts_bulk**
 > unblock_contacts_bulk(unblock_contacts_bulk_input_object)
 
 Unblock contacts (bulk)
 
 Unblock several contacts by blocked contact IDs or unblock all contacts.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-unblock_contacts_bulk_input_object = TextmagicRestClient::UnblockContactsBulkInputObject.new # UnblockContactsBulkInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+unblock_contacts_bulk_input_object = TextMagic::UnblockContactsBulkInputObject.new # UnblockContactsBulkInputObject | 
+
 
 begin
-  # Unblock contacts (bulk)
+  #Unblock contacts (bulk)
   api_instance.unblock_contacts_bulk(unblock_contacts_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->unblock_contacts_bulk: #{e}"
-end
-```
-
-#### Using the unblock_contacts_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> unblock_contacts_bulk_with_http_info(unblock_contacts_bulk_input_object)
-
-```ruby
-begin
-  # Unblock contacts (bulk)
-  data, status_code, headers = api_instance.unblock_contacts_bulk_with_http_info(unblock_contacts_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->unblock_contacts_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->unblock_contacts_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **unblock_contacts_bulk_input_object** | [**UnblockContactsBulkInputObject**](UnblockContactsBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unblock_contacts_bulk_input_object** | [**UnblockContactsBulkInputObject**](UnblockContactsBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -9465,64 +7165,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## unmute_chats_bulk
 
+# **unmute_chats_bulk**
 > unmute_chats_bulk(unmute_chats_bulk_input_object)
 
 Unmute chats (bulk)
 
 Unmute several chats by chat ids or unmute all chats.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-unmute_chats_bulk_input_object = TextmagicRestClient::UnmuteChatsBulkInputObject.new # UnmuteChatsBulkInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+unmute_chats_bulk_input_object = TextMagic::UnmuteChatsBulkInputObject.new # UnmuteChatsBulkInputObject | 
+
 
 begin
-  # Unmute chats (bulk)
+  #Unmute chats (bulk)
   api_instance.unmute_chats_bulk(unmute_chats_bulk_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->unmute_chats_bulk: #{e}"
-end
-```
-
-#### Using the unmute_chats_bulk_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> unmute_chats_bulk_with_http_info(unmute_chats_bulk_input_object)
-
-```ruby
-begin
-  # Unmute chats (bulk)
-  data, status_code, headers = api_instance.unmute_chats_bulk_with_http_info(unmute_chats_bulk_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->unmute_chats_bulk_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->unmute_chats_bulk: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **unmute_chats_bulk_input_object** | [**UnmuteChatsBulkInputObject**](UnmuteChatsBulkInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unmute_chats_bulk_input_object** | [**UnmuteChatsBulkInputObject**](UnmuteChatsBulkInputObject.md)|  | 
 
 ### Return type
 
@@ -9534,65 +7217,48 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## unsubscribe_contact
 
-> <ResourceLinkResponse> unsubscribe_contact(unsubscribe_contact_input_object)
+# **unsubscribe_contact**
+> ResourceLinkResponse unsubscribe_contact(unsubscribe_contact_input_object)
 
 Manually unsubscribe a contact
 
 > Please note, if you unsubscribe a contact, this action cannot be reversed. 
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-unsubscribe_contact_input_object = TextmagicRestClient::UnsubscribeContactInputObject.new # UnsubscribeContactInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+unsubscribe_contact_input_object = TextMagic::UnsubscribeContactInputObject.new # UnsubscribeContactInputObject | 
+
 
 begin
-  # Manually unsubscribe a contact
+  #Manually unsubscribe a contact
   result = api_instance.unsubscribe_contact(unsubscribe_contact_input_object)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->unsubscribe_contact: #{e}"
-end
-```
-
-#### Using the unsubscribe_contact_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> unsubscribe_contact_with_http_info(unsubscribe_contact_input_object)
-
-```ruby
-begin
-  # Manually unsubscribe a contact
-  data, status_code, headers = api_instance.unsubscribe_contact_with_http_info(unsubscribe_contact_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->unsubscribe_contact_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->unsubscribe_contact: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **unsubscribe_contact_input_object** | [**UnsubscribeContactInputObject**](UnsubscribeContactInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unsubscribe_contact_input_object** | [**UnsubscribeContactInputObject**](UnsubscribeContactInputObject.md)|  | 
 
 ### Return type
 
@@ -9604,62 +7270,47 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## update_balance_notification_settings
 
+# **update_balance_notification_settings**
 > update_balance_notification_settings(update_balance_notification_settings_input_object)
 
 Update balance notification settings
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-update_balance_notification_settings_input_object = TextmagicRestClient::UpdateBalanceNotificationSettingsInputObject.new # UpdateBalanceNotificationSettingsInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+update_balance_notification_settings_input_object = TextMagic::UpdateBalanceNotificationSettingsInputObject.new # UpdateBalanceNotificationSettingsInputObject | 
+
 
 begin
-  # Update balance notification settings
+  #Update balance notification settings
   api_instance.update_balance_notification_settings(update_balance_notification_settings_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_balance_notification_settings: #{e}"
-end
-```
-
-#### Using the update_balance_notification_settings_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> update_balance_notification_settings_with_http_info(update_balance_notification_settings_input_object)
-
-```ruby
-begin
-  # Update balance notification settings
-  data, status_code, headers = api_instance.update_balance_notification_settings_with_http_info(update_balance_notification_settings_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_balance_notification_settings_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->update_balance_notification_settings: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **update_balance_notification_settings_input_object** | [**UpdateBalanceNotificationSettingsInputObject**](UpdateBalanceNotificationSettingsInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_balance_notification_settings_input_object** | [**UpdateBalanceNotificationSettingsInputObject**](UpdateBalanceNotificationSettingsInputObject.md)|  | 
 
 ### Return type
 
@@ -9671,62 +7322,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## update_callback_settings
 
+# **update_callback_settings**
 > update_callback_settings(update_callback_settings_input_object)
 
 Update callback URL settings
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-update_callback_settings_input_object = TextmagicRestClient::UpdateCallbackSettingsInputObject.new # UpdateCallbackSettingsInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+update_callback_settings_input_object = TextMagic::UpdateCallbackSettingsInputObject.new # UpdateCallbackSettingsInputObject | 
+
 
 begin
-  # Update callback URL settings
+  #Update callback URL settings
   api_instance.update_callback_settings(update_callback_settings_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_callback_settings: #{e}"
-end
-```
-
-#### Using the update_callback_settings_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> update_callback_settings_with_http_info(update_callback_settings_input_object)
-
-```ruby
-begin
-  # Update callback URL settings
-  data, status_code, headers = api_instance.update_callback_settings_with_http_info(update_callback_settings_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_callback_settings_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->update_callback_settings: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **update_callback_settings_input_object** | [**UpdateCallbackSettingsInputObject**](UpdateCallbackSettingsInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_callback_settings_input_object** | [**UpdateCallbackSettingsInputObject**](UpdateCallbackSettingsInputObject.md)|  | 
 
 ### Return type
 
@@ -9738,62 +7374,47 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## update_chat_desktop_notification_settings
 
+# **update_chat_desktop_notification_settings**
 > update_chat_desktop_notification_settings(update_chat_desktop_notification_settings_input_object)
 
 Update chat desktop notification settings
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-update_chat_desktop_notification_settings_input_object = TextmagicRestClient::UpdateChatDesktopNotificationSettingsInputObject.new # UpdateChatDesktopNotificationSettingsInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+update_chat_desktop_notification_settings_input_object = TextMagic::UpdateChatDesktopNotificationSettingsInputObject.new # UpdateChatDesktopNotificationSettingsInputObject | 
+
 
 begin
-  # Update chat desktop notification settings
+  #Update chat desktop notification settings
   api_instance.update_chat_desktop_notification_settings(update_chat_desktop_notification_settings_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_chat_desktop_notification_settings: #{e}"
-end
-```
-
-#### Using the update_chat_desktop_notification_settings_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> update_chat_desktop_notification_settings_with_http_info(update_chat_desktop_notification_settings_input_object)
-
-```ruby
-begin
-  # Update chat desktop notification settings
-  data, status_code, headers = api_instance.update_chat_desktop_notification_settings_with_http_info(update_chat_desktop_notification_settings_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_chat_desktop_notification_settings_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->update_chat_desktop_notification_settings: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **update_chat_desktop_notification_settings_input_object** | [**UpdateChatDesktopNotificationSettingsInputObject**](UpdateChatDesktopNotificationSettingsInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_chat_desktop_notification_settings_input_object** | [**UpdateChatDesktopNotificationSettingsInputObject**](UpdateChatDesktopNotificationSettingsInputObject.md)|  | 
 
 ### Return type
 
@@ -9805,65 +7426,51 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## update_contact
 
-> <ResourceLinkResponse> update_contact(id, update_contact_input_object)
+# **update_contact**
+> ResourceLinkResponse update_contact(update_contact_input_object, id)
 
 Edit a contact
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
+update_contact_input_object = TextMagic::UpdateContactInputObject.new # UpdateContactInputObject | 
+
 id = 1 # Integer | 
-update_contact_input_object = TextmagicRestClient::UpdateContactInputObject.new # UpdateContactInputObject | 
+
 
 begin
-  # Edit a contact
-  result = api_instance.update_contact(id, update_contact_input_object)
+  #Edit a contact
+  result = api_instance.update_contact(update_contact_input_object, id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_contact: #{e}"
-end
-```
-
-#### Using the update_contact_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> update_contact_with_http_info(id, update_contact_input_object)
-
-```ruby
-begin
-  # Edit a contact
-  data, status_code, headers = api_instance.update_contact_with_http_info(id, update_contact_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_contact_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->update_contact: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **update_contact_input_object** | [**UpdateContactInputObject**](UpdateContactInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_contact_input_object** | [**UpdateContactInputObject**](UpdateContactInputObject.md)|  | 
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -9875,65 +7482,51 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## update_contact_note
 
-> <ResourceLinkResponse> update_contact_note(id, update_contact_note_input_object)
+# **update_contact_note**
+> ResourceLinkResponse update_contact_note(update_contact_note_input_object, id)
 
 Update a contact note
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
+update_contact_note_input_object = TextMagic::UpdateContactNoteInputObject.new # UpdateContactNoteInputObject | 
+
 id = 1 # Integer | 
-update_contact_note_input_object = TextmagicRestClient::UpdateContactNoteInputObject.new # UpdateContactNoteInputObject | 
+
 
 begin
-  # Update a contact note
-  result = api_instance.update_contact_note(id, update_contact_note_input_object)
+  #Update a contact note
+  result = api_instance.update_contact_note(update_contact_note_input_object, id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_contact_note: #{e}"
-end
-```
-
-#### Using the update_contact_note_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> update_contact_note_with_http_info(id, update_contact_note_input_object)
-
-```ruby
-begin
-  # Update a contact note
-  data, status_code, headers = api_instance.update_contact_note_with_http_info(id, update_contact_note_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_contact_note_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->update_contact_note: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **update_contact_note_input_object** | [**UpdateContactNoteInputObject**](UpdateContactNoteInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_contact_note_input_object** | [**UpdateContactNoteInputObject**](UpdateContactNoteInputObject.md)|  | 
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -9945,63 +7538,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## update_current_user
 
-> <UpdateCurrentUserResponse> update_current_user(update_current_user_input_object)
+# **update_current_user**
+> UpdateCurrentUserResponse update_current_user(update_current_user_input_object)
 
 Edit current account info
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-update_current_user_input_object = TextmagicRestClient::UpdateCurrentUserInputObject.new # UpdateCurrentUserInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+update_current_user_input_object = TextMagic::UpdateCurrentUserInputObject.new # UpdateCurrentUserInputObject | 
+
 
 begin
-  # Edit current account info
+  #Edit current account info
   result = api_instance.update_current_user(update_current_user_input_object)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_current_user: #{e}"
-end
-```
-
-#### Using the update_current_user_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<UpdateCurrentUserResponse>, Integer, Hash)> update_current_user_with_http_info(update_current_user_input_object)
-
-```ruby
-begin
-  # Edit current account info
-  data, status_code, headers = api_instance.update_current_user_with_http_info(update_current_user_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <UpdateCurrentUserResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_current_user_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->update_current_user: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **update_current_user_input_object** | [**UpdateCurrentUserInputObject**](UpdateCurrentUserInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_current_user_input_object** | [**UpdateCurrentUserInputObject**](UpdateCurrentUserInputObject.md)|  | 
 
 ### Return type
 
@@ -10013,65 +7591,51 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## update_custom_field
 
-> <ResourceLinkResponse> update_custom_field(id, update_custom_field_input_object)
+# **update_custom_field**
+> ResourceLinkResponse update_custom_field(update_custom_field_input_object, id)
 
 Edit a custom field
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
+update_custom_field_input_object = TextMagic::UpdateCustomFieldInputObject.new # UpdateCustomFieldInputObject | 
+
 id = 1 # Integer | 
-update_custom_field_input_object = TextmagicRestClient::CustomFieldInputObject.new # CustomFieldInputObject | 
+
 
 begin
-  # Edit a custom field
-  result = api_instance.update_custom_field(id, update_custom_field_input_object)
+  #Edit a custom field
+  result = api_instance.update_custom_field(update_custom_field_input_object, id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_custom_field: #{e}"
-end
-```
-
-#### Using the update_custom_field_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> update_custom_field_with_http_info(id, update_custom_field_input_object)
-
-```ruby
-begin
-  # Edit a custom field
-  data, status_code, headers = api_instance.update_custom_field_with_http_info(id, update_custom_field_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_custom_field_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->update_custom_field: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **update_custom_field_input_object** | [**CustomFieldInputObject**](CustomFieldInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_custom_field_input_object** | [**UpdateCustomFieldInputObject**](UpdateCustomFieldInputObject.md)|  | 
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -10083,65 +7647,51 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## update_custom_field_value
 
-> <ResourceLinkResponse> update_custom_field_value(id, update_custom_field_value_input_object)
+# **update_custom_field_value**
+> ResourceLinkResponse update_custom_field_value(update_custom_field_value_input_object, id)
 
 Edit the custom field value of a specified contact
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
+update_custom_field_value_input_object = TextMagic::UpdateCustomFieldValueInputObject.new # UpdateCustomFieldValueInputObject | 
+
 id = 554 # Integer | 
-update_custom_field_value_input_object = TextmagicRestClient::UpdateCustomFieldValueInputObject.new # UpdateCustomFieldValueInputObject | 
+
 
 begin
-  # Edit the custom field value of a specified contact
-  result = api_instance.update_custom_field_value(id, update_custom_field_value_input_object)
+  #Edit the custom field value of a specified contact
+  result = api_instance.update_custom_field_value(update_custom_field_value_input_object, id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_custom_field_value: #{e}"
-end
-```
-
-#### Using the update_custom_field_value_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> update_custom_field_value_with_http_info(id, update_custom_field_value_input_object)
-
-```ruby
-begin
-  # Edit the custom field value of a specified contact
-  data, status_code, headers = api_instance.update_custom_field_value_with_http_info(id, update_custom_field_value_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_custom_field_value_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->update_custom_field_value: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **update_custom_field_value_input_object** | [**UpdateCustomFieldValueInputObject**](UpdateCustomFieldValueInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_custom_field_value_input_object** | [**UpdateCustomFieldValueInputObject**](UpdateCustomFieldValueInputObject.md)|  | 
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -10153,62 +7703,47 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## update_inbound_messages_notification_settings
 
+# **update_inbound_messages_notification_settings**
 > update_inbound_messages_notification_settings(update_inbound_messages_notification_settings_input_object)
 
 Update inbound messages notification settings
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-update_inbound_messages_notification_settings_input_object = TextmagicRestClient::UpdateInboundMessagesNotificationSettingsInputObject.new # UpdateInboundMessagesNotificationSettingsInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+update_inbound_messages_notification_settings_input_object = TextMagic::UpdateInboundMessagesNotificationSettingsInputObject.new # UpdateInboundMessagesNotificationSettingsInputObject | 
+
 
 begin
-  # Update inbound messages notification settings
+  #Update inbound messages notification settings
   api_instance.update_inbound_messages_notification_settings(update_inbound_messages_notification_settings_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_inbound_messages_notification_settings: #{e}"
-end
-```
-
-#### Using the update_inbound_messages_notification_settings_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> update_inbound_messages_notification_settings_with_http_info(update_inbound_messages_notification_settings_input_object)
-
-```ruby
-begin
-  # Update inbound messages notification settings
-  data, status_code, headers = api_instance.update_inbound_messages_notification_settings_with_http_info(update_inbound_messages_notification_settings_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_inbound_messages_notification_settings_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->update_inbound_messages_notification_settings: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **update_inbound_messages_notification_settings_input_object** | [**UpdateInboundMessagesNotificationSettingsInputObject**](UpdateInboundMessagesNotificationSettingsInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_inbound_messages_notification_settings_input_object** | [**UpdateInboundMessagesNotificationSettingsInputObject**](UpdateInboundMessagesNotificationSettingsInputObject.md)|  | 
 
 ### Return type
 
@@ -10220,67 +7755,52 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## update_list
 
-> <ResourceLinkResponse> update_list(id, opts)
+# **update_list**
+> ResourceLinkResponse update_list(id, opts)
 
 Edit a list
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
 id = 1 # Integer | 
-opts = {
-  update_list_object: TextmagicRestClient::UpdateListInputObject.new # UpdateListInputObject | 
+
+opts = { 
+  update_list_object: TextMagic::UpdateListObject.new # UpdateListObject | 
 }
 
 begin
-  # Edit a list
+  #Edit a list
   result = api_instance.update_list(id, opts)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_list: #{e}"
-end
-```
-
-#### Using the update_list_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> update_list_with_http_info(id, opts)
-
-```ruby
-begin
-  # Edit a list
-  data, status_code, headers = api_instance.update_list_with_http_info(id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_list_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->update_list: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **update_list_object** | [**UpdateListInputObject**](UpdateListInputObject.md) |  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
+ **update_list_object** | [**UpdateListObject**](UpdateListObject.md)|  | [optional] 
 
 ### Return type
 
@@ -10292,62 +7812,47 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## update_sender_setting
 
+# **update_sender_setting**
 > update_sender_setting(update_sender_setting_input_object)
 
 Change sender settings
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-update_sender_setting_input_object = TextmagicRestClient::UpdateSenderSettingInputObject.new # UpdateSenderSettingInputObject | 
+api_instance = TextMagic::TextMagicApi.new
+
+update_sender_setting_input_object = TextMagic::UpdateSenderSettingInputObject.new # UpdateSenderSettingInputObject | 
+
 
 begin
-  # Change sender settings
+  #Change sender settings
   api_instance.update_sender_setting(update_sender_setting_input_object)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_sender_setting: #{e}"
-end
-```
-
-#### Using the update_sender_setting_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> update_sender_setting_with_http_info(update_sender_setting_input_object)
-
-```ruby
-begin
-  # Change sender settings
-  data, status_code, headers = api_instance.update_sender_setting_with_http_info(update_sender_setting_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_sender_setting_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->update_sender_setting: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **update_sender_setting_input_object** | [**UpdateSenderSettingInputObject**](UpdateSenderSettingInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_sender_setting_input_object** | [**UpdateSenderSettingInputObject**](UpdateSenderSettingInputObject.md)|  | 
 
 ### Return type
 
@@ -10359,65 +7864,51 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
-## update_template
 
-> <ResourceLinkResponse> update_template(id, update_template_input_object)
+# **update_template**
+> ResourceLinkResponse update_template(update_template_input_object, id)
 
 Update a template
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
+update_template_input_object = TextMagic::UpdateTemplateInputObject.new # UpdateTemplateInputObject | 
+
 id = 1 # Integer | 
-update_template_input_object = TextmagicRestClient::UpdateTemplateInputObject.new # UpdateTemplateInputObject | 
+
 
 begin
-  # Update a template
-  result = api_instance.update_template(id, update_template_input_object)
+  #Update a template
+  result = api_instance.update_template(update_template_input_object, id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_template: #{e}"
-end
-```
-
-#### Using the update_template_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> update_template_with_http_info(id, update_template_input_object)
-
-```ruby
-begin
-  # Update a template
-  data, status_code, headers = api_instance.update_template_with_http_info(id, update_template_input_object)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->update_template_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->update_template: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **update_template_input_object** | [**UpdateTemplateInputObject**](UpdateTemplateInputObject.md) |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_template_input_object** | [**UpdateTemplateInputObject**](UpdateTemplateInputObject.md)|  | 
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -10429,62 +7920,47 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## upload_avatar
 
+# **upload_avatar**
 > upload_avatar(image)
 
 Upload an avatar
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-image = File.new('/path/to/some/file') # File | User avatar. Should be a PNG or JPG file not more than 10 MB.
+api_instance = TextMagic::TextMagicApi.new
+
+image = File.new('/path/to/file.txt') # File | User avatar. Should be a PNG or JPG file not more than 10 MB.
+
 
 begin
-  # Upload an avatar
+  #Upload an avatar
   api_instance.upload_avatar(image)
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->upload_avatar: #{e}"
-end
-```
-
-#### Using the upload_avatar_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> upload_avatar_with_http_info(image)
-
-```ruby
-begin
-  # Upload an avatar
-  data, status_code, headers = api_instance.upload_avatar_with_http_info(image)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->upload_avatar_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->upload_avatar: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **image** | **File** | User avatar. Should be a PNG or JPG file not more than 10 MB. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **image** | **File**| User avatar. Should be a PNG or JPG file not more than 10 MB. | 
 
 ### Return type
 
@@ -10496,65 +7972,51 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
 
 
-## upload_contact_avatar
 
-> <ResourceLinkResponse> upload_contact_avatar(id, image)
+# **upload_contact_avatar**
+> ResourceLinkResponse upload_contact_avatar(image, id)
 
 Upload an avatar
 
-### Examples
 
+
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
+image = File.new('/path/to/file.txt') # File | Contact avatar. Should be a PNG or JPG file not more than 10 MB.
+
 id = 1 # Integer | 
-image = File.new('/path/to/some/file') # File | Contact avatar. Should be a PNG or JPG file not more than 10 MB.
+
 
 begin
-  # Upload an avatar
-  result = api_instance.upload_contact_avatar(id, image)
+  #Upload an avatar
+  result = api_instance.upload_contact_avatar(image, id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->upload_contact_avatar: #{e}"
-end
-```
-
-#### Using the upload_contact_avatar_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> upload_contact_avatar_with_http_info(id, image)
-
-```ruby
-begin
-  # Upload an avatar
-  data, status_code, headers = api_instance.upload_contact_avatar_with_http_info(id, image)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->upload_contact_avatar_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->upload_contact_avatar: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **image** | **File** | Contact avatar. Should be a PNG or JPG file not more than 10 MB. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **image** | **File**| Contact avatar. Should be a PNG or JPG file not more than 10 MB. | 
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -10566,67 +8028,51 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
 
 
-## upload_list_avatar
 
-> <ResourceLinkResponse> upload_list_avatar(id, image)
-
-Add an avatar for a list
+# **upload_list_avatar**
+> ResourceLinkResponse upload_list_avatar(image, id)
 
 Add an avatar for a list
 
-### Examples
+Add an avatar for a list
 
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
+
+image = File.new('/path/to/file.txt') # File | List avatar. Should be a PNG or JPG file not more than 10 MB.
+
 id = 1 # Integer | 
-image = File.new('/path/to/some/file') # File | List avatar. Should be a PNG or JPG file not more than 10 MB.
+
 
 begin
-  # Add an avatar for a list
-  result = api_instance.upload_list_avatar(id, image)
+  #Add an avatar for a list
+  result = api_instance.upload_list_avatar(image, id)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->upload_list_avatar: #{e}"
-end
-```
-
-#### Using the upload_list_avatar_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ResourceLinkResponse>, Integer, Hash)> upload_list_avatar_with_http_info(id, image)
-
-```ruby
-begin
-  # Add an avatar for a list
-  data, status_code, headers = api_instance.upload_list_avatar_with_http_info(id, image)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ResourceLinkResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->upload_list_avatar_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->upload_list_avatar: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **Integer** |  |  |
-| **image** | **File** | List avatar. Should be a PNG or JPG file not more than 10 MB. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **image** | **File**| List avatar. Should be a PNG or JPG file not more than 10 MB. | 
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -10638,65 +8084,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
 
 
-## upload_message_attachment
 
-> <UploadMessageAttachmentResponse> upload_message_attachment(file)
+# **upload_message_attachment**
+> UploadMessageAttachmentResponse upload_message_attachment(file)
 
 Upload message attachment
 
 Upload a new file to insert it as a link.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-file = File.new('/path/to/some/file') # File | Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx & .vcf file formats.
+api_instance = TextMagic::TextMagicApi.new
+
+file = File.new('/path/to/file.txt') # File | Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx & .vcf file formats.
+
 
 begin
-  # Upload message attachment
+  #Upload message attachment
   result = api_instance.upload_message_attachment(file)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->upload_message_attachment: #{e}"
-end
-```
-
-#### Using the upload_message_attachment_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<UploadMessageAttachmentResponse>, Integer, Hash)> upload_message_attachment_with_http_info(file)
-
-```ruby
-begin
-  # Upload message attachment
-  data, status_code, headers = api_instance.upload_message_attachment_with_http_info(file)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <UploadMessageAttachmentResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->upload_message_attachment_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->upload_message_attachment: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **file** | **File** | Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats. | 
 
 ### Return type
 
@@ -10708,65 +8137,48 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
 
 
-## upload_message_mms_attachment
 
-> <UploadMessageAttachmentResponse> upload_message_mms_attachment(file)
+# **upload_message_mms_attachment**
+> UploadMessageAttachmentResponse upload_message_mms_attachment(file)
 
 Upload message mms attachment
 
 Upload a new file to mms.
 
-### Examples
-
+### Example
 ```ruby
-require 'time'
+# load the gem
 require 'textmagic_rest_client'
 # setup authorization
-TextmagicRestClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = TextmagicRestClient::TextMagicApi.new
-file = File.new('/path/to/some/file') # File | Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx & .vcf file formats.
+api_instance = TextMagic::TextMagicApi.new
+
+file = File.new('/path/to/file.txt') # File | Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx & .vcf file formats.
+
 
 begin
-  # Upload message mms attachment
+  #Upload message mms attachment
   result = api_instance.upload_message_mms_attachment(file)
   p result
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->upload_message_mms_attachment: #{e}"
-end
-```
-
-#### Using the upload_message_mms_attachment_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<UploadMessageAttachmentResponse>, Integer, Hash)> upload_message_mms_attachment_with_http_info(file)
-
-```ruby
-begin
-  # Upload message mms attachment
-  data, status_code, headers = api_instance.upload_message_mms_attachment_with_http_info(file)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <UploadMessageAttachmentResponse>
-rescue TextmagicRestClient::ApiError => e
-  puts "Error when calling TextMagicApi->upload_message_mms_attachment_with_http_info: #{e}"
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->upload_message_mms_attachment: #{e}"
 end
 ```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **file** | **File** | Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats. | 
 
 ### Return type
 
@@ -10778,6 +8190,8 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
 

@@ -1,15 +1,7 @@
-# TextmagicRestClient::GetMessagingStatResponse
+# TextMagic::GetMessagingStatResponse
 
 ## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-
-## Example
-
-```ruby
-require 'textmagic_rest_client'
-
-instance = TextmagicRestClient::GetMessagingStatResponse.new()
-```
 

@@ -1,24 +1,11 @@
-# TextmagicRestClient::GetAllMessageSessionsPaginatedResponse
+# TextMagic::GetAllMessageSessionsPaginatedResponse
 
 ## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**page** | **Integer** |  | 
+**page_count** | **Integer** | The total number of pages. | 
+**limit** | **Integer** | The number of results per page. | 
+**resources** | [**Array&lt;MessageSession&gt;**](MessageSession.md) |  | 
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **page** | **Integer** |  |  |
-| **page_count** | **Integer** | The total number of pages. |  |
-| **limit** | **Integer** | The number of results per page. |  |
-| **resources** | [**Array&lt;MessageSession&gt;**](MessageSession.md) |  |  |
-
-## Example
-
-```ruby
-require 'textmagic_rest_client'
-
-instance = TextmagicRestClient::GetAllMessageSessionsPaginatedResponse.new(
-  page: 1,
-  page_count: 10,
-  limit: 10,
-  resources: null
-)
-```
 

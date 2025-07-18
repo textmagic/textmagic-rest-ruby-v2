@@ -1,22 +1,10 @@
-# TextmagicRestClient::MuteChatsBulkInputObject
+# TextMagic::MuteChatsBulkInputObject
 
 ## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**ids** | **String** | Entity ID(s), separated by comma. | [optional] 
+**all** | **BOOLEAN** | Entity ID(s), separated by comma | [optional] 
+**_for** | **Integer** | Mute for N hours. | [optional] 
 
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **ids** | **String** | Entity ID(s), separated by comma. | [optional] |
-| **all** | **Boolean** | Entity ID(s), separated by comma | [optional] |
-| **_for** | **Integer** | Mute for N hours. | [optional] |
-
-## Example
-
-```ruby
-require 'textmagic_rest_client'
-
-instance = TextmagicRestClient::MuteChatsBulkInputObject.new(
-  ids: 1,2,3,
-  all: false,
-  _for: 1
-)
-```
 
