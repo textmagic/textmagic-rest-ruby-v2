@@ -561,6 +561,60 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Create new email campaign
+    # Creates a new email campaign and sends it to the specified recipients.  This endpoint allows you to create and immediately send an email marketing campaign to your contacts, groups, or direct email addresses. The campaign will be processed asynchronously, and you'll receive a campaign object with tracking information.  ## Request Requirements  - **Email Sender ID**: Must be a valid, configured email sender from your account - **Recipients**: At least one recipient type must be specified (contacts, groups, or emails) - **Content**: Subject and HTML message content are required - **Balance**: Sufficient account balance for the estimated campaign cost  ## Recipient Types  You can target multiple recipient types in a single campaign:  - **Contact IDs**: Send to specific contacts from your contact list - **Group IDs**: Send to all contacts within specified groups   - **Direct Emails**: Send to email addresses not in your contact list  ## Content Guidelines  - **Subject**: Maximum 998 characters, should be engaging and relevant - **Message**: HTML content supported, including images, links, and formatting - **From Name**: Optional custom sender name (max 500 characters) - **Reply-To**: Optional custom reply-to email address  ## Cost and Balance  The API automatically calculates campaign costs based on: - Total number of unique recipients across all specified groups, contacts, and emails - Your account's email pricing tier - Any additional features or premium content  If your account balance is insufficient, the request will be rejected with a low balance error.  ## Response Information  Successful campaigns return: - Campaign ID for tracking and analytics - Current campaign status and progress - Cost breakdown and recipient counts - Sender information and content preview - Statistical totals and engagement metrics  ## Error Scenarios  Common error conditions include: - **Validation Errors**: Invalid email addresses, missing required fields, or content that exceeds limits - **Insufficient Balance**: Account balance too low for campaign cost - **Invalid Recipients**: Non-existent contact/group IDs or invalid email formats - **Sender Configuration**: Invalid or unconfigured email sender ID - **No Recipients**: All recipient arrays are empty or invalid 
+    # @param create_email_campaign_input_object 
+    # @param [Hash] opts the optional parameters
+    # @return [CreateEmailCampaignResponse]
+    def create_email_campaign(create_email_campaign_input_object, opts = {})
+      data, _status_code, _headers = create_email_campaign_with_http_info(create_email_campaign_input_object, opts)
+      data
+    end
+
+    # Create new email campaign
+    # Creates a new email campaign and sends it to the specified recipients.  This endpoint allows you to create and immediately send an email marketing campaign to your contacts, groups, or direct email addresses. The campaign will be processed asynchronously, and you&#39;ll receive a campaign object with tracking information.  ## Request Requirements  - **Email Sender ID**: Must be a valid, configured email sender from your account - **Recipients**: At least one recipient type must be specified (contacts, groups, or emails) - **Content**: Subject and HTML message content are required - **Balance**: Sufficient account balance for the estimated campaign cost  ## Recipient Types  You can target multiple recipient types in a single campaign:  - **Contact IDs**: Send to specific contacts from your contact list - **Group IDs**: Send to all contacts within specified groups   - **Direct Emails**: Send to email addresses not in your contact list  ## Content Guidelines  - **Subject**: Maximum 998 characters, should be engaging and relevant - **Message**: HTML content supported, including images, links, and formatting - **From Name**: Optional custom sender name (max 500 characters) - **Reply-To**: Optional custom reply-to email address  ## Cost and Balance  The API automatically calculates campaign costs based on: - Total number of unique recipients across all specified groups, contacts, and emails - Your account&#39;s email pricing tier - Any additional features or premium content  If your account balance is insufficient, the request will be rejected with a low balance error.  ## Response Information  Successful campaigns return: - Campaign ID for tracking and analytics - Current campaign status and progress - Cost breakdown and recipient counts - Sender information and content preview - Statistical totals and engagement metrics  ## Error Scenarios  Common error conditions include: - **Validation Errors**: Invalid email addresses, missing required fields, or content that exceeds limits - **Insufficient Balance**: Account balance too low for campaign cost - **Invalid Recipients**: Non-existent contact/group IDs or invalid email formats - **Sender Configuration**: Invalid or unconfigured email sender ID - **No Recipients**: All recipient arrays are empty or invalid 
+    # @param create_email_campaign_input_object 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateEmailCampaignResponse, Fixnum, Hash)>] CreateEmailCampaignResponse data, response status code and response headers
+    def create_email_campaign_with_http_info(create_email_campaign_input_object, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TextMagicApi.create_email_campaign ...'
+      end
+      # verify the required parameter 'create_email_campaign_input_object' is set
+      if @api_client.config.client_side_validation && create_email_campaign_input_object.nil?
+        fail ArgumentError, "Missing the required parameter 'create_email_campaign_input_object' when calling TextMagicApi.create_email_campaign"
+      end
+      # resource path
+      local_var_path = '/api/v2/email-campaigns'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(create_email_campaign_input_object)
+      auth_names = ['BasicAuth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CreateEmailCampaignResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TextMagicApi#create_email_campaign\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Create a new list
     # 
     # @param create_list_input_object 
@@ -4012,6 +4066,57 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Get list of email senders
+    # Retrieves a list of configured email senders available for creating email campaigns.
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :domain_id Filter email senders by specific domain ID.
+    # @return [GetEmailSendersResponse]
+    def get_email_senders(opts = {})
+      data, _status_code, _headers = get_email_senders_with_http_info(opts)
+      data
+    end
+
+    # Get list of email senders
+    # Retrieves a list of configured email senders available for creating email campaigns.
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :domain_id Filter email senders by specific domain ID.
+    # @return [Array<(GetEmailSendersResponse, Fixnum, Hash)>] GetEmailSendersResponse data, response status code and response headers
+    def get_email_senders_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TextMagicApi.get_email_senders ...'
+      end
+      # resource path
+      local_var_path = '/api/v2/email-campaigns/email-senders'
+
+      # query parameters
+      query_params = {}
+      query_params[:'domainId'] = opts[:'domain_id'] if !opts[:'domain_id'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['BasicAuth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'GetEmailSendersResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TextMagicApi#get_email_senders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Get favorite contacts and lists
     # 
     # @param [Hash] opts the optional parameters
@@ -6366,6 +6471,60 @@ module TextMagic
         :return_type => 'ResourceLinkResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#request_sender_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Schedule new email campaign
+    # Creates a new scheduled email campaign that will be sent at a specified time or according to a recurring schedule.
+    # @param schedule_email_campaign_input_object 
+    # @param [Hash] opts the optional parameters
+    # @return [ScheduleEmailCampaignResponse]
+    def schedule_email_campaign(schedule_email_campaign_input_object, opts = {})
+      data, _status_code, _headers = schedule_email_campaign_with_http_info(schedule_email_campaign_input_object, opts)
+      data
+    end
+
+    # Schedule new email campaign
+    # Creates a new scheduled email campaign that will be sent at a specified time or according to a recurring schedule.
+    # @param schedule_email_campaign_input_object 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ScheduleEmailCampaignResponse, Fixnum, Hash)>] ScheduleEmailCampaignResponse data, response status code and response headers
+    def schedule_email_campaign_with_http_info(schedule_email_campaign_input_object, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TextMagicApi.schedule_email_campaign ...'
+      end
+      # verify the required parameter 'schedule_email_campaign_input_object' is set
+      if @api_client.config.client_side_validation && schedule_email_campaign_input_object.nil?
+        fail ArgumentError, "Missing the required parameter 'schedule_email_campaign_input_object' when calling TextMagicApi.schedule_email_campaign"
+      end
+      # resource path
+      local_var_path = '/api/v2/email-campaigns/schedule'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(schedule_email_campaign_input_object)
+      auth_names = ['BasicAuth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ScheduleEmailCampaignResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TextMagicApi#schedule_email_campaign\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

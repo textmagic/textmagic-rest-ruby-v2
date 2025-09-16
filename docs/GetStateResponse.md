@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **system_account_accept_terms_update** | **Integer** |  | 
 **system_account_closed** | **Integer** |  | 
 **system_account_additional_fields** | **Integer** |  | 
+**system_account_numbers_list_change** | **Integer** |  | 
 **system_account_permissions_changed** | **Integer** |  | 
 **user_profile_changed** | **Integer** |  | 
 **user_balance_changed** | **Integer** |  | 
@@ -76,8 +77,8 @@ Name | Type | Description | Notes
 **list_cache_clear** | **Integer** |  | 
 **custom_fields_cache_clear** | **Integer** |  | 
 **progress_carrier_bulk_lookup** | **Integer** |  | 
-**progress_email_bulk_lookup** | **Integer** |  | 
 **progress_sub_account_bulk_import** | **Integer** |  | 
+**email_lookup_progress_state** | **Integer** |  | 
 **import_progress_state** | **Integer** |  | 
 **force_refresh_web_app** | **Integer** |  | 
 **chat_sender_settings_changed** | **Integer** |  | 
@@ -181,6 +182,8 @@ Name | Type | Description | Notes
 **email_campaign_domain_entry_verification_changed** | **Integer** |  | 
 **email_campaign_progress_state** | **Integer** |  | 
 **email_campaign_updated** | **Integer** |  | 
+**email_template_improved** | **Integer** |  | 
+**email_template_improving_failed** | **Integer** |  | 
 **sms_campaign_invalidated** | **Integer** |  | 
 **scheduled_email_campaign_created** | **Integer** |  | 
 **scheduled_email_campaign_updated** | **Integer** |  | 

@@ -74,6 +74,12 @@ describe 'GetStateResponse' do
     end
   end
 
+  describe 'test attribute "system_account_numbers_list_change"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "system_account_permissions_changed"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -470,13 +476,13 @@ describe 'GetStateResponse' do
     end
   end
 
-  describe 'test attribute "progress_email_bulk_lookup"' do
+  describe 'test attribute "progress_sub_account_bulk_import"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "progress_sub_account_bulk_import"' do
+  describe 'test attribute "email_lookup_progress_state"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -1095,6 +1101,18 @@ describe 'GetStateResponse' do
   end
 
   describe 'test attribute "email_campaign_updated"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "email_template_improved"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "email_template_improving_failed"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
