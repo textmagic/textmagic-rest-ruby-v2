@@ -31,7 +31,7 @@ module TextMagic
     # @option config [Configuration] Configuration for initializing the object, default to Configuration.default
     def initialize(config = Configuration.default)
       @config = config
-      @user_agent = "textmagic client SDK ruby"
+      @user_agent = "textmagic client SDK Ruby"
       @default_headers = {
         'Content-Type' => 'application/json',
         'User-Agent' => @user_agent

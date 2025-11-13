@@ -1118,6 +1118,12 @@ describe 'GetStateResponse' do
     end
   end
 
+  describe 'test attribute "email_bonus_updated"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "sms_campaign_invalidated"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

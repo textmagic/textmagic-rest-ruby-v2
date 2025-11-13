@@ -376,6 +376,8 @@ module TextMagic
 
     attr_accessor :email_template_improving_failed
 
+    attr_accessor :email_bonus_updated
+
     attr_accessor :sms_campaign_invalidated
 
     attr_accessor :scheduled_email_campaign_created
@@ -576,6 +578,7 @@ module TextMagic
         :'email_campaign_updated' => :'emailCampaignUpdated',
         :'email_template_improved' => :'emailTemplateImproved',
         :'email_template_improving_failed' => :'emailTemplateImprovingFailed',
+        :'email_bonus_updated' => :'emailBonusUpdated',
         :'sms_campaign_invalidated' => :'smsCampaignInvalidated',
         :'scheduled_email_campaign_created' => :'scheduledEmailCampaignCreated',
         :'scheduled_email_campaign_updated' => :'scheduledEmailCampaignUpdated',
@@ -771,6 +774,7 @@ module TextMagic
         :'email_campaign_updated' => :'Integer',
         :'email_template_improved' => :'Integer',
         :'email_template_improving_failed' => :'Integer',
+        :'email_bonus_updated' => :'Integer',
         :'sms_campaign_invalidated' => :'Integer',
         :'scheduled_email_campaign_created' => :'Integer',
         :'scheduled_email_campaign_updated' => :'Integer',
@@ -1514,6 +1518,10 @@ module TextMagic
         self.email_template_improving_failed = attributes[:'emailTemplateImprovingFailed']
       end
 
+      if attributes.has_key?(:'emailBonusUpdated')
+        self.email_bonus_updated = attributes[:'emailBonusUpdated']
+      end
+
       if attributes.has_key?(:'smsCampaignInvalidated')
         self.sms_campaign_invalidated = attributes[:'smsCampaignInvalidated']
       end
@@ -1881,14 +1889,6 @@ module TextMagic
 
       if @chat_suggested_reply_chunk.nil?
         invalid_properties.push('invalid value for "chat_suggested_reply_chunk", chat_suggested_reply_chunk cannot be nil.')
-      end
-
-      if @user_subscription_changed.nil?
-        invalid_properties.push('invalid value for "user_subscription_changed", user_subscription_changed cannot be nil.')
-      end
-
-      if @user_subscription_deleted.nil?
-        invalid_properties.push('invalid value for "user_subscription_deleted", user_subscription_deleted cannot be nil.')
       end
 
       if @task_created.nil?
@@ -2275,6 +2275,10 @@ module TextMagic
         invalid_properties.push('invalid value for "email_template_improving_failed", email_template_improving_failed cannot be nil.')
       end
 
+      if @email_bonus_updated.nil?
+        invalid_properties.push('invalid value for "email_bonus_updated", email_bonus_updated cannot be nil.')
+      end
+
       if @sms_campaign_invalidated.nil?
         invalid_properties.push('invalid value for "sms_campaign_invalidated", sms_campaign_invalidated cannot be nil.')
       end
@@ -2396,8 +2400,6 @@ module TextMagic
       return false if @chat_summary_chunk.nil?
       return false if @chat_ways_to_reply_chunk.nil?
       return false if @chat_suggested_reply_chunk.nil?
-      return false if @user_subscription_changed.nil?
-      return false if @user_subscription_deleted.nil?
       return false if @task_created.nil?
       return false if @task_updated.nil?
       return false if @task_reordered.nil?
@@ -2494,6 +2496,7 @@ module TextMagic
       return false if @email_campaign_updated.nil?
       return false if @email_template_improved.nil?
       return false if @email_template_improving_failed.nil?
+      return false if @email_bonus_updated.nil?
       return false if @sms_campaign_invalidated.nil?
       return false if @scheduled_email_campaign_created.nil?
       return false if @scheduled_email_campaign_updated.nil?
@@ -2691,6 +2694,7 @@ module TextMagic
           email_campaign_updated == o.email_campaign_updated &&
           email_template_improved == o.email_template_improved &&
           email_template_improving_failed == o.email_template_improving_failed &&
+          email_bonus_updated == o.email_bonus_updated &&
           sms_campaign_invalidated == o.sms_campaign_invalidated &&
           scheduled_email_campaign_created == o.scheduled_email_campaign_created &&
           scheduled_email_campaign_updated == o.scheduled_email_campaign_updated &&
@@ -2710,7 +2714,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [system_cache_clear, system_exit, system_alert, system_account_state_changed, system_account_accept_terms_update, system_account_closed, system_account_additional_fields, system_account_numbers_list_change, system_account_permissions_changed, user_profile_changed, user_balance_changed, user_presence_status_changed, user_impersonation_end, message_deleted, message_incoming, message_incoming_deleted, message_state_changed, message_bulk_end, message_wipe_end, message_sent, message_log, message_note, message_initial, last_message_set, message_session_deleted, message_cache_clear, message_incoming_cache_clear, message_schedule_added, message_schedule_state_changed, message_schedule_deleted, message_schedule_not_sent_state_changed, message_schedule_cache_clear, message_template_cache_clear, call_finished, chat_created, chat_marked_as_read, chat_muted, chat_unmuted, chat_pinned, chat_unpinned, chat_deleted, chat_closed, chat_reopened, chat_activated, chat_cache_clear, chat_read, chat_unread, chat_assignee_changed, chat_tags_changed, chat_conversation_ended, chat_updated, live_chat_agent_changed, live_chat_rated, web_widget_updated, web_widget_deleted, contact_added, contact_deleted, contact_bulk_updated, contact_state_changed, contact_unsubscribed, contact_resubscribed, contact_note_added, contact_note_deleted, contact_note_state_changed, list_added, list_deleted, list_state_changed, list_count_members_updated, contact_wipe_end, contact_import_end, contact_cache_clear, list_cache_clear, custom_fields_cache_clear, progress_carrier_bulk_lookup, progress_sub_account_bulk_import, email_lookup_progress_state, import_progress_state, force_refresh_web_app, chat_sender_settings_changed, country_sender_settings_changed, chat_summary_chunk, chat_ways_to_reply_chunk, chat_suggested_reply_chunk, user_subscription_changed, user_subscription_deleted, task_created, task_updated, task_reordered, task_deleted, task_moved_all, task_stage_created, task_stage_updated, task_stage_deleted, task_board_created, task_board_updated, task_board_reordered, task_board_deleted, task_board_archived, task_checklist_created, task_checklist_updated, task_checklist_deleted, task_checklist_bulk_marked, task_checklist_item_created, task_checklist_item_updated, task_checklist_item_deleted, task_comment_created, task_comment_deleted, pinned_contact_added, pinned_contact_removed, pinned_contact_reordered, pinned_contact_state_changed, whatsapp_account_added, whatsapp_account_removed, whatsapp_account_changed, facebook_page_added, facebook_page_removed, facebook_page_changed, instagram_account_added, instagram_account_removed, instagram_account_changed, unread_tickets_count_updated, ticket_deleted, ticket_updated, ticket_created, ticket_bulk_updated, ticket_bulk_deleted, ticket_message_created, ticket_message_updated, ticket_message_deleted, sub_accounts_closed, user_invited, filtered_view_created, filtered_view_count_updated, filtered_view_deleted, forwarding_inbox_was_verified, forwarding_inbox_check_was_failed, forwarding_inbox_verification_link_was_parsed, tendlc_link_number_status_updated, channel_presence, deal_created, deal_updated, deal_deleted, deal_moved, deal_stage_created, deal_stage_updated, deal_stage_deleted, deal_pipeline_created, deal_pipeline_updated, deal_pipeline_deleted, deal_pipeline_archived, deal_pipeline_reordered, deal_activity_updated, deal_activity_item_created, deal_activity_item_updated, deal_activity_item_deleted, deal_activity_item_bulk_marked, deal_timeline_item_deleted, deal_timeline_item_created, ai_assistant_created, ai_assistant_state, ai_assistant_deleted, ai_assistant_link_deleted, ai_assistant_link_state, ai_assistant_link_created, ai_assistant_sub_link_state, ai_assistant_sub_link_created, email_campaign_email_sender_created, email_campaign_email_sender_updated, email_campaign_email_sender_deleted, email_campaign_domain_created, email_campaign_domain_deleted, email_campaign_domain_verified, email_campaign_domain_status_changed, email_campaign_domain_dkim_verified, email_campaign_domain_return_path_verified, email_campaign_domain_dmarc_verified, email_campaign_domain_entry_verification_changed, email_campaign_progress_state, email_campaign_updated, email_template_improved, email_template_improving_failed, sms_campaign_invalidated, scheduled_email_campaign_created, scheduled_email_campaign_updated, scheduled_email_campaign_status_updated, scheduled_email_campaign_deleted, email_campaign_failed_attempt_created, email_campaign_failed_attempt_deleted, email_campaign_failed_attempt_state_updated].hash
+      [system_cache_clear, system_exit, system_alert, system_account_state_changed, system_account_accept_terms_update, system_account_closed, system_account_additional_fields, system_account_numbers_list_change, system_account_permissions_changed, user_profile_changed, user_balance_changed, user_presence_status_changed, user_impersonation_end, message_deleted, message_incoming, message_incoming_deleted, message_state_changed, message_bulk_end, message_wipe_end, message_sent, message_log, message_note, message_initial, last_message_set, message_session_deleted, message_cache_clear, message_incoming_cache_clear, message_schedule_added, message_schedule_state_changed, message_schedule_deleted, message_schedule_not_sent_state_changed, message_schedule_cache_clear, message_template_cache_clear, call_finished, chat_created, chat_marked_as_read, chat_muted, chat_unmuted, chat_pinned, chat_unpinned, chat_deleted, chat_closed, chat_reopened, chat_activated, chat_cache_clear, chat_read, chat_unread, chat_assignee_changed, chat_tags_changed, chat_conversation_ended, chat_updated, live_chat_agent_changed, live_chat_rated, web_widget_updated, web_widget_deleted, contact_added, contact_deleted, contact_bulk_updated, contact_state_changed, contact_unsubscribed, contact_resubscribed, contact_note_added, contact_note_deleted, contact_note_state_changed, list_added, list_deleted, list_state_changed, list_count_members_updated, contact_wipe_end, contact_import_end, contact_cache_clear, list_cache_clear, custom_fields_cache_clear, progress_carrier_bulk_lookup, progress_sub_account_bulk_import, email_lookup_progress_state, import_progress_state, force_refresh_web_app, chat_sender_settings_changed, country_sender_settings_changed, chat_summary_chunk, chat_ways_to_reply_chunk, chat_suggested_reply_chunk, user_subscription_changed, user_subscription_deleted, task_created, task_updated, task_reordered, task_deleted, task_moved_all, task_stage_created, task_stage_updated, task_stage_deleted, task_board_created, task_board_updated, task_board_reordered, task_board_deleted, task_board_archived, task_checklist_created, task_checklist_updated, task_checklist_deleted, task_checklist_bulk_marked, task_checklist_item_created, task_checklist_item_updated, task_checklist_item_deleted, task_comment_created, task_comment_deleted, pinned_contact_added, pinned_contact_removed, pinned_contact_reordered, pinned_contact_state_changed, whatsapp_account_added, whatsapp_account_removed, whatsapp_account_changed, facebook_page_added, facebook_page_removed, facebook_page_changed, instagram_account_added, instagram_account_removed, instagram_account_changed, unread_tickets_count_updated, ticket_deleted, ticket_updated, ticket_created, ticket_bulk_updated, ticket_bulk_deleted, ticket_message_created, ticket_message_updated, ticket_message_deleted, sub_accounts_closed, user_invited, filtered_view_created, filtered_view_count_updated, filtered_view_deleted, forwarding_inbox_was_verified, forwarding_inbox_check_was_failed, forwarding_inbox_verification_link_was_parsed, tendlc_link_number_status_updated, channel_presence, deal_created, deal_updated, deal_deleted, deal_moved, deal_stage_created, deal_stage_updated, deal_stage_deleted, deal_pipeline_created, deal_pipeline_updated, deal_pipeline_deleted, deal_pipeline_archived, deal_pipeline_reordered, deal_activity_updated, deal_activity_item_created, deal_activity_item_updated, deal_activity_item_deleted, deal_activity_item_bulk_marked, deal_timeline_item_deleted, deal_timeline_item_created, ai_assistant_created, ai_assistant_state, ai_assistant_deleted, ai_assistant_link_deleted, ai_assistant_link_state, ai_assistant_link_created, ai_assistant_sub_link_state, ai_assistant_sub_link_created, email_campaign_email_sender_created, email_campaign_email_sender_updated, email_campaign_email_sender_deleted, email_campaign_domain_created, email_campaign_domain_deleted, email_campaign_domain_verified, email_campaign_domain_status_changed, email_campaign_domain_dkim_verified, email_campaign_domain_return_path_verified, email_campaign_domain_dmarc_verified, email_campaign_domain_entry_verification_changed, email_campaign_progress_state, email_campaign_updated, email_template_improved, email_template_improving_failed, email_bonus_updated, sms_campaign_invalidated, scheduled_email_campaign_created, scheduled_email_campaign_updated, scheduled_email_campaign_status_updated, scheduled_email_campaign_deleted, email_campaign_failed_attempt_created, email_campaign_failed_attempt_deleted, email_campaign_failed_attempt_state_updated].hash
     end
 
     # Builds the object from hash
