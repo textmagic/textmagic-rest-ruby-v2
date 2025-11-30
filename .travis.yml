@@ -8,4 +8,4 @@ script:
   - bundle install --path vendor/bundle
   - bundle exec rspec
   - gem build textmagic_rest_client.gemspec
-  - gem install ./textmagic_rest_client-2.0.43821.gem
+  - gem install ./textmagic_rest_client-3.0.43893.gem
