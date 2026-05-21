@@ -14,6 +14,7 @@
 | **email** | **String** | Contact email address. |  |
 | **country** | [**Country**](Country.md) |  |  |
 | **custom_fields** | [**Array&lt;CustomFieldListItem&gt;**](CustomFieldListItem.md) |  |  |
+| **custom_field_values** | [**Array&lt;CustomFieldValues&gt;**](CustomFieldValues.md) |  |  |
 | **user** | [**User**](User.md) |  |  |
 | **lists** | **Array&lt;Array&gt;** |  |  |
 | **owner** | [**User**](User.md) |  | [optional] |
@@ -39,6 +40,7 @@ instance = TextMagic::Contact.new(
   email: charles@example.com,
   country: null,
   custom_fields: null,
+  custom_field_values: null,
   user: null,
   lists: null,
   owner: null,

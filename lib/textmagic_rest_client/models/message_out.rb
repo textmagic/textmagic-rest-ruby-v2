@@ -46,6 +46,9 @@ module TextMagic
     # Indicates that the message has been deleted.
     attr_accessor :deleted
 
+    # Time when message was delivered.
+    attr_accessor :delivered_at
+
     # Message charset. Could be: *   **ISO-8859-1** for plaintext SMS; *   **UTF-16BE** for Unicode SMS. 
     attr_accessor :charset
 
@@ -116,6 +119,7 @@ module TextMagic
         :'message_time' => :'messageTime',
         :'avatar' => :'avatar',
         :'deleted' => :'deleted',
+        :'delivered_at' => :'deliveredAt',
         :'charset' => :'charset',
         :'charset_label' => :'charsetLabel',
         :'first_name' => :'firstName',
@@ -155,6 +159,7 @@ module TextMagic
         :'message_time' => :'Time',
         :'avatar' => :'String',
         :'deleted' => :'Boolean',
+        :'delivered_at' => :'Time',
         :'charset' => :'String',
         :'charset_label' => :'String',
         :'first_name' => :'String',
@@ -177,6 +182,7 @@ module TextMagic
         :'contact_id',
         :'session_id',
         :'avatar',
+        :'delivered_at',
         :'charset',
         :'charset_label',
         :'first_name',
@@ -262,6 +268,10 @@ module TextMagic
 
       if attributes.key?(:'deleted')
         self.deleted = attributes[:'deleted']
+      end
+
+      if attributes.key?(:'delivered_at')
+        self.delivered_at = attributes[:'delivered_at']
       end
 
       if attributes.key?(:'charset')
@@ -430,6 +440,7 @@ module TextMagic
           message_time == o.message_time &&
           avatar == o.avatar &&
           deleted == o.deleted &&
+          delivered_at == o.delivered_at &&
           charset == o.charset &&
           charset_label == o.charset_label &&
           first_name == o.first_name &&
@@ -453,7 +464,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, sender, receiver, text, status, reject_reason, contact_id, session_id, message_time, avatar, deleted, charset, charset_label, first_name, last_name, country, phone, price, parts_count, from_email, from_number, sender_source, session].hash
+      [id, sender, receiver, text, status, reject_reason, contact_id, session_id, message_time, avatar, deleted, delivered_at, charset, charset_label, first_name, last_name, country, phone, price, parts_count, from_email, from_number, sender_source, session].hash
     end
 
     # Builds the object from hash

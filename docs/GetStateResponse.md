@@ -59,6 +59,7 @@
 | **live_chat_rated** | **Integer** |  |  |
 | **web_widget_updated** | **Integer** |  |  |
 | **web_widget_deleted** | **Integer** |  |  |
+| **web_widget_created** | **Integer** |  |  |
 | **contact_added** | **Integer** |  |  |
 | **contact_deleted** | **Integer** |  |  |
 | **contact_bulk_updated** | **Integer** |  |  |
@@ -194,6 +195,18 @@
 | **email_campaign_failed_attempt_created** | **Integer** |  |  |
 | **email_campaign_failed_attempt_deleted** | **Integer** |  |  |
 | **email_campaign_failed_attempt_state_updated** | **Integer** |  |  |
+| **toll_free_pre_fill_completed** | **Integer** |  |  |
+| **toll_free_pre_fill_failed** | **Integer** |  |  |
+| **toll_free_compliance_check_completed** | **Integer** |  |  |
+| **toll_free_compliance_check_failed** | **Integer** |  |  |
+| **ten_dlc_pre_fill_completed** | **Integer** |  |  |
+| **ten_dlc_pre_fill_failed** | **Integer** |  |  |
+| **ten_dlc_compliance_check_completed** | **Integer** |  |  |
+| **ten_dlc_compliance_check_failed** | **Integer** |  |  |
+| **marketing_data_modal_changed** | **Integer** |  |  |
+| **integration_status_changed** | **Integer** |  |  |
+| **integration_customer_sync_progress_state** | **Integer** |  |  |
+| **integration_customer_sync_end** | **Integer** |  |  |
 
 ## Example
 
@@ -256,6 +269,7 @@ instance = TextMagic::GetStateResponse.new(
   live_chat_rated: null,
   web_widget_updated: null,
   web_widget_deleted: null,
+  web_widget_created: null,
   contact_added: null,
   contact_deleted: null,
   contact_bulk_updated: null,
@@ -390,7 +404,19 @@ instance = TextMagic::GetStateResponse.new(
   scheduled_email_campaign_deleted: null,
   email_campaign_failed_attempt_created: null,
   email_campaign_failed_attempt_deleted: null,
-  email_campaign_failed_attempt_state_updated: null
+  email_campaign_failed_attempt_state_updated: null,
+  toll_free_pre_fill_completed: null,
+  toll_free_pre_fill_failed: null,
+  toll_free_compliance_check_completed: null,
+  toll_free_compliance_check_failed: null,
+  ten_dlc_pre_fill_completed: null,
+  ten_dlc_pre_fill_failed: null,
+  ten_dlc_compliance_check_completed: null,
+  ten_dlc_compliance_check_failed: null,
+  marketing_data_modal_changed: null,
+  integration_status_changed: null,
+  integration_customer_sync_progress_state: null,
+  integration_customer_sync_end: null
 )
 ```
 

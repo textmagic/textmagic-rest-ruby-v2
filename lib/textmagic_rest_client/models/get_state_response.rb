@@ -125,6 +125,8 @@ module TextMagic
 
     attr_accessor :web_widget_deleted
 
+    attr_accessor :web_widget_created
+
     attr_accessor :contact_added
 
     attr_accessor :contact_deleted
@@ -395,6 +397,30 @@ module TextMagic
 
     attr_accessor :email_campaign_failed_attempt_state_updated
 
+    attr_accessor :toll_free_pre_fill_completed
+
+    attr_accessor :toll_free_pre_fill_failed
+
+    attr_accessor :toll_free_compliance_check_completed
+
+    attr_accessor :toll_free_compliance_check_failed
+
+    attr_accessor :ten_dlc_pre_fill_completed
+
+    attr_accessor :ten_dlc_pre_fill_failed
+
+    attr_accessor :ten_dlc_compliance_check_completed
+
+    attr_accessor :ten_dlc_compliance_check_failed
+
+    attr_accessor :marketing_data_modal_changed
+
+    attr_accessor :integration_status_changed
+
+    attr_accessor :integration_customer_sync_progress_state
+
+    attr_accessor :integration_customer_sync_end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -453,6 +479,7 @@ module TextMagic
         :'live_chat_rated' => :'liveChatRated',
         :'web_widget_updated' => :'webWidgetUpdated',
         :'web_widget_deleted' => :'webWidgetDeleted',
+        :'web_widget_created' => :'webWidgetCreated',
         :'contact_added' => :'contactAdded',
         :'contact_deleted' => :'contactDeleted',
         :'contact_bulk_updated' => :'contactBulkUpdated',
@@ -587,7 +614,19 @@ module TextMagic
         :'scheduled_email_campaign_deleted' => :'scheduledEmailCampaignDeleted',
         :'email_campaign_failed_attempt_created' => :'emailCampaignFailedAttemptCreated',
         :'email_campaign_failed_attempt_deleted' => :'emailCampaignFailedAttemptDeleted',
-        :'email_campaign_failed_attempt_state_updated' => :'emailCampaignFailedAttemptStateUpdated'
+        :'email_campaign_failed_attempt_state_updated' => :'emailCampaignFailedAttemptStateUpdated',
+        :'toll_free_pre_fill_completed' => :'tollFreePreFillCompleted',
+        :'toll_free_pre_fill_failed' => :'tollFreePreFillFailed',
+        :'toll_free_compliance_check_completed' => :'tollFreeComplianceCheckCompleted',
+        :'toll_free_compliance_check_failed' => :'tollFreeComplianceCheckFailed',
+        :'ten_dlc_pre_fill_completed' => :'tenDlcPreFillCompleted',
+        :'ten_dlc_pre_fill_failed' => :'tenDlcPreFillFailed',
+        :'ten_dlc_compliance_check_completed' => :'tenDlcComplianceCheckCompleted',
+        :'ten_dlc_compliance_check_failed' => :'tenDlcComplianceCheckFailed',
+        :'marketing_data_modal_changed' => :'marketingDataModalChanged',
+        :'integration_status_changed' => :'integrationStatusChanged',
+        :'integration_customer_sync_progress_state' => :'integrationCustomerSyncProgressState',
+        :'integration_customer_sync_end' => :'integrationCustomerSyncEnd'
       }
     end
 
@@ -659,6 +698,7 @@ module TextMagic
         :'live_chat_rated' => :'Integer',
         :'web_widget_updated' => :'Integer',
         :'web_widget_deleted' => :'Integer',
+        :'web_widget_created' => :'Integer',
         :'contact_added' => :'Integer',
         :'contact_deleted' => :'Integer',
         :'contact_bulk_updated' => :'Integer',
@@ -793,7 +833,19 @@ module TextMagic
         :'scheduled_email_campaign_deleted' => :'Integer',
         :'email_campaign_failed_attempt_created' => :'Integer',
         :'email_campaign_failed_attempt_deleted' => :'Integer',
-        :'email_campaign_failed_attempt_state_updated' => :'Integer'
+        :'email_campaign_failed_attempt_state_updated' => :'Integer',
+        :'toll_free_pre_fill_completed' => :'Integer',
+        :'toll_free_pre_fill_failed' => :'Integer',
+        :'toll_free_compliance_check_completed' => :'Integer',
+        :'toll_free_compliance_check_failed' => :'Integer',
+        :'ten_dlc_pre_fill_completed' => :'Integer',
+        :'ten_dlc_pre_fill_failed' => :'Integer',
+        :'ten_dlc_compliance_check_completed' => :'Integer',
+        :'ten_dlc_compliance_check_failed' => :'Integer',
+        :'marketing_data_modal_changed' => :'Integer',
+        :'integration_status_changed' => :'Integer',
+        :'integration_customer_sync_progress_state' => :'Integer',
+        :'integration_customer_sync_end' => :'Integer'
       }
     end
 
@@ -1147,6 +1199,12 @@ module TextMagic
         self.web_widget_deleted = attributes[:'web_widget_deleted']
       else
         self.web_widget_deleted = nil
+      end
+
+      if attributes.key?(:'web_widget_created')
+        self.web_widget_created = attributes[:'web_widget_created']
+      else
+        self.web_widget_created = nil
       end
 
       if attributes.key?(:'contact_added')
@@ -1954,6 +2012,78 @@ module TextMagic
       else
         self.email_campaign_failed_attempt_state_updated = nil
       end
+
+      if attributes.key?(:'toll_free_pre_fill_completed')
+        self.toll_free_pre_fill_completed = attributes[:'toll_free_pre_fill_completed']
+      else
+        self.toll_free_pre_fill_completed = nil
+      end
+
+      if attributes.key?(:'toll_free_pre_fill_failed')
+        self.toll_free_pre_fill_failed = attributes[:'toll_free_pre_fill_failed']
+      else
+        self.toll_free_pre_fill_failed = nil
+      end
+
+      if attributes.key?(:'toll_free_compliance_check_completed')
+        self.toll_free_compliance_check_completed = attributes[:'toll_free_compliance_check_completed']
+      else
+        self.toll_free_compliance_check_completed = nil
+      end
+
+      if attributes.key?(:'toll_free_compliance_check_failed')
+        self.toll_free_compliance_check_failed = attributes[:'toll_free_compliance_check_failed']
+      else
+        self.toll_free_compliance_check_failed = nil
+      end
+
+      if attributes.key?(:'ten_dlc_pre_fill_completed')
+        self.ten_dlc_pre_fill_completed = attributes[:'ten_dlc_pre_fill_completed']
+      else
+        self.ten_dlc_pre_fill_completed = nil
+      end
+
+      if attributes.key?(:'ten_dlc_pre_fill_failed')
+        self.ten_dlc_pre_fill_failed = attributes[:'ten_dlc_pre_fill_failed']
+      else
+        self.ten_dlc_pre_fill_failed = nil
+      end
+
+      if attributes.key?(:'ten_dlc_compliance_check_completed')
+        self.ten_dlc_compliance_check_completed = attributes[:'ten_dlc_compliance_check_completed']
+      else
+        self.ten_dlc_compliance_check_completed = nil
+      end
+
+      if attributes.key?(:'ten_dlc_compliance_check_failed')
+        self.ten_dlc_compliance_check_failed = attributes[:'ten_dlc_compliance_check_failed']
+      else
+        self.ten_dlc_compliance_check_failed = nil
+      end
+
+      if attributes.key?(:'marketing_data_modal_changed')
+        self.marketing_data_modal_changed = attributes[:'marketing_data_modal_changed']
+      else
+        self.marketing_data_modal_changed = nil
+      end
+
+      if attributes.key?(:'integration_status_changed')
+        self.integration_status_changed = attributes[:'integration_status_changed']
+      else
+        self.integration_status_changed = nil
+      end
+
+      if attributes.key?(:'integration_customer_sync_progress_state')
+        self.integration_customer_sync_progress_state = attributes[:'integration_customer_sync_progress_state']
+      else
+        self.integration_customer_sync_progress_state = nil
+      end
+
+      if attributes.key?(:'integration_customer_sync_end')
+        self.integration_customer_sync_end = attributes[:'integration_customer_sync_end']
+      else
+        self.integration_customer_sync_end = nil
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -2179,6 +2309,10 @@ module TextMagic
 
       if @web_widget_deleted.nil?
         invalid_properties.push('invalid value for "web_widget_deleted", web_widget_deleted cannot be nil.')
+      end
+
+      if @web_widget_created.nil?
+        invalid_properties.push('invalid value for "web_widget_created", web_widget_created cannot be nil.')
       end
 
       if @contact_added.nil?
@@ -2713,6 +2847,54 @@ module TextMagic
         invalid_properties.push('invalid value for "email_campaign_failed_attempt_state_updated", email_campaign_failed_attempt_state_updated cannot be nil.')
       end
 
+      if @toll_free_pre_fill_completed.nil?
+        invalid_properties.push('invalid value for "toll_free_pre_fill_completed", toll_free_pre_fill_completed cannot be nil.')
+      end
+
+      if @toll_free_pre_fill_failed.nil?
+        invalid_properties.push('invalid value for "toll_free_pre_fill_failed", toll_free_pre_fill_failed cannot be nil.')
+      end
+
+      if @toll_free_compliance_check_completed.nil?
+        invalid_properties.push('invalid value for "toll_free_compliance_check_completed", toll_free_compliance_check_completed cannot be nil.')
+      end
+
+      if @toll_free_compliance_check_failed.nil?
+        invalid_properties.push('invalid value for "toll_free_compliance_check_failed", toll_free_compliance_check_failed cannot be nil.')
+      end
+
+      if @ten_dlc_pre_fill_completed.nil?
+        invalid_properties.push('invalid value for "ten_dlc_pre_fill_completed", ten_dlc_pre_fill_completed cannot be nil.')
+      end
+
+      if @ten_dlc_pre_fill_failed.nil?
+        invalid_properties.push('invalid value for "ten_dlc_pre_fill_failed", ten_dlc_pre_fill_failed cannot be nil.')
+      end
+
+      if @ten_dlc_compliance_check_completed.nil?
+        invalid_properties.push('invalid value for "ten_dlc_compliance_check_completed", ten_dlc_compliance_check_completed cannot be nil.')
+      end
+
+      if @ten_dlc_compliance_check_failed.nil?
+        invalid_properties.push('invalid value for "ten_dlc_compliance_check_failed", ten_dlc_compliance_check_failed cannot be nil.')
+      end
+
+      if @marketing_data_modal_changed.nil?
+        invalid_properties.push('invalid value for "marketing_data_modal_changed", marketing_data_modal_changed cannot be nil.')
+      end
+
+      if @integration_status_changed.nil?
+        invalid_properties.push('invalid value for "integration_status_changed", integration_status_changed cannot be nil.')
+      end
+
+      if @integration_customer_sync_progress_state.nil?
+        invalid_properties.push('invalid value for "integration_customer_sync_progress_state", integration_customer_sync_progress_state cannot be nil.')
+      end
+
+      if @integration_customer_sync_end.nil?
+        invalid_properties.push('invalid value for "integration_customer_sync_end", integration_customer_sync_end cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -2775,6 +2957,7 @@ module TextMagic
       return false if @live_chat_rated.nil?
       return false if @web_widget_updated.nil?
       return false if @web_widget_deleted.nil?
+      return false if @web_widget_created.nil?
       return false if @contact_added.nil?
       return false if @contact_deleted.nil?
       return false if @contact_bulk_updated.nil?
@@ -2908,6 +3091,18 @@ module TextMagic
       return false if @email_campaign_failed_attempt_created.nil?
       return false if @email_campaign_failed_attempt_deleted.nil?
       return false if @email_campaign_failed_attempt_state_updated.nil?
+      return false if @toll_free_pre_fill_completed.nil?
+      return false if @toll_free_pre_fill_failed.nil?
+      return false if @toll_free_compliance_check_completed.nil?
+      return false if @toll_free_compliance_check_failed.nil?
+      return false if @ten_dlc_pre_fill_completed.nil?
+      return false if @ten_dlc_pre_fill_failed.nil?
+      return false if @ten_dlc_compliance_check_completed.nil?
+      return false if @ten_dlc_compliance_check_failed.nil?
+      return false if @marketing_data_modal_changed.nil?
+      return false if @integration_status_changed.nil?
+      return false if @integration_customer_sync_progress_state.nil?
+      return false if @integration_customer_sync_end.nil?
       true
     end
 
@@ -3459,6 +3654,16 @@ module TextMagic
       end
 
       @web_widget_deleted = web_widget_deleted
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] web_widget_created Value to be assigned
+    def web_widget_created=(web_widget_created)
+      if web_widget_created.nil?
+        fail ArgumentError, 'web_widget_created cannot be nil'
+      end
+
+      @web_widget_created = web_widget_created
     end
 
     # Custom attribute writer method with validation
@@ -4791,6 +4996,126 @@ module TextMagic
       @email_campaign_failed_attempt_state_updated = email_campaign_failed_attempt_state_updated
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] toll_free_pre_fill_completed Value to be assigned
+    def toll_free_pre_fill_completed=(toll_free_pre_fill_completed)
+      if toll_free_pre_fill_completed.nil?
+        fail ArgumentError, 'toll_free_pre_fill_completed cannot be nil'
+      end
+
+      @toll_free_pre_fill_completed = toll_free_pre_fill_completed
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] toll_free_pre_fill_failed Value to be assigned
+    def toll_free_pre_fill_failed=(toll_free_pre_fill_failed)
+      if toll_free_pre_fill_failed.nil?
+        fail ArgumentError, 'toll_free_pre_fill_failed cannot be nil'
+      end
+
+      @toll_free_pre_fill_failed = toll_free_pre_fill_failed
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] toll_free_compliance_check_completed Value to be assigned
+    def toll_free_compliance_check_completed=(toll_free_compliance_check_completed)
+      if toll_free_compliance_check_completed.nil?
+        fail ArgumentError, 'toll_free_compliance_check_completed cannot be nil'
+      end
+
+      @toll_free_compliance_check_completed = toll_free_compliance_check_completed
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] toll_free_compliance_check_failed Value to be assigned
+    def toll_free_compliance_check_failed=(toll_free_compliance_check_failed)
+      if toll_free_compliance_check_failed.nil?
+        fail ArgumentError, 'toll_free_compliance_check_failed cannot be nil'
+      end
+
+      @toll_free_compliance_check_failed = toll_free_compliance_check_failed
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] ten_dlc_pre_fill_completed Value to be assigned
+    def ten_dlc_pre_fill_completed=(ten_dlc_pre_fill_completed)
+      if ten_dlc_pre_fill_completed.nil?
+        fail ArgumentError, 'ten_dlc_pre_fill_completed cannot be nil'
+      end
+
+      @ten_dlc_pre_fill_completed = ten_dlc_pre_fill_completed
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] ten_dlc_pre_fill_failed Value to be assigned
+    def ten_dlc_pre_fill_failed=(ten_dlc_pre_fill_failed)
+      if ten_dlc_pre_fill_failed.nil?
+        fail ArgumentError, 'ten_dlc_pre_fill_failed cannot be nil'
+      end
+
+      @ten_dlc_pre_fill_failed = ten_dlc_pre_fill_failed
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] ten_dlc_compliance_check_completed Value to be assigned
+    def ten_dlc_compliance_check_completed=(ten_dlc_compliance_check_completed)
+      if ten_dlc_compliance_check_completed.nil?
+        fail ArgumentError, 'ten_dlc_compliance_check_completed cannot be nil'
+      end
+
+      @ten_dlc_compliance_check_completed = ten_dlc_compliance_check_completed
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] ten_dlc_compliance_check_failed Value to be assigned
+    def ten_dlc_compliance_check_failed=(ten_dlc_compliance_check_failed)
+      if ten_dlc_compliance_check_failed.nil?
+        fail ArgumentError, 'ten_dlc_compliance_check_failed cannot be nil'
+      end
+
+      @ten_dlc_compliance_check_failed = ten_dlc_compliance_check_failed
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] marketing_data_modal_changed Value to be assigned
+    def marketing_data_modal_changed=(marketing_data_modal_changed)
+      if marketing_data_modal_changed.nil?
+        fail ArgumentError, 'marketing_data_modal_changed cannot be nil'
+      end
+
+      @marketing_data_modal_changed = marketing_data_modal_changed
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] integration_status_changed Value to be assigned
+    def integration_status_changed=(integration_status_changed)
+      if integration_status_changed.nil?
+        fail ArgumentError, 'integration_status_changed cannot be nil'
+      end
+
+      @integration_status_changed = integration_status_changed
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] integration_customer_sync_progress_state Value to be assigned
+    def integration_customer_sync_progress_state=(integration_customer_sync_progress_state)
+      if integration_customer_sync_progress_state.nil?
+        fail ArgumentError, 'integration_customer_sync_progress_state cannot be nil'
+      end
+
+      @integration_customer_sync_progress_state = integration_customer_sync_progress_state
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] integration_customer_sync_end Value to be assigned
+    def integration_customer_sync_end=(integration_customer_sync_end)
+      if integration_customer_sync_end.nil?
+        fail ArgumentError, 'integration_customer_sync_end cannot be nil'
+      end
+
+      @integration_customer_sync_end = integration_customer_sync_end
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -4851,6 +5176,7 @@ module TextMagic
           live_chat_rated == o.live_chat_rated &&
           web_widget_updated == o.web_widget_updated &&
           web_widget_deleted == o.web_widget_deleted &&
+          web_widget_created == o.web_widget_created &&
           contact_added == o.contact_added &&
           contact_deleted == o.contact_deleted &&
           contact_bulk_updated == o.contact_bulk_updated &&
@@ -4985,7 +5311,19 @@ module TextMagic
           scheduled_email_campaign_deleted == o.scheduled_email_campaign_deleted &&
           email_campaign_failed_attempt_created == o.email_campaign_failed_attempt_created &&
           email_campaign_failed_attempt_deleted == o.email_campaign_failed_attempt_deleted &&
-          email_campaign_failed_attempt_state_updated == o.email_campaign_failed_attempt_state_updated
+          email_campaign_failed_attempt_state_updated == o.email_campaign_failed_attempt_state_updated &&
+          toll_free_pre_fill_completed == o.toll_free_pre_fill_completed &&
+          toll_free_pre_fill_failed == o.toll_free_pre_fill_failed &&
+          toll_free_compliance_check_completed == o.toll_free_compliance_check_completed &&
+          toll_free_compliance_check_failed == o.toll_free_compliance_check_failed &&
+          ten_dlc_pre_fill_completed == o.ten_dlc_pre_fill_completed &&
+          ten_dlc_pre_fill_failed == o.ten_dlc_pre_fill_failed &&
+          ten_dlc_compliance_check_completed == o.ten_dlc_compliance_check_completed &&
+          ten_dlc_compliance_check_failed == o.ten_dlc_compliance_check_failed &&
+          marketing_data_modal_changed == o.marketing_data_modal_changed &&
+          integration_status_changed == o.integration_status_changed &&
+          integration_customer_sync_progress_state == o.integration_customer_sync_progress_state &&
+          integration_customer_sync_end == o.integration_customer_sync_end
     end
 
     # @see the `==` method
@@ -4997,7 +5335,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [system_cache_clear, system_exit, system_alert, system_account_state_changed, system_account_accept_terms_update, system_account_closed, system_account_additional_fields, system_account_numbers_list_change, system_account_permissions_changed, user_profile_changed, user_balance_changed, user_presence_status_changed, user_impersonation_end, message_deleted, message_incoming, message_incoming_deleted, message_state_changed, message_bulk_end, message_wipe_end, message_sent, message_log, message_note, message_initial, last_message_set, message_session_deleted, message_cache_clear, message_incoming_cache_clear, message_schedule_added, message_schedule_state_changed, message_schedule_deleted, message_schedule_not_sent_state_changed, message_schedule_cache_clear, message_template_cache_clear, call_finished, chat_created, chat_marked_as_read, chat_muted, chat_unmuted, chat_pinned, chat_unpinned, chat_deleted, chat_closed, chat_reopened, chat_activated, chat_cache_clear, chat_read, chat_unread, chat_assignee_changed, chat_tags_changed, chat_conversation_ended, chat_updated, live_chat_agent_changed, live_chat_rated, web_widget_updated, web_widget_deleted, contact_added, contact_deleted, contact_bulk_updated, contact_state_changed, contact_unsubscribed, contact_resubscribed, contact_note_added, contact_note_deleted, contact_note_state_changed, list_added, list_deleted, list_state_changed, list_count_members_updated, contact_wipe_end, contact_import_end, contact_cache_clear, list_cache_clear, custom_fields_cache_clear, progress_carrier_bulk_lookup, progress_sub_account_bulk_import, email_lookup_progress_state, import_progress_state, force_refresh_web_app, chat_sender_settings_changed, country_sender_settings_changed, chat_summary_chunk, chat_ways_to_reply_chunk, chat_suggested_reply_chunk, user_subscription_changed, user_subscription_deleted, task_created, task_updated, task_reordered, task_deleted, task_moved_all, task_stage_created, task_stage_updated, task_stage_deleted, task_board_created, task_board_updated, task_board_reordered, task_board_deleted, task_board_archived, task_checklist_created, task_checklist_updated, task_checklist_deleted, task_checklist_bulk_marked, task_checklist_item_created, task_checklist_item_updated, task_checklist_item_deleted, task_comment_created, task_comment_deleted, pinned_contact_added, pinned_contact_removed, pinned_contact_reordered, pinned_contact_state_changed, whatsapp_account_added, whatsapp_account_removed, whatsapp_account_changed, facebook_page_added, facebook_page_removed, facebook_page_changed, instagram_account_added, instagram_account_removed, instagram_account_changed, unread_tickets_count_updated, ticket_deleted, ticket_updated, ticket_created, ticket_bulk_updated, ticket_bulk_deleted, ticket_message_created, ticket_message_updated, ticket_message_deleted, sub_accounts_closed, user_invited, filtered_view_created, filtered_view_count_updated, filtered_view_deleted, forwarding_inbox_was_verified, forwarding_inbox_check_was_failed, forwarding_inbox_verification_link_was_parsed, tendlc_link_number_status_updated, channel_presence, deal_created, deal_updated, deal_deleted, deal_moved, deal_stage_created, deal_stage_updated, deal_stage_deleted, deal_pipeline_created, deal_pipeline_updated, deal_pipeline_deleted, deal_pipeline_archived, deal_pipeline_reordered, deal_activity_updated, deal_activity_item_created, deal_activity_item_updated, deal_activity_item_deleted, deal_activity_item_bulk_marked, deal_timeline_item_deleted, deal_timeline_item_created, ai_assistant_created, ai_assistant_state, ai_assistant_deleted, ai_assistant_link_deleted, ai_assistant_link_state, ai_assistant_link_created, ai_assistant_sub_link_state, ai_assistant_sub_link_created, email_campaign_email_sender_created, email_campaign_email_sender_updated, email_campaign_email_sender_deleted, email_campaign_domain_created, email_campaign_domain_deleted, email_campaign_domain_verified, email_campaign_domain_status_changed, email_campaign_domain_dkim_verified, email_campaign_domain_return_path_verified, email_campaign_domain_dmarc_verified, email_campaign_domain_entry_verification_changed, email_campaign_progress_state, email_campaign_updated, email_template_improved, email_template_improving_failed, email_bonus_updated, sms_campaign_invalidated, scheduled_email_campaign_created, scheduled_email_campaign_updated, scheduled_email_campaign_status_updated, scheduled_email_campaign_deleted, email_campaign_failed_attempt_created, email_campaign_failed_attempt_deleted, email_campaign_failed_attempt_state_updated].hash
+      [system_cache_clear, system_exit, system_alert, system_account_state_changed, system_account_accept_terms_update, system_account_closed, system_account_additional_fields, system_account_numbers_list_change, system_account_permissions_changed, user_profile_changed, user_balance_changed, user_presence_status_changed, user_impersonation_end, message_deleted, message_incoming, message_incoming_deleted, message_state_changed, message_bulk_end, message_wipe_end, message_sent, message_log, message_note, message_initial, last_message_set, message_session_deleted, message_cache_clear, message_incoming_cache_clear, message_schedule_added, message_schedule_state_changed, message_schedule_deleted, message_schedule_not_sent_state_changed, message_schedule_cache_clear, message_template_cache_clear, call_finished, chat_created, chat_marked_as_read, chat_muted, chat_unmuted, chat_pinned, chat_unpinned, chat_deleted, chat_closed, chat_reopened, chat_activated, chat_cache_clear, chat_read, chat_unread, chat_assignee_changed, chat_tags_changed, chat_conversation_ended, chat_updated, live_chat_agent_changed, live_chat_rated, web_widget_updated, web_widget_deleted, web_widget_created, contact_added, contact_deleted, contact_bulk_updated, contact_state_changed, contact_unsubscribed, contact_resubscribed, contact_note_added, contact_note_deleted, contact_note_state_changed, list_added, list_deleted, list_state_changed, list_count_members_updated, contact_wipe_end, contact_import_end, contact_cache_clear, list_cache_clear, custom_fields_cache_clear, progress_carrier_bulk_lookup, progress_sub_account_bulk_import, email_lookup_progress_state, import_progress_state, force_refresh_web_app, chat_sender_settings_changed, country_sender_settings_changed, chat_summary_chunk, chat_ways_to_reply_chunk, chat_suggested_reply_chunk, user_subscription_changed, user_subscription_deleted, task_created, task_updated, task_reordered, task_deleted, task_moved_all, task_stage_created, task_stage_updated, task_stage_deleted, task_board_created, task_board_updated, task_board_reordered, task_board_deleted, task_board_archived, task_checklist_created, task_checklist_updated, task_checklist_deleted, task_checklist_bulk_marked, task_checklist_item_created, task_checklist_item_updated, task_checklist_item_deleted, task_comment_created, task_comment_deleted, pinned_contact_added, pinned_contact_removed, pinned_contact_reordered, pinned_contact_state_changed, whatsapp_account_added, whatsapp_account_removed, whatsapp_account_changed, facebook_page_added, facebook_page_removed, facebook_page_changed, instagram_account_added, instagram_account_removed, instagram_account_changed, unread_tickets_count_updated, ticket_deleted, ticket_updated, ticket_created, ticket_bulk_updated, ticket_bulk_deleted, ticket_message_created, ticket_message_updated, ticket_message_deleted, sub_accounts_closed, user_invited, filtered_view_created, filtered_view_count_updated, filtered_view_deleted, forwarding_inbox_was_verified, forwarding_inbox_check_was_failed, forwarding_inbox_verification_link_was_parsed, tendlc_link_number_status_updated, channel_presence, deal_created, deal_updated, deal_deleted, deal_moved, deal_stage_created, deal_stage_updated, deal_stage_deleted, deal_pipeline_created, deal_pipeline_updated, deal_pipeline_deleted, deal_pipeline_archived, deal_pipeline_reordered, deal_activity_updated, deal_activity_item_created, deal_activity_item_updated, deal_activity_item_deleted, deal_activity_item_bulk_marked, deal_timeline_item_deleted, deal_timeline_item_created, ai_assistant_created, ai_assistant_state, ai_assistant_deleted, ai_assistant_link_deleted, ai_assistant_link_state, ai_assistant_link_created, ai_assistant_sub_link_state, ai_assistant_sub_link_created, email_campaign_email_sender_created, email_campaign_email_sender_updated, email_campaign_email_sender_deleted, email_campaign_domain_created, email_campaign_domain_deleted, email_campaign_domain_verified, email_campaign_domain_status_changed, email_campaign_domain_dkim_verified, email_campaign_domain_return_path_verified, email_campaign_domain_dmarc_verified, email_campaign_domain_entry_verification_changed, email_campaign_progress_state, email_campaign_updated, email_template_improved, email_template_improving_failed, email_bonus_updated, sms_campaign_invalidated, scheduled_email_campaign_created, scheduled_email_campaign_updated, scheduled_email_campaign_status_updated, scheduled_email_campaign_deleted, email_campaign_failed_attempt_created, email_campaign_failed_attempt_deleted, email_campaign_failed_attempt_state_updated, toll_free_pre_fill_completed, toll_free_pre_fill_failed, toll_free_compliance_check_completed, toll_free_compliance_check_failed, ten_dlc_pre_fill_completed, ten_dlc_pre_fill_failed, ten_dlc_compliance_check_completed, ten_dlc_compliance_check_failed, marketing_data_modal_changed, integration_status_changed, integration_customer_sync_progress_state, integration_customer_sync_end].hash
     end
 
     # Builds the object from hash

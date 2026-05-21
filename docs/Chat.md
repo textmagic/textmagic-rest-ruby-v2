@@ -25,6 +25,10 @@
 | **sms_price** | **Float** |  |  |
 | **mms_price** | **Float** |  |  |
 | **tags** | [**Array&lt;Tag&gt;**](Tag.md) |  | [optional] |
+| **assignee_id** | **Integer** |  |  |
+| **updated_by** | [**NullableUserPersonalInfo**](NullableUserPersonalInfo.md) |  | [optional] |
+| **created_at** | **Time** | Chat creation date and time. |  |
+| **message_time** | **Time** | Chat last message date and time. |  |
 
 ## Example
 
@@ -52,7 +56,11 @@ instance = TextMagic::Chat.new(
   type: sms,
   sms_price: 12.34,
   mms_price: 12.34,
-  tags: null
+  tags: null,
+  assignee_id: 1,
+  updated_by: null,
+  created_at: null,
+  message_time: null
 )
 ```
 

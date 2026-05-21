@@ -33,6 +33,7 @@ docs/CreateTagResponse.md
 docs/CreateTemplateRequest.md
 docs/Currency.md
 docs/CustomFieldListItem.md
+docs/CustomFieldValues.md
 docs/DeleteChatMessagesRequest.md
 docs/DeleteChatsBulkRequest.md
 docs/DeleteContactNotesBulkRequest.md
@@ -117,6 +118,7 @@ docs/MessagingStatItem.md
 docs/MuteChatRequest.md
 docs/MuteChatsBulkRequest.md
 docs/NotFoundResponse.md
+docs/NullableUserPersonalInfo.md
 docs/OutboundEmailResponse.md
 docs/PingResponse.md
 docs/PushToken.md
@@ -208,6 +210,7 @@ lib/textmagic_rest_client/models/create_tag_response.rb
 lib/textmagic_rest_client/models/create_template_request.rb
 lib/textmagic_rest_client/models/currency.rb
 lib/textmagic_rest_client/models/custom_field_list_item.rb
+lib/textmagic_rest_client/models/custom_field_values.rb
 lib/textmagic_rest_client/models/delete_chat_messages_request.rb
 lib/textmagic_rest_client/models/delete_chats_bulk_request.rb
 lib/textmagic_rest_client/models/delete_contact_notes_bulk_request.rb
@@ -292,6 +295,7 @@ lib/textmagic_rest_client/models/messaging_stat_item.rb
 lib/textmagic_rest_client/models/mute_chat_request.rb
 lib/textmagic_rest_client/models/mute_chats_bulk_request.rb
 lib/textmagic_rest_client/models/not_found_response.rb
+lib/textmagic_rest_client/models/nullable_user_personal_info.rb
 lib/textmagic_rest_client/models/outbound_email_response.rb
 lib/textmagic_rest_client/models/ping_response.rb
 lib/textmagic_rest_client/models/push_token.rb

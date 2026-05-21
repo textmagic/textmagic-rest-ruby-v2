@@ -15,6 +15,7 @@
 | **message_time** | **Time** | Sending time. |  |
 | **avatar** | **String** |  |  |
 | **deleted** | **Boolean** | Indicates that the message has been deleted. | [optional] |
+| **delivered_at** | **Time** | Time when message was delivered. | [optional] |
 | **charset** | **String** | Message charset. Could be: *   **ISO-8859-1** for plaintext SMS; *   **UTF-16BE** for Unicode SMS.  |  |
 | **charset_label** | **String** | Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS; *   **UTF-16BE** for Unicode SMS; *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages.  |  |
 | **first_name** | **String** | Contact first name. Could be substituted from your [Contacts](https://docs.textmagic.com/#tag/Contacts) (even if you submitted the phone number instead of the contact ID).  |  |
@@ -45,6 +46,7 @@ instance = TextMagic::MessageOut.new(
   message_time: null,
   avatar: avatars/dummy_avatar.png,
   deleted: false,
+  delivered_at: null,
   charset: ISO-8859-1,
   charset_label: ISO-8859-1,
   first_name: John,

@@ -72,6 +72,16 @@ module TextMagic
 
     attr_accessor :tags
 
+    attr_accessor :assignee_id
+
+    attr_accessor :updated_by
+
+    # Chat creation date and time.
+    attr_accessor :created_at
+
+    # Chat last message date and time.
+    attr_accessor :message_time
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -117,7 +127,11 @@ module TextMagic
         :'type' => :'type',
         :'sms_price' => :'smsPrice',
         :'mms_price' => :'mmsPrice',
-        :'tags' => :'tags'
+        :'tags' => :'tags',
+        :'assignee_id' => :'assigneeId',
+        :'updated_by' => :'updatedBy',
+        :'created_at' => :'createdAt',
+        :'message_time' => :'messageTime'
       }
     end
 
@@ -154,7 +168,11 @@ module TextMagic
         :'type' => :'String',
         :'sms_price' => :'Float',
         :'mms_price' => :'Float',
-        :'tags' => :'Array<Tag>'
+        :'tags' => :'Array<Tag>',
+        :'assignee_id' => :'Integer',
+        :'updated_by' => :'NullableUserPersonalInfo',
+        :'created_at' => :'Time',
+        :'message_time' => :'Time'
       }
     end
 
@@ -171,6 +189,8 @@ module TextMagic
         :'muted_until',
         :'country',
         :'pinned',
+        :'assignee_id',
+        :'updated_by',
       ])
     end
 
@@ -315,6 +335,28 @@ module TextMagic
           self.tags = value
         end
       end
+
+      if attributes.key?(:'assignee_id')
+        self.assignee_id = attributes[:'assignee_id']
+      else
+        self.assignee_id = nil
+      end
+
+      if attributes.key?(:'updated_by')
+        self.updated_by = attributes[:'updated_by']
+      end
+
+      if attributes.key?(:'created_at')
+        self.created_at = attributes[:'created_at']
+      else
+        self.created_at = nil
+      end
+
+      if attributes.key?(:'message_time')
+        self.message_time = attributes[:'message_time']
+      else
+        self.message_time = nil
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -362,6 +404,14 @@ module TextMagic
         invalid_properties.push('invalid value for "mms_price", mms_price cannot be nil.')
       end
 
+      if @created_at.nil?
+        invalid_properties.push('invalid value for "created_at", created_at cannot be nil.')
+      end
+
+      if @message_time.nil?
+        invalid_properties.push('invalid value for "message_time", message_time cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -383,6 +433,8 @@ module TextMagic
       return false if @type.nil?
       return false if @sms_price.nil?
       return false if @mms_price.nil?
+      return false if @created_at.nil?
+      return false if @message_time.nil?
       true
     end
 
@@ -496,6 +548,26 @@ module TextMagic
       @mms_price = mms_price
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] created_at Value to be assigned
+    def created_at=(created_at)
+      if created_at.nil?
+        fail ArgumentError, 'created_at cannot be nil'
+      end
+
+      @created_at = created_at
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] message_time Value to be assigned
+    def message_time=(message_time)
+      if message_time.nil?
+        fail ArgumentError, 'message_time cannot be nil'
+      end
+
+      @message_time = message_time
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -521,7 +593,11 @@ module TextMagic
           type == o.type &&
           sms_price == o.sms_price &&
           mms_price == o.mms_price &&
-          tags == o.tags
+          tags == o.tags &&
+          assignee_id == o.assignee_id &&
+          updated_by == o.updated_by &&
+          created_at == o.created_at &&
+          message_time == o.message_time
     end
 
     # @see the `==` method
@@ -533,7 +609,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, original_id, phone, contact, unsubscribed_contact_id, unread, updated_at, status, mute, last_message, direction, reply_options_type, from, muted_until, time_left_mute, country, pinned, type, sms_price, mms_price, tags].hash
+      [id, original_id, phone, contact, unsubscribed_contact_id, unread, updated_at, status, mute, last_message, direction, reply_options_type, from, muted_until, time_left_mute, country, pinned, type, sms_price, mms_price, tags, assignee_id, updated_by, created_at, message_time].hash
     end
 
     # Builds the object from hash

@@ -43,6 +43,8 @@ module TextMagic
 
     attr_accessor :custom_fields
 
+    attr_accessor :custom_field_values
+
     attr_accessor :user
 
     attr_accessor :lists
@@ -74,6 +76,7 @@ module TextMagic
         :'email' => :'email',
         :'country' => :'country',
         :'custom_fields' => :'customFields',
+        :'custom_field_values' => :'customFieldValues',
         :'user' => :'user',
         :'lists' => :'lists',
         :'owner' => :'owner',
@@ -108,6 +111,7 @@ module TextMagic
         :'email' => :'String',
         :'country' => :'Country',
         :'custom_fields' => :'Array<CustomFieldListItem>',
+        :'custom_field_values' => :'Array<CustomFieldValues>',
         :'user' => :'User',
         :'lists' => :'Array<List>',
         :'owner' => :'User',
@@ -214,6 +218,14 @@ module TextMagic
         self.custom_fields = nil
       end
 
+      if attributes.key?(:'custom_field_values')
+        if (value = attributes[:'custom_field_values']).is_a?(Array)
+          self.custom_field_values = value
+        end
+      else
+        self.custom_field_values = nil
+      end
+
       if attributes.key?(:'user')
         self.user = attributes[:'user']
       else
@@ -284,6 +296,10 @@ module TextMagic
         invalid_properties.push('invalid value for "custom_fields", custom_fields cannot be nil.')
       end
 
+      if @custom_field_values.nil?
+        invalid_properties.push('invalid value for "custom_field_values", custom_field_values cannot be nil.')
+      end
+
       if @lists.nil?
         invalid_properties.push('invalid value for "lists", lists cannot be nil.')
       end
@@ -303,6 +319,7 @@ module TextMagic
       return false if @favorited.nil?
       return false if @blocked.nil?
       return false if @custom_fields.nil?
+      return false if @custom_field_values.nil?
       return false if @lists.nil?
       return false if @notes.nil?
       true
@@ -349,6 +366,16 @@ module TextMagic
     end
 
     # Custom attribute writer method with validation
+    # @param [Object] custom_field_values Value to be assigned
+    def custom_field_values=(custom_field_values)
+      if custom_field_values.nil?
+        fail ArgumentError, 'custom_field_values cannot be nil'
+      end
+
+      @custom_field_values = custom_field_values
+    end
+
+    # Custom attribute writer method with validation
     # @param [Object] lists Value to be assigned
     def lists=(lists)
       if lists.nil?
@@ -383,6 +410,7 @@ module TextMagic
           email == o.email &&
           country == o.country &&
           custom_fields == o.custom_fields &&
+          custom_field_values == o.custom_field_values &&
           user == o.user &&
           lists == o.lists &&
           owner == o.owner &&
@@ -402,7 +430,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, favorited, blocked, first_name, last_name, company_name, phone, email, country, custom_fields, user, lists, owner, tags, phone_type, avatar, notes, whatsapp_phone].hash
+      [id, favorited, blocked, first_name, last_name, company_name, phone, email, country, custom_fields, custom_field_values, user, lists, owner, tags, phone_type, avatar, notes, whatsapp_phone].hash
     end
 
     # Builds the object from hash
