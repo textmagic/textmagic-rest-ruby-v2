@@ -38,7 +38,7 @@ gem install textmagic_rest_client
 Add this line to your `Gemfile`:
 
 ```ruby
-gem 'textmagic_rest_client', '~> 3.0.50031'
+gem 'textmagic_rest_client', '~> 3.0.50052'
 ```
 
 Then run:
@@ -52,7 +52,7 @@ bundle install
 Add this line to your `Gemfile`:
 
 ```ruby
-gem 'textmagic_rest_client', git: 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', tag: 'v3.0.50031'
+gem 'textmagic_rest_client', git: 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', tag: 'v3.0.50052'
 ```
 
 Then run:
@@ -331,7 +331,7 @@ bundle exec rspec --format documentation
 gem build textmagic_rest_client.gemspec
 
 # Install locally
-gem install ./textmagic_rest_client-3.0.50031.gem
+gem install ./textmagic_rest_client-3.0.50052.gem
 ```
 
 ## Need Help?

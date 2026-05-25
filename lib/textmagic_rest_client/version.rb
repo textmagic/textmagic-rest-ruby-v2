@@ -11,5 +11,5 @@ Generator version: 7.17.0
 =end
 
 module TextMagic
-  VERSION = '3.0.50031'
+  VERSION = '3.0.50052'
 end

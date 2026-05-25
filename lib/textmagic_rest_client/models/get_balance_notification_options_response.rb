@@ -16,16 +16,16 @@ require 'time'
 module TextMagic
   class GetBalanceNotificationOptionsResponse < ApiModelBase
     # Contains sign of currency in Unicode hex code.
-    attr_accessor :_1
+    attr_accessor :_n1
 
     # Contains sign of currency in Unicode hex code.
-    attr_accessor :_2
+    attr_accessor :_n2
 
     # Contains sign of currency in Unicode hex code.
-    attr_accessor :_3
+    attr_accessor :_n3
 
     # Contains sign of currency in Unicode hex code.
-    attr_accessor :_5
+    attr_accessor :_n5
 
     # Contains sign of currency in Unicode hex code.
     attr_accessor :_10
@@ -51,10 +51,10 @@ module TextMagic
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'_1' => :'1',
-        :'_2' => :'2',
-        :'_3' => :'3',
-        :'_5' => :'5',
+        :'_n1' => :'1',
+        :'_n2' => :'2',
+        :'_n3' => :'3',
+        :'_n5' => :'5',
         :'_10' => :'10',
         :'_20' => :'20',
         :'_30' => :'30',
@@ -78,10 +78,10 @@ module TextMagic
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'_1' => :'String',
-        :'_2' => :'String',
-        :'_3' => :'String',
-        :'_5' => :'String',
+        :'_n1' => :'String',
+        :'_n2' => :'String',
+        :'_n3' => :'String',
+        :'_n5' => :'String',
         :'_10' => :'String',
         :'_20' => :'String',
         :'_30' => :'String',
@@ -114,28 +114,28 @@ module TextMagic
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'_1')
-        self._1 = attributes[:'_1']
+      if attributes.key?(:'_n1')
+        self._n1 = attributes[:'_n1']
       else
-        self._1 = nil
+        self._n1 = nil
       end
 
-      if attributes.key?(:'_2')
-        self._2 = attributes[:'_2']
+      if attributes.key?(:'_n2')
+        self._n2 = attributes[:'_n2']
       else
-        self._2 = nil
+        self._n2 = nil
       end
 
-      if attributes.key?(:'_3')
-        self._3 = attributes[:'_3']
+      if attributes.key?(:'_n3')
+        self._n3 = attributes[:'_n3']
       else
-        self._3 = nil
+        self._n3 = nil
       end
 
-      if attributes.key?(:'_5')
-        self._5 = attributes[:'_5']
+      if attributes.key?(:'_n5')
+        self._n5 = attributes[:'_n5']
       else
-        self._5 = nil
+        self._n5 = nil
       end
 
       if attributes.key?(:'_10')
@@ -186,20 +186,20 @@ module TextMagic
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @_1.nil?
-        invalid_properties.push('invalid value for "_1", _1 cannot be nil.')
+      if @_n1.nil?
+        invalid_properties.push('invalid value for "_n1", _n1 cannot be nil.')
       end
 
-      if @_2.nil?
-        invalid_properties.push('invalid value for "_2", _2 cannot be nil.')
+      if @_n2.nil?
+        invalid_properties.push('invalid value for "_n2", _n2 cannot be nil.')
       end
 
-      if @_3.nil?
-        invalid_properties.push('invalid value for "_3", _3 cannot be nil.')
+      if @_n3.nil?
+        invalid_properties.push('invalid value for "_n3", _n3 cannot be nil.')
       end
 
-      if @_5.nil?
-        invalid_properties.push('invalid value for "_5", _5 cannot be nil.')
+      if @_n5.nil?
+        invalid_properties.push('invalid value for "_n5", _n5 cannot be nil.')
       end
 
       if @_10.nil?
@@ -237,10 +237,10 @@ module TextMagic
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @_1.nil?
-      return false if @_2.nil?
-      return false if @_3.nil?
-      return false if @_5.nil?
+      return false if @_n1.nil?
+      return false if @_n2.nil?
+      return false if @_n3.nil?
+      return false if @_n5.nil?
       return false if @_10.nil?
       return false if @_20.nil?
       return false if @_30.nil?
@@ -252,43 +252,43 @@ module TextMagic
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] _1 Value to be assigned
-    def _1=(_1)
-      if _1.nil?
-        fail ArgumentError, '_1 cannot be nil'
+    # @param [Object] _n1 Value to be assigned
+    def _n1=(_n1)
+      if _n1.nil?
+        fail ArgumentError, '_n1 cannot be nil'
       end
 
-      @_1 = _1
+      @_n1 = _n1
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] _2 Value to be assigned
-    def _2=(_2)
-      if _2.nil?
-        fail ArgumentError, '_2 cannot be nil'
+    # @param [Object] _n2 Value to be assigned
+    def _n2=(_n2)
+      if _n2.nil?
+        fail ArgumentError, '_n2 cannot be nil'
       end
 
-      @_2 = _2
+      @_n2 = _n2
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] _3 Value to be assigned
-    def _3=(_3)
-      if _3.nil?
-        fail ArgumentError, '_3 cannot be nil'
+    # @param [Object] _n3 Value to be assigned
+    def _n3=(_n3)
+      if _n3.nil?
+        fail ArgumentError, '_n3 cannot be nil'
       end
 
-      @_3 = _3
+      @_n3 = _n3
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] _5 Value to be assigned
-    def _5=(_5)
-      if _5.nil?
-        fail ArgumentError, '_5 cannot be nil'
+    # @param [Object] _n5 Value to be assigned
+    def _n5=(_n5)
+      if _n5.nil?
+        fail ArgumentError, '_n5 cannot be nil'
       end
 
-      @_5 = _5
+      @_n5 = _n5
     end
 
     # Custom attribute writer method with validation
@@ -366,10 +366,10 @@ module TextMagic
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          _1 == o._1 &&
-          _2 == o._2 &&
-          _3 == o._3 &&
-          _5 == o._5 &&
+          _n1 == o._n1 &&
+          _n2 == o._n2 &&
+          _n3 == o._n3 &&
+          _n5 == o._n5 &&
           _10 == o._10 &&
           _20 == o._20 &&
           _30 == o._30 &&
@@ -388,7 +388,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [_1, _2, _3, _5, _10, _20, _30, _50, _100, _500, _1000].hash
+      [_n1, _n2, _n3, _n5, _10, _20, _30, _50, _100, _500, _1000].hash
     end
 
     # Builds the object from hash
